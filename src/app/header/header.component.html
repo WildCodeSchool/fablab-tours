@@ -1,90 +1,66 @@
+<!-- navbar -->
+<nav class="navbar navbar-light fixed-top">
+  <!-- bouton pour faire apparaitre la sidebar -->
+  <button [ngClass]="{'transBtn': sidebarDisplayed}" (click)="showSidebar()" (click)="isCollapsed = !isCollapsed"
+  id="boutonfiltre2" class="btnStartPos navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <!-- menu burger ouverture sidebar -->
+  <div *ngIf="!sidebarDisplayed" class="openside">
+    <i class="fa fa-bars"></i>
+  </div>
+  <!-- croix fermeture sidebar -->
+  <div *ngIf="sidebarDisplayed" class="closeside">
+    <i class="fa fa-times"></i>
+  </div>
+</button>
 
-<nav class="navbar fixed-top navbar-expand-lg navbar-light nav1" *ngIf="onWindowfix()">
+<!-- Logo FunLab -->
+<img src="../../assets/images/image-header/logo_funlab.png" routerLink="">
 
-  <a class="navbar-brand d-flex justify-content-between">
-    <img src="../../assets/images/image-header/logo_funlab.png" width="115%" height="115%" routerLink="">
-  </a>
+<!-- Icon recherche -->
+<div class="loupe">
+  <i class="fa fa-search" routerLink="/search"></i>
+</div>
+</nav>
+<!-- fin navbar -->
 
-  <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-    <!-- Icon loupe pour recherche
-    <img src="../../assets/images/image-header/loupe2.png" width="40" routerLink="/recherche">
-  -->
-  <div class="navbar-collapse" id="navbarNav"  [ngbCollapse]="!isCollapsed">
-    <ul class="navbar-nav mx-auto">
-      <li class="nav-item">
-        <h3 class="nav-link text-info mx-2" routerLink="">Accueil</h3>
-      </li>
-      <li class="nav-item">
-        <h3 class="nav-link text-info mx-2" routerLink="/agenda">Agenda</h3>
-      </li>
-      <li class="nav-item">
-        <h3 class="nav-link text-info mx-2"><a href="http://funlab.fr/category/actusblog/" target="_blank">Blog</a></h3>
-      </li>
-      <li class="nav-item">
-        <h3 class="nav-link text-info mx-2"><a href="http://wiki.funlab.fr/index.php/Accueil" target="_blank">Wiki</a></h3>
-      </li>
-      <li class="nav-item">
-        <h3 class="nav-link text-info mx-2" routerLink="/equipe">Equipe</h3>
-      </li>
-      <li class="nav-item">
-        <h3 class="nav-link text-info mx-2" routerLink="/contact">Contact</h3>
-      </li>
-    </ul>
-
-    <form class="form-inline justify-content-center">
-      <input name="search" class="fa fa-search form-control" type="search" placeholder="Rechercher" aria-label="Search">
-      <i role="submit" class="fa fa-search"></i>
-    </form>
-
+<!-- Sidebar -->
+<nav class="sidebar hidden fixed-top" id="nav1" [ngClass]="{'trans': sidebarDisplayed}">
+  <div class="navbar-nav">
+    <div class="row">
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault" [ngbCollapse]="!isCollapsed">
+        <ul class="nav sidebar-nav d-table">
+          <li class="nav-item">
+            <h3 class="nav-link" routerLink="">Accueil</h3>
+          </li>
+          <li class="nav-item">
+            <h3 class="nav-link" routerLink="/agenda">Agenda</h3>
+          </li>
+          <li class="nav-item">
+            <h3 class="nav-link" routerLink="/blog">Blog</h3>
+          </li>
+          <li class="nav-item">
+            <h3 class="nav-link" routerLink="/wiki">Wiki</h3>
+          </li>
+          <li class="nav-item">
+            <h3 class="nav-link" routerLink="/equipe">Equipe</h3>
+          </li>
+          <li class="nav-item">
+            <h3 class="nav-link" routerLink="/machine">Machine</h3>
+          </li>
+          <li class="nav-item">
+            <h3 class="nav-link" routerLink="/contact">Contact</h3>
+          </li>
+          <div class="reseaux">
+            <ul class="d-flex">
+              <a href="https://www.facebook.com/FablabTourangeau/"><i  class="fa fa-facebook-f mx-4"></i></a>
+              <a href="https://www.instagram.com/funlab_tours/"><i class="fa fa-instagram mx-4"></i></a>
+              <a href="https://twitter.com/lefunlab/"><i class="fa fa-twitter mx-4"></i></a>
+            </ul>
+          </div>
+        </ul>
+      </div>
+    </div>
   </div>
 </nav>
-
-
-
-
-
-<div class="backgroundimage">
-  <nav class="navbar fixed-top navbar-expand-lg navbar-light nav2" *ngIf="onWindowScroll()">
-
-    <a class="navbar-brand d-flex justify-content-between">
-      <img src="../../assets/images/image-header/logo_funlab.png" width="115%" height="115%" routerLink="">
-    </a>
-
-    <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <!-- Icon loupe pour recherche
-    <img src="../../assets/images/image-header/loupe2.png" width="40" routerLink="/recherche">
-  -->
-  <div class="navbar-collapse" id="navbarNav"  [ngbCollapse]="!isCollapsed">
-    <ul class="navbar-nav mx-auto">
-      <li class="nav-item">
-        <h3 class="nav-link text-info mx-2" routerLink="">Accueil</h3>
-      </li>
-      <li class="nav-item">
-        <h3 class="nav-link text-info mx-2" routerLink="/agenda">Agenda</h3>
-      </li>
-      <li class="nav-item">
-        <h3 class="nav-link text-info mx-2"><a href="http://funlab.fr/category/actusblog/" target="_blank">Blog</a></h3>
-      </li>
-      <li class="nav-item">
-        <h3 class="nav-link text-info mx-2"><a href="http://wiki.funlab.fr/index.php/Accueil" target="_blank">Wiki</a></h3>
-      </li>
-      <li class="nav-item">
-        <h3 class="nav-link text-info mx-2" routerLink="/equipe">Equipe</h3>
-      </li>
-      <li class="nav-item">
-        <h3 class="nav-link text-info mx-2" routerLink="/contact">Contact</h3>
-      </li>
-    </ul>
-
-    <form class="form-inline justify-content-center">
-      <input name="search" class="fa fa-search form-control" type="search" placeholder="Rechercher" aria-label="Search">
-      <i role="submit" class="fa fa-search"></i>
-    </form>
-
-  </div>
-</nav>
+<!-- Fin sidebar -->

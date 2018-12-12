@@ -1,77 +1,115 @@
-	.nav1 {
+.sidebar {
+  margin-top: 89px;
+  height: 100vh;
+  width: 320px;
+  font-size: 8rem;
+  background-color:#666666 !important;
+  opacity: 0.92;
+  z-index: 1;
+}
 
-		background-color:transparent !important;
-		border-color:transparent;
-		background-image:none;
-		box-shadow:none;  
-	}
+.navbar-nav {
+  height: 100vh;
+}
 
-	.nav2 {
-		background-color: #808080;
-		opacity: 0.9;
-		z-index: 1;
-		box-shadow: 0px 4px 8px black;
-	}
+img{
+  margin-left:45%;
+  width: 155px;
+  z-index: -1;
+}
+
+li{
+  font-family: Didot, serif;
+  margin-top: 12%;
+  margin-left: 50%;
+  color: #fff;
+}
+
+button{
+  border-radius: 20%;
+  border: none;
+}
+
+.nav-item{
+  cursor: pointer;
+}
+
+#boutonfiltre2 {
+  transition: transform 0.5s ease-in-out;
+  position: fixed;
+  cursor: pointer;
+}
+
+.trans {
+  transform: translateX(0px) !important;
+  transition: transform 0.5s ease-in-out !important;
+}
+
+.hidden {
+  transform: translateX(-320px);
+  transition: transform 0.4s ease-in-out;
+}
+
+.transBtn {
+  position: relative;
+  z-index:3;
+  /*
+  transition: transform 0.5s ease-in-out;
+  transform: translateX(320px);
+  */
+}
+
+input{
+  max-width: 200px;
+}
+
+@media screen and (max-width: 800px){
+
+  img{
+    margin-left: 33%;
+  }
+
+  li{
+    margin-top: 5%;
+  }
+
+  .reseaux{
+    margin-top: 5%;
+  }
+
+}
 
 
-	.navbar-brand {
-		max-width: 200px;
-	}
+.loupe{
+  font-size: 1.9em;
+  margin-left: 95%;
+  margin-top:-80px;
+  color: black;
+}
 
-	ul{
-		margin-left:15%;
-		font-family: Didot, serif;
+.navbar{
+  background-color: #666666;
+  opacity: 0.92;
+}
 
-	}
+.reseaux{
+  font-size: 0.3em;
+  margin-top: 15%;
+  margin-left: 10%
+}
 
-	i{
-		font-size: 130%;
-		position: absolute;
-		right: 23px;
-		cursor: pointer;
-	}
+.closeside{
+  margin-left: 5%;
+  font-size: 2.6em;
+  color: black;
+}
 
-	@media screen and (min-width:800px) and (max-width: 991px){
-		
-		i{
-			font-size: 130%;
-			right:335px;
-			position: absolute;
-			cursor: pointer;
-		}
-	}
+.openside{
+  margin-left: 5%;
+  font-size: 2.3em;
+  color: black;
+}
 
-	@media screen and (min-width: 400px) and (max-width: 800px){
-		i{
-			font-size: 130%;
-			right:235px;
-			position: absolute;
-			cursor: pointer;
-		}
-	}
-
-	@media screen and (max-width: 400px){
-		i{
-			font-size: 130%;
-			right:100px;
-			position: absolute;
-			cursor: pointer;
-		}
-	}
-
-
-	.nav-link:hover {
-		transform: scale(1.1);
-	}
-
-	.navbar-nav {
-		text-align: center;
-	}
-
-	.navbar-toggler{
-		background-color: #808080;
-	}
-
-	.navbar.scroll{
-		background-color: #808080;
-	}
+a{
+  color: white;
+}
