@@ -35,17 +35,11 @@ footer p {
 
 }
 
-.social_footer_ul li {
-  padding-left: 20px;
-  padding-top: 10px;
-  float: left;
+.reseaux a :hover{
+  color:black;
+  text-decoration: none; 
 }
 
-.social_footer_ul li a {
-  border: 1px solid #000;
-  padding: 12px;
-  border-radius: 30%;
-}
 
 .social_footer_ul a img {
   width: 50px;
