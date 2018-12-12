@@ -21,9 +21,10 @@ h1{
     text-align: center;
     overflow: hidden;
     position: relative;
-    border:1px dotted #ccc;
+    border:2px;
     margin: auto;
     min-width: 14rem;
+    margin-bottom: 20%;
 }
 h1{
     margin-bottom:15px;
