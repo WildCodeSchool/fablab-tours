@@ -30,7 +30,6 @@ export class AgendaComponent implements OnInit {
       map(res => {
         return res.map(event => {
           return {
-            id: event.id,
             title: event.summary,
             start: event.start.date ? event.start.date : event.start.dateTime,
             end: event.end.date ? event.end.date : event.end.dateTime,
