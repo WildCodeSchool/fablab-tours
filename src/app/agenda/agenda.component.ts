@@ -15,10 +15,10 @@ export class AgendaComponent implements OnInit {
   showModal: boolean;
   name: string;
   dateStart: string;
-  dateEnd: string;
+  heureDepart: string;
+  heureFin: string;
   lieu: string;
   description: string;
-  titre = 'Agenda FunLab';
   calendarOptions: Options;
   @ViewChild(CalendarComponent) ucCalendar: CalendarComponent;
 
@@ -30,11 +30,15 @@ export class AgendaComponent implements OnInit {
       map(res => {
         return res.map(event => {
           return {
+            jour: event.start.date ? event.start.date : event.start.dateTime,
+            mois: event.start.date ? event.start.date : event.start.dateTime,
+            hDepart: event.start.date ? 'indéfini' : event.start.dateTime.slice(11, 16),
+            hFin: event.end.date ? 'indéfini' : event.end.dateTime.slice(11, 16),
             title: event.summary,
             start: event.start.date ? event.start.date : event.start.dateTime,
             end: event.end.date ? event.end.date : event.end.dateTime,
-            location: event.location,
-            description: event.description
+            location: event.location ? event.location : 'indéfini',
+            description: event.description ? event.description : 'indéfini'
           };
         });
       })
@@ -53,21 +57,21 @@ export class AgendaComponent implements OnInit {
       },
       events: [
         {
-          color: 'red',
-          textColor: 'red'
+          color: 'red'
         },
       ],
       allDayText: 'Toute la journée',
       timeFormat: 'H:mm',
       buttonText: {
         today: 'Aujourd’hui', month: 'Mois', week: 'Semaine', day: 'Jour', list: 'Mon planning'
-      }
+      },
     };
   }
   eventClick(model: any) {
     this.name = model.event.title;
     this.dateStart = model.event.start;
-    this.dateEnd = model.event.end;
+    this.heureDepart = model.event.hDepart;
+    this.heureFin = model.event.hFin;
     this.lieu = model.event.location;
     this.description = model.event.description;
     this.showModal = true;
