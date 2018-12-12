@@ -1,6 +1,6 @@
 <div class="container taille">
     <ngb-carousel *ngIf="evenements">
-        <ng-template ngbSlide *ngFor='let event of evenements'>
+        <ng-template ngbSlide *ngFor='let event of evenements | slice: 0:3; let i = index'>
             <img src="../../assets/images/image-contact/contact1.jpg" alt="fond_blanc">
             <div class="carousel-caption general rounded">
                 <h1>{{event.title}}</h1>
