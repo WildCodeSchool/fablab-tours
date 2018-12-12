@@ -25,6 +25,7 @@ h1{
     margin: auto;
     min-width: 14rem;
     margin-bottom: 20%;
+    box-shadow: 0px 10px 10px black;
 }
 h1{
     margin-bottom:15px;
