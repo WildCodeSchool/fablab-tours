@@ -64,21 +64,20 @@ input{
 }
 
 @media screen and (max-width: 800px){
-
+  
   img{
     margin-left: 33%;
   }
-
+  
   li{
     margin-top: 5%;
   }
-
+  
   .reseaux{
     margin-top: 5%;
   }
-
+  
 }
-
 
 .loupe{
   font-size: 1.9em;
@@ -112,4 +111,9 @@ input{
 
 a{
   color: white;
+}
+
+li :hover, a :hover {
+  color:black;
+  text-decoration: none; 
 }
