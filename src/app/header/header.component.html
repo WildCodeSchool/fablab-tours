@@ -1,8 +1,8 @@
 <!-- navbar -->
 <nav class="navbar navbar-light fixed-top">
   <!-- bouton pour faire apparaitre la sidebar -->
-  <button [ngClass]="{'transBtn': sidebarDisplayed}" (click)="showSidebar()" (click)="isCollapsed = !isCollapsed" 
-  id="boutonfiltre2" class="btnStartPos navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
+  <button [ngClass]="{'transBtn': sidebarDisplayed}" (click)="showSidebar()" (click)="isCollapsed = !isCollapsed"
+  id="boutonfiltre2" class="btnStartPos navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
   aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
   <!-- menu burger ouverture sidebar -->
   <div *ngIf="!sidebarDisplayed" class="openside">
@@ -14,7 +14,6 @@
   </div>
 </button>
 
-
 <!-- Logo FunLab -->
 <img src="../../assets/images/image-header/logo_funlab.png" routerLink="">
 
@@ -23,7 +22,6 @@
   <i class="fa fa-search" routerLink="/search"></i>
 </div>
 </nav>
-
 <!-- fin navbar -->
 
 <!-- Sidebar -->
@@ -58,9 +56,6 @@
               <a href="https://www.facebook.com/FablabTourangeau/"><i  class="fa fa-facebook-f mx-4"></i></a>
               <a href="https://www.instagram.com/funlab_tours/"><i class="fa fa-instagram mx-4"></i></a>
               <a href="https://twitter.com/lefunlab/"><i class="fa fa-twitter mx-4"></i></a>
-              
-              
-              
             </ul>
           </div>
         </ul>
@@ -68,12 +63,4 @@
     </div>
   </div>
 </nav>
-
 <!-- Fin sidebar -->
-
-
-<!--
-  <form class="form-inline mx-4 my-2 col-lg-2 col-4">
-    <input class="fa fa-search form-control awesomplete mr-sm-2" type="search" placeholder="Rechercher" aria-label="Search">
-  </form>
--->
