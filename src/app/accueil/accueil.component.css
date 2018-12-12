@@ -19,3 +19,9 @@ h1{
 {
   padding-top: 1050px;
 }
+
+@media screen and (max-width: 400px){
+  .marge {
+    padding-top: 750px;
+  }
+}
