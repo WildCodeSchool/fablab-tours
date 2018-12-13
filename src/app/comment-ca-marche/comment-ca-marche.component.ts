@@ -21,6 +21,8 @@ export class CommentCaMarcheComponent implements OnInit {
 
   ngOnInit() {
 
+    // Calls calendar API 
+
     this.service.get<any>('http://localhost:3000/api/calendar/events')
       .pipe(
         map(res => {
@@ -40,7 +42,7 @@ export class CommentCaMarcheComponent implements OnInit {
       });
 
 
-    // Opening Hours
+    // To check opening Hours 
 
     let now = new Date();
     let weekday = new Array(7);
@@ -92,8 +94,7 @@ export class CommentCaMarcheComponent implements OnInit {
     let currentDayID = "#" + currentDay; //gets todays weekday and turns it into id
    
    
-    // $(currentDayID).toggleClass("today"); //hightlights today in the view hours modal popup
-
+    // $(currentDayID).toggleClass("today"); //hightlights today in the view hours modal popup {to be added once JSQUERY installed}
 
     setInterval(checkTime, 1000);
     checkTime();
