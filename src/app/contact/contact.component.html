@@ -1,4 +1,108 @@
+<div class="backgroundimage">
+  <div class="container">
+    <h1 class="mb-5 text-white">Nous Contacter</h1>
+    <div class="row">
+      <div class="col-12 col-sm-12 col-xl-7">
 
-<h1>
-  contact works!
-</h1>
+        <!--Debut map géolicalisant fanlab-->
+
+        <div class="card card1">
+          <div class="card-body text-center">
+            <h2 class="d-flex justify-content-center">Carte</h2>
+            <div class="map">
+              <aol-map>
+                <aol-control-zoom></aol-control-zoom>
+                <aol-control-fullscreen></aol-control-fullscreen>
+                <aol-interaction-default></aol-interaction-default>
+                <aol-view [zoom]="14">
+                  <aol-coordinate [x]=" 0.66842" [y]="47.39301" [srid]="'EPSG:4326'"></aol-coordinate>
+                </aol-view>
+                <aol-layer-tile [opacity]="1">
+                  <aol-source-osm></aol-source-osm>
+                </aol-layer-tile>
+                <aol-layer-vector>
+                  <aol-source-cluster [distance]="60">
+                    <aol-source-vector>
+                      <aol-feature>
+                        <aol-overlay>
+                          <!--Coordonnées FanLab-->
+                          <aol-coordinate [x]="0.6691059" [y]="47.3931929" [srid]="'EPSG:4326'"></aol-coordinate>
+                          <aol-content>
+                            <span class="logo_FanLab">
+                              <img src="assets/localisationimages/MapMarker.png">
+                            </span>
+                          </aol-content>
+                        </aol-overlay>
+                      </aol-feature>
+                    </aol-source-vector>
+                  </aol-source-cluster>
+                </aol-layer-vector>
+                <aol-layer-vector>
+                  <aol-source-vector>
+                    <aol-feature>
+                      <aol-geometry-polygon>
+                        <aol-collection-coordinates [coordinates]="[[1.47, 43.545],[1.51, 43.545],[1.51, 43.565], [1.47, 43.565]]"
+                          [srid]="'EPSG:4326'">
+                        </aol-collection-coordinates>
+                      </aol-geometry-polygon>
+                      <aol-style>
+                        <aol-style-stroke [color]="'red'" [width]="2"></aol-style-stroke>
+                        <aol-style-fill [color]="[255,0,0,0.1]"></aol-style-fill>
+                      </aol-style>
+                    </aol-feature>
+                  </aol-source-vector>
+                </aol-layer-vector>
+              </aol-map>
+            </div>
+          </div>
+          <!--Fin map-->
+          <p>
+            MAME<br>
+            49 Boulevard Preuilly<br>
+            37000 Tours<br>
+            contact@funlab.fr
+          </p>
+        </div>
+      </div>
+
+
+      <!-- formulaire de contact -->
+
+
+      <div class="card col-12 col-sm-12 col-xl-5">
+        <h2 class="d-flex justify-content-center">Contact</h2>
+        <div class="form-element form-input form-group">
+          <input name="name" id="field-name" class="form-element-field" placeholder="Saisissez votre nom" type="input"
+            required minlength="5" />
+          <div class="form-element-bar"></div>
+          <label class="form-element-label" for="field-name">Nom</label>
+          <small class="form-element-hint">(champ obligatoire)</small>
+        </div>
+
+        <div class="form-element form-input form-group">
+          <input name="email" id="field-email" class="form-element-field" placeholder="Saisissez votre e-mail" type="input"
+            required minlength="5" />
+          <div class="form-element-bar"></div>
+          <label class="form-element-label" for="field-email">E-mail</label>
+          <small class="form-element-hint">(champ obligatoire)</small>
+        </div>
+
+        <div class="form-element form-input form-group">
+          <input name="sujet" id="field-sujet" class="form-element-field" placeholder="Saisissez le sujet de votre message"
+            type="input" required minlength="5" />
+          <div class="form-element-bar"></div>
+          <label class="form-element-label" for="field-email">Sujet</label>
+        </div>
+
+        <div class="form-element form-input form-group textarea">
+          <textarea name="message" id="field-message" class="form-element-field message" placeholder="Saisissez votre message"
+            type="message" required minlength="5"></textarea>
+          <div class="form-element-bar"></div>
+          <label class="form-element-label" for="field-name">Message</label>
+          <small class="form-element-hint">(champ obligatoire)</small>
+        </div>
+      </div>
+      <!-- fin formulaire de contact -->
+    </div>
+  </div>
+</div>
