@@ -4,7 +4,7 @@
   width: 320px;
   font-size: 8rem;
   background-color:#666666 !important;
-  opacity: 0.92;
+  opacity: 0.95;
   z-index: 1;
 }
 
@@ -88,7 +88,7 @@ input{
 
 .navbar{
   background-color: #666666;
-  opacity: 0.92;
+  opacity: 0.95;
 }
 
 .reseaux{
@@ -105,7 +105,7 @@ input{
 
 .openside{
   margin-left: 5%;
-  font-size: 2.3em;
+  font-size: 2.3em; 
   color: black;
 }
 
