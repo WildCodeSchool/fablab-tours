@@ -1,0 +1,242 @@
+/* start === styling of header for section comment ca marche */
+.header{
+    background-color: #666666;
+    color: #fff;
+}
+
+.header h1 {
+    margin:0;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 40px 15px 0;
+}
+
+.header p {
+    margin:0;
+    text-align: center;
+    padding: 20px 30px;
+    }
+
+/* end === styling of header for section comment ca marche */  
+
+
+/* top-container styling */
+
+.top-container {
+    background-color:#F6F6F2;
+  }
+
+.top-container h2{
+    margin: 0;
+	text-align:center;
+	text-transform: uppercase;
+	font-weight:600;
+    letter-spacing: 1px;
+    padding: 40px 15px 0;
+    color: #000000;
+}
+
+/* cards styling */
+
+.top-container h4{
+    text-transform: uppercase;
+    font-weight: 600;   
+}
+
+.card{
+    border:none;
+    background-color: #F6F6F2;
+}
+
+/* icon styling */
+.fa{
+    padding: 10px;
+    font-size: 30px; 
+}
+
+
+
+/* activity section */
+
+.activity-header h2{
+	margin: 0;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: 600;
+	padding: 40px 15px 0;
+}
+
+
+.lead{
+	margin-top: 12px;
+	text-align: justify;
+	font-size: 19px;
+	}
+
+	/*section horaire  */
+
+.card-horaire{
+	text-align:center;
+	letter-spacing: 1px;
+	background-color: rgba(0, 0, 0, 0.03);
+	cursor: pointer;
+	-webkit-transition: .1s all ease-in-out;
+	-moz-transition: .1s all ease-in-out;
+	-o-transition: .1s all ease-in-out;
+	transition: .1s all ease-in-out;
+}
+
+.card-horaire:hover {
+	background-color:#fdd000;
+}
+
+#timeDiv{
+	font-size: 16px;
+	text-align: center;
+}
+#statusDiv{
+	font-size: 16px;
+	text-align: center;
+}
+
+.open {
+	color: #27ae60;
+  }
+  
+.closed {
+	color: rgba(231, 76, 60, 0.85);
+  }
+
+  .today {
+	color: rgb(200, 85, 39);
+	font-weight: 600;
+  }
+
+/* To split the days and hours in modal */
+
+.day {
+    float: left;
+  }
+  
+  .time {
+    float: right
+  }
+
+/* Agenda */
+
+.agenda{
+	text-align: center;
+	letter-spacing: 1px;
+}
+
+.event-detail-start-date, .event-detail-start-time, .event-detail-end-time{
+	font-size: 12px;
+}
+
+.event-detail-title{
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 11px;
+	}
+
+.agenda-more{
+	text-decoration: none;
+	font-size:15px;
+	font-weight: 600;
+	
+
+}
+
+/* Newsletter */
+.form-control{
+	height:calc(2.5rem + 2px);
+}
+
+/* Button */
+
+.btn{
+	padding:0px;
+	border-radius: 0.5px;
+}
+
+.btn:hover{
+	background-color: #000000;
+	border:#000000;
+	transition:0;
+}
+
+
+.fa-paper-plane{
+	font-size:20px;
+}
+
+
+  
+/* subscription box */
+  .subscription {
+	display: block;
+	margin: 50px auto;
+	/* width: 60%; */
+	/* max-width: 490px;
+	min-width: 320px; */
+	position: relative;
+	overflow: hidden;
+	background-color: rgba(156, 156, 151, 0.247);
+}
+
+/* alignment of all p tags */
+.subscription p {
+	margin: 0;
+	text-align: center;
+}
+
+/* styling of first p tag in section */
+.subscription p:first-child {
+	margin: 40px 15px 0;
+	color: #F38630;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 40px;
+	letter-spacing: 1px;
+}
+/* subscription input */
+.subscription input[type="text"] {
+	margin: 45px 30px;
+	color: #666666;
+	padding: 25px 15px !important;
+	text-align: center;
+	width: 100% !important;
+	max-width: calc(100% - 90px);
+	outline: none;
+	border: 0;
+	text-transform: uppercase;
+	font-size: 12px;
+}
+
+/* start ==styling submit button with hover */
+.subscription input[type="submit"] {
+	margin: 0;
+	background-color: #666666;
+	color: #fff;
+	padding: 25px 15px !important;
+	text-align: center;
+	width: 100%;
+	max-width: 100%;
+	outline: none;
+	border: 0;
+	text-transform: uppercase;
+	font-size: 12px;
+	cursor: pointer;
+	-webkit-transition: .1s all ease-in-out;
+	-moz-transition: .1s all ease-in-out;
+	-o-transition: .1s all ease-in-out;
+	transition: .1s all ease-in-out;
+}
+.subscription input[type="submit"]:hover {
+	background-color: #F38630;
+}
+/* end === styling submit button with hober */
+
+
+  

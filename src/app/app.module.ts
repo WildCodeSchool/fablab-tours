@@ -4,6 +4,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { AngularOpenlayersModule } from 'ngx-openlayers';
 import { HostListener } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http'
+
 
 
 import { AppComponent } from './app.component';
@@ -41,6 +43,8 @@ import { CommentCaMarcheComponent } from './comment-ca-marche/comment-ca-marche.
     AngularOpenlayersModule,
     FormsModule,
     AppRoutingModule,
+    HttpClientModule,
+    
   ],
 
   providers: [],
