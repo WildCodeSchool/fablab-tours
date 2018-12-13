@@ -1,0 +1,26 @@
+/* css card */
+.taille {
+  margin-top: 140px;
+}
+.row-striped:nth-of-type(odd){
+  background-color: #efefef;
+  border-left: 4px #000000 solid;
+}
+
+.row-striped:nth-of-type(even){
+  background-color: #ffffff;
+  border-left: 4px #efefef solid;
+}
+
+.row-striped {
+    padding: 15px 0;
+}
+/* css carousel */
+img {
+  height: 400px;
+  width: 1200px;
+}
+.general {
+  background-color:  #000000;
+  opacity: 0.8;
+}
