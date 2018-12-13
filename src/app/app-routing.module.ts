@@ -4,6 +4,7 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { AgendaComponent } from './agenda/agenda.component';
 import { EquipeComponent } from './equipe/equipe.component';
 import { ContactComponent } from './contact/contact.component';
+import { GalerieMachinesComponent } from './galerie-machines/galerie-machines.component';
 
 
 const routes: Routes = [
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'agenda', component: AgendaComponent },
   { path: 'equipe', component: EquipeComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'galeriemachines', component: GalerieMachinesComponent },
 ];
 @NgModule({
   imports: [
