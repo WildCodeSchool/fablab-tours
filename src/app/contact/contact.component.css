@@ -1,5 +1,5 @@
-.backgroundimage{
-  background-image: url(../../assets/images/image-header/back-black.png);
+.backgroundimage {
+  background-image: url(/assets/images/image-header/back-black.png);
   background-size: cover;
   background-position: center;
   min-width: 100%;
@@ -15,8 +15,8 @@
 
 @media screen and (max-width: 550px) {
   .container {
-  margin-top: 20%;
-}
+    margin-top: 20%;
+  }
 }
 
 .form-legend+p {
@@ -112,7 +112,7 @@
 }
 
 .form-element-field:focus~.form-element-label {
-  color: rgb(12,207,208);
+  color: rgb(12, 207, 208);
 }
 
 .form-element-field.-hasvalue,
@@ -143,15 +143,16 @@
   will-change: transform;
 }
 
-img{
+img {
   position: relative;
 }
 
-h1, h2{
+h1,
+h2 {
   text-align: center;
 }
 
-h1{
+h1 {
   font-size: 310%;
 }
 
@@ -160,20 +161,20 @@ h1{
   width: 39px;
 }
 
-.card1{
- height: 100%;
- margin-bottom: 10%;
+.card1 {
+  height: 100%;
+  margin-bottom: 10%;
 }
 
-.card{
- box-shadow: 0px 2px 4px black;
+.card {
+  box-shadow: 0px 2px 4px black;
 }
 
-#field-message{
+#field-message {
   height: 70px;
 }
 
-p{
+p {
   margin-left: 5%;
   margin-bottom: 5%;
   font-size: 120%;
