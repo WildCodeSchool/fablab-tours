@@ -1,0 +1,21 @@
+<h1>Titre de la galerie</h1>
+<div class="card-columns">
+  <div class="card" *ngFor="let machine of machines">
+    <div class="item-slide">
+      <div class="box-img">
+  <!-- Card présente l'image de la machine et le nom -->
+            <img src="{{machine.photo}}" alt="machineFunLab" />
+          <div class="text-wrap">
+            <h4 class="text-center">{{machine.nom_machine}}</h4>
+          </div>
+      </div>
+<!-- text desciptif de la machine et le nom qui s'affiche au survol de la souris -->
+     <div class="slide-hover">
+      <div class="text-wrap">
+        <p class>{{machine.description}}</p>
+        <h4 class="text-center">{{machine.nom_machine}}</h4>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>

@@ -1,3 +1,64 @@
-<h1>
-  agenda works!
-</h1>
+<div class="container taille">
+<!-- debut events -->
+    <div *ngFor='let event of evenements | slice: 0:4; let i = index' class="row row-striped">
+        <div class="col-2 text-right">
+            <h1 class="display-4"><span class="badge badge-secondary">{{event.jour | slice: 8:10}}</span></h1>
+            <h2>{{event.mois | date:'MMM'}}</h2>
+        </div>
+        <div class="col-10">
+            <h3 class="text-uppercase"><strong>{{event.title}}</strong></h3>
+            <ul class="list-inline">
+                <li class="list-inline-item"><i class="fa fa-calendar-o mx-2" aria-hidden="true"></i> {{event.jour | date:'EEEE'}} </li>
+                <li class="list-inline-item"><i class="fa fa-clock-o mx-2" aria-hidden="true"></i> {{event.hDepart}} - {{event.hFin}}</li>
+                <li class="list-inline-item"><i class="fa fa-location-arrow mx-2" aria-hidden="true"></i>{{event.location}}</li>
+            </ul>
+            <p>{{event.description}}</p>
+        </div>
+    </div>
+<!-- fin events -->
+<!-- debut calendar -->
+    <div class="my-5 text-center">
+        <div *ngIf="calendarOptions">
+            <ng-fullcalendar #ucCalendar (eventClick)="eventClick($event.detail)" [options]="calendarOptions" [(eventsModel)]="evenements"></ng-fullcalendar>
+      </div>
+    </div>
+<!-- fin calendar -->
+</div>
+<!-- debut modal -->
+<div class="modal" id="myModal" [style.display]="showModal ? 'block' : 'none'">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+    <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title"> {{ name }} </h4>
+                <button type="button" class="close" data-dismiss="modal" (click) = "hide()">&times;</button>
+            </div>
+    <!-- Modal body -->
+            <div class="modal-body">
+                <p><span><i class="fa fa-clock-o mx-2"></i> {{dateStart | date: 'EEEE d MMMM y'}} </span></p>
+                <p> {{heureDepart}} à {{heureFin}} </p>
+                <p><span><i class="fa fa-location-arrow mx-2"></i></span> {{ lieu }} </p>
+                <p><span><i class="fa fa-align-left mx-2"></i></span> {{ description }} </p>
+            </div>
+    <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal" (click) = "hide()">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- fin modal -->
+<div class="container my-3">
+<ngb-carousel *ngIf="evenements">
+    <ng-template ngbSlide *ngFor='let event of evenements | slice: 0:4; let i = index'>
+        <img src="../../assets/images/image-contact/contact1.jpg" alt="fond_blanc">
+        <div class="carousel-caption general rounded">
+            <h1>{{event.title}}</h1>
+            <p><span><i class="fa fa-clock-o mx-2"></i></span>  {{event.start | date: 'EEEE d MMMM y'}} </p>
+            <p> {{event.hDepart}} à {{event.hFin}} </p>
+            <p><span><i class="fa fa-location-arrow mx-2"></i></span> {{event.location}}</p>
+            <p><span><i class="fa fa-align-left mx-2"></i></span> {{event.description}} </p>
+        </div>
+    </ng-template>
+</ngb-carousel>
+</div>
