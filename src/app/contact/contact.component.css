@@ -9,17 +9,11 @@
 }
 
 .container {
-  margin-top: 6.75%;
+  margin-top: 89px;
   margin-bottom: 15%;
   z-index: 2;
 }
 
-
-@media screen and (max-width: 550px) {
-  .container {
-    margin-top: 20%;
-  }
-}
 
 .form-legend+p {
   margin-top: 1rem;
