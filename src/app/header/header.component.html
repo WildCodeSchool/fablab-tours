@@ -1,27 +1,27 @@
 <!-- navbar -->
 <nav class="navbar navbar-light fixed-top">
   <!-- bouton pour faire apparaitre la sidebar -->
-  <button [ngClass]="{'transBtn': sidebarDisplayed}" (click)="showSidebar()" (click)="isCollapsed = !isCollapsed" 
-  id="boutonfiltre2" class="btnStartPos navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
-  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-  <!-- menu burger ouverture sidebar -->
-  <div *ngIf="!sidebarDisplayed" class="openside">
-    <i class="fa fa-bars"></i>
+  <button [ngClass]="{'transBtn': sidebarDisplayed}" (click)="showSidebar()" (click)="isCollapsed = !isCollapsed" id="boutonfiltre2"
+    class="btnStartPos navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <!-- menu burger ouverture sidebar -->
+    <div *ngIf="!sidebarDisplayed" class="openside">
+      <i class="fa fa-bars"></i>
+    </div>
+    <!-- croix fermeture sidebar -->
+    <div *ngIf="sidebarDisplayed" class="closeside">
+      <i class="fa fa-times"></i>
+    </div>
+  </button>
+
+
+  <!-- Logo FunLab -->
+  <img src="../../assets/images/image-header/logo_funlab.png" routerLink="">
+
+  <!-- Icon recherche -->
+  <div class="loupe">
+    <i class="fa fa-search" routerLink="/search"></i>
   </div>
-  <!-- croix fermeture sidebar -->
-  <div *ngIf="sidebarDisplayed" class="closeside">
-    <i class="fa fa-times"></i>
-  </div>
-</button>
-
-
-<!-- Logo FunLab -->
-<img src="../../assets/images/image-header/logo_funlab.png" routerLink="">
-
-<!-- Icon recherche -->
-<div class="loupe">
-  <i class="fa fa-search" routerLink="/search"></i>
-</div>
 </nav>
 
 <!-- fin navbar -->
@@ -55,12 +55,12 @@
           </li>
           <div class="reseaux">
             <ul class="d-flex">
-              <a href="https://www.facebook.com/FablabTourangeau/"><i  class="fa fa-facebook-f mx-4"></i></a>
+              <a href="https://www.facebook.com/FablabTourangeau/"><i class="fa fa-facebook-f mx-4"></i></a>
               <a href="https://www.instagram.com/funlab_tours/"><i class="fa fa-instagram mx-4"></i></a>
               <a href="https://twitter.com/lefunlab/"><i class="fa fa-twitter mx-4"></i></a>
-              
-              
-              
+
+
+
             </ul>
           </div>
         </ul>
