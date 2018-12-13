@@ -5,8 +5,6 @@ import { FormsModule } from '@angular/forms';
 import { AngularOpenlayersModule } from 'ngx-openlayers';
 import { HttpClientModule } from '@angular/common/http';
 
-import { HostListener } from '@angular/core';
-
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';

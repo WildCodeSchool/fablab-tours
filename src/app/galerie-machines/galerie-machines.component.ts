@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { MachinesService } from '../common/machines.service';
+
 
 @Component({
   selector: 'app-galerie-machines',
@@ -10,13 +11,14 @@ export class GalerieMachinesComponent implements OnInit {
 
   machines: any[];
 
-  constructor(private http: HttpClient) { }
+  constructor(public service: MachinesService) { }
 
   ngOnInit() {
     // récuperer les données concernant les machines de la base de données.
-    this.http.get<any>(`http://localhost:3000/api/machines`).subscribe(res => {
+    this.service.getMachines().subscribe(res => {
       this.machines = res;
     });
+
   }
 
 }
