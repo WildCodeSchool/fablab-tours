@@ -4,7 +4,7 @@
   width: 320px;
   font-size: 8rem;
   background-color:#666666 !important;
-  opacity: 0.95;
+  opacity: 0.98;
   z-index: 1;
 }
 
@@ -23,6 +23,7 @@ li{
   margin-top: 12%;
   margin-left: 50%;
   color: #fff;
+  cursor: pointer;
 }
 
 button{
@@ -64,19 +65,19 @@ input{
 }
 
 @media screen and (max-width: 800px){
-
+  
   img{
     margin-left: 33%;
   }
-
+  
   li{
     margin-top: 5%;
   }
-
+  
   .reseaux{
     margin-top: 5%;
   }
-
+  
 }
 
 .loupe{
@@ -88,7 +89,7 @@ input{
 
 .navbar{
   background-color: #666666;
-  opacity: 0.95;
+  opacity: 0.98;
 }
 
 .reseaux{
