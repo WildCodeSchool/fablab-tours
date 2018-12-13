@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { CalendrierService } from '../common//calendar/calendrier.service';
 import { CalendarComponent } from 'ng-fullcalendar';
 import { Options } from 'fullcalendar';
 import { map } from 'rxjs/operators';
@@ -22,10 +22,10 @@ export class AgendaComponent implements OnInit {
   calendarOptions: Options;
   @ViewChild(CalendarComponent) ucCalendar: CalendarComponent;
 
-  constructor(private service: HttpClient) { }
+  constructor(private service: CalendrierService) { }
 
   ngOnInit() {
-    this.service.get<any>('http://localhost:3000/api/calendar/events')
+    this.service.readAll()
     .pipe(
       map(res => {
         return res.map(event => {
