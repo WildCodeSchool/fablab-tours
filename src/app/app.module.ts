@@ -3,14 +3,8 @@ import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { AngularOpenlayersModule } from 'ngx-openlayers';
-<<<<<<< HEAD
 import { HttpClientModule } from '@angular/common/http';
 import { FullCalendarModule } from 'ng-fullcalendar';
-=======
-import { HostListener } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http'
-
->>>>>>> comment-ca-marche
 
 
 import { AppComponent } from './app.component';
