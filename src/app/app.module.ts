@@ -20,6 +20,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { EquipeComponent } from './equipe/equipe.component';
 import { CommentCaMarcheComponent } from './comment-ca-marche/comment-ca-marche.component';
 import { GalerieMachinesComponent } from './galerie-machines/galerie-machines.component';
+import { FlashMessagesModule } from 'angular2-flash-messages';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { GalerieMachinesComponent } from './galerie-machines/galerie-machines.co
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    FullCalendarModule
+    FlashMessagesModule.forRoot(),
+    FullCalendarModule,
+    ReactiveFormsModule
   ],
 
   providers: [],

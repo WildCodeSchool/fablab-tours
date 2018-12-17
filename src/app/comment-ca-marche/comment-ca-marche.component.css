@@ -1,0 +1,194 @@
+/* Start === styling of header for section comment ca marche */
+.header {
+  background-color: #666666;
+  color: #fff;
+}
+
+.header h1 {
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 40px 15px 0;
+}
+
+.header p {
+  margin: 0;
+  text-align: center;
+  padding: 20px 30px;
+}
+
+/* End === styling of header for section comment ca marche */
+
+/* Start === top-container - Esprit FabLab styling */
+
+.top-container {
+  background-color: #F6F6F2;
+}
+
+.top-container h2 {
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 40px 15px 0;
+  color: #000000;
+}
+
+/* cards styling */
+
+.top-container h4 {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.card {
+  border: none;
+  background-color: #F6F6F2;
+}
+
+/* icon styling */
+
+.fa {
+  padding: 10px;
+  font-size: 30px;
+}
+
+/* End === top-container - Esprit FabLab styling */
+
+/* Start === Activity section */
+
+.activity-header h2 {
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 40px 15px 0;
+}
+
+/*  paragraph styling */
+
+.lead {
+  margin-top: 12px;
+  text-align: justify;
+  font-size: 19px;
+}
+
+/* End === Activity section */
+
+/* Start === section Horaire  */
+
+.card-horaire {
+  text-align: center;
+  letter-spacing: 1px;
+  background-color: rgba(0, 0, 0, 0.03);
+  cursor: pointer;
+  -webkit-transition: .1s all ease-in-out;
+  -moz-transition: .1s all ease-in-out;
+  -o-transition: .1s all ease-in-out;
+  transition: .1s all ease-in-out;
+}
+
+.card-horaire:hover {
+  background-color: #fdd000;
+}
+
+/* top sentence of section horaire */
+
+#timeDiv {
+  font-size: 16px;
+  text-align: center;
+}
+
+/* bottom sentence of section horaire */
+
+#statusDiv {
+  font-size: 16px;
+  text-align: center;
+}
+
+/* Color for open */
+
+.open {
+  color: #27ae60;
+}
+
+/* Color for closed  */
+
+.closed {
+  color: rgba(231, 76, 60, 0.85);
+}
+
+/* To split the days and hours in modal */
+
+.day {
+  float: left;
+}
+
+.time {
+  float: right
+}
+
+/* Color to highlight day in modal */
+
+.today {
+  color: rgb(200, 85, 39);
+  font-weight: 600;
+}
+
+/* End === section Horaire  */
+
+/* Start === section Agenda */
+
+.agenda {
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.event-detail-start-date,
+.event-detail-start-time,
+.event-detail-end-time {
+  font-size: 12px;
+}
+
+.event-detail-title {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 11px;
+}
+
+/* link to see agenda */
+
+.agenda-more {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* End === section Agenda */
+
+/* Start === section Newsletter */
+
+.form-control {
+  height: calc(2.5rem + 2px);
+}
+
+/* Button */
+
+.btn {
+  padding: 0px;
+  border-radius: 0.5px;
+}
+
+.btn:hover {
+  background-color: #000000;
+  border: #000000;
+  transition: 0;
+}
+
+.fa-paper-plane {
+  font-size: 20px;
+}
+
+/* End === section Newsletter */
