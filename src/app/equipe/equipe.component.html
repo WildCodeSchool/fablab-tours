@@ -1,3 +1,28 @@
-<h1>
-  equipe works!
-</h1>
+<div class="background">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h1 class="text-white">Notre équipe</h1>
+      </div>
+    </div>
+    <div class="row d-flex justify-content-center" *ngFor= "let equipe of equipes">
+      <div class="col-xl-3 col-md-3 col-sm-6 mt-5">
+        <div class="our-team">
+          <div class="pic">
+            <img src="{{equipe.image}}">
+            
+          </div>
+          <div class="team-content">
+            <h3>{{equipe.prenom}} {{equipe.nom}}</h3>
+            <span class="post">{{equipe.poste}}</span>
+          </div>
+          <ul class="social">
+            
+            <li><a href="" class="fa fa-linkedin m-4"></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

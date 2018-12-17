@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { EquipeService } from '../common/equipe.service';
+
 
 @Component({
   selector: 'app-equipe',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EquipeComponent implements OnInit {
 
-  constructor() { }
+  equipes: any[];
+
+  constructor(public service: EquipeService) { }
 
   ngOnInit() {
+    //récupère données concernant l'équipe dans bdd.
+    this.service.getEquipe().subscribe(res => {
+      this.equipes = res;
+    });
   }
 
 }
