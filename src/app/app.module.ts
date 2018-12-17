@@ -6,7 +6,6 @@ import { AngularOpenlayersModule } from 'ngx-openlayers';
 import { HttpClientModule } from '@angular/common/http';
 import { FullCalendarModule } from 'ng-fullcalendar';
 
-
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { PresentationComponent } from './presentation/presentation.component';
@@ -45,7 +44,7 @@ import { GalerieMachinesComponent } from './galerie-machines/galerie-machines.co
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    FullCalendarModule
+    FullCalendarModule,
   ],
 
   providers: [],
