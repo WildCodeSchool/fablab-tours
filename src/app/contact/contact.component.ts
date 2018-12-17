@@ -38,7 +38,6 @@ export class ContactComponent implements OnInit {
     // }
   ngOnInit() {
   }
-
   contactForm(form) {
     this.contactService.sendMessage(form).subscribe(() => {
     swal('Formulaire de contact', 'Votre message a bien été envoyé', 'success');
