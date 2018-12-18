@@ -1,11 +1,11 @@
 .sidebar {
-  margin-top: 89px;
+  margin-top: 88px;
   height: 100vh;
   width: 320px;
   font-size: 8rem;
   background-color:#666666 !important;
   opacity: 0.98;
-  z-index: 1;
+  z-index: 9999;
 }
 
 .navbar-nav {
@@ -24,6 +24,8 @@ li{
   margin-left: 50%;
   color: #fff;
   cursor: pointer;
+  font-family: Raleway;
+  font-weight: bold;
 }
 
 button{
@@ -65,26 +67,26 @@ input{
 }
 
 @media screen and (max-width: 800px){
-
+  
   img{
     margin-left: 33%;
   }
-
+  
   li{
     margin-top: 5%;
   }
-
+  
   .reseaux{
     margin-top: 5%;
   }
-
+  
 }
 
 .loupe{
   font-size: 1.9em;
   margin-left: 95%;
   margin-top:-80px;
-  color: black;
+  color: white;
 }
 
 .navbar{
@@ -101,13 +103,13 @@ input{
 .closeside{
   margin-left: 5%;
   font-size: 2.6em;
-  color: black;
+  color: white;
 }
 
 .openside{
   margin-left: 5%;
   font-size: 2.3em;
-  color: black;
+  color: white;
 }
 
 a{
@@ -117,4 +119,9 @@ a{
 li :hover, a :hover {
   color:black;
   text-decoration: none;
+}
+
+h1{
+  font-family: Raleway;
+  text-transform: uppercase;
 }
