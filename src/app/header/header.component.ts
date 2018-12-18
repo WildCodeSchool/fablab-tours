@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.sidebarDisplayed = false;
   }
-  showSidebar() {
-    this.sidebarDisplayed = !this.sidebarDisplayed;
+  showSidebar(isShow: boolean) {
+    this.sidebarDisplayed = isShow;
   }
 }

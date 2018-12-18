@@ -1,7 +1,7 @@
 <!-- navbar -->
 <nav class="navbar navbar-light fixed-top">
   <!-- bouton pour faire apparaitre la sidebar -->
-  <button [ngClass]="{'transBtn': sidebarDisplayed}" (click)="showSidebar()" (click)="isCollapsed = !isCollapsed"
+  <button [ngClass]="{'transBtn': sidebarDisplayed}" (click)="showSidebar(!sidebarDisplayed)"
   id="boutonfiltre2" class="btnStartPos navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
   aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
   <!-- menu burger ouverture sidebar -->
@@ -28,28 +28,28 @@
 <nav class="sidebar hidden fixed-top" id="nav1" [ngClass]="{'trans': sidebarDisplayed}">
   <div class="navbar-nav">
     <div class="row">
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault" [ngbCollapse]="!isCollapsed">
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault" [ngbCollapse]="false">
         <ul class="nav sidebar-nav d-table">
           <li class="nav-item">
-            <h3 class="nav-link" routerLink="">Accueil</h3>
+            <h3 class="nav-link" routerLink="" (click)="showSidebar(false)">Accueil</h3>
           </li>
           <li class="nav-item">
-            <h3 class="nav-link" routerLink="/agenda">Agenda</h3>
+            <h3 class="nav-link" routerLink="/agenda" (click)="showSidebar(false)">Agenda</h3>
           </li>
           <li class="nav-item">
-            <h3 class="nav-link"><a href="http://funlab.fr/category/actusblog/">Blog</a></h3>
+            <h3 class="nav-link"><a  (click)="showSidebar(false)" href="http://funlab.fr/category/actusblog/">Blog</a></h3>
           </li>
           <li class="nav-item">
-            <h3 class="nav-link"><a href="http://wiki.funlab.fr/index.php/Accueil">Wiki</a></h3>
+            <h3 class="nav-link"><a (click)="showSidebar(false)" href="http://wiki.funlab.fr/index.php/Accueil">Wiki</a></h3>
           </li>
           <li class="nav-item">
-            <h3 class="nav-link" routerLink="/equipe">Equipe</h3>
+            <h3 class="nav-link" routerLink="/equipe" (click)="showSidebar(false)">Equipe</h3>
           </li>
           <li class="nav-item">
-            <h3 class="nav-link" routerLink="/machine">Machine</h3>
+            <h3 class="nav-link" routerLink="/machine" (click)="showSidebar(false)">Machine</h3>
           </li>
           <li class="nav-item">
-            <h3 class="nav-link" routerLink="/contact">Contact</h3>
+            <h3 class="nav-link" routerLink="/contact" (click)="showSidebar(false)">Contact</h3>
           </li>
           <div class="reseaux">
             <ul class="d-flex">
