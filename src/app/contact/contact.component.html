@@ -106,3 +106,75 @@
     </div>
   </div>
 </div>
+
+<!-- <div class="container">
+  <form [formGroup]="angForm" novalidate>
+    <div class="message">
+      <h3> Write to us </h3>
+    </div>
+    <div class="form__top">
+      <div class="form__left">
+        <div class="form__group">
+          <input class="form__input form__input--name" type="text"   formControlName="name" placeholder="name" #name>
+        </div>
+        <div *ngIf="angForm.controls['name'].invalid && (angForm.controls['name'].dirty || angForm.controls['name'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['name'].errors.required">
+            Name is required.
+          </div>
+        </div>
+        <div class="form__group">
+          <input class="form__input form__input--email" type="email"  formControlName="email" placeholder="email" #email>
+        </div>
+        <div *ngIf="angForm.controls['email'].invalid && (angForm.controls['message'].dirty || angForm.controls['message'].touched)"
+          class="alert alert-danger">
+          <div *ngIf="angForm.controls['message'].errors.required">
+            message is required.
+          </div>
+        </div>
+      </div>
+      <div class="form__right">
+        <div class="form__group">
+          <textarea class="form__input form__input--textarea" placeholder="Message" formControlName="message"  #message
+            rows="3"></textarea>
+        </div>
+        <div *ngIf="angForm.controls['message'].invalid && (angForm.controls['message'].dirty || angForm.controls['message'].touched)"
+          class="alert alert-danger">
+          <div *ngIf="angForm.controls['message'].errors.required">
+            message is required.
+          </div>
+        </div>
+      </div>
+    </div>
+    <flash-messages></flash-messages>
+    <div class="form__down">
+      <div class="form__group">
+        <button (click)="sendMail(name.value, email.value, message.value)" [disabled]="angForm.pristine || angForm.invalid"  class="form__input form__input--submit" name="submit" type="submit" value="SEND MESSAGE">SEND MESSAGE
+        </button>
+      </div>
+    </div>
+
+  </form>
+</div> -->
+
+<div class='container mt-5'>
+    <h2>Formulaire de contact</h2>
+    <form (ngSubmit)='contactForm(form.value)' #form='ngForm'>
+        <div class='form-group'>
+            <label>Nom; </label>
+            <input type='text' class='form-control' name='nom' ngModel>
+        </div>
+        <div class='form-group'>
+            <label>E-mail: </label>
+            <input type='email' class='form-control' name='email' ngModel>
+        </div>
+        <div class='form-group'>
+            <label>Sujet: </label>
+            <input type='text' class='form-control' name='sujet' ngModel>
+        </div>
+        <div class='form-group'>
+            <label>Message: </label>
+            <textarea class='form-control' cols='30' rows='6' name='message' ngModel></textarea>
+        </div>
+        <button type='submit' class='btn btn-primary'>Envoyer</button>
+    </form>
+</div>
