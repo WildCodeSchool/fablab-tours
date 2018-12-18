@@ -67,19 +67,19 @@ input{
 }
 
 @media screen and (max-width: 800px){
-
+  
   img{
     margin-left: 33%;
   }
-
+  
   li{
     margin-top: 5%;
   }
-
+  
   .reseaux{
     margin-top: 5%;
   }
-
+  
 }
 
 .loupe{
