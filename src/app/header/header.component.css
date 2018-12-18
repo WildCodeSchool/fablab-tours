@@ -84,7 +84,7 @@ input{
   font-size: 1.9em;
   margin-left: 95%;
   margin-top:-80px;
-  color: black;
+  color: white;
 }
 
 .navbar{
@@ -101,13 +101,13 @@ input{
 .closeside{
   margin-left: 5%;
   font-size: 2.6em;
-  color: black;
+  color: white;
 }
 
 .openside{
   margin-left: 5%;
   font-size: 2.3em;
-  color: black;
+  color: white;
 }
 
 a{
@@ -117,4 +117,9 @@ a{
 li :hover, a :hover {
   color:black;
   text-decoration: none;
+}
+
+h1{
+  font-family: Raleway;
+  text-transform: uppercase;
 }

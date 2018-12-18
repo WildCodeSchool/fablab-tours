@@ -10,9 +10,10 @@
 h1 {
   font-size: 340%;
   margin-top: 30%;
-  font-family: Didot, serif;
-  font-weight: 900;
+  font-family: Raleway;
+  font-weight: 600;
   color: white;
+  text-transform: uppercase
 }
 
 .marge
