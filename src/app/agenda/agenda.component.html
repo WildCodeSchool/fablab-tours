@@ -48,17 +48,3 @@
     </div>
 </div>
 <!-- fin modal -->
-<div class="container my-3">
-<ngb-carousel *ngIf="evenements">
-    <ng-template ngbSlide *ngFor='let event of evenements | slice: 0:4; let i = index'>
-        <img src="../../assets/images/image-contact/contact1.jpg" alt="fond_blanc">
-        <div class="carousel-caption general rounded">
-            <h1>{{event.title}}</h1>
-            <p><span><i class="fa fa-clock-o mx-2"></i></span>  {{event.start | date: 'EEEE d MMMM y'}} </p>
-            <p> {{event.hDepart}} à {{event.hFin}} </p>
-            <p><span><i class="fa fa-location-arrow mx-2"></i></span> {{event.location}}</p>
-            <p><span><i class="fa fa-align-left mx-2"></i></span> {{event.description}} </p>
-        </div>
-    </ng-template>
-</ngb-carousel>
-</div>

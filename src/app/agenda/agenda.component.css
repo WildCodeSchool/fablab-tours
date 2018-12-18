@@ -15,12 +15,3 @@
 .row-striped {
     padding: 15px 0;
 }
-/* css carousel */
-img {
-  height: 400px;
-  width: 1200px;
-}
-.general {
-  background-color:  #000000;
-  opacity: 0.8;
-}
