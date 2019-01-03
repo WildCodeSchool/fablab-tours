@@ -21,6 +21,7 @@ footer p {
   padding-bottom: 0px;
   margin-bottom: 8px;
   text-align: center;
+  font-family: Raleway;
 }
 
 .bottom-border {
@@ -53,6 +54,7 @@ footer p {
   max-height: 40px;
   font-size: 20px;
   margin: 20px auto 0 auto;
+  font-family: Raleway;
 }
 
 .reseaux{
@@ -73,4 +75,8 @@ footer p {
 .reseaux{
   margin-top: 2%;
   margin-left: 6%;
+}
+
+h5 {
+  font-family: Raleway;
 }
