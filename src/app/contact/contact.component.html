@@ -95,6 +95,7 @@
                   <div *ngIf="touchForm.controls['message'].errors.required">Le message est obligatoire.</div>
                 </div>
               </div>
+              <re-captcha required siteKey="6LfVeoYUAAAAAEaZs6ni0Ax_Dd-Ua2ga1EnOJQul" formControlName="recaptchaReactive"></re-captcha>
               <button type='submit' [disabled]="touchForm.pristine ||touchForm.invalid" class='btn btn-primary'>Envoyer</button>
             </form>
           </div>
