@@ -9,13 +9,7 @@
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 1px;
-  padding: 40px 15px 0;
-}
-
-.header p {
-  margin: 0;
-  text-align: center;
-  padding: 20px 30px;
+  padding: 35px 35px;
 }
 
 /* End === styling of header for section comment ca marche */
