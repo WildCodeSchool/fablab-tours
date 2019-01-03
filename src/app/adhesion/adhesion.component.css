@@ -11,3 +11,8 @@ h1 {
   font-size: 40px; 
   font-weight: 600;
 }
+
+span {
+  font-weight: bold;
+  font-size: 28px;
+}
