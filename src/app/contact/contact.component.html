@@ -2,7 +2,7 @@
  <div class="container mx-auto">
     <div class="innerwrap">
 
-      <h1 class="text-center">Contacter-nous</h1>
+      <h1 class="text-center">Contactez-nous</h1>
       <section class="section2 clearfix">
 
         <div class="col2 column1 first">
@@ -62,13 +62,13 @@
           </div>
 
           <div class="sec2contactform">
-            <h5 class="sec2frmtitle">Laisser nous votre message</h5>
+            <h5 class="sec2frmtitle">Laisser nous un message</h5>
             <form [formGroup]="touchForm" (ngSubmit)='contactForm(touchForm.value)'>
               <div class='form-group'>
                 <input type='text' class="form-control" formControlName='nom' placeholder="Votre nom">
                 <div *ngIf="touchForm.controls['nom'].invalid && (touchForm.controls['nom'].dirty || touchForm.controls['nom'].touched)"
                   class="alert alert-danger">
-                  <div *ngIf="touchForm.controls['nom'].errors.required">Le champ nom est obligatoire.</div>
+                  <div *ngIf="touchForm.controls['nom'].errors.required">Votre nom est obligatoire.</div>
                 </div>
               </div>
 
@@ -76,7 +76,7 @@
                 <input type='email' class='form-control' formControlName='email' placeholder="Votre adresse Mail">
                 <div *ngIf="touchForm.controls['email'].invalid && (touchForm.controls['email'].dirty || touchForm.controls['email'].touched)"
                   class="alert alert-danger">
-                  <div *ngIf="touchForm.controls['email'].errors.required">Le email est obligatoire.</div>
+                  <div *ngIf="touchForm.controls['email'].errors.required">Votre email est obligatoire.</div>
                 </div>
               </div>
 
