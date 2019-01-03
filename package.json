@@ -31,6 +31,7 @@
     "fullcalendar-scheduler": "^1.9.4",
     "jquery": "^3.3.1",
     "ng-fullcalendar": "^1.7.1",
+    "ng-recaptcha": "^4.2.1",
     "ngx-openlayers": "^0.8.22",
     "rxjs": "~6.2.0",
     "sweetalert2": "^7.32.4",
