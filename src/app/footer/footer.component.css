@@ -55,6 +55,8 @@ footer p {
   font-size: 20px;
   margin: 20px auto 0 auto;
   font-family: Raleway;
+  background: 0;
+  border: #FFF
 }
 
 .reseaux{
