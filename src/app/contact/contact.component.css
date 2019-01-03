@@ -53,7 +53,9 @@ select:focus {
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 50px;
+  font-weight: 600;
+  margin-bottom: 5%;
   color: black;
   font-weight: normal;
   font-family: Raleway;

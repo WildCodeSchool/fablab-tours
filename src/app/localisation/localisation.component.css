@@ -48,6 +48,16 @@ z-index: 250;
  }
 }
 
+h4, h5 {
+  font-family: Raleway;
+}
+
+h1 {
+  font-family: Raleway;
+  font-size: 40px;
+  font-weight: 600
+}
+
 
 
 

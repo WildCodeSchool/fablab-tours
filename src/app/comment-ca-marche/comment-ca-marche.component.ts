@@ -68,14 +68,14 @@ export class CommentCaMarcheComponent implements OnInit {
 
       if ((dayOfWeek == 2 || dayOfWeek == 3 || dayOfWeek == 5) && hour >= 14 && hour <= 18) {
         timeDiv.innerHTML = `Nous sommes ${today} il est ${hour}h${minutes},`;
-        statusDiv.innerHTML = `est nous sommes ouvert!`;
+        statusDiv.innerHTML = `et nous sommes ouvert!`;
         timeDiv.className = 'open';
         statusDiv.className = 'open';
       }
 
       else if ((dayOfWeek == 4) && hour >= 16 && hour <= 22) {
         timeDiv.innerHTML = `Nous sommes ${today} il est ${hour}h${minutes},`;
-        statusDiv.innerHTML = `est nous sommes ouvert!`;
+        statusDiv.innerHTML = `et nous sommes ouvert!`;
         timeDiv.className = 'open';
         statusDiv.className = 'open'
       }

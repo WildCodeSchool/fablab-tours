@@ -16,6 +16,12 @@
     padding: 15px 0;
 }
 
-h3, p, h2, h4, li, i, .btn {
+h1, h3, p, h2, h4, li, i, .btn {
   font-family: Raleway;
+}
+
+h1{
+  margin-bottom: 5%;
+  margin-top: 5%;
+  font-weight: 600;
 }
