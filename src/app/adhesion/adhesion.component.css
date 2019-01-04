@@ -1,6 +1,18 @@
 h1, h4, p, div {
   text-align: center;
+  font-family: Raleway;
 }
 a {
   font-size: 20px;
+  font-family: Raleway;
+}
+
+h1 {
+  font-size: 40px; 
+  font-weight: 600;
+}
+
+span {
+  font-weight: bold;
+  font-size: 28px;
 }

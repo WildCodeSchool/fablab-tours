@@ -21,7 +21,8 @@ export class ContactComponent implements OnInit {
       nom: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       sujet: ['', Validators.required],
-      message: ['', [Validators.required, Validators.minLength(10)]]
+      message: ['', [Validators.required, Validators.minLength(10)]],
+      recaptchaReactive: ['', Validators.required]
     });
   }
 

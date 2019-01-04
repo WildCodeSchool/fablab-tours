@@ -53,9 +53,12 @@ select:focus {
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 50px;
+  font-weight: 600;
+  margin-bottom: 5%;
   color: black;
   font-weight: normal;
+  font-family: Raleway;
 }
 
 .section2 {
@@ -195,4 +198,22 @@ h1 {
 .map
 {
 width: 50%;
+}
+
+p{
+  font-family: Raleway;
+}
+h5{
+  font-family: Raleway;
+}
+.btn {
+  font-family: Raleway;
+}
+
+.form-control {
+  font-family: Raleway;
+}
+
+.obl {
+  font-family: Raleway;
 }

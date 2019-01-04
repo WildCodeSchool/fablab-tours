@@ -22,6 +22,8 @@ import { CommentCaMarcheComponent } from './comment-ca-marche/comment-ca-marche.
 import { GalerieMachinesComponent } from './galerie-machines/galerie-machines.component';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RecaptchaModule  } from 'ng-recaptcha';
+import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     FlashMessagesModule.forRoot(),
     FullCalendarModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RecaptchaModule,
+    RecaptchaFormsModule
   ],
 
   providers: [],
