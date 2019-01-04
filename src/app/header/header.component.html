@@ -2,12 +2,12 @@
 
 <!-- navbar -->
 <nav class="navbar navbar-light fixed-top">
-  
+
   <!-- bouton pour faire apparaitre la sidebar -->
   <button [ngClass]="{'transBtn': sidebarDisplayed}" (click)="showSidebar(!sidebarDisplayed)"
   id="boutonfiltre2" class="btnStartPos navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
   aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-  
+
   <!-- menu burger ouverture sidebar -->
   <div *ngIf="!sidebarDisplayed" class="openside">
     <i class="fa fa-bars"></i>
@@ -22,8 +22,14 @@
 <img src="../../assets/images/image-header/logo_blanc.svg" routerLink="" (click)="showSidebar(false)">
 
 <!-- Icon recherche -->
-<div class="loupe">
+<!-- <div class="loupe">
   <i class="fa fa-search" routerLink="/search"></i>
+</div> -->
+<div class="search-box">
+<input class="search-txt" type="search" name="q" placeholder="Ecrire pour rechercher">
+  <a class="search-btn" routerLink="/recherche">
+    <i class="fa fa-search"></i>
+  </a>
 </div>
 </nav>
 <!-- fin navbar -->

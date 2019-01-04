@@ -5,6 +5,7 @@ import { AgendaComponent } from './agenda/agenda.component';
 import { EquipeComponent } from './equipe/equipe.component';
 import { ContactComponent } from './contact/contact.component';
 import { GalerieMachinesComponent } from './galerie-machines/galerie-machines.component';
+import { SearchResultComponent } from './search-result/search-result.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'equipe', component: EquipeComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'machine', component: GalerieMachinesComponent },
+  { path: 'recherche', component: SearchResultComponent },
 ];
 @NgModule({
   imports: [

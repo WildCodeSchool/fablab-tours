@@ -77,19 +77,19 @@ input{
 }
 
 @media screen and (max-width: 800px){
-  
+
   img{
     margin-left: 33%;
   }
-  
+
   li{
     margin-top: 5%;
   }
-  
+
   .reseaux{
     margin-top: 5%;
   }
-  
+
 }
 
 .loupe{
@@ -134,4 +134,60 @@ li :hover, a :hover {
 h1{
   font-family: Raleway;
   text-transform: uppercase;
+}
+
+
+
+/* recherche */
+body {
+  margin: 0;
+  padding: 0;
+  background: #6ecbcc;
+}
+
+.search-box {
+  position: absolute;
+  top: 20%;
+  right: 5%;
+  /* transform: translate(-50%); */
+  /* background: #2f3640; */
+  background: #6ecbcc;
+  height: 40px;
+  border-radius: 40px;
+  padding: 10px;
+}
+
+.search-box:hover>.search-txt {
+  width: 240px;
+  padding: 0 6px;
+}
+
+.search-box:hover>.search-btn {
+  background : white;
+  color: #6ecbcc;
+}
+
+.search-btn {
+  color: white;
+  float: right;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #6ecbcc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
+}
+
+.search-txt {
+  border: none;
+  background: none;
+  outline: none;
+  float: left;
+  color: white;
+  font-size: 17px;
+  transition: 0.4s;
+  line-height: 40px;
+  width: 0px;
 }

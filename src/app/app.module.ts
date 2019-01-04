@@ -22,6 +22,7 @@ import { CommentCaMarcheComponent } from './comment-ca-marche/comment-ca-marche.
 import { GalerieMachinesComponent } from './galerie-machines/galerie-machines.component';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SearchResultComponent } from './search-result/search-result.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     EquipeComponent,
     CommentCaMarcheComponent,
     GalerieMachinesComponent,
+    SearchResultComponent,
 
   ],
   imports: [
