@@ -88,8 +88,6 @@ export class CommentCaMarcheComponent implements OnInit {
 
     };
 
-
-
     let currentDay = weekday[now.getDay()];
     let currentDayID = "#" + currentDay; //gets todays weekday and turns it into id
    
