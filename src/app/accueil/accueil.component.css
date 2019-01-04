@@ -8,12 +8,16 @@
 }
 
 h1 {
-  font-size: 350%;
-  margin-top: 30%;
+  font-size: 3.25rem;
   font-family: Raleway;
   font-weight: bold;
   color: white;
-  text-transform: uppercase
+  text-transform: uppercase;
+  max-width: 28ch;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 23%;
+  text-shadow: 3px 3px 3px black;
 }
 
 .marge
