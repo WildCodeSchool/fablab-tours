@@ -57,11 +57,12 @@ export class AgendaComponent implements OnInit {
       },
       events: [
         {
-          color: 'red'
+          color: '#72cfd0'
         },
       ],
+      eventColor: '#72cfd0',
       allDayText: 'Toute la journée',
-      timeFormat: 'H:mm',
+      timeFormat: 'hh:mm',
       buttonText: {
         today: 'Aujourd’hui', month: 'Mois', week: 'Semaine', day: 'Jour', list: 'Mon planning'
       },

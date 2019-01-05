@@ -14,7 +14,7 @@ export class EquipeComponent implements OnInit {
   constructor(public service: EquipeService) { }
 
   ngOnInit() {
-    //récupère données concernant l'équipe dans bdd.
+    // récupère données concernant l'équipe dans bdd.
     this.service.getEquipe().subscribe(res => {
       this.equipes = res;
     });
