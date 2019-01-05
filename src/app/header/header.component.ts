@@ -1,4 +1,3 @@
-
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   sidebarDisplayed: boolean;
+  password: string;
+
   constructor() { }
 
   ngOnInit() {
@@ -16,4 +17,5 @@ export class HeaderComponent implements OnInit {
   showSidebar(isShow: boolean) {
     this.sidebarDisplayed = isShow;
   }
+
 }
