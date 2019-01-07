@@ -10,4 +10,8 @@ export class ContactService {
   sendMessage(body) {
     return this.http.post('http://localhost:3000/contact', body);
     }
+
+    sendNewsletter(body) {
+      return this.http.post('http://localhost:3000/newsletter', body);
+      }
 }

@@ -2,7 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { elementClassProp } from '@angular/core/src/render3/instructions';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators'
+import { map } from 'rxjs/operators';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FlashMessagesModule, FlashMessagesService } from 'angular2-flash-messages';
+import swal from 'sweetalert2';
+import { ContactService } from '../common/contact.service';
 
 
 
@@ -14,12 +18,17 @@ import { map } from 'rxjs/operators'
 export class CommentCaMarcheComponent implements OnInit {
   closeResult: string;
   evenements: any;
+  newsForm: FormGroup;
 
 
 
-  constructor(private modalService: NgbModal, private service: HttpClient) { }
+  constructor(private modalService: NgbModal, private service: HttpClient, private flashMessages: FlashMessagesService, private fb: FormBuilder, private contactService: ContactService) { }
 
   ngOnInit() {
+
+    this.newsForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]]
+    });
 
     // Calls calendar API 
 
@@ -118,6 +127,15 @@ export class CommentCaMarcheComponent implements OnInit {
     } else {
       return `with: ${reason}`;
     }
+  }
+
+// fonction envoi email newsletter
+
+  contactForm(form) {
+    // this.submitted = true;
+    this.contactService.sendNewsletter(form).subscribe(() => {
+      swal('Adhésion newsletter', 'Votre demande a bien été envoyé', 'success');
+    });
   }
 
 
