@@ -16,7 +16,7 @@ footer {
 }
 
 footer p {
-  font-size: 14px;
+  font-size: 18px;
   color: #CCC;
   padding-bottom: 0px;
   margin-bottom: 8px;
@@ -33,7 +33,6 @@ footer p {
   display: table;
   margin: 15px auto 0 auto;
   list-style-type: none;
-
 }
 
 .reseaux :hover{
@@ -59,9 +58,8 @@ footer p {
   border: #FFF
 }
 
-.reseaux{
-  margin-top: 2%;
-  margin-left: 6%;
+.res{
+  margin-top: 5.5em;
 }
 
 .text-white{
@@ -81,4 +79,6 @@ footer p {
 
 h5 {
   font-family: Raleway;
+  font-size: 22px;
+  font-weight: bold;
 }

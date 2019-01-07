@@ -1,0 +1,37 @@
+.social-footer-ul {
+    display: table;
+    margin: 15px auto 0 auto;
+    list-style-type: none;
+    margin-bottom: 5em;
+    margin-top: 2em;
+  }
+  .social-footer-ul a img {
+    width: 70px;
+  }
+
+  .btn-sm {
+      border: 0;
+
+  }
+
+  a, h1, h5 {
+      font-family: Raleway;
+  }
+
+  a {
+    font-size: 20px;
+  }
+
+  h1 {
+      text-transform: uppercase;
+      color: #696969;
+  }
+
+  h5 {
+      font-size: 22px;
+      font-weight: bold;
+  }
+
+  .part {
+      margin-top: 5em;
+    }

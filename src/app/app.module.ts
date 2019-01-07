@@ -23,6 +23,7 @@ import { FlashMessagesModule } from 'angular2-flash-messages';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RecaptchaModule  } from 'ng-recaptcha';
 import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
+import { PartenaireComponent } from './partenaire/partenaire.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
     EquipeComponent,
     CommentCaMarcheComponent,
     GalerieMachinesComponent,
+    PartenaireComponent,
 
   ],
   imports: [
