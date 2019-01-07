@@ -10,9 +10,14 @@ a {
 h1 {
   font-size: 40px; 
   font-weight: 600;
+  text-transform: uppercase;
 }
 
 span {
   font-weight: bold;
   font-size: 28px;
+}
+
+.topcontainer {
+  background-color: #F6F6F2;
 }
