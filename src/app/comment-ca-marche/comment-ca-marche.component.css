@@ -1,12 +1,8 @@
 /* Start === styling of header for section comment ca marche */
 
-
 h1 {
-  margin: 0;
-  text-align: center;
   text-transform: uppercase;
   letter-spacing: 1px;
-  padding: 35px 35px;
   color: #696969;
   margin-bottom: 1em;
 }
@@ -62,6 +58,7 @@ h1 {
   font-size: 40px;
   margin-top: 1em;
   margin-bottom: 2em;
+  color: #696969;
 }
 
 /*  paragraph styling */
