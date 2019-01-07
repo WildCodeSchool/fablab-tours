@@ -1,70 +1,85 @@
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway"/>
-
 <!-- navbar -->
 <nav class="navbar navbar-light fixed-top">
-  
-  <!-- bouton pour faire apparaitre la sidebar -->
-  <button [ngClass]="{'transBtn': sidebarDisplayed}" (click)="showSidebar(!sidebarDisplayed)"
-  id="boutonfiltre2" class="btnStartPos navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-  
-  <!-- menu burger ouverture sidebar -->
-  <div *ngIf="!sidebarDisplayed" class="openside">
-    <i class="fa fa-bars"></i>
-  </div>
-  <!-- croix fermeture sidebar -->
-  <div *ngIf="sidebarDisplayed" class="closeside">
-    <i class="fa fa-times"></i>
-  </div>
-</button>
-
-<!-- Logo FunLab -->
-<img src="../../assets/images/image-header/logo_blanc.svg" routerLink="" (click)="showSidebar(false)">
-
-<!-- Icon recherche -->
-<div class="loupe">
-  <i class="fa fa-search" routerLink="/search"></i>
-</div>
+    <!-- bouton pour faire apparaitre la sidebar -->
+    <button [ngClass]="{'transBtn': sidebarDisplayed}" (click)="showSidebar(!sidebarDisplayed)" id="boutonfiltre2" class="btnStartPos navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <!-- menu burger ouverture sidebar -->
+        <div *ngIf="!sidebarDisplayed" class="openside">
+            <i class="fa fa-bars"></i>
+        </div>
+        <!-- croix fermeture sidebar -->
+        <div *ngIf="sidebarDisplayed" class="closeside">
+            <i class="fa fa-times"></i>
+        </div>
+    </button>
+    <!-- Logo FunLab -->
+    <img src="../../assets/images/image-header/logo_blanc.svg" routerLink="" (click)="showSidebar(false)">
+    <!-- Icon recherche -->
+    <div class="loupe">
+        <i class="fa fa-search" routerLink="/search"></i>
+    </div>
 </nav>
 <!-- fin navbar -->
 
 <!-- Sidebar -->
 <nav class="sidebar hidden fixed-top" id="nav1" [ngClass]="{'trans': sidebarDisplayed}">
-  <div class="navbar-nav">
-    <div class="row">
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault" [ngbCollapse]="false">
-        <ul class="nav sidebar-nav d-table">
-          <li class="nav-item">
-            <h3 class="nav-link" routerLink="" (click)="showSidebar(false)">Accueil</h3>
-          </li>
-          <li class="nav-item">
-            <h3 class="nav-link" routerLink="/agenda" (click)="showSidebar(false)">Agenda</h3>
-          </li>
-          <li class="nav-item">
-            <h3 class="nav-link"><a  (click)="showSidebar(false)" href="http://funlab.fr/category/actusblog/" title="Lien externe: http://funlab.fr/category/actusblog/" target="_blank">Blog</a></h3>
-          </li>
-          <li class="nav-item">
-            <h3 class="nav-link"><a (click)="showSidebar(false)" href="http://wiki.funlab.fr/index.php/Accueil" title="Lien externe: http://wiki.funlab.fr/index.php/Accueil" target="_blank">Wiki</a></h3>
-          </li>
-          <li class="nav-item">
-            <h3 class="nav-link" routerLink="/equipe" (click)="showSidebar(false)">Equipe</h3>
-          </li>
-          <li class="nav-item">
-            <h3 class="nav-link" routerLink="/machine" (click)="showSidebar(false)">Machines</h3>
-          </li>
-          <li class="nav-item">
-            <h3 class="nav-link" routerLink="/contact" (click)="showSidebar(false)">Contact</h3>
-          </li>
-          <div class="reseaux">
-            <ul class="d-flex">
-              <a href="https://www.facebook.com/FablabTourangeau/" target="_blank" title="Lien externe: https://www.facebook.com/FablabTourangeau/"><i  class="fa fa-facebook-f mx-4"></i></a>
-              <a href="https://www.instagram.com/funlab_tours/" target="_blank" title="Lien externe: https://www.instagram.com/funlab_tours/"><i class="fa fa-instagram mx-4"></i></a>
-              <a href="https://twitter.com/lefunlab/" target="_blank" title="Lien externe: https://twitter.com/lefunlab/"><i class="fa fa-twitter mx-4"></i></a>
-            </ul>
-          </div>
-        </ul>
-      </div>
+    <div class="navbar-nav">
+        <div class="row">
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault" [ngbCollapse]="false">
+                <ul class="nav sidebar-nav d-table">
+                    <li class="nav-item">
+                        <h3 class="nav-link" routerLink="" (click)="showSidebar(false)">Accueil</h3>
+                    </li>
+                    <li class="nav-item">
+                        <h3 class="nav-link" routerLink="/agenda" (click)="showSidebar(false)">Agenda</h3>
+                    </li>
+                    <li class="nav-item">
+                        <h3 class="nav-link"><a  (click)="showSidebar(false)" href="http://funlab.fr/category/actusblog/" title="Lien externe: http://funlab.fr/category/actusblog/" target="_blank">Blog</a></h3>
+                    </li>
+                    <li class="nav-item">
+                        <h3 class="nav-link"><a (click)="showSidebar(false)" href="http://wiki.funlab.fr/index.php/Accueil" title="Lien externe: http://wiki.funlab.fr/index.php/Accueil" target="_blank">Wiki</a></h3>
+                    </li>
+                    <li class="nav-item">
+                        <h3 class="nav-link" routerLink="/machine" (click)="showSidebar(false)">Machines</h3>
+                    </li>
+                    <li class="nav-item">
+                        <h3 class="nav-link" routerLink="/equipe" (click)="showSidebar(false)">Equipe</h3>
+                    </li>
+                    <li class="nav-item">
+                        <h3 class="nav-link" routerLink="/contact" (click)="showSidebar(false)">Contact</h3>
+                    </li>
+                    <div class="reseaux">
+                        <ul class="d-flex">
+                            <a href="https://www.facebook.com/FablabTourangeau/" target="_blank" title="Lien externe: https://www.facebook.com/FablabTourangeau/"><i  class="fa fa-facebook-f mx-2"></i></a>
+                            <a href="https://www.instagram.com/funlab_tours/" target="_blank" title="Lien externe: https://www.instagram.com/funlab_tours/"><i class="fa fa-instagram mx-2"></i></a>
+                            <a href="https://twitter.com/lefunlab/" target="_blank" title="Lien externe: https://twitter.com/lefunlab/"><i class="fa fa-twitter mx-2"></i></a>
+                            <!-- debut dropdown connexion user -->
+                            <div class="btn-group drop" ngbDropdown [autoClose]="'outside'" id="headerdrop">
+                                <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" ngbDropdownToggle aria-haspopup="true" aria-expanded="false"><i class="fa fa-user mx-2"></i></button>
+                                <div x-placement="right-start" style="position: absolute; transform: translate3d(0px, -300px, 0px); top: 0px; left: 0px; will-change: transform;" class="dropdown-menu" aria-labelledby="dropdownMenuButton" ngbDropdownMenu>
+                                    <div class="container-fluid">
+                                        <form method="post" action="/users/login">
+                                            <div class="form-group">
+                                                <label class="col-md-4">Email</label>
+                                                <input type="text" class="form-control" name="email"/>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-4">Password</label>
+                                                <input type="password" class="form-control" name="mot de passe"/>
+                                            </div>
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-secondary">Se connecter</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- fin dropdown connexion user -->
+                        </ul>
+                    </div>
+                </ul>
+            </div>
+        </div>
     </div>
-  </div>
 </nav>
 <!-- Fin sidebar -->
