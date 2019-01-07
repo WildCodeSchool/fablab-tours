@@ -8,16 +8,12 @@ import { SearchResultService } from '../common/search-result.service';
 })
 export class SearchResultComponent implements OnInit {
 
-  resultOfSearch: any[];
+  results: any;
 
   constructor(public service: SearchResultService ) { }
 
   ngOnInit() {
-    this.service.getMachinesRechercher().subscribe(res => {
-      this.resultOfSearch = res;
-      console.log(this.resultOfSearch);
-    });
-
+    this.results = this.service.result;
   }
 
 }

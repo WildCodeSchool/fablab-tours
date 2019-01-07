@@ -1,5 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
+import { SearchResultService } from '../common/search-result.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-header',
@@ -8,12 +10,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   sidebarDisplayed: boolean;
-  constructor() { }
+  rechercheForm: FormGroup;
+  constructor(private service: SearchResultService, private fb: FormBuilder) { }
 
   ngOnInit() {
     this.sidebarDisplayed = false;
+    this.rechercheForm = this.fb.group({
+      input: ['', Validators.required],
+    });
   }
+
   showSidebar(isShow: boolean) {
     this.sidebarDisplayed = isShow;
+  }
+
+  // searchForm(form) {
+  //   this.service.sendSearch(form);
+  // }
+
+  onSubmit() {
+    this.service.getSearch(this.rechercheForm.value.input);
   }
 }
