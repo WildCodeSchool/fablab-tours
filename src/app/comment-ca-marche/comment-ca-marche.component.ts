@@ -9,7 +9,6 @@ import swal from 'sweetalert2';
 import { ContactService } from '../common/contact.service';
 
 
-
 @Component({
   selector: 'app-comment-ca-marche',
   templateUrl: './comment-ca-marche.component.html',
@@ -19,8 +18,6 @@ export class CommentCaMarcheComponent implements OnInit {
   closeResult: string;
   evenements: any;
   newsForm: FormGroup;
-
-
 
   constructor(private modalService: NgbModal, private service: HttpClient, private flashMessages: FlashMessagesService, private fb: FormBuilder, private contactService: ContactService) { }
 
@@ -134,7 +131,7 @@ export class CommentCaMarcheComponent implements OnInit {
   contactForm(form) {
     // this.submitted = true;
     this.contactService.sendNewsletter(form).subscribe(() => {
-      swal('Adhésion newsletter', 'Votre demande a bien été envoyé', 'success');
+      swal('Adhésion newsletter', 'Vous recevrez un mail de confirmation', 'success');
     });
   }
 

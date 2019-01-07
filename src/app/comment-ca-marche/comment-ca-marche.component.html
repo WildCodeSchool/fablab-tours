@@ -163,42 +163,29 @@
                       
                       <div class="card mb-3">
                         <h3 class="card-header mb-3">Souscrire à notre newsletter</h3>
-                        <form class="form-horizontal" [formGroup]="newsForm" (ngSubmit)='contactForm(newsForm.value)'>
+                        <form action="/subscribe" method="post" class="form-horizontal" [formGroup]="newsForm" (ngSubmit)='contactForm(newsForm.value)'>
                           <div class="form-group">
                             <div class="col-sm-12">
                               <div class="input-group">
                                 <input type="email" class="form-control" placeholder="Saisissez votre email" formControlName='email'>
-                              <span class="input-group-btn">
-                                <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane"></i></button>
-                              </span>
+                                <span class="input-group-btn">
+                                  <button type="submit" [disabled]="newsForm.pristine ||newsForm.invalid" class="btn btn-primary"><i class="fa fa-paper-plane"></i></button>
+                                </span>
+                              </div>
+                              <div *ngIf="newsForm.controls['email'].invalid && (newsForm.controls['email'].dirty || newsForm.controls['email'].touched)" class="mt-5"
+                              class="alert alert-danger">
+                              <div class="obl" *ngIf="newsForm.controls['email'].errors.required">Votre email est obligatoire.</div>
                             </div>
                           </div>
                         </div>
                       </form>
                     </div>
-                    
-                    
-                    
-                    
-                    
-                    
-                    <!-- <form [formGroup]="touchForm" (ngSubmit)='contactForm(touchForm.value)'>
-                      
-                      <div class='form-group'>
-                        <textarea  class='form-control' cols='30' rows='6' formControlName='message' placeholder="Tapez ici votre message"></textarea>
-                        <div *ngIf="touchForm.controls['message'].invalid && (touchForm.controls['message'].dirty || touchForm.controls['message'].touched)"
-                        class="alert alert-danger">
-                        <div class="obl" *ngIf="touchForm.controls['message'].errors.required">Le message est obligatoire.</div>
-                      </div>
-                    </div>
-                    <button type='submit' [disabled]="touchForm.pristine ||touchForm.invalid" class='btn btn-primary'>Envoyer</button>
-                  </form> -->
-                  <!-- Newsletter Section === END -->
-                </aside>
-                <!--Side section === END -->
-                
+                    <!-- Newsletter Section === END -->
+                  </aside>
+                  <!--Side section === END -->
+                  
+                </div>
               </div>
-            </div>
+              
+            </section>
             
-          </section>
-          
