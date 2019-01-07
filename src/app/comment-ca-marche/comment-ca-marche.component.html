@@ -52,31 +52,19 @@
         <article>
           <!-- Title and Description of Activity One -->
           <header>
-            <h2>Sous-titre</h2>
+            <h2>Qu’est-ce qu’on y fait ?</h2>
           </header>
           <div class="first-content">
-            <p class="lead">Lorem ipsum dolor sit amet, mel sumo mazim nonumy eu, vim ad duis impedit, diam tritani duo
-              ut. Ex debet ignota noster his, alii semper nam ne. Ad mundi pericula mea, ne nec ludus nostrum. Ex quot
-              atqui inimicus usu, eum possim prompta repudiare te, sea id fugit nemore perfecto. Verear deserunt an
-              usu, est in doctus appetere.</p>
-            <p class="lead">Lorem ipsum dolor sit amet, mel sumo mazim nonumy eu, vim ad duis impedit, diam tritani duo
-              ut. Ex debet ignota noster his, alii semper nam ne. Ad mundi pericula mea, ne nec ludus nostrum. Ex quot
-              atqui inimicus usu, eum possim prompta repudiare te, sea id fugit nemore perfecto. Verear deserunt an
-              usu, est in doctus appetere.</p>
+            <p class="lead">En un mot : on fait. On fait soit-même, avec les autres (c’est le principe du Do It Yourself With Other – DIYWO). On y vient parfois avec un projet et souvent sans idées précises, puis on y trouve des ressources pour passer à l’action. On peut apprendre à utiliser les machines, concevoir ses propres modèles 3D, découvrir l’électronique et l’univers des micro-controleurs arduino, ou encore passer à la couture 2.0 en réalisant ses propres T-shirt avec la brodeuse numérique.</p>
+            <p class="lead">Difficile d’être explicite, puisque c’est un lieu pour réaliser à peu près tout. Le mieux est donc de passer nous voir ou de consulter les différents projets menés via la rubrique « documentation« . En effet, s’il est une chose essentielle dans un FabLab, c’est de documenter chacun de nos projets pour les rendre accessibles, modifiables et reproductibles par d’autres !</p>
           </div>
           <!-- Title and Description of Activity Two -->
           <header>
-            <h2>Sous-titre</h2>
+            <h2>Cette fois, je me lance !</h2>
           </header>
           <div class="second-content">
-            <p class="lead">Lorem ipsum dolor sit amet, mel sumo mazim nonumy eu, vim ad duis impedit, diam tritani duo
-              ut. Ex debet ignota noster his, alii semper nam ne. Ad mundi pericula mea, ne nec ludus nostrum. Ex quot
-              atqui inimicus usu, eum possim prompta repudiare te, sea id fugit nemore perfecto. Verear deserunt an
-              usu, est in doctus appetere.</p>
-            <p class="lead">Lorem ipsum dolor sit amet, mel sumo mazim nonumy eu, vim ad duis impedit, diam tritani duo
-              ut. Ex debet ignota noster his, alii semper nam ne. Ad mundi pericula mea, ne nec ludus nostrum. Ex quot
-              atqui inimicus usu, eum possim prompta repudiare te, sea id fugit nemore perfecto. Verear deserunt an
-              usu, est in doctus appetere.</p>
+            <p class="lead">Envie de découvrir le lieu, ses machines et ses habitants ? Un projet à mener ? N’hésitez pas à passer nous voir sur nos temps d’ouverture (voir l’agenda). Il y aura toujours quelqu’un pour vous guider sur ces créneaux, qui sont également l’occasion de démonstration des différents équipements disponibles… Alors n’hésitez plus !</p>
+
           </div>
         </article>
       </div>
@@ -145,7 +133,7 @@
         <!-- Agenda Section === START -->
         <h3 class="agenda">Agenda</h3>
         <div class="list-group  mb-3">
-          <div class="list-group-item">
+          <div class="list-group-item text-center">
             <div class="event-detail" *ngFor="let event of evenements | slice:0:3; let i=index">
               <span class="event-detail-start-date">{{event.date | date: 'dd MMMM yyy '}}</span><!-- Date Pipe used to transform date format -->
               <span class="event-detail-start-time">{{event.start}} à</span>
@@ -162,7 +150,7 @@
         <!-- Newsletter Section === START -->
 
         <div class="card mb-3">
-          <h3 class="card-header mb-3">Souscrire à notre newsletter</h3>
+          <h3 class="card-header mb-3 text-center">Souscrire à notre newsletter</h3>
           <form class="form-horizontal">
             <div class="form-group">
               <div class="col-sm-12">
