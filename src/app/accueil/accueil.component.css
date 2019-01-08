@@ -29,12 +29,12 @@ h1 {
 
 .marge
 {
-  padding-top: 850px;
+  padding-top: 950px;
 }
 
 @media screen and (max-width: 400px){
   .marge {
-    padding-top: 750px;
+    padding-top: 700px;
   }
 }
 
