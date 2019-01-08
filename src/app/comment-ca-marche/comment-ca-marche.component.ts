@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { elementClassProp } from '@angular/core/src/render3/instructions';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators'
+import { map } from 'rxjs/operators';
 
 
 
@@ -11,9 +11,11 @@ import { map } from 'rxjs/operators'
   templateUrl: './comment-ca-marche.component.html',
   styleUrls: ['./comment-ca-marche.component.css']
 })
-export class CommentCaMarcheComponent implements OnInit {
+export class CommentCaMarcheComponent implements OnInit, OnDestroy {
   closeResult: string;
   evenements: any;
+
+  interval: any;
 
 
 
@@ -21,7 +23,7 @@ export class CommentCaMarcheComponent implements OnInit {
 
   ngOnInit() {
 
-    // Calls calendar API 
+    // Calls calendar API
 
     this.service.get<any>('http://localhost:3000/api/calendar/events')
       .pipe(
@@ -29,20 +31,20 @@ export class CommentCaMarcheComponent implements OnInit {
           return res.map(event => {
             return {
               title: event.summary,
-              date: event.start.date ? event.start.date : event.start.dateTime.slice(0,10),
-              start: event.start.date ? "indéfini" : event.start.dateTime.slice(11,16),
-              end:event.end.date ? "indéfini" : event.end.dateTime.slice(11,16),
+              date: event.start.date ? event.start.date : event.start.dateTime.slice(0, 10),
+              start: event.start.date ? 'indéfini' : event.start.dateTime.slice(11, 16),
+              end: event.end.date ? 'indéfini' : event.end.dateTime.slice(11, 16),
             };
           });
         })
       )
       .subscribe(res => {
         this.evenements = res;
-        console.log(this.evenements)
+        console.log(this.evenements);
       });
 
 
-    // To check opening Hours 
+    // To check opening Hours
 
     let now = new Date();
     let weekday = new Array(7);
@@ -92,11 +94,11 @@ export class CommentCaMarcheComponent implements OnInit {
 
     let currentDay = weekday[now.getDay()];
     let currentDayID = "#" + currentDay; //gets todays weekday and turns it into id
-   
-   
+
+
     // $(currentDayID).toggleClass("today"); //hightlights today in the view hours modal popup {to be added once JSQUERY installed}
 
-    setInterval(checkTime, 1000);
+    this.interval = setInterval(checkTime, 1000);
     checkTime();
 
   }
@@ -120,6 +122,10 @@ export class CommentCaMarcheComponent implements OnInit {
     } else {
       return `with: ${reason}`;
     }
+  }
+
+  ngOnDestroy() {
+    clearInterval(this.interval);
   }
 
 

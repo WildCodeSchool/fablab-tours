@@ -1,5 +1,8 @@
-.row
+.container
 {
-  margin-top: 100px;
+margin-top: 150px;
+}
 
+img{
+  max-width: 300px;
 }

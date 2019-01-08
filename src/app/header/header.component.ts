@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchResultService } from '../common/search-result.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +12,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class HeaderComponent implements OnInit {
   sidebarDisplayed: boolean;
   rechercheForm: FormGroup;
-  constructor(private service: SearchResultService, private fb: FormBuilder) { }
+  constructor(private service: SearchResultService, private fb: FormBuilder, private router: Router) { }
 
   ngOnInit() {
     this.sidebarDisplayed = false;
@@ -24,11 +25,9 @@ export class HeaderComponent implements OnInit {
     this.sidebarDisplayed = isShow;
   }
 
-  // searchForm(form) {
-  //   this.service.sendSearch(form);
-  // }
-
   onSubmit() {
     this.service.getSearch(this.rechercheForm.value.input);
+    this.router.navigate(['/recherche']);
+
   }
 }
