@@ -32,13 +32,13 @@ export class AgendaComponent implements OnInit {
           return {
             jour: event.start.date ? event.start.date : event.start.dateTime,
             mois: event.start.date ? event.start.date : event.start.dateTime,
-            hDepart: event.start.date ? 'indéfini' : event.start.dateTime.slice(11, 16),
-            hFin: event.end.date ? 'indéfini' : event.end.dateTime.slice(11, 16),
+            hDepart: event.start.date ? 'Non défini' : event.start.dateTime.slice(11, 16),
+            hFin: event.end.date ? 'Non défini' : event.end.dateTime.slice(11, 16),
             title: event.summary,
             start: event.start.date ? event.start.date : event.start.dateTime,
             end: event.end.date ? event.end.date : event.end.dateTime,
-            location: event.location ? event.location : 'indéfini',
-            description: event.description ? event.description : 'indéfini'
+            location: event.location ? event.location : 'Non défini',
+            description: event.description ? event.description : 'Pas de description'
           };
         });
       })
