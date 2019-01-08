@@ -2,15 +2,6 @@
     position: relative;
 }
 
-.background{
-    background-image: url(/assets/images/image-header/equipe2.png);
-    background-size: cover;
-    background-position: center;
-    min-width: 100%;
-    min-height: 100%;
-    position: relative;
-}
-
 h1{
     margin-top: 115px;
     font-size: 50px;
