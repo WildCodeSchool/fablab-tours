@@ -76,10 +76,7 @@ h1 {
 .card-horaire {
   text-align: center;
   letter-spacing: 1px;
-  background-color: #70CCCC;
-  border-color: #70CCCC;
-  color: #FFF;
-  font-weight: 600;
+  background-color: rgba(0, 0, 0, 0.03);
   cursor: pointer;
   -webkit-transition: .1s all ease-in-out;
   -moz-transition: .1s all ease-in-out;
@@ -88,10 +85,9 @@ h1 {
 }
 
 .card-horaire:hover {
-  background-color: #333333;
-  border-color: #333333;
-  color: #fff;
+  background-color: #70CCCC;
 }
+
 
 /* top sentence of section horaire */
 
@@ -168,7 +164,7 @@ h1 {
   font-size: 15px;
   font-weight: 600;
   font-family: Raleway;
-}
+  }
 
 /* End === section Agenda */
 
