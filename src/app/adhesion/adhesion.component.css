@@ -1,24 +1,86 @@
-h1, h4, p, div {
-  text-align: center;
+.container {
   font-family: Raleway;
-}
-a {
-  font-size: 20px;
-  font-family: Raleway;
+  margin-bottom: 50px;
 }
 
+/* Section Header */
+
 h1 {
-  font-size: 40px; 
+  font-size: 40px;
   font-weight: 600;
+  text-align: center;
   text-transform: uppercase;
   color: #696969;
 }
 
-span {
-  font-weight: bold;
-  font-size: 28px;
+/* Whole Card */
+.card {
+  border-radius: 6px;
+  margin: 10px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  margin-bottom: 10px;
 }
 
-.topcontainer {
-  background-color: #F6F6F2;
+/* Card transition on hover */
+
+.card:hover {
+  transition-duration: 0.3s;
+  transform: translateY(-5px);
+  box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.2);
+}
+
+/* Top of Card */
+
+h3 {
+  font-weight: 600;
+  font-size: 24px;
+  text-align: center;
+}
+
+h4 {
+  font-weight: 900;
+  font-size: 32px;
+  text-align: center;
+}
+
+.an {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+/* Card body with bullet points */
+.adherant {
+  list-style-type: none;
+  padding: 35px 0 25px;
+  border: 0 solid #D9DADC;
+  border-top-width: 1px;
+}
+
+.adherant>li {
+
+  padding-bottom: 7px;
+  line-height: 22px;
+}
+
+ul li:before {
+  content: '✓';
+}
+
+/* Card Footer with buttons */
+.card-footer {
+  background-color: #FFF;
+}
+
+.btn {
+  background-color: #70CCCC;
+  border-color: #70CCCC;
+  color: #FFF;
+  font-weight: 600;
+}
+
+.btn:hover {
+  background-color: #333333;
+  border-color: #333333;
+  color: #fff;
 }

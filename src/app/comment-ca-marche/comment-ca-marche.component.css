@@ -76,7 +76,10 @@ h1 {
 .card-horaire {
   text-align: center;
   letter-spacing: 1px;
-  background-color: rgba(0, 0, 0, 0.03);
+  background-color: #70CCCC;
+  border-color: #70CCCC;
+  color: #FFF;
+  font-weight: 600;
   cursor: pointer;
   -webkit-transition: .1s all ease-in-out;
   -moz-transition: .1s all ease-in-out;
@@ -85,7 +88,9 @@ h1 {
 }
 
 .card-horaire:hover {
-  background-color: #fdd000;
+  background-color: #333333;
+  border-color: #333333;
+  color: #fff;
 }
 
 /* top sentence of section horaire */
@@ -158,6 +163,7 @@ h1 {
 /* link to see agenda */
 
 .agenda-more {
+  text-align: center;
   text-decoration: none;
   font-size: 15px;
   font-weight: 600;

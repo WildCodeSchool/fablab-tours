@@ -1,9 +1,9 @@
 <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
 
 <section class="comment-ca-marche fond">
-  
+
   <h1 class="text-center">Comment ca marche ?</h1>
-  
+
   <div class="top-container">
     <div class="row justify-content-around">
       <div class="col-sm-12 col-md-12 col-lg-4">
@@ -13,179 +13,175 @@
             <h4>Partager</h4>
             <p>Lorem ipsum dolor sit amet, elit latine ne vis, diam salutatus reformidans mel ne. Pro ea insolens
               ullamcorper, ad vix s umo ullum constituam. </p>
-            </div>
           </div>
         </div>
-        <div class="col-sm-12 col-md-12 col-lg-4">
-          <div class="card ml-4 mr-4">
-            <div class="card-body text-center">
-              <i class="fa fa-magic"></i>
-              <h4>Apprendre</h4>
-              <p>Lorem ipsum dolor sit amet, elit latine ne vis, diam salutatus reformidans mel ne. Pro ea insolens
-                ullamcorper, ad vix sumo ullum constituam. </p>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-4">
+        <div class="card ml-4 mr-4">
+          <div class="card-body text-center">
+            <i class="fa fa-book"></i>
+            <h4>Apprendre</h4>
+            <p>Lorem ipsum dolor sit amet, elit latine ne vis, diam salutatus reformidans mel ne. Pro ea insolens
+              ullamcorper, ad vix sumo ullum constituam. </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-4">
+        <div class="card ml-4 mr-4">
+          <div class="card-body text-center">
+            <i class="fa fa-wrench"></i>
+            <h4>Faire</h4>
+            <p>Lorem ipsum dolor sit amet, elit latine ne vis, diam salutatus reformidans mel ne. Pro ea insolens
+              ullamcorper, ad vix sumo ullum constituam. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="activity-header">
+      <h2>Nos Activités</h2>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8">
+        <article>
+          <!-- Title and Description of Activity One -->
+          <header>
+            <h2>Qu’est-ce qu’on y fait ?</h2>
+          </header>
+          <div class="first-content">
+            <p class="lead">En un mot : on fait. On fait soit-même, avec les autres (c’est le principe du Do It
+              Yourself With Other – DIYWO). On y vient parfois avec un projet et souvent sans idées précises, puis on y
+              trouve des ressources pour passer à l’action. On peut apprendre à utiliser les machines, concevoir ses
+              propres modèles 3D, découvrir l’électronique et l’univers des micro-controleurs arduino, ou encore passer
+              à la couture 2.0 en réalisant ses propres T-shirt avec la brodeuse numérique.</p>
+            <p class="lead">Difficile d’être explicite, puisque c’est un lieu pour réaliser à peu près tout. Le mieux
+              est donc de passer nous voir ou de consulter les différents projets menés via la rubrique «
+              documentation« . En effet, s’il est une chose essentielle dans un FabLab, c’est de documenter chacun de
+              nos projets pour les rendre accessibles, modifiables et reproductibles par d’autres !</p>
+          </div>
+          <!-- Title and Description of Activity Two -->
+          <header>
+            <h2>Cette fois, je me lance !</h2>
+          </header>
+          <div class="second-content">
+            <p class="lead">Envie de découvrir le lieu, ses machines et ses habitants ? Un projet à mener ? N’hésitez
+              pas à passer nous voir sur nos temps d’ouverture (voir l’agenda). Il y aura toujours quelqu’un pour vous
+              guider sur ces créneaux, qui sont également l’occasion de démonstration des différents équipements
+              disponibles… Alors n’hésitez plus !</p>
+          </div>
+        </article>
+      </div>
+
+      <!--Side section === START -->
+      <aside class="col-md-4">
+        <!-- Horaires Section === START -->
+        <div class="card mb-3">
+          <h3 class="card-horaire mb-3" (click)="open(content)">Horaires<i class="fa fa-clock-o"></i></h3>
+          <ng-template #content let-modal>
+            <div class="modal-header">
+              <h4 class="modal-title" id="modal-basic-title">Horaires d'ouverture</h4>
+              <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div id="lundi" class="dateTime">
+                <div class="day">Lundi</div>
+                <div class="time">Fermé</div>
+              </div>
+              <br>
+              <div id="mardi" class="dateTime">
+                <div class="day">Mardi</div>
+                <div class="time">14h - 18h</div>
+              </div>
+              <br>
+              <div id="mercredi" class="dateTime">
+                <div class="day">Mercredi</div>
+                <div class="time">14h - 18h</div>
+              </div>
+              <br>
+              <div id="jeudi" class="dateTime">
+                <div class="day">Jeudi</div>
+                <div class="time">16h - 22h</div>
+              </div>
+              <br>
+              <div id="vendredi" class="dateTime">
+                <div class="day">Vendredi</div>
+                <div class="time">14h - 18h</div>
+              </div>
+              <br>
+              <div id="samedi" class="dateTime">
+                <div class="day">Samedi</div>
+                <div class="time">Fermé</div>
+              </div>
+              <br>
+              <div id="dimanche" class="dateTime">
+                <div class="day">Dimanche</div>
+                <div class="time">Fermé</div>
               </div>
             </div>
+          </ng-template>
+          <form class="form-horizontal">
+            <div class="form-group">
+              <div class="col-sm-12">
+                <div id="timeDiv"></div>
+                <div id="statusDiv"></div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!-- Horaires Section === END -->
+
+        <!-- Agenda Section === START -->
+        <h3 class="agenda">Agenda</h3>
+        <div class="list-group mb-3">
+          <div class="list-group-item">
+            <div class="event-detail text-center" *ngFor="let event of evenements | slice:0:3; let i=index">
+              <span class="event-detail-start-date">{{event.date | date: 'dd MMMM yyy '}}</span><!-- Date Pipe used to transform date format -->
+              <span class="event-detail-start-time">{{event.start}} à</span>
+              <span class="event-detail-end-time"> {{event.end}}</span>
+              <br>
+              <span class="event-detail-title">{{event.title}}</span>
+              <hr>
+            </div>
+            <div class="agenda-more">
+            <a routerLink="/agenda">Voir agenda complet&hellip;</a>
           </div>
-          <div class="col-sm-12 col-md-12 col-lg-4">
-            <div class="card ml-4 mr-4">
-              <div class="card-body text-center">
-                <i class="fa fa-wrench"></i>
-                <h4>Faire</h4>
-                <p>Lorem ipsum dolor sit amet, elit latine ne vis, diam salutatus reformidans mel ne. Pro ea insolens
-                  ullamcorper, ad vix sumo ullum constituam. </p>
+          </div>
+        </div>
+        <!-- Agenda Section === END -->
+
+        <!-- Newsletter Section === START -->
+
+        <div class="card mb-3">
+          <h3 class="card-header mb-3 text-center">Souscrire à notre newsletter</h3>
+          <form action="/subscribe" method="post" class="form-horizontal" [formGroup]="newsForm" (ngSubmit)='contactForm(newsForm.value)'>
+            <div class="form-group">
+              <div class="col-sm-12">
+                <div class="input-group">
+                  <input type="email" class="form-control" placeholder="Saisissez votre email" formControlName='email'>
+                  <span class="input-group-btn">
+                    <button type="submit" [disabled]="newsForm.pristine ||newsForm.invalid" class="btn btn-primary"><i
+                        class="fa fa-paper-plane"></i></button>
+                  </span>
+                </div>
+                <div *ngIf="newsForm.controls['email'].invalid && (newsForm.controls['email'].dirty || newsForm.controls['email'].touched)"
+                  class="mt-5" class="alert alert-danger">
+                  <div class="obl" *ngIf="newsForm.controls['email'].errors.required">Votre email est obligatoire.</div>
                 </div>
               </div>
             </div>
-          </div>
+          </form>
         </div>
-        
-        
-        
-        <div class="container">
-          
-          <div class="activity-header">
-            <h2>Nos Activités</h2>
-          </div>
-          
-          <div class="row">
-            <div class="col-md-8">
-              <article>
-                <!-- Title and Description of Activity One -->
-                <header>
-                  <h2>Sous-titre</h2>
-                </header>
-                <div class="first-content">
-                  <p class="lead">Lorem ipsum dolor sit amet, mel sumo mazim nonumy eu, vim ad duis impedit, diam tritani duo
-                    ut. Ex debet ignota noster his, alii semper nam ne. Ad mundi pericula mea, ne nec ludus nostrum. Ex quot
-                    atqui inimicus usu, eum possim prompta repudiare te, sea id fugit nemore perfecto. Verear deserunt an
-                    usu, est in doctus appetere.</p>
-                    <p class="lead">Lorem ipsum dolor sit amet, mel sumo mazim nonumy eu, vim ad duis impedit, diam tritani duo
-                      ut. Ex debet ignota noster his, alii semper nam ne. Ad mundi pericula mea, ne nec ludus nostrum. Ex quot
-                      atqui inimicus usu, eum possim prompta repudiare te, sea id fugit nemore perfecto. Verear deserunt an
-                      usu, est in doctus appetere.</p>
-                    </div>
-                    <!-- Title and Description of Activity Two -->
-                    <header>
-                      <h2>Sous-titre</h2>
-                    </header>
-                    <div class="second-content">
-                      <p class="lead">Lorem ipsum dolor sit amet, mel sumo mazim nonumy eu, vim ad duis impedit, diam tritani duo
-                        ut. Ex debet ignota noster his, alii semper nam ne. Ad mundi pericula mea, ne nec ludus nostrum. Ex quot
-                        atqui inimicus usu, eum possim prompta repudiare te, sea id fugit nemore perfecto. Verear deserunt an
-                        usu, est in doctus appetere.</p>
-                        <p class="lead">Lorem ipsum dolor sit amet, mel sumo mazim nonumy eu, vim ad duis impedit, diam tritani duo
-                          ut. Ex debet ignota noster his, alii semper nam ne. Ad mundi pericula mea, ne nec ludus nostrum. Ex quot
-                          atqui inimicus usu, eum possim prompta repudiare te, sea id fugit nemore perfecto. Verear deserunt an
-                          usu, est in doctus appetere.</p>
-                        </div>
-                      </article>
-                    </div>
-                    
-                    
-                    <!--Side section === START -->
-                    <aside class="col-md-4">
-                      <!-- Horaires Section === START -->
-                      <div class="card mb-3">
-                        <h3 class="card-horaire mb-3" (click)="open(content)">Horaires<i class="fa fa-clock-o"></i></h3>
-                        <ng-template #content let-modal>
-                          <div class="modal-header">
-                            <h4 class="modal-title" id="modal-basic-title">Horaires d'ouverture</h4>
-                            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-                              <span aria-hidden="true">&times;</span>
-                            </button>
-                          </div>
-                          <div class="modal-body">
-                            <div id="lundi" class="dateTime">
-                              <div class="day">Lundi</div>
-                              <div class="time">Fermé</div>
-                            </div>
-                            <br>
-                            <div id="mardi" class="dateTime">
-                              <div class="day">Mardi</div>
-                              <div class="time">14h - 18h</div>
-                            </div>
-                            <br>
-                            <div id="mercredi" class="dateTime">
-                              <div class="day">Mercredi</div>
-                              <div class="time">14h - 18h</div>
-                            </div>
-                            <br>
-                            <div id="jeudi" class="dateTime">
-                              <div class="day">Jeudi</div>
-                              <div class="time">16h - 22h</div>
-                            </div>
-                            <br>
-                            <div id="vendredi" class="dateTime">
-                              <div class="day">Vendredi</div>
-                              <div class="time">14h - 18h</div>
-                            </div>
-                            <br>
-                            <div id="samedi" class="dateTime">
-                              <div class="day">Samedi</div>
-                              <div class="time">Fermé</div>
-                            </div>
-                            <br>
-                            <div id="dimanche" class="dateTime">
-                              <div class="day">Dimanche</div>
-                              <div class="time">Fermé</div>
-                            </div>
-                          </div>
-                        </ng-template>
-                        <form class="form-horizontal">
-                          <div class="form-group">
-                            <div class="col-sm-12">
-                              <div id="timeDiv"></div>
-                              <div id="statusDiv"></div>
-                            </div>
-                          </div>
-                        </form>
-                      </div>
-                      <!-- Horaires Section === END -->
-                      
-                      <!-- Agenda Section === START -->
-                      <h3 class="agenda">Agenda</h3>
-                      <div class="list-group  mb-3">
-                        <div class="list-group-item">
-                          <div class="event-detail" *ngFor="let event of evenements | slice:0:3; let i=index">
-                            <span class="event-detail-start-date">{{event.date | date: 'dd MMMM yyy '}}</span><!-- Date Pipe used to transform date format -->
-                            <span class="event-detail-start-time">{{event.start}} à</span>
-                            <span class="event-detail-end-time"> {{event.end}}</span>
-                            <br>
-                            <span class="event-detail-title">{{event.title}}</span>
-                            <hr>
-                          </div>
-                          <a routerLink="/agenda" class="agenda-more">Voir agenda complet&hellip;</a>
-                        </div>
-                      </div>
-                      <!-- Agenda Section === END -->
-                      
-                      <!-- Newsletter Section === START -->
-                      
-                      <div class="card mb-3">
-                        <h3 class="card-header mb-3">Souscrire à notre newsletter</h3>
-                        <form action="/subscribe" method="post" class="form-horizontal" [formGroup]="newsForm" (ngSubmit)='contactForm(newsForm.value)'>
-                          <div class="form-group">
-                            <div class="col-sm-12">
-                              <div class="input-group">
-                                <input type="email" class="form-control" placeholder="Saisissez votre email" formControlName='email'>
-                                <span class="input-group-btn">
-                                  <button type="submit" [disabled]="newsForm.pristine ||newsForm.invalid" class="btn btn-primary"><i class="fa fa-paper-plane"></i></button>
-                                </span>
-                              </div>
-                              <div *ngIf="newsForm.controls['email'].invalid && (newsForm.controls['email'].dirty || newsForm.controls['email'].touched)" class="mt-5"
-                              class="alert alert-danger">
-                              <div class="obl" *ngIf="newsForm.controls['email'].errors.required">Votre email est obligatoire.</div>
-                            </div>
-                          </div>
-                        </div>
-                      </form>
-                    </div>
-                    <!-- Newsletter Section === END -->
-                  </aside>
-                  <!--Side section === END -->
-                  
-                </div>
-              </div>
-              
-            </section>
-            
+        <!-- Newsletter Section === END -->
+      </aside>
+      <!--Side section === END -->
+
+    </div>
+  </div>
+
+</section>
