@@ -1,19 +1,28 @@
 <div class="container">
   <h3 class="pb-3 mb-4 font-italic border-bottom">Resultats de recherche</h3>
   <div class="row">
-    <div class="col-md-8 mx-auto">
+    <div class="col-md-10 mx-auto">
       <div *ngIf="results | async; let results">
         <div class="card flex-md-row mb-4 shadow-sm h-md-250 mx-auto" *ngFor="let result of results">
-        <img class="card-img-right flex-auto d-none d-lg-block" alt="Thumbnail [300x250]" src="{{result.photo}}"
-          style="width: 300px; height: 250px;">
-        <div class="card-body d-flex flex-column align-items-start">
-          <strong class="d-inline-block mb-2 text-primary">{{result.post_title}}</strong>
-          <p class="card-text mb-auto">{{result.post_content}}</p>
-          <a class="btn btn-outline-primary btn-sm" role="button" href="#">Lire la suite</a>
+
+           <!-- <img class="card-img-right flex-auto d-none d-lg-block" alt="Thumbnail [300x250]" src="{{result.guid}}"
+            style="width: 300px; height: 250px;"> -->
+<div *ngIf="result.post_type ==='attachment';then show else default_show"></div>
+              <ng-template #show><img class="card-img-right flex-auto d-none d-lg-block" alt="image article" src="{{result.guid}}"
+    style="width: 300px; height: 250px;"></ng-template>
+<ng-template #default_show><img class="card-img-right flex-auto d-none d-lg-block" alt="image funlab" src="assets/images/image_presentation/logo_fun_lab.png"
+    style="width: 250px; height: 250px;"></ng-template>
+
+          <div class="card-body d-flex flex-column align-items-start">
+            <strong class="d-inline-block mb-2 text-primary">{{result.post_title}}</strong>
+            <p class="card-text mb-auto" [innerHTML]="result.post_content"></p>
+            <p>&hellip;</p>
+            <a class="btn btn-outline-primary btn-sm" role="button" href="#">Lire la suite</a>
+          </div>
         </div>
-      </div>
       </div>
     </div>
   </div>
 </div>
+
 
