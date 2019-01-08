@@ -9,9 +9,9 @@
         <div class="col-10">
             <h3 class="text-uppercase"><strong>{{event.title}}</strong></h3>
             <ul class="list-inline">
-                <li class="list-inline-item"><img src="assets/images/image-header/calendar.svg" width="25"> {{event.jour | date:'EEEE'}} </li>
-                <li class="list-inline-item"><img src="assets/images/image-header/clock.svg" width="22"> {{event.hDepart}} - {{event.hFin}}</li>
-                <li class="list-inline-item"><img src="assets/images/image-header/location.svg" width="22">{{event.location}}</li>
+                <li class="list-inline-item"><img src="assets/images/image-header/calendar.svg" class="mx-2" width="25"> {{event.jour | date:'EEEE'}} </li>
+                <li class="list-inline-item"><img src="assets/images/image-header/clock.svg" class="mx-2" width="22"> {{event.hDepart}} - {{event.hFin}}</li>
+                <li class="list-inline-item"><img src="assets/images/image-header/location.svg" class="mx-2" width="22">{{event.location}}</li>
             </ul>
             <p>{{event.description}}</p>
         </div>
@@ -36,10 +36,10 @@
             </div>
     <!-- Modal body -->
             <div class="modal-body">
-                <p><span><img src="assets/images/image-header/clock.svg" width="22"> {{dateStart | date: 'EEEE d MMMM y'}} </span></p>
+                <p><span><img src="assets/images/image-header/clock.svg" class="mx-2" width="22"> {{dateStart | date: 'EEEE d MMMM y'}} </span></p>
                 <p> {{heureDepart}} à {{heureFin}} </p>
-                <p><span><img src="assets/images/image-header/location.svg" width="22"></span> {{ lieu }} </p>
-                <p><span><img src="assets/images/image-header/align.svg" width="22"></span> {{ description }} </p>
+                <p><span><img src="assets/images/image-header/location.svg" class="mx-2" width="22"></span> {{ lieu }} </p>
+                <p><span><img src="assets/images/image-header/align.svg" class="mx-2" width="22"></span> {{ description }} </p>
             </div>
     <!-- Modal footer -->
             <div class="modal-footer">
