@@ -165,8 +165,7 @@
                 <div class="input-group">
                   <input type="email" class="form-control" placeholder="Saisissez votre email" formControlName='email'>
                   <span class="input-group-btn">
-                    <button type="submit" [disabled]="newsForm.pristine ||newsForm.invalid" class="btn btn-primary"><i
-                        class="fa fa-paper-plane"></i></button>
+                    <button type="submit" [disabled]="newsForm.pristine ||newsForm.invalid" class="btn btn-primary"><i class="fa fa-paper-plane"></i></button>
                   </span>
                 </div>
                 <div *ngIf="newsForm.controls['email'].invalid && (newsForm.controls['email'].dirty || newsForm.controls['email'].touched)"

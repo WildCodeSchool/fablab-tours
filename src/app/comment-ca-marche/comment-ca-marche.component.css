@@ -166,6 +166,10 @@ h1 {
   font-family: Raleway;
   }
 
+  .agenda-more a {
+    color: #70CCCC;
+  }
+
 /* End === section Agenda */
 
 /* Start === section Newsletter */
@@ -180,6 +184,8 @@ h1 {
 .btn {
   padding: 0px;
   border-radius: 0.5px;
+  background-color: #70CCCC;
+  border-color: #70CCCC;
 }
 
 .btn:hover {
