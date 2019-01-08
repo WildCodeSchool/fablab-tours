@@ -19,6 +19,7 @@ export class CommentCaMarcheComponent implements OnInit {
   evenements: any;
   newsForm: FormGroup;
 
+  // tslint:disable-next-line:max-line-length
   constructor(private modalService: NgbModal, private service: HttpClient, private flashMessages: FlashMessagesService, private fb: FormBuilder, private contactService: ContactService) { }
 
   ngOnInit() {
@@ -27,7 +28,7 @@ export class CommentCaMarcheComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]]
     });
 
-    // Calls calendar API 
+    // Calls calendar API
 
     this.service.get<any>('http://localhost:3000/api/calendar/events')
       .pipe(
@@ -35,69 +36,66 @@ export class CommentCaMarcheComponent implements OnInit {
           return res.map(event => {
             return {
               title: event.summary,
-              date: event.start.date ? event.start.date : event.start.dateTime.slice(0,10),
-              start: event.start.date ? "indéfini" : event.start.dateTime.slice(11,16),
-              end:event.end.date ? "indéfini" : event.end.dateTime.slice(11,16),
+              date: event.start.date ? event.start.date : event.start.dateTime.slice(0, 10),
+              start: event.start.date ? 'indéfini' : event.start.dateTime.slice(11, 16),
+              end: event.end.date ? 'indéfini' : event.end.dateTime.slice(11, 16),
             };
           });
         })
       )
       .subscribe(res => {
         this.evenements = res;
-        console.log(this.evenements)
+        console.log(this.evenements);
       });
 
 
-    // To check opening Hours 
+    // To check opening Hours
 
-    let now = new Date();
-    let weekday = new Array(7);
-    weekday[0] = "Dimanche";
-    weekday[1] = "Lundi";
-    weekday[2] = "Mardi";
-    weekday[3] = "Mercredi";
-    weekday[4] = "Jeudi";
-    weekday[5] = "Vendredi";
-    weekday[6] = "Samedi";
+    const now = new Date();
+    const weekday = new Array(7);
+    weekday[0] = 'Dimanche';
+    weekday[1] = 'Lundi';
+    weekday[2] = 'Mardi';
+    weekday[3] = 'Mercredi';
+    weekday[4] = 'Jeudi';
+    weekday[5] = 'Vendredi';
+    weekday[6] = 'Samedi';
 
-    let checkTime = function () {
-      let today: any = weekday[now.getDay()];
-      let timeDiv: any = document.getElementById('timeDiv');
-      let statusDiv: any = document.getElementById('statusDiv');
-      let dayOfWeek: any = now.getDay();
-      let hour: number = now.getHours();
+    const checkTime = function () {
+      const today: any = weekday[now.getDay()];
+      const timeDiv: any = document.getElementById('timeDiv');
+      const statusDiv: any = document.getElementById('statusDiv');
+      const dayOfWeek: any = now.getDay();
+      const hour: number = now.getHours();
       let minutes: any = now.getMinutes();
 
       if (minutes < 10) {
-        minutes = "0" + minutes;
-      };
+        minutes = '0' + minutes;
+      }
 
-      if ((dayOfWeek == 2 || dayOfWeek == 3 || dayOfWeek == 5) && hour >= 14 && hour <= 18) {
+      if ((dayOfWeek === 2 || dayOfWeek === 3 || dayOfWeek === 5) && hour >= 14 && hour <= 18) {
         timeDiv.innerHTML = `Nous sommes ${today} il est ${hour}h${minutes},`;
         statusDiv.innerHTML = `et nous sommes ouvert!`;
         timeDiv.className = 'open';
         statusDiv.className = 'open';
-      }
-
-      else if ((dayOfWeek == 4) && hour >= 16 && hour <= 22) {
+      } else if ((dayOfWeek === 4) && hour >= 16 && hour <= 22) {
         timeDiv.innerHTML = `Nous sommes ${today} il est ${hour}h${minutes},`;
         statusDiv.innerHTML = `et nous sommes ouvert!`;
         timeDiv.className = 'open';
-        statusDiv.className = 'open'
-      }
-      else {
+        statusDiv.className = 'open';
+      } else {
         timeDiv.innerHTML = `Nous sommes ${today} il est ${hour}h${minutes},`;
-        statusDiv.innerHTML = `Nous sommes fermé!`;;
+        statusDiv.innerHTML = `Nous sommes fermé!`;
         timeDiv.className = 'closed';
-        statusDiv.className = 'closed'
+        statusDiv.className = 'closed';
       }
 
     };
 
-    let currentDay = weekday[now.getDay()];
-    let currentDayID = "#" + currentDay; //gets todays weekday and turns it into id
-   
-   
+    const currentDay = weekday[now.getDay()];
+    const currentDayID = '#' + currentDay; // gets todays weekday and turns it into id
+
+
     // $(currentDayID).toggleClass("today"); //hightlights today in the view hours modal popup {to be added once JSQUERY installed}
 
     setInterval(checkTime, 1000);
@@ -134,8 +132,4 @@ export class CommentCaMarcheComponent implements OnInit {
       swal('Adhésion newsletter', 'Vous recevrez un mail de confirmation', 'success');
     });
   }
-
-
 }
-
-
