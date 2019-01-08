@@ -24,6 +24,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RecaptchaModule  } from 'ng-recaptcha';
 import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
 import { PartenaireComponent } from './partenaire/partenaire.component';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { PartenaireComponent } from './partenaire/partenaire.component';
     CommentCaMarcheComponent,
     GalerieMachinesComponent,
     PartenaireComponent,
+    UserComponent,
 
   ],
   imports: [

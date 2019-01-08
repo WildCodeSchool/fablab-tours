@@ -12,6 +12,6 @@ export class ContactService {
     }
 
     sendNewsletter(body) {
-      return this.http.post('http://localhost:3000/subscribe', body);
-      }
+    return this.http.post('http://localhost:3000/subscribe', body);
+    }
 }
