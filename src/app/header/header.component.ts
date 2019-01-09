@@ -23,20 +23,11 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.sidebarDisplayed = false;
     
-    
     // Champs connection
     this.connectForm = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required],
     });
-    
-    
-  rechercheForm: FormGroup;
-
-  // tslint:disable-next-line:max-line-length
-
-
-    this.sidebarDisplayed = false;
 
   // Champs connection
   this.connectForm = this.fb.group({
