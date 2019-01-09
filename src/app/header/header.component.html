@@ -53,32 +53,40 @@
                             <a href="https://www.facebook.com/FablabTourangeau/" target="_blank" title="Lien externe: https://www.facebook.com/FablabTourangeau/"><i  class="fa fa-facebook-f mx-3"></i></a>
                             <a href="https://www.instagram.com/funlab_tours/" target="_blank" title="Lien externe: https://www.instagram.com/funlab_tours/"><i class="fa fa-instagram mx-3"></i></a>
                             <a href="https://twitter.com/lefunlab/" target="_blank" title="Lien externe: https://twitter.com/lefunlab/"><i class="fa fa-twitter mx-3"></i></a>
-                            <!-- debut dropdown connexion user -->
-                            <div class="btn-group drop" ngbDropdown [autoClose]="'outside'" id="headerdrop">
-                                <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" ngbDropdownToggle aria-haspopup="true" aria-expanded="false"><i class="fa fa-user mx-2"></i></button>
-                                <div x-placement="right-start" style="position: absolute; transform: translate3d(0px, -300px, 0px); top: 0px; left: 0px; will-change: transform;" class="dropdown-menu" aria-labelledby="dropdownMenuButton" ngbDropdownMenu>
+                            
+                            <!-- debut modal connexion user -->
+                            
+                            <a (click)="open(content)" (click)="showSidebar(false)"><i class="fa fa-user mx-2"></i></a>
+                            <ng-template #content let-modal>
+                                <div class="modal-header">
+                                    <h4 class="modal-title" id="modal-basic-title">Connection</h4>
+                                    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
                                     <div class="container-fluid">
-                                        <form  action="/api/login" method="post" (ngSubmit)='connectUser(connectForm.value)' [formGroup]="connectForm">
+                                        <form (ngSubmit)="connectUser(connectForm.value)" [formGroup]="connectForm">
                                             <div class="form-group">
                                                 <input type="text" class="form-control" name="username" formControlName='username' placeholder="username"/>
                                                 <div *ngIf="connectForm.controls['username'].invalid && (connectForm.controls['username'].dirty || connectForm.controls['username'].touched)" class="alert alert-danger">
-                                                  <div class="obl" *ngIf="connectForm.controls['username'].errors.required">Le username est obligatoire.</div>
-                                              </div>
+                                                    <div class="obl" *ngIf="connectForm.controls['username'].errors.required">Le username est obligatoire.</div>
+                                                </div>
                                             </div>
                                             <div class="form-group">
-                                              <input type="text" class="form-control" name="password" formControlName='password' placeholder="password"/>
-                                              <div *ngIf="connectForm.controls['password'].invalid && (connectForm.controls['password'].dirty || connectForm.controls['password'].touched)" class="alert alert-danger">
-                                                <div class="obl" *ngIf="connectForm.controls['password'].errors.required">Le mot de passe est obligatoire.</div>
-                                              </div>
+                                                <input type="text" class="form-control" name="password" formControlName='password' placeholder="password"/>
+                                                <div *ngIf="connectForm.controls['password'].invalid && (connectForm.controls['password'].dirty || connectForm.controls['password'].touched)" class="alert alert-danger">
+                                                    <div class="obl" *ngIf="connectForm.controls['password'].errors.required">Le mot de passe est obligatoire.</div>
+                                                </div>
                                             </div>
                                             <div class="form-group">
-                                                <button routerLink="/user" type='submit' [disabled]="connectForm.pristine ||connectForm.invalid" class='btn btn-secondary'>Se connecter</button>
+                                                <button routerLink="/user" type='submit' [disabled]="connectForm.pristine ||connectForm.invalid" class='btn btn-secondary' (click)="modal.close()">Se connecter</button>
                                             </div>
                                         </form>
                                     </div>
                                 </div>
-                            </div>
-                            <!-- fin dropdown connexion user -->
+                            </ng-template>
+                            <!-- fin modal connexion user -->
                         </ul>
                     </div>
                 </ul>

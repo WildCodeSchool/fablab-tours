@@ -33,11 +33,6 @@ li :hover{
   text-decoration: none;
 }
 
-a :hover{
-  color:#70CCCC;
-  text-decoration: none;
-}
-
 button{
   border-radius: 20%;
   border: none;
@@ -123,6 +118,20 @@ input{
 
 a{
   color: white;
+}
+
+a :hover{
+  color:#70CCCC;
+  text-decoration: none;
+}
+
+.fa{
+  color: white;
+}
+
+.fa :hover{
+  color:#70CCCC;
+  text-decoration: none;
 }
 
 li :hover, a :hover {

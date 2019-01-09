@@ -3,6 +3,7 @@ import { LoginService } from '../common/login/login.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { FlashMessagesModule, FlashMessagesService } from 'angular2-flash-messages';
 import swal from 'sweetalert2';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-header',
@@ -12,30 +13,55 @@ import swal from 'sweetalert2';
 export class HeaderComponent implements OnInit {
   sidebarDisplayed: boolean;
   connectForm: FormGroup;
-
-  constructor(private flashMessages: FlashMessagesService, private fb: FormBuilder, private loginService: LoginService) { }
-
+  closeResult: string;
+  
+  constructor(private modalService: NgbModal, private flashMessages: FlashMessagesService, private fb: FormBuilder, private loginService: LoginService) { }
+  
   ngOnInit() {
     this.sidebarDisplayed = false;
-
-
-  // Champs connection
-  this.connectForm = this.fb.group({
-    username: ['', Validators.required],
-    password: ['', Validators.required],
-  });
-
-
+    
+    
+    // Champs connection
+    this.connectForm = this.fb.group({
+      username: ['', Validators.required],
+      password: ['', Validators.required],
+    });
+    
+    
   }
   showSidebar(isShow: boolean) {
     this.sidebarDisplayed = isShow;
   }
-
-  connectUser(form) {
+  
+  connectUser() {
     // this.submitted = true;
-    this.loginService.sendUser(form).subscribe(() => {
+    this.loginService.sendUser(this.connectForm.value).subscribe(() => {
       swal('Connection', 'Vous ête bien connecter', 'success');
     });
   }
-
+  
+  // Open Modal //
+  
+  open(content) {
+    this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+      this.connectForm.reset()
+      this.connectUser();
+      
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+  
+  // Close modal by pressing esc or clicking on backdrop //
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
+  }
+  
 }

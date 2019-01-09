@@ -23,7 +23,7 @@ h1, h3, p, h2, h4, li, i, .btn {
 h1{
   margin-bottom: 5%;
   margin-top: 5%;
-  font-weight: 600;
+  font-weight: bold;
   font-size: 3rem;
 }
 
