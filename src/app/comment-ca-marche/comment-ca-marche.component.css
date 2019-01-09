@@ -73,63 +73,24 @@ h1 {
 
 /* Start === section Horaire  */
 
-.card-horaire {
+.horaire {
   text-align: center;
   letter-spacing: 1px;
-  background-color: rgba(0, 0, 0, 0.03);
-  cursor: pointer;
-  -webkit-transition: .1s all ease-in-out;
-  -moz-transition: .1s all ease-in-out;
-  -o-transition: .1s all ease-in-out;
-  transition: .1s all ease-in-out;
+  
 }
 
-.card-horaire:hover {
-  background-color: #70CCCC;
-}
-
-
-/* top sentence of section horaire */
-
-#timeDiv {
-  font-size: 16px;
-  text-align: center;
-}
-
-/* bottom sentence of section horaire */
-
-#statusDiv {
-  font-size: 16px;
-  text-align: center;
-}
-
-/* Color for open */
-
-.open {
-  color: #27ae60;
-}
-
-/* Color for closed  */
-
-.closed {
-  color: rgba(231, 76, 60, 0.85);
-}
-
-/* To split the days and hours in modal */
+/* To split the days and hours  */
 
 .day {
   float: left;
+  font-size: 12px;
+  font-family: Raleway;
 }
 
 .time {
-  float: right
-}
-
-/* Color to highlight day in modal */
-
-.today {
-  color: rgb(200, 85, 39);
+  float: right;
   font-weight: 600;
+  font-size: 13px;
   font-family: Raleway;
 }
 
