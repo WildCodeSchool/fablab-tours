@@ -13,4 +13,9 @@ p {
   line-height: 15px;
   /* Height / no. of lines to display */
   overflow: hidden;
+  font-family: Raleway;
+}
+
+strong, a, h3 {
+  font-family: Raleway;
 }
