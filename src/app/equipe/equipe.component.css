@@ -1,9 +1,6 @@
 /* .equipe{
     position: relative;
 }
-
-
-
 .equipe{
     padding: 30px 0 50px;
     background-color: white;
@@ -415,6 +412,9 @@ h1{
 .material-card.mc-active .mc-footer a {
     top: 0;
 }
+.material-card.mc-active .mc-footer a:hover {
+    color: #37474F;
+}
 .material-card.mc-active .mc-footer h4 {
     top: -32px;
 }
@@ -449,13 +449,10 @@ h1{
     background-color: #70CCCC;
 }
 .material-card.Red .mc-btn-action:hover {
-    background-color: #70CCCC;
+    background-color: #37474F;
 }
 .material-card.Red .mc-footer h4 {
     color: #70CCCC;
-}
-.material-card.Red .mc-footer a {
-    background-color: #70CCCC;
 }
 .material-card.Red.mc-active .mc-content {
     background-color: #c9efef;
