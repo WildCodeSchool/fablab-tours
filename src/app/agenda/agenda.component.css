@@ -37,3 +37,7 @@ h3 {
     margin-left: 2em;
   }
 }
+
+li {
+  font-weight: 600;
+}
