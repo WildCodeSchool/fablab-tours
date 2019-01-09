@@ -61,10 +61,6 @@ button{
 .transBtn {
   position: relative;
   z-index:3;
-  /*
-  transition: transform 0.5s ease-in-out;
-  transform: translateX(320px);
-  */
 }
 
 input{
@@ -72,11 +68,11 @@ input{
 }
 
 @media screen and (max-width: 800px){
-  
+
   img{
     margin-left: 33%;
   }
-  
+
   li{
     margin-top: 0%;
   }
@@ -84,6 +80,10 @@ input{
   ul .d-flex {
     margin-top: -0.75em;
   }
+  .reseaux{
+    margin-top: 5%;
+  }
+
 }
 
 .loupe{
@@ -142,4 +142,113 @@ li :hover, a :hover {
 h1{
   font-family: Raleway;
   text-transform: uppercase;
+}
+
+.btn {
+  
+}
+
+/*
+body {
+  margin: 0;
+  padding: 0;
+  background: #6ecbcc;
+}
+
+.search-box {
+  position: absolute;
+  top: 20%;
+  right: 5%;
+  background: #6ecbcc;
+  height: 40px;
+  border-radius: 40px;
+  padding: 10px;
+}
+
+.search-box:hover>.search-txt {
+  width: 240px;
+  padding: 0 6px;
+}
+
+.search-box:hover>.search-btn {
+  background : white;
+  color: #6ecbcc;
+}
+
+.search-btn {
+  color: white;
+  float: right;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #6ecbcc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
+}
+
+.search-txt {
+  border: none;
+  background: none;
+  outline: none;
+  float: left;
+  color: white;
+  font-size: 17px;
+  transition: 0.4s;
+  line-height: 40px;
+  width: 0px;
+} */
+
+
+/* 2eme model */
+
+.searchbar {
+  position: absolute;
+  top: 20%;
+  right: 5%;
+  margin-bottom: auto;
+  margin-top: auto;
+  height: 60px;
+  background-color: #70cccc;
+  border-radius: 30px;
+  padding: 10px;
+}
+
+.search_input {
+  color: white;
+  border: 0;
+  outline: 0;
+  background: none;
+  width: 0;
+  caret-color: transparent;
+  line-height: 40px;
+  transition: width 0.4s linear;
+}
+
+.searchbar:hover>.search_input {
+  padding: 0 10px;
+  width: 450px;
+  caret-color: black;
+  transition: width 0.4s linear;
+}
+
+.searchbar:hover>.search_icon {
+  background: white;
+  color: #70cccc;
+}
+
+.search_icon {
+  position: absolute;
+  top: 15%;
+  right: 5%;
+  height: 40px;
+  width: 40px;
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: white;
+  background: #70cccc;
 }

@@ -6,6 +6,7 @@ import { EquipeComponent } from './equipe/equipe.component';
 import { ContactComponent } from './contact/contact.component';
 import { GalerieMachinesComponent } from './galerie-machines/galerie-machines.component';
 import { UserComponent } from './user/user.component';
+import { SearchResultComponent } from './search-result/search-result.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'machine', component: GalerieMachinesComponent },
   { path: 'user', component: UserComponent },
+  { path: 'recherche', component: SearchResultComponent },
 ];
 @NgModule({
   imports: [

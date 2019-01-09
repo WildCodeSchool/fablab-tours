@@ -1,0 +1,16 @@
+.container
+{
+margin-top: 150px;
+}
+
+img{
+  max-width: 300px;
+}
+
+p {
+  width: 600px;
+  height: 60px;
+  line-height: 15px;
+  /* Height / no. of lines to display */
+  overflow: hidden;
+}

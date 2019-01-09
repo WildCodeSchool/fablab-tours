@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { elementClassProp } from '@angular/core/src/render3/instructions';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClient } from '@angular/common/http';
@@ -9,15 +9,17 @@ import swal from 'sweetalert2';
 import { ContactService } from '../common/contact.service';
 
 
+
 @Component({
   selector: 'app-comment-ca-marche',
   templateUrl: './comment-ca-marche.component.html',
   styleUrls: ['./comment-ca-marche.component.css']
 })
-export class CommentCaMarcheComponent implements OnInit {
+export class CommentCaMarcheComponent implements OnInit, OnDestroy {
   closeResult: string;
   evenements: any;
   newsForm: FormGroup;
+  interval: any;
 
   // tslint:disable-next-line:max-line-length
   constructor(private modalService: NgbModal, private service: HttpClient, private flashMessages: FlashMessagesService, private fb: FormBuilder, private contactService: ContactService) { }
@@ -28,9 +30,9 @@ export class CommentCaMarcheComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]]
     });
 
-    // Calls calendar API
 
-    this.service.get<any>('http://localhost:3000/api/calendar/events')
+    // Calls calendar API
+this.service.get<any>('http://localhost:3000/api/calendar/events')
       .pipe(
         map(res => {
           return res.map(event => {
@@ -45,7 +47,7 @@ export class CommentCaMarcheComponent implements OnInit {
       )
       .subscribe(res => {
         this.evenements = res;
-        console.log(this.evenements);
+
       });
 
 
@@ -96,9 +98,10 @@ export class CommentCaMarcheComponent implements OnInit {
     const currentDayID = '#' + currentDay; // gets todays weekday and turns it into id
 
 
+
     // $(currentDayID).toggleClass("today"); //hightlights today in the view hours modal popup {to be added once JSQUERY installed}
 
-    setInterval(checkTime, 1000);
+    this.interval = setInterval(checkTime, 1000);
     checkTime();
 
   }
@@ -124,8 +127,11 @@ export class CommentCaMarcheComponent implements OnInit {
     }
   }
 
-// fonction envoi email newsletter
+  ngOnDestroy() {
+    clearInterval(this.interval);
+  }
 
+// fonction envoi email newsletter
   contactForm(form) {
     // this.submitted = true;
     this.contactService.sendNewsletter(form).subscribe(() => {

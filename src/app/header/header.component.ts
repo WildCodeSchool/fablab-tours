@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../common/login/login.service';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { FlashMessagesModule, FlashMessagesService } from 'angular2-flash-messages';
 import swal from 'sweetalert2';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { SearchResultService } from '../common/search-result.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -14,8 +16,9 @@ export class HeaderComponent implements OnInit {
   sidebarDisplayed: boolean;
   connectForm: FormGroup;
   closeResult: string;
+  rechercheForm: FormGroup;
   
-  constructor(private modalService: NgbModal, private flashMessages: FlashMessagesService, private fb: FormBuilder, private loginService: LoginService) { }
+  constructor(private service: SearchResultService,private modalService: NgbModal, private flashMessages: FlashMessagesService, private fb: FormBuilder, private loginService: LoginService, private router: Router) { }
   
   ngOnInit() {
     this.sidebarDisplayed = false;
@@ -28,7 +31,26 @@ export class HeaderComponent implements OnInit {
     });
     
     
+  rechercheForm: FormGroup;
+
+  // tslint:disable-next-line:max-line-length
+
+
+    this.sidebarDisplayed = false;
+
+  // Champs connection
+  this.connectForm = this.fb.group({
+    username: ['', Validators.required],
+    password: ['', Validators.required],
+  });
+
+
+// champs de recherche
+    this.rechercheForm = this.fb.group({
+      input: ['', Validators.required],
+    });
   }
+
   showSidebar(isShow: boolean) {
     this.sidebarDisplayed = isShow;
   }
@@ -45,11 +67,12 @@ export class HeaderComponent implements OnInit {
   open(content) {
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
-      this.connectForm.reset()
+      this.connectForm.reset();
       this.connectUser();
       
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+      this.connectForm.reset();
     });
   }
   
@@ -64,4 +87,11 @@ export class HeaderComponent implements OnInit {
     }
   }
   
+
+  onSubmit() {
+    this.service.getSearch(this.rechercheForm.value.input);
+    this.router.navigate(['/recherche']);
+
+  }
+
 }

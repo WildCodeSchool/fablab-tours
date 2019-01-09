@@ -25,6 +25,7 @@ import { RecaptchaModule  } from 'ng-recaptcha';
 import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
 import { PartenaireComponent } from './partenaire/partenaire.component';
 import { UserComponent } from './user/user.component';
+import { SearchResultComponent } from './search-result/search-result.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { UserComponent } from './user/user.component';
     GalerieMachinesComponent,
     PartenaireComponent,
     UserComponent,
+    SearchResultComponent,
 
   ],
   imports: [
