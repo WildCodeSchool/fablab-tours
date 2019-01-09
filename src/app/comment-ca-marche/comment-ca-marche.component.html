@@ -79,60 +79,35 @@
       <!--Side section === START -->
       <aside class="col-md-4">
         <!-- Horaires Section === START -->
-        <div class="card mb-3">
-          <h3 class="card-horaire mb-3" (click)="open(content)">Horaires<i class="fa fa-clock-o"></i></h3>
-          <ng-template #content let-modal>
-            <div class="modal-header">
-              <h4 class="modal-title" id="modal-basic-title">Horaires d'ouverture</h4>
-              <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <div id="lundi" class="dateTime">
-                <div class="day">Lundi</div>
-                <div class="time">Fermé</div>
-              </div>
-              <br>
-              <div id="mardi" class="dateTime">
+        <h3 class="horaire">Les Horaires</h3>
+        <div class="list-group mb-3">
+          <div class="list-group-item">
+            <div class="event-detail text-center">
+              <div>
                 <div class="day">Mardi</div>
                 <div class="time">14h - 18h</div>
               </div>
               <br>
-              <div id="mercredi" class="dateTime">
+              <hr>
+              <div>
                 <div class="day">Mercredi</div>
                 <div class="time">14h - 18h</div>
               </div>
               <br>
-              <div id="jeudi" class="dateTime">
+              <hr>
+              <div>
                 <div class="day">Jeudi</div>
                 <div class="time">16h - 22h</div>
               </div>
               <br>
-              <div id="vendredi" class="dateTime">
+              <hr>
+              <div>
                 <div class="day">Vendredi</div>
                 <div class="time">14h - 18h</div>
-              </div>
-              <br>
-              <div id="samedi" class="dateTime">
-                <div class="day">Samedi</div>
-                <div class="time">Fermé</div>
-              </div>
-              <br>
-              <div id="dimanche" class="dateTime">
-                <div class="day">Dimanche</div>
-                <div class="time">Fermé</div>
+                <br>
               </div>
             </div>
-          </ng-template>
-          <form class="form-horizontal">
-            <div class="form-group">
-              <div class="col-sm-12">
-                <div id="timeDiv"></div>
-                <div id="statusDiv"></div>
-              </div>
-            </div>
-          </form>
+          </div>
         </div>
         <!-- Horaires Section === END -->
 
@@ -149,8 +124,8 @@
               <hr>
             </div>
             <div class="agenda-more">
-            <a routerLink="/agenda">Voir agenda complet&hellip;</a>
-          </div>
+              <a routerLink="/agenda">Voir agenda complet&hellip;</a>
+            </div>
           </div>
         </div>
         <!-- Agenda Section === END -->
@@ -165,7 +140,8 @@
                 <div class="input-group">
                   <input type="email" class="form-control" placeholder="Saisissez votre email" formControlName='email'>
                   <span class="input-group-btn">
-                    <button type="submit" [disabled]="newsForm.pristine ||newsForm.invalid" class="btn btn-primary"><i class="fa fa-paper-plane"></i></button>
+                    <button type="submit" [disabled]="newsForm.pristine ||newsForm.invalid" class="btn btn-primary"><i
+                        class="fa fa-paper-plane"></i></button>
                   </span>
                 </div>
                 <div *ngIf="newsForm.controls['email'].invalid && (newsForm.controls['email'].dirty || newsForm.controls['email'].touched)"
