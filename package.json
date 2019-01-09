@@ -34,6 +34,7 @@
     "ng-fullcalendar": "^1.7.1",
     "ng-recaptcha": "^4.2.1",
     "ngx-openlayers": "^0.8.22",
+    "ngx-pagination": "^3.2.1",
     "rxjs": "~6.2.0",
     "sweetalert2": "^7.32.4",
     "zone.js": "~0.8.26"

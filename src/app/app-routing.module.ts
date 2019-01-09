@@ -5,8 +5,11 @@ import { AgendaComponent } from './agenda/agenda.component';
 import { EquipeComponent } from './equipe/equipe.component';
 import { ContactComponent } from './contact/contact.component';
 import { GalerieMachinesComponent } from './galerie-machines/galerie-machines.component';
-import { UserComponent } from './user/user.component';
 import { SearchResultComponent } from './search-result/search-result.component';
+import { AccueilUserComponent } from './accueil-user/accueil-user.component';
+import { CreationEquipeMachineComponent } from './creation-equipe-machine/creation-equipe-machine.component';
+import { ModifSupEquipeComponent } from './modif-sup-equipe/modif-sup-equipe.component';
+import { ModifSupMachineComponent } from './modif-sup-machine/modif-sup-machine.component';
 
 
 const routes: Routes = [
@@ -15,8 +18,11 @@ const routes: Routes = [
   { path: 'equipe', component: EquipeComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'machine', component: GalerieMachinesComponent },
-  { path: 'user', component: UserComponent },
+  { path: 'creation', component: CreationEquipeMachineComponent },
+  { path: 'modifsupequipe', component: ModifSupEquipeComponent },
+  { path: 'modifsupemachine', component: ModifSupMachineComponent },
   { path: 'recherche', component: SearchResultComponent },
+  { path: 'admin', component: AccueilUserComponent },
 ];
 @NgModule({
   imports: [

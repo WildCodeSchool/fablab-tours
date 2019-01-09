@@ -25,7 +25,6 @@
   <form [formGroup]="rechercheForm" (ngSubmit)="onSubmit()">
     <div class="searchbar">
       <input class="form-control search_input" type="text" formControlName="input" placeholder="Rechercher...">
-      <!-- <a class="search_icon" routerLink="/recherche"><i class="fa fa-search"></i></a> -->
       <button class="search_icon" type="submit" [disabled]="rechercheForm.invalid"><i class="fa fa-search"></i></button>
     </div>
   </form>
@@ -83,7 +82,7 @@
                                               </div>
                                             </div>
                                             <div class="form-group">
-                                                <button routerLink="/user" type='submit' [disabled]="connectForm.pristine ||connectForm.invalid" class='btn btn-secondary'>Se connecter</button>
+                                                <button routerLink="/admin" type='submit' [disabled]="connectForm.pristine ||connectForm.invalid" class='btn btn-secondary'>Se connecter</button>
                                             </div>
                                         </form>
                                     </div>

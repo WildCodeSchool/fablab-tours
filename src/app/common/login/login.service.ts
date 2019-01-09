@@ -13,7 +13,7 @@ export class LoginService {
     return this.http.post('http://localhost:3000/api/login', body);
     }
 
-  // cretion machine
+  // creation machine
   sendMachine(body) {
     return this.http.post('http://localhost:3000/api/ajouterMachine', body);
     }
@@ -22,4 +22,7 @@ export class LoginService {
     sendMember(body) {
     return this.http.post('http://localhost:3000/api/ajouterMembre', body);
     }
+
+  // modification membre
+
 }

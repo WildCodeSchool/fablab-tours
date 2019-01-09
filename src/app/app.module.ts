@@ -24,8 +24,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RecaptchaModule  } from 'ng-recaptcha';
 import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
 import { PartenaireComponent } from './partenaire/partenaire.component';
-import { UserComponent } from './user/user.component';
 import { SearchResultComponent } from './search-result/search-result.component';
+import { AccueilUserComponent } from './accueil-user/accueil-user.component';
+import { CreationEquipeMachineComponent } from './creation-equipe-machine/creation-equipe-machine.component';
+import { ModifSupEquipeComponent } from './modif-sup-equipe/modif-sup-equipe.component';
+import { ModifSupMachineComponent } from './modif-sup-machine/modif-sup-machine.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -42,8 +46,11 @@ import { SearchResultComponent } from './search-result/search-result.component';
     CommentCaMarcheComponent,
     GalerieMachinesComponent,
     PartenaireComponent,
-    UserComponent,
     SearchResultComponent,
+    AccueilUserComponent,
+    CreationEquipeMachineComponent,
+    ModifSupEquipeComponent,
+    ModifSupMachineComponent
 
   ],
   imports: [
@@ -58,7 +65,9 @@ import { SearchResultComponent } from './search-result/search-result.component';
     FullCalendarModule,
     ReactiveFormsModule,
     RecaptchaModule,
-    RecaptchaFormsModule
+    RecaptchaFormsModule,
+    NgxPaginationModule,
+    ReactiveFormsModule.withConfig({ warnOnNgModelWithFormControl: 'never' })
   ],
 
   providers: [],

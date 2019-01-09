@@ -5,11 +5,11 @@ import { FlashMessagesModule, FlashMessagesService } from 'angular2-flash-messag
 import swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-user',
-  templateUrl: './user.component.html',
-  styleUrls: ['./user.component.css']
+  selector: 'app-creation-equipe-machine',
+  templateUrl: './creation-equipe-machine.component.html',
+  styleUrls: ['./creation-equipe-machine.component.css']
 })
-export class UserComponent implements OnInit {
+export class CreationEquipeMachineComponent implements OnInit {
 
   machineForm: FormGroup;
   membreForm: FormGroup;
@@ -18,14 +18,14 @@ export class UserComponent implements OnInit {
 
   ngOnInit() {
 
-// Champs machine
+    // Champs machine
     this.machineForm = this.fb.group({
       nom_machine: ['', Validators.required],
       photo: ['', Validators.required],
       description: ['', Validators.required]
     });
 
-// Champs membre equipe
+    // Champs membre equipe
     this.membreForm = this.fb.group({
       prenom: ['', Validators.required],
       nom: ['', Validators.required],
@@ -35,7 +35,7 @@ export class UserComponent implements OnInit {
     });
 
   }
-// creation machine
+  // creation machine
   createMachine(form) {
     // this.submitted = true;
     this.loginService.sendMachine(form).subscribe(() => {
