@@ -41,3 +41,7 @@ h3 {
 li {
   font-weight: 600;
 }
+
+li, span, h2 {
+  text-transform: capitalize;
+}
