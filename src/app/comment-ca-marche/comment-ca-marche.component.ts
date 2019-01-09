@@ -21,6 +21,8 @@ export class CommentCaMarcheComponent implements OnInit, OnDestroy {
   newsForm: FormGroup;
   interval: any;
 
+  
+
   // tslint:disable-next-line:max-line-length
   constructor(private modalService: NgbModal, private service: HttpClient, private flashMessages: FlashMessagesService, private fb: FormBuilder, private contactService: ContactService) { }
 
@@ -30,7 +32,7 @@ export class CommentCaMarcheComponent implements OnInit, OnDestroy {
       email: ['', [Validators.required, Validators.email]]
     });
 
-
+        
     // Calls calendar API
 this.service.get<any>('http://localhost:3000/api/calendar/events')
       .pipe(
@@ -38,7 +40,7 @@ this.service.get<any>('http://localhost:3000/api/calendar/events')
           return res.map(event => {
             return {
               title: event.summary,
-              date: event.start.date ? event.start.date : event.start.dateTime.slice(0, 10),
+              date: event.start.date ? event.start.date : event.start.dateTime,
               start: event.start.date ? 'indéfini' : event.start.dateTime.slice(11, 16),
               end: event.end.date ? 'indéfini' : event.end.dateTime.slice(11, 16),
             };
@@ -47,8 +49,7 @@ this.service.get<any>('http://localhost:3000/api/calendar/events')
       )
       .subscribe(res => {
         this.evenements = res;
-
-      });
+    });
 
 
     // To check opening Hours
