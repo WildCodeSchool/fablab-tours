@@ -218,49 +218,52 @@ body {
 
 .searchbar {
   position: absolute;
-  top: 20%;
-  right: 5%;
+  top: 0.7em;
+  right: 2em;
   margin-bottom: auto;
   margin-top: auto;
-  height: 60px;
-  background-color: #70cccc;
-  border-radius: 30px;
+  height: 40px;
+  background: #666666;
+  opacity: 0.98;
+  border-radius: 50px;
   padding: 10px;
+  transition: width 0.3s linear;
 }
 
 .search_input {
-  color: white;
   border: 0;
   outline: 0;
   background: none;
   width: 0;
+  height: 3em;
   caret-color: transparent;
   line-height: 40px;
-  transition: width 0.4s linear;
+  border-radius: 50px;
 }
 
 .searchbar:hover>.search_input {
   padding: 0 10px;
   width: 450px;
   caret-color: black;
-  transition: width 0.4s linear;
+  transition: width 0.3s linear;
+  background-color: #70CCCC;
 }
 
 .searchbar:hover>.search_icon {
-  color: #70cccc;
+ background-color: transparent;
 }
 
 .search_icon {
   position: absolute;
-  top: 15%;
-  right: 5%;
-  height: 40px;
-  width: 40px;
+  top: 0.2em;
+  right: 0.4em;
+  height: 50px;
   float: right;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50%;
   color: white;
-  background: #70cccc;
+  background: #666666;
+  opacity: 0.98;
+  font-size: 2rem;
 }
