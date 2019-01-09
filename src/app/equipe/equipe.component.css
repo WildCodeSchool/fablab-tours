@@ -126,11 +126,14 @@ h4 {
     max-width: 15ch;
 } */
 
-h1{
+h1 {
     margin-top: 3em;
-    font-size: 50px;
+    font-size: 3.125rem;
+    font-weight: 600;
+    color: #696969;
+    font-weight: bold;
     font-family: Raleway;
-}
+  }
 
 .container{
     margin-top: 10em;
