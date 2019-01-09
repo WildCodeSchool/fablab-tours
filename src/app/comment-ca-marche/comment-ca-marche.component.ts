@@ -21,7 +21,7 @@ export class CommentCaMarcheComponent implements OnInit, OnDestroy {
   newsForm: FormGroup;
   interval: any;
 
-  
+
 
   // tslint:disable-next-line:max-line-length
   constructor(private modalService: NgbModal, private service: HttpClient, private flashMessages: FlashMessagesService, private fb: FormBuilder, private contactService: ContactService) { }
@@ -32,7 +32,7 @@ export class CommentCaMarcheComponent implements OnInit, OnDestroy {
       email: ['', [Validators.required, Validators.email]]
     });
 
-        
+
     // Calls calendar API
 this.service.get<any>('http://localhost:3000/api/calendar/events')
       .pipe(
