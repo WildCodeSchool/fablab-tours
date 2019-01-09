@@ -62,7 +62,7 @@
       
       <div class="sec2contactform">
         <h5 class="sec2frmtitle">Laissez nous un message</h5>
-        <form [formGroup]="touchForm" (ngSubmit)='contactForm(touchForm.value)'>
+        <form [formGroup]="touchForm" (ngSubmit)='contactForm(touchForm.value); touchForm.reset()'>
           <div class='form-group'>
             <input type='text' class="form-control" formControlName='nom' placeholder="Votre nom">
             <div *ngIf="touchForm.controls['nom'].invalid && (touchForm.controls['nom'].dirty || touchForm.controls['nom'].touched)"
