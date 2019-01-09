@@ -145,7 +145,16 @@ h1{
 }
 
 .btn {
-  
+  border-radius: 2em;
+  margin-left: 10em;
+}
+
+h4 {
+  margin-left: 7.25em;
+}
+
+.connect {
+  margin-left: 7.25em;
 }
 
 /*
