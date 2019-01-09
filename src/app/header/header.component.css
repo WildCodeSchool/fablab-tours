@@ -34,7 +34,7 @@ li :hover{
 }
 
 a :hover{
-  color:black;
+  color:#70CCCC;
   text-decoration: none;
 }
 
@@ -83,13 +83,12 @@ input{
   }
   
   li{
-    margin-top: 5%;
+    margin-top: 0%;
   }
-  
-  .reseaux{
-    margin-top: 5%;
+
+  ul .d-flex {
+    margin-top: -0.75em;
   }
-  
 }
 
 .loupe{
@@ -127,7 +126,7 @@ a{
 }
 
 li :hover, a :hover {
-  color:black;
+  color:#70CCCC;
   text-decoration: none;
 }
 

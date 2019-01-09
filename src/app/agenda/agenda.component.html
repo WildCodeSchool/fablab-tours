@@ -9,9 +9,9 @@
         <div class="col-10">
             <h3 class="text-uppercase"><strong>{{event.title}}</strong></h3>
             <ul class="list-inline">
-                <li class="list-inline-item"><i class="fa fa-calendar-o mx-2" aria-hidden="true"></i> {{event.jour | date:'EEEE'}} </li>
-                <li class="list-inline-item"><i class="fa fa-clock-o mx-2" aria-hidden="true"></i> {{event.hDepart}} - {{event.hFin}}</li>
-                <li class="list-inline-item"><i class="fa fa-location-arrow mx-2" aria-hidden="true"></i>{{event.location}}</li>
+                <li class="list-inline-item"><img src="assets/images/image-header/calendar.svg" class="mx-2" width="25"> {{event.jour | date:'EEEE'}} </li>
+                <li class="list-inline-item"><img src="assets/images/image-header/clock.svg" class="mx-2" width="22"> {{event.hDepart}} - {{event.hFin}}</li>
+                <li class="list-inline-item"><img src="assets/images/image-header/location.svg" class="mx-2" width="22">{{event.location}}</li>
             </ul>
             <p>{{event.description}}</p>
         </div>
@@ -36,10 +36,10 @@
             </div>
     <!-- Modal body -->
             <div class="modal-body">
-                <p><span><i class="fa fa-clock-o mx-2"></i> {{dateStart | date: 'EEEE d MMMM y'}} </span></p>
+                <p><span><img src="assets/images/image-header/clock.svg" class="mx-2" width="22"> {{dateStart | date: 'EEEE d MMMM y'}} </span></p>
                 <p> {{heureDepart}} à {{heureFin}} </p>
-                <p><span><i class="fa fa-location-arrow mx-2"></i></span> {{ lieu }} </p>
-                <p><span><i class="fa fa-align-left mx-2"></i></span> {{ description }} </p>
+                <p><span><img src="assets/images/image-header/location.svg" class="mx-2" width="22"></span> {{ lieu }} </p>
+                <p><span><img src="assets/images/image-header/align.svg" class="mx-2" width="22"></span> {{ description }} </p>
             </div>
     <!-- Modal footer -->
             <div class="modal-footer">

@@ -159,7 +159,7 @@
 
         <div class="card mb-3">
           <h3 class="card-header mb-3 text-center">Souscrire à notre newsletter</h3>
-          <form action="/subscribe" method="post" class="form-horizontal" [formGroup]="newsForm" (ngSubmit)='contactForm(newsForm.value)'>
+          <form action="/subscribe" method="post" class="form-horizontal" [formGroup]="newsForm" (ngSubmit)='contactForm(newsForm.value); newsForm.reset()'>
             <div class="form-group">
               <div class="col-sm-12">
                 <div class="input-group">
