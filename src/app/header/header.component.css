@@ -19,8 +19,8 @@ img{
 }
 
 li{
-  margin-top: 10%;
-  margin-left: 50%;
+  margin-top: 0.2em;
+  margin-left: 1em;;
   color: #fff;
   cursor: pointer;
   font-family: Raleway;
@@ -67,22 +67,22 @@ input{
 }
 
 @media screen and (max-width: 800px){
-
+  
   img{
     margin-left: 33%;
   }
-
+  
   li{
     margin-top: 0%;
   }
-
+  
   ul .d-flex {
     margin-top: -0.75em;
   }
   .reseaux{
     margin-top: 5%;
   }
-
+  
 }
 
 .loupe{
@@ -99,8 +99,8 @@ input{
 
 .reseaux{
   font-size: 0.3em;
-  margin-top: 15%;
-  margin-left: 10%
+  margin-top: 0.7em;
+  margin-left: 0.4em;
 }
 
 .closeside{
@@ -147,7 +147,7 @@ h1{
   border-radius: 2em;
   margin-left: 10em;
   font-family: Raleway;
-
+  
 }
 
 h4 {
