@@ -161,6 +161,20 @@ h4 {
   font-family: Raleway;
 }
 
+@media screen and (max-width: 500px) {
+  .connect {
+    margin-left: 3em;
+  }
+
+  .btn {
+    margin-left: 5em;
+  }
+
+  h4 {
+    margin-left: 3em;
+  }
+}
+
 /*
 body {
   margin: 0;

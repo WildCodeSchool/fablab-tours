@@ -22,8 +22,8 @@ export class EquipeComponent implements OnInit {
 
     $(function() {
       $('.material-card > .mc-btn-action').click(function () {
-          var card = $(this).parent('.material-card');
-          var icon = $(this).children('i');
+          const card = $(this).parent('.material-card');
+          const icon = $(this).children('i');
           icon.addClass('fa-spin-fast');
 
           if (card.hasClass('mc-active')) {
@@ -35,7 +35,7 @@ export class EquipeComponent implements OnInit {
                       .removeClass('fa-spin-fast')
                       .addClass('fa-bars');
 
-              }, 800);
+              }, 500);
           } else {
               card.addClass('mc-active');
 
@@ -45,7 +45,7 @@ export class EquipeComponent implements OnInit {
                       .removeClass('fa-spin-fast')
                       .addClass('fa-arrow-left');
 
-              }, 800);
+              }, 500);
           }
       });
   });
