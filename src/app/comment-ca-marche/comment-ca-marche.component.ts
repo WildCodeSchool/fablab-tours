@@ -45,7 +45,6 @@ export class CommentCaMarcheComponent implements OnInit {
       )
       .subscribe(res => {
         this.evenements = res;
-        console.log(this.evenements);
       });
 
 
