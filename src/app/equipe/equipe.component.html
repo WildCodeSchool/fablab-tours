@@ -1,27 +1,63 @@
-
+<!-- 
   <div class="container">
     <div class="row">
       <div class="col-md-12 text-center">
-        <h1 class="text-dark">Notre équipe</h1>
+        
       </div>
     </div>
     <div class="card-group">
-    <div class="col-xl-3 col-md-4 col-sm-6 mt-4" *ngFor= "let equipe of equipes">
-      <div class="row">
-        <div class="equipe">
-          <div class="pic">
-            <img src="{{equipe.image}}">
+      <div class="col-xl-3 col-md-4 col-sm-6 mt-4" *ngFor= "let equipe of equipes">
+        <div class="row">
+          <div class="equipe">
+            <div class="pic">
+              <img src="{{equipe.image}}">
+            </div>
+            <div class="team-content">
+              <h3>{{equipe.prenom}}</h3>
+              <h4>{{equipe.nom}}</h4>
+              <span>{{equipe.poste}}</span>
+            </div>
+            <ul class="social">
+              <li><a href="{{equipe.linkedin}}" target="_blank" class="fa fa-linkedin m-3"></a></li>
+            </ul>
           </div>
-          <div class="team-content">
-            <h3>{{equipe.prenom}}</h3>
-            <h4>{{equipe.nom}}</h4>
-            <span>{{equipe.poste}}</span>
-          </div>
-          <ul class="social">
-            <li><a href="{{equipe.linkedin}}" target="_blank" class="fa fa-linkedin m-3"></a></li>
-          </ul>
         </div>
       </div>
     </div>
-  </div>
-  </div>
+  </div> -->
+  
+  <h1 class="text-dark text-center">Notre équipe</h1>
+  
+  <section class="container">
+    <div class="row active-with-click">
+      <div class="col-md-4 col-sm-6 col-xs-12" *ngFor= "let equipe of equipes">
+        <article class="material-card Red">
+          <h2>
+            <span>{{equipe.nom}}{{equipe.prenom}}</span>
+            <strong>
+              <i class="fa fa-fw fa-star"></i>
+              {{equipe.poste}}
+            </strong>
+          </h2>
+          <div class="mc-content">
+            <div class="img-container">
+              <img class="img-responsive" src="{{equipe.image}}">
+            </div>
+            <div class="mc-description">
+              {{equipe.poste}}
+            </div>
+          </div>
+          <a class="mc-btn-action">
+            <i class="fa fa-bars"></i>
+          </a>
+          <div class="mc-footer">
+            <a class="fa fa-fw fa-facebook"></a>
+            <a class="fa fa-fw fa-twitter"></a>
+            <a class="fa fa-fw fa-linkedin" href="{{equipe.linkedin}}"></a>
+          </div>
+        </article>
+      </div>
+      
+    </div>
+  </section>
+  
