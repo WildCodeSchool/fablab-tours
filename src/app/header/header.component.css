@@ -19,7 +19,6 @@ img{
 }
 
 li{
-  font-family: Raleway;
   margin-top: 10%;
   margin-left: 50%;
   color: #fff;
@@ -147,14 +146,19 @@ h1{
 .btn {
   border-radius: 2em;
   margin-left: 10em;
+  font-family: Raleway;
+
 }
 
 h4 {
   margin-left: 7.25em;
+  font-family: Raleway;
+  font-weight: bold;
 }
 
 .connect {
   margin-left: 7.25em;
+  font-family: Raleway;
 }
 
 /*
