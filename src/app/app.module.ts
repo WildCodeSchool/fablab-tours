@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { AngularOpenlayersModule } from 'ngx-openlayers';
@@ -26,6 +26,12 @@ import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
 import { PartenaireComponent } from './partenaire/partenaire.component';
 import { UserComponent } from './user/user.component';
 import { SearchResultComponent } from './search-result/search-result.component';
+
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+
+// the second parameter 'fr' is optional
+registerLocaleData(localeFr, 'fr');
 
 @NgModule({
   declarations: [
@@ -61,7 +67,7 @@ import { SearchResultComponent } from './search-result/search-result.component';
     RecaptchaFormsModule
   ],
 
-  providers: [],
+  providers: [{provide: LOCALE_ID, useValue: "fr-CA" }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
