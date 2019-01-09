@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../common/login/login.service';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { FlashMessagesModule, FlashMessagesService } from 'angular2-flash-messages';
 import swal from 'sweetalert2';
+import { SearchResultService } from '../common/search-result.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -12,12 +14,13 @@ import swal from 'sweetalert2';
 export class HeaderComponent implements OnInit {
   sidebarDisplayed: boolean;
   connectForm: FormGroup;
+  rechercheForm: FormGroup;
 
-  constructor(private flashMessages: FlashMessagesService, private fb: FormBuilder, private loginService: LoginService) { }
+  // tslint:disable-next-line:max-line-length
+  constructor(private service: SearchResultService, private flashMessages: FlashMessagesService, private fb: FormBuilder, private loginService: LoginService, private router: Router) { }
 
   ngOnInit() {
     this.sidebarDisplayed = false;
-
 
   // Champs connection
   this.connectForm = this.fb.group({
@@ -26,7 +29,12 @@ export class HeaderComponent implements OnInit {
   });
 
 
+// champs de recherche
+    this.rechercheForm = this.fb.group({
+      input: ['', Validators.required],
+    });
   }
+
   showSidebar(isShow: boolean) {
     this.sidebarDisplayed = isShow;
   }
@@ -38,4 +46,9 @@ export class HeaderComponent implements OnInit {
     });
   }
 
+  onSubmit() {
+    this.service.getSearch(this.rechercheForm.value.input);
+    this.router.navigate(['/recherche']);
+
+  }
 }
