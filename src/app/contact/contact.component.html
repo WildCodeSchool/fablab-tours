@@ -5,49 +5,36 @@
     <section class="section2 clearfix">
       
       <div class="col2 column1 first">
-        <aol-map>
-          <aol-control-zoom></aol-control-zoom>
-          <aol-control-fullscreen></aol-control-fullscreen>
-          <aol-interaction-default></aol-interaction-default>
-          <aol-view [zoom]="14">
-            <aol-coordinate [x]=" 0.66842" [y]="47.39301" [srid]="'EPSG:4326'"></aol-coordinate>
-          </aol-view>
-          <aol-layer-tile [opacity]="1">
-            <aol-source-osm></aol-source-osm>
-          </aol-layer-tile>
-          <aol-layer-vector>
-            <aol-source-cluster [distance]="60">
-              <aol-source-vector>
-                <aol-feature>
-                  <aol-overlay>
-                    <!--Coordonnées FanLab-->
-                    <aol-coordinate [x]="0.6691059" [y]="47.3931929" [srid]="'EPSG:4326'"></aol-coordinate>
-                    <aol-content>
-                      <span class="logo_FanLab">
-                        <img src="assets/localisationimages/MapMarker.png">
-                      </span>
-                    </aol-content>
-                  </aol-overlay>
-                </aol-feature>
-              </aol-source-vector>
-            </aol-source-cluster>
-          </aol-layer-vector>
-          <aol-layer-vector>
-            <aol-source-vector>
-              <aol-feature>
-                <aol-geometry-polygon>
-                  <aol-collection-coordinates [coordinates]="[[1.47, 43.545],[1.51, 43.545],[1.51, 43.565], [1.47, 43.565]]"
-                  [srid]="'EPSG:4326'">
-                </aol-collection-coordinates>
-              </aol-geometry-polygon>
-              <aol-style>
-                <aol-style-stroke [color]="'red'" [width]="2"></aol-style-stroke>
-                <aol-style-fill [color]="[255,0,0,0.1]"></aol-style-fill>
-              </aol-style>
-            </aol-feature>
-          </aol-source-vector>
-        </aol-layer-vector>
-      </aol-map>
+          <aol-map>
+              <aol-control-zoom></aol-control-zoom>
+              <aol-control-fullscreen></aol-control-fullscreen>
+              <aol-interaction-default></aol-interaction-default>
+              <aol-view [zoom]="zoom">
+                <aol-coordinate [x]="x" [y]="y" [srid]="'EPSG:4326'"></aol-coordinate>
+              </aol-view>
+              <aol-layer-tile [opacity]="1">
+                <aol-source-osm></aol-source-osm>
+              </aol-layer-tile>
+              <aol-layer-vector>
+                <aol-source-cluster [distance]="distance">
+                  <aol-source-vector>
+                    <aol-feature>
+                      <aol-overlay>
+                        <!--ircage de la page la carte pointe sur les Coordonnées FanLab-->
+                        <aol-coordinate [x]="0.6691059" [y]="47.3931929" [srid]="'EPSG:4326'"></aol-coordinate>
+                        <aol-content>
+                          <span class="logo_FanLab">
+                            <img  src="assets/localisationimages/MapMarker.png">
+                          </span>
+                        </aol-content>
+                      </aol-overlay>
+                    </aol-feature>
+                  </aol-source-vector>
+                </aol-source-cluster>
+              </aol-layer-vector>
+              <aol-layer-vector>
+            </aol-layer-vector>
+          </aol-map>
     </div>
     
     
