@@ -18,7 +18,7 @@
             <span>{{equipe.poste}}</span>
           </div>
           <ul class="social">
-            <li>{{equipe.email}}</li>
+            <a href="mailto:{{equipe.email}}"><li>{{equipe.email}}</li></a>
             <li><a *ngIf="equipe.linkedin" href="{{equipe.linkedin}}" target="_blank" class="fa fa-linkedin m-3"></a></li>
           </ul>
         </div>

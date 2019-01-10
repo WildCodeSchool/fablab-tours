@@ -208,6 +208,10 @@ h1 {
 width: 50%;
 }
 
-p, h5, .form-control, .obl{
+a{
+  color: black;
+}
+
+p, a, h5, .form-control, .obl{
   font-family: Raleway;
 }
