@@ -38,6 +38,15 @@ h3 {
   font-size: 1.5rem;
 }
 
+.btn {
+  background-color: #70CCCC;
+  border: transparent;
+}
+
+.btn:hover {
+  background-color: #333333;
+}
+
 @media screen and (max-width: 600px) {
   h3 {
     font-size: 1.375rem;

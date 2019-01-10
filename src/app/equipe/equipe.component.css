@@ -7,7 +7,11 @@ h1 {
     font-weight: bold;
     font-family: Raleway;
   }
-  
+
+  li {
+      color: white;
+  }
+
 .equipe{
     padding: 30px 0 50px;
     background-color: white;
@@ -100,10 +104,12 @@ h1 {
 
 .equipe:hover .social{
     bottom: 0;
+    min-height: 3em;
 }
 .equipe .social li{
     display: inline-block;
 }
+
 .equipe .social li a{
     display: block;
     font-size: 23px;
@@ -111,7 +117,7 @@ h1 {
     
 }
 .equipe .social li a:hover{
-    color:black;
+    color:#70CCCC;
     text-decoration: none;
 }
 
@@ -127,6 +133,7 @@ span{
 
 h4 {
     max-width: 15ch;
+    text-transform: uppercase;
 } 
 
 .container{

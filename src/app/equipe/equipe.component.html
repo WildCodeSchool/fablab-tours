@@ -1,4 +1,4 @@
-<h1 class="text-center">Notre équipe</h1>
+<h1 class="text-center">équipe</h1>
 <div class="container">
   <div class="row">
     <div class="col-md-12 text-center">
@@ -18,7 +18,8 @@
             <span>{{equipe.poste}}</span>
           </div>
           <ul class="social">
-            <li><a href="{{equipe.linkedin}}" target="_blank" class="fa fa-linkedin m-3"></a></li>
+            <li>{{equipe.email}}</li>
+            <li><a *ngIf="equipe.linkedin" href="{{equipe.linkedin}}" target="_blank" class="fa fa-linkedin m-3"></a></li>
           </ul>
         </div>
       </div>

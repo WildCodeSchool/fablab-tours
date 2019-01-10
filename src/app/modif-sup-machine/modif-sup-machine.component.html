@@ -1,58 +1,58 @@
+<h1 class="text-center">Gestion machines</h1>
 <div class="container">
-<h1>Gestion machines</h1>
-<div class="text-center">
-<pagination-controls (pageChange)="p = $event" nextLabel="Suivant" previousLabel="Précédent"></pagination-controls>
-</div>
-<div class="row">
-<div class="col-md-4" *ngFor="let machine of machines | paginate :{ itemsPerPage: 6, currentPage: p }">
-    <div class="card mb-4">
-      <img class="card-img-top" src="{{machine.photo}}" alt="image machine">
-      <div class="card-body">
-        <h5 class="card-title">{{machine.nom_machine}}</h5>
-        <p class="card-text">{{machine.description}}</p>
+  <div class="text-center">
+    <pagination-controls (pageChange)="p = $event" nextLabel="Suivant" previousLabel="Précédent"></pagination-controls>
+  </div>
+  <div class="row">
+    <div class="col-md-4" *ngFor="let machine of machines | paginate :{ itemsPerPage: 6, currentPage: p }">
+      <div class="card mb-4">
+        <img class="card-img-top" src="{{machine.photo}}" alt="image machine">
+        <div class="card-body">
+          <h5 class="card-title">{{machine.nom_machine}}</h5>
+          <p class="card-text">{{machine.description}}</p>
           <button type="button" class="btn btn-outline-info mr-2" (click)="openLg(content)">Modifier</button>
           <button type="button" class="btn btn btn-outline-danger" (click)="openVerticallyCentered(contentSup)">Supprimer</button>
+        </div>
       </div>
-    </div>
-<!-- update Modal -->
-<ng-template #content let-modal>
-  <div class="modal-header">
-    <h4 class="modal-title text-center">Modifier {{machine.nom_machine}}</h4>
-    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-
-<form [formGroup]="machineForm">
-
-  <div class='form-group'>
-<input type='text' class="form-control" formControlName='nom_machine' placeholder="nom machine" [(ngModel)]="machine.nom_machine">
-    <div *ngIf="machineForm.controls['nom_machine'].invalid && (machineForm.controls['nom_machine'].dirty || machineForm.controls['nom_machine'].touched)"
-      class="alert alert-danger">
-      <div class="obl" *ngIf="machineForm.controls['nom_machine'].errors.required">Nom machine est obligatoire.</div>
-    </div>
-  </div>
-
-  <div class='form-group'>
-<textarea class="form-control" formControlName='description' placeholder="description" [(ngModel)]="machine.description"></textarea>
-    <div *ngIf="machineForm.controls['description'].invalid && (machineForm.controls['description'].dirty || machineForm.controls['description'].touched)"
-      class="alert alert-danger">
-      <div class="obl" *ngIf="machineForm.controls['description'].errors.required">La description est obligatoire.</div>
-    </div>
-  </div>
-
-<div class='form-group'>
-  <input type='text' class="form-control" formControlName='photo' placeholder="photo machine" [(ngModel)]="machine.photo">
-  <div *ngIf="machineForm.controls['photo'].invalid && (machineForm.controls['photo'].dirty || machineForm.controls['photo'].touched)"
-    class="alert alert-danger">
-    <div class="obl" *ngIf="machineForm.controls['photo'].errors.required">La photo est obligatoire.</div>
-  </div>
-</div>
-
-<button type='submit' [disabled]="machineForm.pristine ||machineForm.invalid" class="btn btn-success mr-2">Confirmer</button>
-<button type="button" class="btn btn-light" (click)="modal.close()">Annuler</button>
-</form>
+      <!-- update Modal -->
+      <ng-template #content let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title text-center">Modifier {{machine.nom_machine}}</h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          
+          <form [formGroup]="machineForm">
+            
+            <div class='form-group'>
+              <input type='text' class="form-control" formControlName='nom_machine' placeholder="nom machine" [(ngModel)]="machine.nom_machine">
+              <div *ngIf="machineForm.controls['nom_machine'].invalid && (machineForm.controls['nom_machine'].dirty || machineForm.controls['nom_machine'].touched)"
+              class="alert alert-danger">
+              <div class="obl" *ngIf="machineForm.controls['nom_machine'].errors.required">Nom machine est obligatoire.</div>
+            </div>
+          </div>
+          
+          <div class='form-group'>
+            <textarea class="form-control" formControlName='description' placeholder="description" [(ngModel)]="machine.description"></textarea>
+            <div *ngIf="machineForm.controls['description'].invalid && (machineForm.controls['description'].dirty || machineForm.controls['description'].touched)"
+            class="alert alert-danger">
+            <div class="obl" *ngIf="machineForm.controls['description'].errors.required">La description est obligatoire.</div>
+          </div>
+        </div>
+        
+        <div class='form-group'>
+          <input type='text' class="form-control" formControlName='photo' placeholder="photo machine" [(ngModel)]="machine.photo">
+          <div *ngIf="machineForm.controls['photo'].invalid && (machineForm.controls['photo'].dirty || machineForm.controls['photo'].touched)"
+          class="alert alert-danger">
+          <div class="obl" *ngIf="machineForm.controls['photo'].errors.required">La photo est obligatoire.</div>
+        </div>
+      </div>
+      
+      <button type='submit' [disabled]="machineForm.pristine ||machineForm.invalid" class="btn btn-success mr-2">Confirmer</button>
+      <button type="button" class="btn btn-light" (click)="modal.close()">Annuler</button>
+    </form>
   </div>
 </ng-template>
 
@@ -73,6 +73,6 @@
     <button type="button" class="btn btn btn-danger" (click)="modal.close()">Supprimer</button>
   </div>
 </ng-template>
-  </div>
+</div>
 </div>
 </div>
