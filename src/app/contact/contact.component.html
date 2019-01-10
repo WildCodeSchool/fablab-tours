@@ -5,85 +5,85 @@
     <section class="section2 clearfix">
       
       <div class="col2 column1 first">
-          <aol-map>
-              <aol-control-zoom></aol-control-zoom>
-              <aol-control-fullscreen></aol-control-fullscreen>
-              <aol-interaction-default></aol-interaction-default>
-              <aol-view [zoom]="zoom">
-                <aol-coordinate [x]="x" [y]="y" [srid]="'EPSG:4326'"></aol-coordinate>
-              </aol-view>
-              <aol-layer-tile [opacity]="1">
-                <aol-source-osm></aol-source-osm>
-              </aol-layer-tile>
-              <aol-layer-vector>
-                <aol-source-cluster [distance]="distance">
-                  <aol-source-vector>
-                    <aol-feature>
-                      <aol-overlay>
-                        <!--ircage de la page la carte pointe sur les Coordonnées FanLab-->
-                        <aol-coordinate [x]="0.6691059" [y]="47.3931929" [srid]="'EPSG:4326'"></aol-coordinate>
-                        <aol-content>
-                          <span class="logo_FanLab">
-                            <img  src="assets/localisationimages/MapMarker.png">
-                          </span>
-                        </aol-content>
-                      </aol-overlay>
-                    </aol-feature>
-                  </aol-source-vector>
-                </aol-source-cluster>
-              </aol-layer-vector>
-              <aol-layer-vector>
-            </aol-layer-vector>
-          </aol-map>
-    </div>
-    
-    
-    <div class="col2 column2 last">
-      
-      <div class="sec2innercont">
-        <div class="sec2addr">
-          <p> MAME, 49 Boulevard Preuilly, 37000 Tours</p>
-          <p><i class="fa fa-envelope"></i>contact@funlab.fr </p>
-        </div>
+        <aol-map>
+          <aol-control-zoom></aol-control-zoom>
+          <aol-control-fullscreen></aol-control-fullscreen>
+          <aol-interaction-default></aol-interaction-default>
+          <aol-view [zoom]="zoom">
+            <aol-coordinate [x]="x" [y]="y" [srid]="'EPSG:4326'"></aol-coordinate>
+          </aol-view>
+          <aol-layer-tile [opacity]="1">
+            <aol-source-osm></aol-source-osm>
+          </aol-layer-tile>
+          <aol-layer-vector>
+            <aol-source-cluster [distance]="distance">
+              <aol-source-vector>
+                <aol-feature>
+                  <aol-overlay>
+                    <!--ircage de la page la carte pointe sur les Coordonnées FanLab-->
+                    <aol-coordinate [x]="0.6691059" [y]="47.3931929" [srid]="'EPSG:4326'"></aol-coordinate>
+                    <aol-content>
+                      <span class="logo_FanLab">
+                        <img  src="assets/localisationimages/MapMarker.png">
+                      </span>
+                    </aol-content>
+                  </aol-overlay>
+                </aol-feature>
+              </aol-source-vector>
+            </aol-source-cluster>
+          </aol-layer-vector>
+          <aol-layer-vector>
+          </aol-layer-vector>
+        </aol-map>
       </div>
       
-      <div class="sec2contactform">
-        <h5 class="sec2frmtitle">Laissez nous un message</h5>
-        <form [formGroup]="touchForm" (ngSubmit)='contactForm(touchForm.value); touchForm.reset()'>
+      
+      <div class="col2 column2 last">
+        
+        <div class="sec2innercont">
+          <div class="sec2addr">
+            <p class="mx-3"> MAME, 49 Boulevard Preuilly, 37000 Tours</p>
+            <p><i class="fa fa-envelope mx-3"></i>contact@funlab.fr </p>
+          </div>
+        </div>
+        
+        <div class="sec2contactform">
+          <h5 class="sec2frmtitle">Laissez nous un message</h5>
+          <form [formGroup]="touchForm" (ngSubmit)='contactForm(touchForm.value); touchForm.reset()'>
+            <div class='form-group'>
+              <input type='text' class="form-control" formControlName='nom' placeholder="Votre nom">
+              <div *ngIf="touchForm.controls['nom'].invalid && (touchForm.controls['nom'].dirty || touchForm.controls['nom'].touched)"
+              class="alert alert-danger">
+              <div class="obl" *ngIf="touchForm.controls['nom'].errors.required">Votre nom est obligatoire.</div>
+            </div>
+          </div>
+          
           <div class='form-group'>
-            <input type='text' class="form-control" formControlName='nom' placeholder="Votre nom">
-            <div *ngIf="touchForm.controls['nom'].invalid && (touchForm.controls['nom'].dirty || touchForm.controls['nom'].touched)"
+            <input type='email' class='form-control' formControlName='email' placeholder="Votre adresse mail">
+            <div *ngIf="touchForm.controls['email'].invalid && (touchForm.controls['email'].dirty || touchForm.controls['email'].touched)"
             class="alert alert-danger">
-            <div class="obl" *ngIf="touchForm.controls['nom'].errors.required">Votre nom est obligatoire.</div>
+            <div class="obl" *ngIf="touchForm.controls['email'].errors.required">Votre email est obligatoire.</div>
           </div>
         </div>
         
         <div class='form-group'>
-          <input type='email' class='form-control' formControlName='email' placeholder="Votre adresse mail">
-          <div *ngIf="touchForm.controls['email'].invalid && (touchForm.controls['email'].dirty || touchForm.controls['email'].touched)"
+          <input type='text'  class='form-control' formControlName='sujet' placeholder="Sujet">
+          <div *ngIf="touchForm.controls['sujet'].invalid && (touchForm.controls['sujet'].dirty || touchForm.controls['sujet'].touched)"
           class="alert alert-danger">
-          <div class="obl" *ngIf="touchForm.controls['email'].errors.required">Votre email est obligatoire.</div>
+          <div class="obl" *ngIf="touchForm.controls['sujet'].errors.required">Le sujet est obligatoire.</div>
         </div>
       </div>
       
       <div class='form-group'>
-        <input type='text'  class='form-control' formControlName='sujet' placeholder="Sujet">
-        <div *ngIf="touchForm.controls['sujet'].invalid && (touchForm.controls['sujet'].dirty || touchForm.controls['sujet'].touched)"
+        <textarea  class='form-control' cols='30' rows='6' formControlName='message' placeholder="Tapez votre message"></textarea>
+        <div *ngIf="touchForm.controls['message'].invalid && (touchForm.controls['message'].dirty || touchForm.controls['message'].touched)"
         class="alert alert-danger">
-        <div class="obl" *ngIf="touchForm.controls['sujet'].errors.required">Le sujet est obligatoire.</div>
+        <div class="obl" *ngIf="touchForm.controls['message'].errors.required">Le message est obligatoire.</div>
       </div>
     </div>
-    
-    <div class='form-group'>
-      <textarea  class='form-control' cols='30' rows='6' formControlName='message' placeholder="Tapez votre message"></textarea>
-      <div *ngIf="touchForm.controls['message'].invalid && (touchForm.controls['message'].dirty || touchForm.controls['message'].touched)"
-      class="alert alert-danger">
-      <div class="obl" *ngIf="touchForm.controls['message'].errors.required">Le message est obligatoire.</div>
-    </div>
-  </div>
-  <re-captcha required siteKey="6LfVeoYUAAAAAEaZs6ni0Ax_Dd-Ua2ga1EnOJQul" formControlName="recaptchaReactive"></re-captcha>
-  <button type='submit' [disabled]="touchForm.pristine ||touchForm.invalid" class='btn btn-primary'>Envoyer</button>
-</form>
+    <re-captcha required siteKey="6LfVeoYUAAAAAEaZs6ni0Ax_Dd-Ua2ga1EnOJQul" formControlName="recaptchaReactive"></re-captcha>
+    <button type='submit' [disabled]="touchForm.pristine ||touchForm.invalid" class='btn btn-secondary'>Envoyer</button>
+  </form>
 </div>
 
 </div>

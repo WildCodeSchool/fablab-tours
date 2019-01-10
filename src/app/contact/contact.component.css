@@ -122,16 +122,18 @@ h1 {
   resize: none;
 }
 
-.section2 .sec2contactform button {
+.btn {
   padding: 15px 40px;
-  color: #fff;
-  border: 0;
-  /* background: #A44DD8; */
-  background: #666;
+  border: transparent;
+  background-color: #70CCCC;
   font-size: 16px;
   text-transform: uppercase;
   margin: 7px 0;
   cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #333333;
 }
 
 .section2 .sec2contactform h5 {
@@ -206,20 +208,6 @@ h1 {
 width: 50%;
 }
 
-p{
-  font-family: Raleway;
-}
-h5{
-  font-family: Raleway;
-}
-.btn {
-  font-family: Raleway;
-}
-
-.form-control {
-  font-family: Raleway;
-}
-
-.obl {
+p, h5, .form-control, .obl{
   font-family: Raleway;
 }

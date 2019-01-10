@@ -1,18 +1,18 @@
 .container {
   font-family: Raleway;
   margin-bottom: 50px;
-  margin-top: 200px;
 }
 
 /* Section Header */
 
 h1 {
-  font-size: 40px;
-  font-weight: 600;
-  text-align: center;
+  margin-top: 3.5em;
+  font-size: 2.5em;
+  margin-bottom: 1.5em;
   text-transform: uppercase;
   color: #696969;
-  margin-bottom: 1.375em;
+  font-weight: bold;
+  font-family: Raleway;
 }
 
 /* Whole Card */
