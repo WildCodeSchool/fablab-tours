@@ -17,4 +17,7 @@ export class LoginService {
     sendMember(body) {
     return this.http.post('http://localhost:3000/api/ajouterMembre', body);
     }
+
+  // modification membre
+
 }
