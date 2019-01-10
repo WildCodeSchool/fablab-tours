@@ -111,7 +111,7 @@ h1 {
     
 }
 .equipe .social li a:hover{
-    color:black;
+    color:#70CCCC;
     text-decoration: none;
 }
 
@@ -127,6 +127,7 @@ span{
 
 h4 {
     max-width: 15ch;
+    text-transform: uppercase;
 } 
 
 .container{
