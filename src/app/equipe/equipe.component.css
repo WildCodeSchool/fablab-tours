@@ -7,7 +7,7 @@ h1 {
     font-weight: bold;
     font-family: Raleway;
   }
-  
+
   li {
       color: white;
   }
@@ -104,10 +104,12 @@ h1 {
 
 .equipe:hover .social{
     bottom: 0;
+    min-height: 3em;
 }
 .equipe .social li{
     display: inline-block;
 }
+
 .equipe .social li a{
     display: block;
     font-size: 23px;
