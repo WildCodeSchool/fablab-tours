@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { AngularOpenlayersModule } from 'ngx-openlayers';
 import { HttpClientModule } from '@angular/common/http';
 import { FullCalendarModule } from 'ng-fullcalendar';
+import { JwtModule } from '@auth0/angular-jwt';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -26,12 +27,17 @@ import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
 import { PartenaireComponent } from './partenaire/partenaire.component';
 import { UserComponent } from './user/user.component';
 import { SearchResultComponent } from './search-result/search-result.component';
+import { AuthService } from './common/auth.service';
+import { AuthGuard } from './common/auth.guard';
 
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 
 // the second parameter 'fr' is optional
 registerLocaleData(localeFr, 'fr');
+export function tokenGetter() {
+  return localStorage.getItem('access_token');
+}
 
 @NgModule({
   declarations: [
@@ -64,10 +70,19 @@ registerLocaleData(localeFr, 'fr');
     FullCalendarModule,
     ReactiveFormsModule,
     RecaptchaModule,
-    RecaptchaFormsModule
+    RecaptchaFormsModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        whitelistedDomains: ['localhost:3000'],
+        blacklistedRoutes: ['localhost:3000/api/auth']
+      }
+    })
   ],
 
-  providers: [{provide: LOCALE_ID, useValue: "fr-CA" }],
+  providers: [
+    {provide: LOCALE_ID, useValue: 'fr-CA' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

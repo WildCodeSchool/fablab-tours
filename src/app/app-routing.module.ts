@@ -7,7 +7,7 @@ import { ContactComponent } from './contact/contact.component';
 import { GalerieMachinesComponent } from './galerie-machines/galerie-machines.component';
 import { UserComponent } from './user/user.component';
 import { SearchResultComponent } from './search-result/search-result.component';
-
+import { AuthGuard } from './common/auth.guard';
 
 const routes: Routes = [
   { path: '', component: AccueilComponent },
@@ -15,8 +15,8 @@ const routes: Routes = [
   { path: 'equipe', component: EquipeComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'machine', component: GalerieMachinesComponent },
-  { path: 'user', component: UserComponent },
   { path: 'recherche', component: SearchResultComponent },
+  { path: 'user', component: UserComponent, canActivate: [AuthGuard] }
 ];
 @NgModule({
   imports: [

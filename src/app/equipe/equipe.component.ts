@@ -51,6 +51,6 @@ export class EquipeComponent implements OnInit {
   });
   }
 
-  
+
 
 }
