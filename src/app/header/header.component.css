@@ -238,6 +238,7 @@ body {
   border-radius: 50px;
   padding: 10px;
   transition: width 0.3s linear;
+  
 }
 
 .search_input {
@@ -261,6 +262,7 @@ body {
 
 .searchbar:hover>.search_icon {
  background-color: transparent;
+ cursor: pointer;
 }
 
 .search_icon {
