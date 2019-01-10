@@ -8,6 +8,10 @@ h1 {
     font-family: Raleway;
   }
   
+  li {
+      color: white;
+  }
+
 .equipe{
     padding: 30px 0 50px;
     background-color: white;
