@@ -35,7 +35,7 @@ export class EquipeComponent implements OnInit {
                       .removeClass('fa-spin-fast')
                       .addClass('fa-bars');
 
-              }, 800);
+              }, 500);
           } else {
               card.addClass('mc-active');
 
@@ -45,7 +45,7 @@ export class EquipeComponent implements OnInit {
                       .removeClass('fa-spin-fast')
                       .addClass('fa-arrow-left');
 
-              }, 800);
+              }, 500);
           }
       });
   });

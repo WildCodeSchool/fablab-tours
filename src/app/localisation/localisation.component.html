@@ -27,7 +27,7 @@
                         <aol-coordinate [x]="0.6691059" [y]="47.3931929" [srid]="'EPSG:4326'"></aol-coordinate>
                         <aol-content>
                           <span class="logo_FanLab">
-                           <img  src="assets/localisationimages/MapMarker.png">
+                            <img  src="assets/localisationimages/MapMarker.png">
                           </span>
                         </aol-content>
                       </aol-overlay>
@@ -36,46 +36,33 @@
                 </aol-source-cluster>
               </aol-layer-vector>
               <aol-layer-vector>
-                <aol-source-vector>
-                  <aol-feature>
-                    <aol-geometry-polygon>
-                      <aol-collection-coordinates [coordinates]="[[1.47, 43.545],[1.51, 43.545],[1.51, 43.565], [1.47, 43.565]]"
-                        [srid]="'EPSG:4326'">
-                      </aol-collection-coordinates>
-                    </aol-geometry-polygon>
-                    <aol-style>
-                      <aol-style-stroke [color]="'red'" [width]="2"></aol-style-stroke>
-                      <aol-style-fill [color]="[255,0,0,0.1]"></aol-style-fill>
-                    </aol-style>
-                  </aol-feature>
-                </aol-source-vector>
-              </aol-layer-vector>
-            </aol-map>
-          </div>
-          <div class="mt-4">
-            <h5>Adresse : MAME, 49 Boulevard Preuilly, 37000 Tours </h5>
-          </div>
+            </aol-layer-vector>
+          </aol-map>
         </div>
-      </div>
-      <!--Fin map-->
-    </div>
-
-    <!--Debut photo mame indicant l'entree vers funLab-->
-    <div class="col-12 col-lg-6 mt-3">
-      <div class="card">
-        <div class="card-body text-center">
-          <h4><strong>Sonnez ici</strong></h4>
-          <div class="pic_mame">
-            <img src="assets/localisationimages/MAME.jpg" alt="photo de mame entree fun lab">
-          </div>
-          <div class="mt-4">
-            <h5>MAME - Cité de la création et de l'innovation</h5>
-          </div>
+        <div class="mt-4">
+          <h5>Adresse : MAME, 49 Boulevard Preuilly, 37000 Tours </h5>
         </div>
       </div>
     </div>
-    <!--Fin-->
+    <!--Fin map-->
   </div>
+  
+  <!--Debut photo mame indicant l'entree vers funLab-->
+  <div class="col-12 col-lg-6 mt-3">
+    <div class="card">
+      <div class="card-body text-center">
+        <h4><strong>Sonnez ici</strong></h4>
+        <div class="pic_mame">
+          <img src="assets/localisationimages/MAME.jpg" alt="photo de mame entree fun lab">
+        </div>
+        <div class="mt-4">
+          <h5>MAME - Cité de la création et de l'innovation</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Fin-->
+</div>
 </div>
 
 

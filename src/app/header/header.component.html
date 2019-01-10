@@ -22,7 +22,7 @@
   <img src="../../assets/images/image-header/logo_blanc.svg" routerLink="" (click)="showSidebar(false)">
 
   <!-- Champ de recherche -->
-  <form [formGroup]="rechercheForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="rechercheForm" (ngSubmit)="onSubmit(); rechercheForm.reset()">
     <div class="searchbar">
       <input class="form-control search_input" type="text" formControlName="input" placeholder="Rechercher...">
       <!-- <a class="search_icon" routerLink="/recherche"><i class="fa fa-search"></i></a> -->
