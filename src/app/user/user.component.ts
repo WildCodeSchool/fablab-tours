@@ -37,7 +37,6 @@ export class UserComponent implements OnInit {
   }
 // creation machine
   createMachine(form) {
-    // this.submitted = true;
     this.loginService.sendMachine(form).subscribe(() => {
       swal('Creation machine', 'Votre machine a bien été créer', 'success');
     });
@@ -45,7 +44,6 @@ export class UserComponent implements OnInit {
 
   // creation membre equipe
   createMembre(form) {
-    // this.submitted = true;
     this.loginService.sendMember(form).subscribe(() => {
       swal('Creation membre équipe', 'Votre membre d\'équipe a bien été créer', 'success');
     });

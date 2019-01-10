@@ -12,7 +12,6 @@ import swal from 'sweetalert2';
 })
 export class ContactComponent implements OnInit {
   touchForm: FormGroup;
-  // submitted = false;
 
   constructor(private flashMessages: FlashMessagesService, private fb: FormBuilder, private contactService: ContactService) {
   }
@@ -27,7 +26,6 @@ export class ContactComponent implements OnInit {
   }
 
   contactForm(form) {
-    // this.submitted = true;
     this.contactService.sendMessage(form).subscribe(() => {
       swal('Formulaire de contact', 'Votre message a bien été envoyé', 'success');
     });
