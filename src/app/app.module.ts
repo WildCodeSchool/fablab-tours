@@ -25,7 +25,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RecaptchaModule  } from 'ng-recaptcha';
 import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
 import { PartenaireComponent } from './partenaire/partenaire.component';
-import { UserComponent } from './user/user.component';
 import { SearchResultComponent } from './search-result/search-result.component';
 import { AuthService } from './common/auth.service';
 import { AuthGuard } from './common/auth.guard';
@@ -38,6 +37,11 @@ registerLocaleData(localeFr, 'fr');
 export function tokenGetter() {
   return localStorage.getItem('access_token');
 }
+import { AccueilUserComponent } from './accueil-user/accueil-user.component';
+import { CreationEquipeMachineComponent } from './creation-equipe-machine/creation-equipe-machine.component';
+import { ModifSupEquipeComponent } from './modif-sup-equipe/modif-sup-equipe.component';
+import { ModifSupMachineComponent } from './modif-sup-machine/modif-sup-machine.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -54,8 +58,11 @@ export function tokenGetter() {
     CommentCaMarcheComponent,
     GalerieMachinesComponent,
     PartenaireComponent,
-    UserComponent,
     SearchResultComponent,
+    AccueilUserComponent,
+    CreationEquipeMachineComponent,
+    ModifSupEquipeComponent,
+    ModifSupMachineComponent
 
   ],
   imports: [
@@ -77,7 +84,9 @@ export function tokenGetter() {
         whitelistedDomains: ['localhost:3000'],
         blacklistedRoutes: ['localhost:3000/api/auth']
       }
-    })
+    }),
+    NgxPaginationModule,
+    ReactiveFormsModule.withConfig({ warnOnNgModelWithFormControl: 'never' })
   ],
 
   providers: [

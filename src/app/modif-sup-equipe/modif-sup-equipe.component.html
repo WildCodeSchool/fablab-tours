@@ -1,0 +1,90 @@
+<div class="container">
+<h1>Gestion d'équipe</h1>
+  <div class="row">
+    <div class="col-md-4 mt-3"  *ngFor= "let equipe of equipes">
+      <div class="card mb">
+        <img class="card-img-top" src="{{equipe.image}}" alt="photo du membre">
+        <div class="card-body mb">
+          <h5 class="card-title">{{equipe.nom}} {{equipe.prenom}}</h5>
+          <p class="card-text">{{equipe.poste}}</p>
+          <button type="button" class="btn btn-outline-info mr-2" (click)="openLg(content)">Modifier</button>
+          <button type="button" class="btn btn btn-outline-danger" (click)="openVerticallyCentered(contentSup)">Supprimer</button>
+        </div>
+      </div>
+
+<!-- update Modal -->
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title text-center">Modifier le membre</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+
+    <form [formGroup]="membreForm">
+      <div class='form-group'>
+<input type='text' class="form-control" formControlName='prenom' [(ngModel)]="equipe.prenom">
+        <div *ngIf="membreForm.controls['prenom'].invalid && (membreForm.controls['prenom'].dirty || membreForm.controls['prenom'].touched)"
+          class="alert alert-danger">
+          <div class="obl" *ngIf="membreForm.controls['prenom'].errors.required">Le prénom est obligatoire.</div>
+        </div>
+      </div>
+
+      <div class='form-group'>
+        <input type='text' class="form-control" formControlName='nom' placeholder="nom" [(ngModel)]="equipe.nom">
+        <div *ngIf="membreForm.controls['nom'].invalid && (membreForm.controls['nom'].dirty || membreForm.controls['nom'].touched)"
+          class="alert alert-danger">
+          <div class="obl" *ngIf="membreForm.controls['nom'].errors.required">Le nom est obligatoire.</div>
+        </div>
+      </div>
+
+      <div class='form-group'>
+        <input type='text' class="form-control" formControlName='poste' placeholder="poste" [(ngModel)]="equipe.poste">
+        <div *ngIf="membreForm.controls['poste'].invalid && (membreForm.controls['poste'].dirty || membreForm.controls['poste'].touched)"
+          class="alert alert-danger">
+          <div class="obl" *ngIf="membreForm.controls['poste'].errors.required">Le poste est obligatoire.</div>
+        </div>
+      </div>
+
+      <div class='form-group'>
+        <input type='text' class="form-control" formControlName='linkedin' placeholder="linkedin" [(ngModel)]="equipe.linkedin">
+      </div>
+
+      <div class='form-group'>
+        <input type='text' class="form-control" formControlName='image' placeholder="image" [(ngModel)]="equipe.image">
+        <div *ngIf="membreForm.controls['image'].invalid && (membreForm.controls['image'].dirty || membreForm.controls['image'].touched)"
+          class="alert alert-danger">
+          <div class="obl" *ngIf="membreForm.controls['image'].errors.required">L'image est obligatoire.</div>
+        </div>
+      </div>
+      <button type='submit' class="btn btn-success mr-2" [disabled]="membreForm.pristine ||membreForm.invalid">Confirmer</button>
+      <button type="button" class="btn btn-light" (click)="modal.close()">Annuler</button>
+    </form>
+  </div>
+</ng-template>
+
+<!-- Delete Modal -->
+<ng-template #contentSup let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title text-center">Confimer la supression de {{equipe.nom}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Voulez-vous vraiment supprimer {{equipe.nom}} {{equipe.prenom }}</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="modal.close()">Annuler</button>
+    <button type="button" class="btn btn btn-danger" (click)="modal.close()">Supprimer</button>
+
+  </div>
+</ng-template>
+
+    </div>
+  </div>
+</div>
+
+
+

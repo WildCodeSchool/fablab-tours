@@ -46,7 +46,7 @@ export class HeaderComponent implements OnInit {
       this.authService.login(this.connectForm.value)
         .pipe(first())
         .subscribe(
-          result => this.router.navigate(['user']),
+          result => this.router.navigate(['admin']),
           err => this.error = 'Impossible de se connecter'
         );
     }
