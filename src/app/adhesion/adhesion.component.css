@@ -50,6 +50,13 @@ h4 {
   font-weight: 400;
 }
 
+.personne-morale {
+  font-weight: 600;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 54px; 
+}
+
 /* Card body with bullet points */
 .adherant {
   list-style-type: none;

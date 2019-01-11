@@ -30,7 +30,8 @@
 
 .funlab-presentation p {
   text-align: center;
-  font-size: 22px;
+  font-size: 1.125rem;
   color: #7d7d7d;
   font-family: Raleway;
+  margin-top: 1em;
 }
