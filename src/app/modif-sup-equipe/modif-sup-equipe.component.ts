@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EquipeService } from '../common/equipe.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { LoginService } from '../common/login/login.service';
 
 @Component({
   selector: 'app-modif-sup-equipe',
@@ -12,7 +13,7 @@ export class ModifSupEquipeComponent implements OnInit {
 
   equipes: any[];
   membreForm: FormGroup;
-  constructor(public service: EquipeService, private modalService: NgbModal, private fb: FormBuilder, ) { }
+  constructor(public service: EquipeService, private modalService: NgbModal, private fb: FormBuilder, public loginService: LoginService) { }
 
   ngOnInit() {
     // récupère données concernant l'équipe dans bdd.
@@ -36,5 +37,18 @@ export class ModifSupEquipeComponent implements OnInit {
 
   openVerticallyCentered(content) {
     this.modalService.open(content, { centered: true });
+  }
+
+  // creation membre equipe
+  updateMembre(form , id) {
+    this.loginService.updateMembre(form, id).subscribe();
+  }
+
+  // suppression membre equipe
+  deleteMembre(id) {
+    this.loginService.deleteMembre(id).subscribe(() => {
+      const index = this.equipes.findIndex(e => e.id === id);
+      this.equipes.splice(index, 1);
+    });
   }
 }

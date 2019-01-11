@@ -1,9 +1,9 @@
-.container
-{
+.container {
 margin-top: 150px;
+min-height: 300px !important;
 }
 
-img{
+img {
   max-width: 300px;
 }
 
@@ -18,4 +18,15 @@ p {
 
 strong, a, h3 {
   font-family: Raleway;
+}
+.default-show {
+  width: 200px;
+  height: 200px;
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+
+.Error-msg p {
+ line-height: 17px;
 }

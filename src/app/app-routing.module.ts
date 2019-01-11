@@ -23,6 +23,7 @@ const routes: Routes = [
   { path: 'admin', component: AccueilUserComponent, canActivate: [AuthGuard] },
   { path: 'creation', component: CreationEquipeMachineComponent, canActivate: [AuthGuard] },
   { path: 'modifsupequipe', component: ModifSupEquipeComponent, canActivate: [AuthGuard] },
+  // { path: 'modifsupequipe/edit/:id', component: ModifSupEquipeComponent, canActivate: [AuthGuard] },
   { path: 'modifsupemachine', component: ModifSupMachineComponent, canActivate: [AuthGuard] },
   { path: 'recherche', component: SearchResultComponent }
 ];

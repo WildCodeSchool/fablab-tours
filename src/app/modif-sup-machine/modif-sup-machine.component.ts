@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MachinesService } from '../common/machines.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { LoginService } from '../common/login/login.service';
 
 @Component({
   selector: 'app-modif-sup-machine',
@@ -13,7 +14,8 @@ export class ModifSupMachineComponent implements OnInit {
   machineForm: FormGroup;
   machines: any[];
 
-  constructor(public service: MachinesService, private fb: FormBuilder, private modalService: NgbModal) { }
+  // tslint:disable-next-line:max-line-length
+  constructor(public service: MachinesService, private fb: FormBuilder, private modalService: NgbModal, public loginService: LoginService) { }
 
   ngOnInit() {
     // récuperer les données concernant les machines de la base de données.
@@ -33,5 +35,18 @@ export class ModifSupMachineComponent implements OnInit {
 
   openVerticallyCentered(content) {
     this.modalService.open(content, { centered: true });
+  }
+
+  // creation membre equipe
+  updateMachine(form, id) {
+    this.loginService.updateMachine(form, id).subscribe();
+  }
+
+  // suppression machine
+  deleteMachine(id) {
+    this.loginService.deleteMachine(id).subscribe(() => {
+        const index = this.machines.findIndex(e => e.id === id);
+        this.machines.splice(index, 1);
+      });
   }
 }

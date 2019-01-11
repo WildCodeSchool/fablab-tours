@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Sanitizer } from '@angular/core';
 import { SearchResultService } from '../common/search-result.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-search-result',
@@ -10,10 +11,16 @@ export class SearchResultComponent implements OnInit {
 
   results: any;
 
-  constructor(public service: SearchResultService ) { }
+  constructor(public service: SearchResultService, private sanitizer: DomSanitizer ) { }
 
   ngOnInit() {
     this.results = this.service.result;
+    console.log(this.results);
+  }
+
+  sanitized(content) {
+    const html = this.sanitizer.bypassSecurityTrustHtml(content);
+    return html;
   }
 
 }

@@ -23,9 +23,9 @@
           </button>
         </div>
         <div class="modal-body">
-          
+
           <form [formGroup]="machineForm">
-            
+
             <div class='form-group'>
               <input type='text' class="form-control" formControlName='nom_machine' placeholder="nom machine" [(ngModel)]="machine.nom_machine">
               <div *ngIf="machineForm.controls['nom_machine'].invalid && (machineForm.controls['nom_machine'].dirty || machineForm.controls['nom_machine'].touched)"
@@ -33,7 +33,7 @@
               <div class="obl" *ngIf="machineForm.controls['nom_machine'].errors.required">Nom machine est obligatoire.</div>
             </div>
           </div>
-          
+
           <div class='form-group'>
             <textarea class="form-control" formControlName='description' placeholder="description" [(ngModel)]="machine.description"></textarea>
             <div *ngIf="machineForm.controls['description'].invalid && (machineForm.controls['description'].dirty || machineForm.controls['description'].touched)"
@@ -41,7 +41,7 @@
             <div class="obl" *ngIf="machineForm.controls['description'].errors.required">La description est obligatoire.</div>
           </div>
         </div>
-        
+
         <div class='form-group'>
           <input type='text' class="form-control" formControlName='photo' placeholder="photo machine" [(ngModel)]="machine.photo">
           <div *ngIf="machineForm.controls['photo'].invalid && (machineForm.controls['photo'].dirty || machineForm.controls['photo'].touched)"
@@ -49,10 +49,11 @@
           <div class="obl" *ngIf="machineForm.controls['photo'].errors.required">La photo est obligatoire.</div>
         </div>
       </div>
-      
-      <button type='submit' [disabled]="machineForm.pristine ||machineForm.invalid" class="btn btn-success mr-2">Confirmer</button>
-      <button type="button" class="btn btn-light" (click)="modal.close()">Annuler</button>
     </form>
+  </div>
+<div class="modal-footer">
+<button type='submit' [disabled]="machineForm.pristine ||machineForm.invalid" class="btn btn-success mr-2" (click)="updateMachine(machineForm.value, machine.id_machine); modal.close()">Confirmer</button>
+<button type="button" class="btn btn-light" (click)="modal.dismiss()">Annuler</button>
   </div>
 </ng-template>
 
@@ -69,8 +70,8 @@
     <p>Voulez-vous vraiment supprimer {{machine.nom_machine}}</p>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-light" (click)="modal.close()">Annuler</button>
-    <button type="button" class="btn btn btn-danger" (click)="modal.close()">Supprimer</button>
+    <button type="button" class="btn btn-light" (click)="modal.dismiss()">Annuler</button>
+<button type="button" class="btn btn btn-danger" (click)="deleteMachine(machine.id_machine); modal.close()">Supprimer</button>
   </div>
 </ng-template>
 </div>
