@@ -111,7 +111,7 @@
           <div class="list-group-item">
             <div class="event-detail text-center" *ngFor="let event of evenements | slice:0:3; let i=index">
               <span class="event-detail-start-date">{{event.date | date: 'dd MMMM yyy '}}</span><!-- Date Pipe used to transform date format -->
-              <span class="event-detail-start-time">{{event.start}} à</span>
+              <span class="event-detail-start-time">de {{event.start}} à</span>
               <span class="event-detail-end-time"> {{event.end}}</span>
               <br>
               <span class="event-detail-title">{{event.title}}</span>
