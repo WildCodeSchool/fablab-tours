@@ -66,9 +66,15 @@ h1 {
 /*  paragraph styling */
 
 .lead {
-  margin-top: 12px;
+  margin-top: 1.4em;
   text-align: justify;
-  font-size: 19px;
+  font-size: 1.125rem;
+}
+
+.lead2 {
+  text-align: justify;
+  font-size: 21px;
+  font-weight: bold;
 }
 
 /* End === Activity section */

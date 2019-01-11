@@ -1,4 +1,4 @@
-.col-white-amrc {
+.col-sm-6 {
   color: #FFF;
   text-align: center;
 }
@@ -15,7 +15,7 @@ footer {
   margin-bottom: 20px;
 }
 
-footer p {
+footer p, .enveloppe {
   font-size: 18px;
   color: #CCC;
   padding-bottom: 0px;
@@ -42,14 +42,11 @@ footer p {
   margin-top: 5.5em;
 }
 
-
-
 .btn{
   max-height: 40px;
   font-size: 20px;
   margin: 20px auto 0 auto;
 }
-
 
 h5 {
   font-family: Raleway;
@@ -61,7 +58,6 @@ h5 {
   text-decoration: none;
   color: #70CCCC;
 }
-
 
 /*Icon reseaux sociaux*/
 

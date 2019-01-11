@@ -4,16 +4,17 @@
     <div *ngFor='let event of evenements | slice: 0:4; let i = index' class="row row-striped">
         <div class="col-2 text-right">
             <h1 class="display-4"><span class="badge badge-secondary">{{event.jour | slice: 8:10}}</span></h1>
-            <h2>{{event.mois | date:'MMM'}}</h2>
+            <h2>{{event.mois | date:'MMMM'}}</h2>
+            <li class="list-inline-item"><img src="assets/images/image-header/clock.svg" class="mx-2" width="22"> {{event.hDepart}} - {{event.hFin}}</li>
         </div>
         <div class="col-10">
             <h3 class="text-uppercase"><strong>{{event.title}}</strong></h3>
             <ul class="list-inline">
                 <li class="list-inline-item"><img src="assets/images/image-header/calendar.svg" class="mx-2" width="25"> {{event.jour | date:'EEEE'}} </li>
-                <li class="list-inline-item"><img src="assets/images/image-header/clock.svg" class="mx-2" width="22"> {{event.hDepart}} - {{event.hFin}}</li>
+                
                 <li class="list-inline-item"><img src="assets/images/image-header/location.svg" class="mx-2" width="22">{{event.location}}</li>
             </ul>
-            <p>{{event.description}}</p>
+            <p [innerHTML]="event.description"></p>
         </div>
     </div>
 <!-- fin events -->
@@ -39,7 +40,7 @@
                 <p><span><img src="assets/images/image-header/clock.svg" class="mx-2" width="22"> {{dateStart | date: 'EEEE d MMMM y'}} </span></p>
                 <p> {{heureDepart}} à {{heureFin}} </p>
                 <p><span><img src="assets/images/image-header/location.svg" class="mx-2" width="22"></span> {{ lieu }} </p>
-                <p><span><img src="assets/images/image-header/align.svg" class="mx-2" width="22"></span> {{ description }} </p>
+                <p [innerHTML]="description"><span><img src="assets/images/image-header/align.svg" class="mx-2" width="22"></span></p>
             </div>
     <!-- Modal footer -->
             <div class="modal-footer">
