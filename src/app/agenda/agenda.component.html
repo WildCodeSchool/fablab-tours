@@ -13,7 +13,7 @@
                 <li class="list-inline-item"><img src="assets/images/image-header/clock.svg" class="mx-2" width="22"> {{event.hDepart}} - {{event.hFin}}</li>
                 <li class="list-inline-item"><img src="assets/images/image-header/location.svg" class="mx-2" width="22">{{event.location}}</li>
             </ul>
-            <p>{{event.description}}</p>
+            <p [innerHTML]="event.description"></p>
         </div>
     </div>
 <!-- fin events -->
@@ -39,7 +39,7 @@
                 <p><span><img src="assets/images/image-header/clock.svg" class="mx-2" width="22"> {{dateStart | date: 'EEEE d MMMM y'}} </span></p>
                 <p> {{heureDepart}} à {{heureFin}} </p>
                 <p><span><img src="assets/images/image-header/location.svg" class="mx-2" width="22"></span> {{ lieu }} </p>
-                <p><span><img src="assets/images/image-header/align.svg" class="mx-2" width="22"></span> {{ description }} </p>
+                <p [innerHTML]="description"><span><img src="assets/images/image-header/align.svg" class="mx-2" width="22"></span></p>
             </div>
     <!-- Modal footer -->
             <div class="modal-footer">
