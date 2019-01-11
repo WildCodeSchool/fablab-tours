@@ -86,22 +86,27 @@ h1 {
 .horaire {
   text-align: center;
   letter-spacing: 1px;
-
 }
 
-/* To split the days and hours  */
-
-.day {
-  float: left;
-  font-size: 12px;
-  font-family: Raleway;
+table {
+  border-collapse: separate;
+  border-spacing: 10px;
 }
 
-.time {
-  float: right;
-  font-weight: 600;
-  font-size: 13px;
-  font-family: Raleway;
+th {
+  text-align: left;
+}
+
+td {
+  text-align: right;
+}
+
+tr:hover {
+  transition-duration: 0.3s;
+  transform: translateY(-5px);
+  font-size: 1.125rem;
+  color: #70CCCC;
+  font-weight: bold;
 }
 
 /* End === section Horaire  */
@@ -116,14 +121,14 @@ h1 {
 .event-detail-start-date,
 .event-detail-start-time,
 .event-detail-end-time {
-  font-size: 12px;
+  font-size: 0.9rem;
   font-family: Raleway;
 }
 
 .event-detail-title {
   text-transform: uppercase;
   font-weight: 600;
-  font-size: 11px;
+  font-size: 0.8rem;
   font-family: Raleway;
 }
 
@@ -132,7 +137,7 @@ h1 {
 .agenda-more {
   text-align: center;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 1rem;
   font-weight: 600;
   font-family: Raleway;
 }
@@ -185,7 +190,8 @@ h4,
 p,
 .day,
 .time,
-a {
+a,
+table {
   font-family: Raleway;
 }
 
