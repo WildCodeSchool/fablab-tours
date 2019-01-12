@@ -43,11 +43,12 @@ export class HeaderComponent implements OnInit {
     }
     // envois requete connection
     submit() {
-      this.authService.login(this.connectForm.value)
+      const val = this.connectForm.value;
+      this.authService.login(val.username, val.password)
         .pipe(first())
         .subscribe(
           result => this.router.navigate(['admin']),
-          err => this.error = 'Impossible de se connecter'
+          err => this.error = 'Erreur lors de la connexion'
         );
     }
     // deconnection
