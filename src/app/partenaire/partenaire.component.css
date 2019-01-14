@@ -1,20 +1,21 @@
 .social-footer-ul {
     display: table;
-    margin: 0 auto;
+    margin: 15px auto 0 auto;
     list-style-type: none;
     margin-bottom: 5em;
     margin-top: 2em;
 }
 
 .social-footer-ul a img {
-    width: 120px;
+    width: 80px;
+    filter: grayscale();
+    margin-top: 1em;
 }
 
-@media screen and (max-width:600px) {
-    .social-footer-ul {
-
-    }
+.social-footer-ul a img:hover {
+    filter: none;
 }
+
 
 a, h1, h5 {
     font-family: Raleway;
@@ -66,9 +67,4 @@ h5 {
     .parttech {
         margin-top: 4em;
     }
-}
-
-.part {
-    max-width: 15em;
-    text-align: center;
 }
