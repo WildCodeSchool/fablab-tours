@@ -1,6 +1,6 @@
 .container {
   font-family: Raleway;
-  margin-bottom: 50px;
+  margin-bottom: 35px;
 }
 
 /* Section Header */
@@ -11,6 +11,7 @@ h1 {
   text-align: center;
   text-transform: uppercase;
   color: #696969;
+  margin-bottom: 1em;
   }
 
 /* Whole Card */
@@ -89,6 +90,26 @@ ul li:before {
   background-color: #333333;
   border-color: #333333;
   color: #fff;
+}
+
+.btn-download {
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 7px;
+  border-radius: 3px;
+  background-color: transparent;
+  border-color: #70CCCC;
+  color: #70CCCC;
+  font-weight: 600;
+  text-decoration: none;
+  }
+
+.btn-download:hover {
+  /* background-color: #333333;
+  border-color: #333333; */
+  
+  color: #333333;
+  
 }
 
 /* Card bulletin */
