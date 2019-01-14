@@ -19,10 +19,10 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'machine', component: GalerieMachinesComponent },
   { path: 'recherche', component: SearchResultComponent },
-  { path: 'admin', component: AccueilUserComponent, canActivate: [AuthGuard] },
-  { path: 'modifsupequipe', component: ModifSupEquipeComponent, canActivate: [AuthGuard] },
+  { path: 'admin', component: AccueilUserComponent, },
+  { path: 'modifsupequipe', component: ModifSupEquipeComponent,},
   // { path: 'modifsupequipe/edit/:id', component: ModifSupEquipeComponent, canActivate: [AuthGuard] },
-  { path: 'modifsupemachine', component: ModifSupMachineComponent, canActivate: [AuthGuard] },
+  { path: 'modifsupemachine', component: ModifSupMachineComponent,},
   { path: 'recherche', component: SearchResultComponent }
 ];
 @NgModule({

@@ -69,8 +69,8 @@
   </form>
 </div>
 <div class="modal-footer">
-  <button type="button" class="btn btn-light" (click)="modal.dismiss(); membreForm.reset()">Annuler</button>
-  <button type='submit' class="btn btn-success mr-2" [disabled]="membreForm.pristine ||membreForm.invalid" (click)="updateMembre(membreForm.value, equipe.id); modal.close(); membreForm.reset()">Confirmer</button>
+  <button type="button" class="btn btn-outline-dark" (click)="modal.dismiss(); membreForm.reset()">Annuler</button>
+  <button type='submit' class="btn btn-outline-success mr-2" [disabled]="membreForm.pristine ||membreForm.invalid" (click)="updateMembre(membreForm.value, equipe.id); modal.close(); membreForm.reset()">Confirmer</button>
 </div>
 </ng-template>
 
@@ -89,8 +89,8 @@
     <p>Voulez-vous vraiment supprimer {{equipe.nom}} {{equipe.prenom }}</p>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-light" (click)="modal.dismiss()">Annuler</button>
-    <button type="button" class="btn btn btn-danger" (click)="deleteMembre(equipe.id);modal.close()">Supprimer</button>
+    <button type="button" class="btn btn-outline-dark" (click)="modal.dismiss()">Annuler</button>
+    <button type="button" class="btn btn-outline-danger" (click)="deleteMembre(equipe.id);modal.close()">Supprimer</button>
     
   </div>
 </ng-template>
@@ -151,8 +151,8 @@
 </form>
 </div>
 <div class="modal-footer">
-  <button type="button" class="btn btn-light" (click)="modal.dismiss()">Annuler</button>
-  <button type='submit' [disabled]="membreForm.pristine ||membreForm.invalid" (click)="createMembre(membreForm.value); modal.close(); membreForm.reset()" class='btn btn-primary'>Ajouter</button>
+  <button type="button" class="btn btn-outline-dark" (click)="modal.dismiss()">Annuler</button>
+  <button type='submit' [disabled]="membreForm.pristine ||membreForm.invalid" (click)="createMembre(membreForm.value); modal.close(); membreForm.reset()" class='btn btn-outline-success'>Ajouter</button>
 </div>
 </ng-template>
 <div class="text-center mt-5">
