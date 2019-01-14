@@ -155,7 +155,7 @@
   <button type='submit' [disabled]="membreForm.pristine ||membreForm.invalid" (click)="createMembre(membreForm.value); modal.close(); membreForm.reset()" class='btn btn-primary'>Ajouter</button>
 </div>
 </ng-template>
-<div class="text-center">
+<div class="text-center mt-5">
   <pagination-controls (pageChange)="p = $event" nextLabel="Suivant" previousLabel="Précédent"></pagination-controls>
 </div>
 </div>
