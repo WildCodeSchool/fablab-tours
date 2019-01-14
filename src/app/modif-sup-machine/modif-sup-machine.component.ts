@@ -29,17 +29,20 @@ export class ModifSupMachineComponent implements OnInit {
       description: ['', Validators.required]
     });
   }
-  openLg(content) {
-    this.modalService.open(content, { size: 'lg' });
-  }
 
-  openVerticallyCentered(content) {
+  // modal
+  openLg(content) {
     this.modalService.open(content, { centered: true });
   }
 
-  // creation membre equipe
+  // modification machine
   updateMachine(form, id) {
     this.loginService.updateMachine(form, id).subscribe();
+  }
+
+  // creation machine
+  createMachine(form) {
+    this.loginService.sendMachine(form).subscribe();
   }
 
   // suppression machine

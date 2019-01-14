@@ -10,40 +10,48 @@ import { LoginService } from '../common/login/login.service';
   styleUrls: ['./modif-sup-equipe.component.css']
 })
 export class ModifSupEquipeComponent implements OnInit {
-
+  
+  p = 1;
   equipes: any[];
   membreForm: FormGroup;
+  
   constructor(public service: EquipeService, private modalService: NgbModal, private fb: FormBuilder, public loginService: LoginService) { }
-
+  
   ngOnInit() {
+    
     // récupère données concernant l'équipe dans bdd.
     this.service.getEquipe().subscribe(res => {
       this.equipes = res;
     });
-
+    
     // Champs membre equipe
     this.membreForm = this.fb.group({
       prenom: ['', Validators.required],
       nom: ['', Validators.required],
       image: ['', Validators.required],
       poste: ['', Validators.required],
+      email: [''],
       linkedin: ['']
     });
-
+    
   }
+  
+  // modal
   openLg(content) {
-    this.modalService.open(content, { size: 'lg' });
+    this.modalService.open(content, { centered: true  });
   }
-
-  openVerticallyCentered(content) {
-    this.modalService.open(content, { centered: true });
-  }
-
-  // creation membre equipe
+  
+  // modification membre equipe
   updateMembre(form , id) {
     this.loginService.updateMembre(form, id).subscribe();
   }
-
+  
+  // creation membre equipe
+  createMembre(form) {
+    this.loginService.sendMember(form).subscribe(() => {
+    });
+  }
+  
   // suppression membre equipe
   deleteMembre(id) {
     this.loginService.deleteMembre(id).subscribe(() => {
@@ -51,4 +59,5 @@ export class ModifSupEquipeComponent implements OnInit {
       this.equipes.splice(index, 1);
     });
   }
+  
 }

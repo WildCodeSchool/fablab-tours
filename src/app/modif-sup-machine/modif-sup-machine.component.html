@@ -1,7 +1,7 @@
 <h1 class="text-center">Gestion machines</h1>
 <div class="container">
   <div class="text-center">
-    <pagination-controls (pageChange)="p = $event" nextLabel="Suivant" previousLabel="Précédent"></pagination-controls>
+      <button class="btn btn-outline-success mb-5 mr-2" (click)="openLg(contentAj)">Ajouter une machine</button>
   </div>
   <div class="row">
     <div class="col-md-4" *ngFor="let machine of machines | paginate :{ itemsPerPage: 6, currentPage: p }">
@@ -11,7 +11,7 @@
           <h5 class="card-title">{{machine.nom_machine}}</h5>
           <p class="card-text">{{machine.description}}</p>
           <button type="button" class="btn btn-outline-info mr-2" (click)="openLg(content)">Modifier</button>
-          <button type="button" class="btn btn btn-outline-danger" (click)="openVerticallyCentered(contentSup)">Supprimer</button>
+          <button type="button" class="btn btn btn-outline-danger" (click)="openLg(contentSup)">Supprimer</button>
         </div>
       </div>
       <!-- update Modal -->
@@ -76,4 +76,52 @@
 </ng-template>
 </div>
 </div>
+<!-- Modal ajout -->
+<ng-template #contentAj let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Ajouter un machine</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <form [formGroup]="machineForm">
+
+            <div class='form-group'>
+              <input type='text' class="form-control" formControlName='nom_machine' placeholder="Nom machine">
+              <div *ngIf="machineForm.controls['nom_machine'].invalid && (machineForm.controls['nom_machine'].dirty || machineForm.controls['nom_machine'].touched)"
+                class="alert alert-danger">
+                <div class="obl" *ngIf="machineForm.controls['nom_machine'].errors.required">Nom machine est obligatoire.</div>
+              </div>
+            </div>
+      
+            <div class='form-group'>
+              <input type='text' class="form-control" formControlName='photo' placeholder="Photo machine">
+              <div *ngIf="machineForm.controls['photo'].invalid && (machineForm.controls['photo'].dirty || machineForm.controls['photo'].touched)"
+                class="alert alert-danger">
+                <div class="obl" *ngIf="machineForm.controls['photo'].errors.required">La photo est obligatoire.</div>
+              </div>
+            </div>
+      
+            <div class='form-group'>
+              <input type='text' class="form-control" formControlName='description' placeholder="Description">
+              <div *ngIf="machineForm.controls['description'].invalid && (machineForm.controls['description'].dirty || machineForm.controls['description'].touched)"
+                class="alert alert-danger">
+                <div class="obl" *ngIf="machineForm.controls['description'].errors.required">La description est obligatoire.</div>
+              </div>
+            </div>
+      
+           
+      
+          </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-light" (click)="modal.dismiss()">Annuler</button>
+        <button type='submit' [disabled]="machineForm.pristine ||machineForm.invalid" (click)="createMachine(machineForm.value); modal.close(); machineForm.reset();" class='btn btn-primary'>Ajouter</button>
+    </div>
+  </ng-template>
+  
+<div class="text-center">
+    <pagination-controls (pageChange)="p = $event" nextLabel="Suivant" previousLabel="Précédent"></pagination-controls>
+  </div>
 </div>

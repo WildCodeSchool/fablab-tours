@@ -60,13 +60,10 @@
                         <h2 class="nav-link " *ngIf="authService.loggedIn" routerLink="/admin" (click)="showSidebar(false)">Tableau de bord</h2>
                     </li>
                     <li class="nav-item log-in">
-                        <h5 class="nav-link" *ngIf="authService.loggedIn" routerLink="/creation" (click)="showSidebar(false)">Création machines & equipe</h5>
+                        <h5 class="nav-link" *ngIf="authService.loggedIn" routerLink="/modifsupemachine" (click)="showSidebar(false)">Gestion Machines</h5>
                     </li>
                     <li class="nav-item log-in">
-                        <h5 class="nav-link" *ngIf="authService.loggedIn" routerLink="/modifsupemachine" (click)="showSidebar(false)">Modification & Suppression machines</h5>
-                    </li>
-                    <li class="nav-item log-in">
-                        <h5 class="nav-link" *ngIf="authService.loggedIn" routerLink="/modifsupequipe" (click)="showSidebar(false)">Modification & Suppression equipe</h5>
+                        <h5 class="nav-link" *ngIf="authService.loggedIn" routerLink="/modifsupequipe" (click)="showSidebar(false)">Gestion Equipe</h5>
                     </li>
                     <div class="reseaux">
                         <ul class="d-flex">

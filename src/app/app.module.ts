@@ -38,7 +38,6 @@ export function tokenGetter() {
   return localStorage.getItem('access_token');
 }
 import { AccueilUserComponent } from './accueil-user/accueil-user.component';
-import { CreationEquipeMachineComponent } from './creation-equipe-machine/creation-equipe-machine.component';
 import { ModifSupEquipeComponent } from './modif-sup-equipe/modif-sup-equipe.component';
 import { ModifSupMachineComponent } from './modif-sup-machine/modif-sup-machine.component';
 import { NgxPaginationModule } from 'ngx-pagination';
@@ -60,7 +59,6 @@ import { NgxPaginationModule } from 'ngx-pagination';
     PartenaireComponent,
     SearchResultComponent,
     AccueilUserComponent,
-    CreationEquipeMachineComponent,
     ModifSupEquipeComponent,
     ModifSupMachineComponent
 
