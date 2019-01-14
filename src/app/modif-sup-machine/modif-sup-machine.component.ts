@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MachinesService } from '../common/machines.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
+import { LoginService } from '../common/login/login.service';
 
 @Component({
   selector: 'app-modif-sup-machine',
@@ -13,7 +14,11 @@ export class ModifSupMachineComponent implements OnInit {
   machineForm: FormGroup;
   machines: any[];
 
-  constructor(public service: MachinesService, private fb: FormBuilder, private modalService: NgbModal) { }
+  // tslint:disable-next-line:max-line-length
+  constructor(private config: NgbModalConfig, public service: MachinesService, private fb: FormBuilder, private modalService: NgbModal, public loginService: LoginService) {
+    config.backdrop = 'static';
+    config.keyboard = false;
+   }
 
   ngOnInit() {
     // récuperer les données concernant les machines de la base de données.
@@ -27,11 +32,27 @@ export class ModifSupMachineComponent implements OnInit {
       description: ['', Validators.required]
     });
   }
-  openLg(content) {
-    this.modalService.open(content, { size: 'lg' });
+
+  // modal
+  open(content) {
+    this.modalService.open(content, { centered: true });
   }
 
-  openVerticallyCentered(content) {
-    this.modalService.open(content, { centered: true });
+  // modification machine
+  updateMachine(form, id) {
+    this.loginService.updateMachine(form, id).subscribe();
+  }
+
+  // creation machine
+  createMachine(form) {
+    this.loginService.sendMachine(form).subscribe();
+  }
+
+  // suppression machine
+  deleteMachine(id) {
+    this.loginService.deleteMachine(id).subscribe(() => {
+        const index = this.machines.findIndex(e => e.id === id);
+        this.machines.splice(index, 1);
+      });
   }
 }

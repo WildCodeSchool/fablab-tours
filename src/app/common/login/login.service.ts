@@ -19,5 +19,22 @@ export class LoginService {
     }
 
   // modification membre
+  updateMembre(body, param) {
+    return this.http.put(`http://localhost:3000/modifier/${param}`, body);
+  }
 
+  // suppression  membre
+  deleteMembre(param) {
+    return this.http.delete(`http://localhost:3000/supprimer/${param}`);
+  }
+
+  // modification machine
+  updateMachine(body, param) {
+    return this.http.put(`http://localhost:3000/modifiermachine/${param}`, body);
+  }
+
+  // suppression machine
+  deleteMachine(param) {
+    return this.http.delete(`http://localhost:3000/supprimermachine/${param}`);
+  }
 }

@@ -8,7 +8,6 @@ import { GalerieMachinesComponent } from './galerie-machines/galerie-machines.co
 import { SearchResultComponent } from './search-result/search-result.component';
 import { AuthGuard } from './common/auth.guard';
 import { AccueilUserComponent } from './accueil-user/accueil-user.component';
-import { CreationEquipeMachineComponent } from './creation-equipe-machine/creation-equipe-machine.component';
 import { ModifSupEquipeComponent } from './modif-sup-equipe/modif-sup-equipe.component';
 import { ModifSupMachineComponent } from './modif-sup-machine/modif-sup-machine.component';
 
@@ -21,8 +20,8 @@ const routes: Routes = [
   { path: 'machine', component: GalerieMachinesComponent },
   { path: 'recherche', component: SearchResultComponent },
   { path: 'admin', component: AccueilUserComponent, canActivate: [AuthGuard] },
-  { path: 'creation', component: CreationEquipeMachineComponent, canActivate: [AuthGuard] },
   { path: 'modifsupequipe', component: ModifSupEquipeComponent, canActivate: [AuthGuard] },
+  // { path: 'modifsupequipe/edit/:id', component: ModifSupEquipeComponent, canActivate: [AuthGuard] },
   { path: 'modifsupemachine', component: ModifSupMachineComponent, canActivate: [AuthGuard] },
   { path: 'recherche', component: SearchResultComponent }
 ];

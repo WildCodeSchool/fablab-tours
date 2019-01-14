@@ -1,68 +1,81 @@
-<h1 class="text-center">Gestion d'équipe</h1>
+<h1 class="text-center">Gestion de l'équipe</h1>
+<div class="text-center">
+  <button class="btn btn-outline-success mb-5 mr-2" (click)="open(contentAj)">Ajouter une personne</button>
+</div>
 <div class="container">
   <div class="row">
-    <div class="col-md-4 mt-3"  *ngFor= "let equipe of equipes">
+    <div class="col-md-4 mt-3"  *ngFor= "let equipe of equipes | paginate :{ itemsPerPage: 6, currentPage: p }">
       <div class="card mb">
         <img class="card-img-top" src="{{equipe.image}}" alt="photo du membre">
         <div class="card-body mb">
           <h5 class="card-title">{{equipe.nom}} {{equipe.prenom}}</h5>
           <p class="card-text">{{equipe.poste}}</p>
-          <button type="button" class="btn btn-outline-info mr-2" (click)="openLg(content)">Modifier</button>
-          <button type="button" class="btn btn btn-outline-danger" (click)="openVerticallyCentered(contentSup)">Supprimer</button>
+          <p class="card-text">{{equipe.email}}</p>
+          <button type="button" class="btn btn-outline-info mr-2" (click)="open(content)">Modifier</button>
+          <button type="button" class="btn btn btn-outline-danger" (click)="open(contentSup)">Supprimer</button>
         </div>
       </div>
-
-<!-- update Modal -->
-<ng-template #content let-modal>
-  <div class="modal-header">
-    <h4 class="modal-title text-center">Modifier le membre</h4>
-    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-
-    <form [formGroup]="membreForm">
-      <div class='form-group'>
-<input type='text' class="form-control" formControlName='prenom' [(ngModel)]="equipe.prenom">
-        <div *ngIf="membreForm.controls['prenom'].invalid && (membreForm.controls['prenom'].dirty || membreForm.controls['prenom'].touched)"
-          class="alert alert-danger">
-          <div class="obl" *ngIf="membreForm.controls['prenom'].errors.required">Le prénom est obligatoire.</div>
+      
+      <!-- update Modal -->
+      <ng-template #content let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title text-center">Modifier le membre</h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss(); membreForm.reset()">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
-      </div>
-
-      <div class='form-group'>
-        <input type='text' class="form-control" formControlName='nom' placeholder="nom" [(ngModel)]="equipe.nom">
-        <div *ngIf="membreForm.controls['nom'].invalid && (membreForm.controls['nom'].dirty || membreForm.controls['nom'].touched)"
-          class="alert alert-danger">
-          <div class="obl" *ngIf="membreForm.controls['nom'].errors.required">Le nom est obligatoire.</div>
+        <div class="modal-body">
+          
+          <form [formGroup]="membreForm">
+            <div class='form-group'>
+              <input type='text' class="form-control" formControlName='prenom' [(ngModel)]="equipe.prenom">
+              <div *ngIf="membreForm.controls['prenom'].invalid && (membreForm.controls['prenom'].dirty || membreForm.controls['prenom'].touched)"
+              class="alert alert-danger">
+              <div class="obl" *ngIf="membreForm.controls['prenom'].errors.required">Le prénom est obligatoire.</div>
+            </div>
+          </div>
+          
+          <div class='form-group'>
+            <input type='text' class="form-control" formControlName='nom' placeholder="nom" [(ngModel)]="equipe.nom">
+            <div *ngIf="membreForm.controls['nom'].invalid && (membreForm.controls['nom'].dirty || membreForm.controls['nom'].touched)"
+            class="alert alert-danger">
+            <div class="obl" *ngIf="membreForm.controls['nom'].errors.required">Le nom est obligatoire.</div>
+          </div>
         </div>
-      </div>
-
-      <div class='form-group'>
-        <input type='text' class="form-control" formControlName='poste' placeholder="poste" [(ngModel)]="equipe.poste">
-        <div *ngIf="membreForm.controls['poste'].invalid && (membreForm.controls['poste'].dirty || membreForm.controls['poste'].touched)"
+        
+        <div class='form-group'>
+          <input type='text' class="form-control" formControlName='poste' placeholder="poste" [(ngModel)]="equipe.poste">
+          <div *ngIf="membreForm.controls['poste'].invalid && (membreForm.controls['poste'].dirty || membreForm.controls['poste'].touched)"
           class="alert alert-danger">
           <div class="obl" *ngIf="membreForm.controls['poste'].errors.required">Le poste est obligatoire.</div>
         </div>
       </div>
-
+      
+      <div class="form-group">
+        <input type="text" class="form-control" formControlName='email' placeholder="Email" [(ngModel)]="equipe.email">
+      </div>
+      
       <div class='form-group'>
         <input type='text' class="form-control" formControlName='linkedin' placeholder="linkedin" [(ngModel)]="equipe.linkedin">
       </div>
-
+      
       <div class='form-group'>
         <input type='text' class="form-control" formControlName='image' placeholder="image" [(ngModel)]="equipe.image">
         <div *ngIf="membreForm.controls['image'].invalid && (membreForm.controls['image'].dirty || membreForm.controls['image'].touched)"
-          class="alert alert-danger">
-          <div class="obl" *ngIf="membreForm.controls['image'].errors.required">L'image est obligatoire.</div>
-        </div>
+        class="alert alert-danger">
+        <div class="obl" *ngIf="membreForm.controls['image'].errors.required">L'image est obligatoire.</div>
       </div>
-      <button type='submit' class="btn btn-success mr-2" [disabled]="membreForm.pristine ||membreForm.invalid">Confirmer</button>
-      <button type="button" class="btn btn-light" (click)="modal.close()">Annuler</button>
-    </form>
-  </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-light" (click)="modal.dismiss(); membreForm.reset()">Annuler</button>
+  <button type='submit' class="btn btn-success mr-2" [disabled]="membreForm.pristine ||membreForm.invalid" (click)="updateMembre(membreForm.value, equipe.id); modal.close(); membreForm.reset()">Confirmer</button>
+</div>
 </ng-template>
+
+
+
 
 <!-- Delete Modal -->
 <ng-template #contentSup let-modal>
@@ -76,14 +89,75 @@
     <p>Voulez-vous vraiment supprimer {{equipe.nom}} {{equipe.prenom }}</p>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-light" (click)="modal.close()">Annuler</button>
-    <button type="button" class="btn btn btn-danger" (click)="modal.close()">Supprimer</button>
-
+    <button type="button" class="btn btn-light" (click)="modal.dismiss()">Annuler</button>
+    <button type="button" class="btn btn btn-danger" (click)="deleteMembre(equipe.id);modal.close()">Supprimer</button>
+    
   </div>
 </ng-template>
 
+</div>
+</div>
+
+<!-- Modal ajout -->
+<ng-template #contentAj let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Ajout membre équipe</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="membreForm">
+      
+      <div class='form-group'>
+        <input type='text' class="form-control" formControlName='prenom' placeholder="Prenom">
+        <div *ngIf="membreForm.controls['prenom'].invalid && (membreForm.controls['prenom'].dirty || membreForm.controls['prenom'].touched)"
+        class="alert alert-danger">
+        <div class="obl" *ngIf="membreForm.controls['prenom'].errors.required">Le prénom est obligatoire.</div>
+      </div>
+    </div>
+    
+    <div class='form-group'>
+      <input type='text' class="form-control" formControlName='nom' placeholder="Nom">
+      <div *ngIf="membreForm.controls['nom'].invalid && (membreForm.controls['nom'].dirty || membreForm.controls['nom'].touched)"
+      class="alert alert-danger">
+      <div class="obl" *ngIf="membreForm.controls['nom'].errors.required">Le nom est obligatoire.</div>
     </div>
   </div>
+  
+  <div class='form-group'>
+    <input type='text' class="form-control" formControlName='image' placeholder="Image">
+    <div *ngIf="membreForm.controls['image'].invalid && (membreForm.controls['image'].dirty || membreForm.controls['image'].touched)"
+    class="alert alert-danger">
+    <div class="obl" *ngIf="membreForm.controls['image'].errors.required">L'image est obligatoire.</div>
+  </div>
+</div>
+
+<div class='form-group'>
+  <input type='text' class="form-control" formControlName='poste' placeholder="Poste">
+  <div *ngIf="membreForm.controls['poste'].invalid && (membreForm.controls['poste'].dirty || membreForm.controls['poste'].touched)"
+  class="alert alert-danger">
+  <div class="obl" *ngIf="membreForm.controls['poste'].errors.required">Le poste est obligatoire.</div>
+</div>
+</div>
+
+<div class="form-group">
+  <input type="text" class="form-control" formControlName='email' placeholder="Email">
+</div>
+
+<div class='form-group'>
+  <input type='text' class="form-control" formControlName='linkedin' placeholder="Linkedin">
+</div>
+</form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-light" (click)="modal.dismiss()">Annuler</button>
+  <button type='submit' [disabled]="membreForm.pristine ||membreForm.invalid" (click)="createMembre(membreForm.value); modal.close(); membreForm.reset()" class='btn btn-primary'>Ajouter</button>
+</div>
+</ng-template>
+<div class="text-center mt-5">
+  <pagination-controls (pageChange)="p = $event" nextLabel="Suivant" previousLabel="Précédent"></pagination-controls>
+</div>
 </div>
 
 
