@@ -65,8 +65,8 @@ export class HeaderComponent implements OnInit {
     open(content) {
       this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title', centered: true }).result.then((result) => {
         this.closeResult = `Closed with: ${result}`;
-        this.connectForm.reset();
         this.submit();
+        this.connectForm.reset();
 
       }, (reason) => {
         this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;

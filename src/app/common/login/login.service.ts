@@ -10,21 +10,21 @@ export class LoginService {
 
   // cretion machine
   sendMachine(body) {
-    return this.http.post('http://localhost:3000/api/machines', body);
-    // , {
-    //   headers: new HttpHeaders({
-    //      'Authorization': `BEARER ${localStorage.getItem('access_token')}`,
-    //   })
-    // };
+    return this.http.post('http://localhost:3000/api/machines', body
+      , {
+        headers: new HttpHeaders({
+          'Authorization': `BEARER ${sessionStorage.getItem('access_token')}`,
+        })
+      });
   }
 
   // creation membre
   sendMember(body) {
-    return this.http.post('http://localhost:3000/api/equipe', body);
-    // , {
-    //   headers: new HttpHeaders({
-    //      'Authorization': `BEARER ${localStorage.getItem('access_token')}`,
-    //   })
-    // };
+    return this.http.post('http://localhost:3000/api/equipe', body
+     , {
+       headers: new HttpHeaders({
+          'Authorization': `BEARER ${localStorage.getItem('access_token')}`,
+       })
+     });
   }
 }
