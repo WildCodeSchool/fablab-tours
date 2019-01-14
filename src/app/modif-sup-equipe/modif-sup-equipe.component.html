@@ -1,8 +1,8 @@
 <h1 class="text-center">Gestion de l'équipe</h1>
+<div class="text-center">
+  <button class="btn btn-outline-success mb-5 mr-2" (click)="open(contentAj)">Ajouter une personne</button>
+</div>
 <div class="container">
-  <div class="text-center">
-    <button class="btn btn-outline-success mb-5 mr-2" (click)="openLg(contentAj)">Ajouter une personne</button>
-  </div>
   <div class="row">
     <div class="col-md-4 mt-3"  *ngFor= "let equipe of equipes | paginate :{ itemsPerPage: 6, currentPage: p }">
       <div class="card mb">
@@ -11,8 +11,8 @@
           <h5 class="card-title">{{equipe.nom}} {{equipe.prenom}}</h5>
           <p class="card-text">{{equipe.poste}}</p>
           <p class="card-text">{{equipe.email}}</p>
-          <button type="button" class="btn btn-outline-info mr-2" (click)="openLg(content)">Modifier</button>
-          <button type="button" class="btn btn btn-outline-danger" (click)="openLg(contentSup)">Supprimer</button>
+          <button type="button" class="btn btn-outline-info mr-2" (click)="open(content)">Modifier</button>
+          <button type="button" class="btn btn btn-outline-danger" (click)="open(contentSup)">Supprimer</button>
         </div>
       </div>
       
@@ -50,10 +50,10 @@
           <div class="obl" *ngIf="membreForm.controls['poste'].errors.required">Le poste est obligatoire.</div>
         </div>
       </div>
-
+      
       <div class="form-group">
-          <input type="text" class="form-control" formControlName='email' placeholder="Email" [(ngModel)]="equipe.email">
-        </div>
+        <input type="text" class="form-control" formControlName='email' placeholder="Email" [(ngModel)]="equipe.email">
+      </div>
       
       <div class='form-group'>
         <input type='text' class="form-control" formControlName='linkedin' placeholder="linkedin" [(ngModel)]="equipe.linkedin">
@@ -142,8 +142,8 @@
 </div>
 
 <div class="form-group">
-    <input type="text" class="form-control" formControlName='email' placeholder="Email">
-  </div>
+  <input type="text" class="form-control" formControlName='email' placeholder="Email">
+</div>
 
 <div class='form-group'>
   <input type='text' class="form-control" formControlName='linkedin' placeholder="Linkedin">

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EquipeService } from '../common/equipe.service';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { LoginService } from '../common/login/login.service';
 
@@ -15,7 +15,10 @@ export class ModifSupEquipeComponent implements OnInit {
   equipes: any[];
   membreForm: FormGroup;
   
-  constructor(public service: EquipeService, private modalService: NgbModal, private fb: FormBuilder, public loginService: LoginService) { }
+  constructor(private config: NgbModalConfig, public service: EquipeService, private modalService: NgbModal, private fb: FormBuilder, public loginService: LoginService) { 
+    config.backdrop = 'static';
+    config.keyboard = false;
+   }
   
   ngOnInit() {
     
@@ -37,7 +40,7 @@ export class ModifSupEquipeComponent implements OnInit {
   }
   
   // modal
-  openLg(content) {
+  open(content) {
     this.modalService.open(content, { centered: true  });
   }
   
