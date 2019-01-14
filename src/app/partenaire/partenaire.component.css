@@ -6,13 +6,13 @@
     margin-top: 2em;
 }
 
-.social-footer-ul a img {
-    width: 80px;
+img {
+    width: 100px;
     filter: grayscale();
     margin-top: 1em;
 }
 
-.social-footer-ul a img:hover {
+img:hover {
     filter: none;
 }
 
@@ -45,7 +45,7 @@ h5 {
     font-weight: bold;
 }
 
- .devpart {
+.devpart {
     margin-top: 1em;
     background-color: #70CCCC;
     border-color: #70CCCC;
@@ -67,4 +67,9 @@ h5 {
     .parttech {
         margin-top: 4em;
     }
+}
+
+.btn {
+    max-width: 15em;
+    min-width: 12em;
 }
