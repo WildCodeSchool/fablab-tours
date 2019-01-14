@@ -69,12 +69,16 @@ h1 {
   margin-top: 1.4em;
   text-align: justify;
   font-size: 1.125rem;
+  margin-left: 1em;
+  margin-right: 1em;
 }
 
 .lead2 {
   text-align: justify;
   font-size: 21px;
   font-weight: bold;
+  margin-left: 1em;
+  margin-right: 1em;
 }
 
 /* End === Activity section */
@@ -133,11 +137,11 @@ h1 {
   font-size: 15px;
   font-weight: 600;
   font-family: Raleway;
-  }
+}
 
-  .agenda-more a {
-    color: #70CCCC;
-  }
+.agenda-more a {
+  color: #70CCCC;
+}
 
 /* End === section Agenda */
 
