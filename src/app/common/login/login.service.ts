@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -10,13 +10,13 @@ export class LoginService {
 
   // cretion machine
   sendMachine(body) {
-    return this.http.post('http://localhost:3000/api/ajouterMachine', body);
-    }
+    return this.http.post('http://localhost:3000/api/machines', body);
+  }
 
   // creation membre
-    sendMember(body) {
-    return this.http.post('http://localhost:3000/api/ajouterMembre', body);
-    }
+  sendMember(body) {
+    return this.http.post('http://localhost:3000/api/equipe', body);
+  }
 
   // modification membre
   updateMembre(body, param) {
@@ -37,4 +37,5 @@ export class LoginService {
   deleteMachine(param) {
     return this.http.delete(`http://localhost:3000/supprimermachine/${param}`);
   }
+
 }

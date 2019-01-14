@@ -1,11 +1,11 @@
 <!-- navbar -->
 <nav class="navbar navbar-light fixed-top">
-    
+
     <!-- bouton pour faire apparaitre la sidebar -->
     <button [ngClass]="{'transBtn': sidebarDisplayed}" (click)="showSidebar(!sidebarDisplayed)" id="boutonfiltre2" class="btnStartPos navbar-toggler"
     type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
     aria-expanded="false" aria-label="Toggle navigation">
-    
+
     <!-- menu burger ouverture sidebar -->
     <div *ngIf="!sidebarDisplayed" class="openside">
         <i class="fa fa-bars"></i>
@@ -70,9 +70,9 @@
                             <a *ngIf="!authService.loggedIn" href="https://www.facebook.com/FablabTourangeau/" target="_blank" title="Lien externe: https://www.facebook.com/FablabTourangeau/"><i  class="fa fa-facebook-f mx-3"></i></a>
                             <a *ngIf="!authService.loggedIn" href="https://www.instagram.com/funlab_tours/" target="_blank" title="Lien externe: https://www.instagram.com/funlab_tours/"><i class="fa fa-instagram mx-3"></i></a>
                             <a *ngIf="!authService.loggedIn" href="https://twitter.com/lefunlab/" target="_blank" title="Lien externe: https://twitter.com/lefunlab/"><i class="fa fa-twitter mx-3"></i></a>
-                            
+
                             <!-- debut modal connexion user -->
-                            
+
                             <a (click)="open(content)" (click)="showSidebar(false)" *ngIf="!authService.loggedIn"><i class="fa fa-user mx-2"></i></a>
                             <a (click)="logout()" (click)="showSidebar(false)" *ngIf="authService.loggedIn"><i class="fa fa-sign-out mx-2"></i></a>
                             <ng-template #content let-modal>
@@ -84,31 +84,31 @@
                                 </div>
                                 <div class="modal-body">
                                     <div class="container-fluid">
-                                        
+
                                         <div class="sec2contactform">
-                                            <form [formGroup]="connectForm" (ngSubmit)='submit(connectForm.value); connectForm.reset(); modal.close()'>
-                                                
+                                            <form [formGroup]="connectForm">
+
                                                 <div class='form-group'>
                                                     <input type='email' class="form-control connect" formControlName='username' placeholder="Votre email">
                                                     <div *ngIf="connectForm.controls['username'].invalid && (connectForm.controls['username'].dirty || connectForm.controls['username'].touched)"
                                                     class="alert alert-danger">
-                                                    <div class="obl" *ngIf="connectForm.controls['username'].invalid && (connectForm.controls['username'].dirty || connectForm.controls['username'].touched)">Email obligatoire.</div>
+                                                        <div class="obl" *ngIf="connectForm.controls['username'].invalid && (connectForm.controls['username'].dirty || connectForm.controls['username'].touched)">Email obligatoire.</div>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            
-                                            <div class='form-group'>
-                                                <input type='password' class="form-control connect" formControlName='password' placeholder="Mot de passe">
-                                                <div *ngIf="connectForm.controls['password'].invalid && (connectForm.controls['password'].dirty || connectForm.controls['password'].touched)"
+
+                                                <div class='form-group'>
+                                                    <input type='password' class="form-control connect" formControlName='password' placeholder="Mot de passe">
+                                                    <div *ngIf="connectForm.controls['password'].invalid && (connectForm.controls['password'].dirty || connectForm.controls['password'].touched)"
                                                 class="alert alert-danger">
                                                 <div class="obl" *ngIf="connectForm.controls['password'].invalid && (connectForm.controls['password'].dirty || connectForm.controls['password'].touched)">Mot de passe obligatoire.</div>
                                             </div>
                                         </div>
-                                        
-                                        <button type='submit' [disabled]="connectForm.pristine ||connectForm.invalid" class='btn btn-secondary'>Connexion</button>
-                                        <h4 *ngIf="error">{{error}}</h4>
+
+                                        <button type='button' [disabled]="connectForm.pristine ||connectForm.invalid" (click)="modal.close()" class='btn btn-secondary'>Connexion</button>
+                                        <h4 class="error" *ngIf="error">{{error}}</h4>
                                     </form>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </ng-template>

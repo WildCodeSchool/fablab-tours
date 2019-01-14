@@ -43,11 +43,12 @@ export class HeaderComponent implements OnInit {
     }
     // envois requete connection
     submit() {
-      this.authService.login(this.connectForm.value)
+      const val = this.connectForm.value;
+      this.authService.login(val.username, val.password)
         .pipe(first())
         .subscribe(
           result => this.router.navigate(['admin']),
-          err => this.error = 'Impossible de se connecter'
+          err => this.error = 'Erreur lors de la connexion'
         );
     }
     // deconnection
@@ -64,8 +65,8 @@ export class HeaderComponent implements OnInit {
     open(content) {
       this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title', centered: true }).result.then((result) => {
         this.closeResult = `Closed with: ${result}`;
-        this.connectForm.reset();
         this.submit();
+        this.connectForm.reset();
 
       }, (reason) => {
         this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
