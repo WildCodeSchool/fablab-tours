@@ -10,6 +10,8 @@ import { LoginService } from '../common/login/login.service';
   styleUrls: ['./modif-sup-machine.component.css']
 })
 export class ModifSupMachineComponent implements OnInit {
+
+  // renitialisation de numero de la premiere page à 1
   p = 1;
   machineForm: FormGroup;
   machines: any[];
@@ -21,19 +23,21 @@ export class ModifSupMachineComponent implements OnInit {
    }
 
   ngOnInit() {
-    // récuperer les données concernant les machines de la base de données.
+
+    // récuperer les données machines de la base de données et les stocker dans le tableau machines.
     this.service.getMachines().subscribe(res => {
       this.machines = res;
     });
+
     // Champs machine
     this.machineForm = this.fb.group({
       nom_machine: ['', Validators.required],
       photo: ['', Validators.required],
-      description: ['', Validators.required]
+      description: ['', [Validators.required, Validators.minLength(10)]]
     });
   }
 
-  // modal
+  // ouvrir modal
   open(content) {
     this.modalService.open(content, { centered: true });
   }

@@ -10,51 +10,53 @@ import { LoginService } from '../common/login/login.service';
   styleUrls: ['./modif-sup-equipe.component.css']
 })
 export class ModifSupEquipeComponent implements OnInit {
-  
+
+// renitialisation de numero de la premiere page à 1
   p = 1;
   equipes: any[];
   membreForm: FormGroup;
-  
-  constructor(private config: NgbModalConfig, public service: EquipeService, private modalService: NgbModal, private fb: FormBuilder, public loginService: LoginService) { 
+
+  // tslint:disable-next-line:max-line-length
+  constructor(private config: NgbModalConfig, public service: EquipeService, private modalService: NgbModal, private fb: FormBuilder, public loginService: LoginService) {
     config.backdrop = 'static';
     config.keyboard = false;
    }
-  
+
   ngOnInit() {
-    
+
     // récupère données concernant l'équipe dans bdd.
     this.service.getEquipe().subscribe(res => {
       this.equipes = res;
     });
-    
+
     // Champs membre equipe
     this.membreForm = this.fb.group({
       prenom: ['', Validators.required],
       nom: ['', Validators.required],
-      image: ['', Validators.required],
+      image: [''],
       poste: ['', Validators.required],
-      email: [''],
-      linkedin: ['']
+      linkedin: [''],
+      email: ['', Validators.email],
     });
-    
+
   }
-  
-  // modal
+
+  // ouvrir modal
   open(content) {
     this.modalService.open(content, { centered: true  });
   }
-  
+
   // modification membre equipe
   updateMembre(form , id) {
     this.loginService.updateMembre(form, id).subscribe();
   }
-  
+
   // creation membre equipe
   createMembre(form) {
     this.loginService.sendMember(form).subscribe(() => {
     });
   }
-  
+
   // suppression membre equipe
   deleteMembre(id) {
     this.loginService.deleteMembre(id).subscribe(() => {
@@ -62,5 +64,5 @@ export class ModifSupEquipeComponent implements OnInit {
       this.equipes.splice(index, 1);
     });
   }
-  
+
 }

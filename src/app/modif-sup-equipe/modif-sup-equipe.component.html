@@ -15,7 +15,7 @@
           <button type="button" class="btn btn btn-outline-danger" (click)="open(contentSup)">Supprimer</button>
         </div>
       </div>
-      
+
       <!-- update Modal -->
       <ng-template #content let-modal>
         <div class="modal-header">
@@ -25,7 +25,7 @@
           </button>
         </div>
         <div class="modal-body">
-          
+
           <form [formGroup]="membreForm">
             <div class='form-group'>
               <input type='text' class="form-control" formControlName='prenom' [(ngModel)]="equipe.prenom">
@@ -34,7 +34,7 @@
               <div class="obl" *ngIf="membreForm.controls['prenom'].errors.required">Le prénom est obligatoire.</div>
             </div>
           </div>
-          
+
           <div class='form-group'>
             <input type='text' class="form-control" formControlName='nom' placeholder="nom" [(ngModel)]="equipe.nom">
             <div *ngIf="membreForm.controls['nom'].invalid && (membreForm.controls['nom'].dirty || membreForm.controls['nom'].touched)"
@@ -42,7 +42,7 @@
             <div class="obl" *ngIf="membreForm.controls['nom'].errors.required">Le nom est obligatoire.</div>
           </div>
         </div>
-        
+
         <div class='form-group'>
           <input type='text' class="form-control" formControlName='poste' placeholder="poste" [(ngModel)]="equipe.poste">
           <div *ngIf="membreForm.controls['poste'].invalid && (membreForm.controls['poste'].dirty || membreForm.controls['poste'].touched)"
@@ -50,22 +50,25 @@
           <div class="obl" *ngIf="membreForm.controls['poste'].errors.required">Le poste est obligatoire.</div>
         </div>
       </div>
-      
+
       <div class="form-group">
-        <input type="text" class="form-control" formControlName='email' placeholder="Email" [(ngModel)]="equipe.email">
+      <input type="text" class="form-control" formControlName='email' pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+   placeholder="Email" [(ngModel)]="equipe.email">
       </div>
-      
+
       <div class='form-group'>
         <input type='text' class="form-control" formControlName='linkedin' placeholder="linkedin" [(ngModel)]="equipe.linkedin">
       </div>
-      
+
       <div class='form-group'>
-        <input type='text' class="form-control" formControlName='image' placeholder="image" [(ngModel)]="equipe.image">
+      <input type='text' class="form-control" formControlName='image' pattern="(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|jpeg|png)"
+   placeholder="image" [(ngModel)]="equipe.image">
         <div *ngIf="membreForm.controls['image'].invalid && (membreForm.controls['image'].dirty || membreForm.controls['image'].touched)"
         class="alert alert-danger">
         <div class="obl" *ngIf="membreForm.controls['image'].errors.required">L'image est obligatoire.</div>
       </div>
     </div>
+
   </form>
 </div>
 <div class="modal-footer">
@@ -91,7 +94,7 @@
   <div class="modal-footer">
     <button type="button" class="btn btn-light" (click)="modal.dismiss()">Annuler</button>
     <button type="button" class="btn btn btn-danger" (click)="deleteMembre(equipe.id);modal.close()">Supprimer</button>
-    
+
   </div>
 </ng-template>
 
@@ -108,7 +111,7 @@
   </div>
   <div class="modal-body">
     <form [formGroup]="membreForm">
-      
+
       <div class='form-group'>
         <input type='text' class="form-control" formControlName='prenom' placeholder="Prenom">
         <div *ngIf="membreForm.controls['prenom'].invalid && (membreForm.controls['prenom'].dirty || membreForm.controls['prenom'].touched)"
@@ -116,7 +119,7 @@
         <div class="obl" *ngIf="membreForm.controls['prenom'].errors.required">Le prénom est obligatoire.</div>
       </div>
     </div>
-    
+
     <div class='form-group'>
       <input type='text' class="form-control" formControlName='nom' placeholder="Nom">
       <div *ngIf="membreForm.controls['nom'].invalid && (membreForm.controls['nom'].dirty || membreForm.controls['nom'].touched)"
@@ -124,9 +127,9 @@
       <div class="obl" *ngIf="membreForm.controls['nom'].errors.required">Le nom est obligatoire.</div>
     </div>
   </div>
-  
+
   <div class='form-group'>
-    <input type='text' class="form-control" formControlName='image' placeholder="Image">
+    <input type='text' class="form-control" formControlName='image' pattern="(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|jpeg|png)" placeholder="Image">
     <div *ngIf="membreForm.controls['image'].invalid && (membreForm.controls['image'].dirty || membreForm.controls['image'].touched)"
     class="alert alert-danger">
     <div class="obl" *ngIf="membreForm.controls['image'].errors.required">L'image est obligatoire.</div>
@@ -142,7 +145,7 @@
 </div>
 
 <div class="form-group">
-  <input type="text" class="form-control" formControlName='email' placeholder="Email">
+  <input type="text" class="form-control" formControlName='email' pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Email">
 </div>
 
 <div class='form-group'>
