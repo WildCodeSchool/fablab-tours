@@ -194,3 +194,10 @@ p {
   text-justify: inter-word;
   text-align-last: center;
 }
+
+
+.row h2 {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  text-align: center;
+}
