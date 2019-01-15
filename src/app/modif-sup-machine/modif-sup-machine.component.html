@@ -4,14 +4,14 @@
     <button class="btn btn-outline-success mb-5 mr-2" (click)="open(contentAj)">Ajouter une machine</button>
   </div>
   <div class="row">
-    <div class="col-md-4" *ngFor="let machine of machines | paginate :{ itemsPerPage: 6, currentPage: p }">
+    <div class="col-md-6 col-sm-12 col-lg-4 col-xl-3" *ngFor="let machine of machines | paginate :{ itemsPerPage: 6, currentPage: p }">
       <div class="card mb-4">
         <img class="card-img-top" src="{{machine.photo}}" alt="image machine">
         <div class="card-body">
           <h5 class="card-title">{{machine.nom_machine}}</h5>
           <p class="card-text">{{machine.description}}</p>
           <button type="button" class="btn btn-outline-info mr-2" (click)="open(content)">Modifier</button>
-          <button type="button" class="btn btn btn-outline-danger" (click)="open(contentSup)">Supprimer</button>
+          <button type="button" class="btn btn-outline-danger" (click)="open(contentSup)">Supprimer</button>
         </div>
       </div>
       <!-- update Modal -->
@@ -35,11 +35,15 @@
           </div>
 
         <div class='form-group'>
-          <input type='text' class="form-control" formControlName='photo' placeholder="Photo machine" [(ngModel)]="machine.photo">
+          <input type='text' class="form-control" formControlName='photo' pattern="(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|jpeg|png)"
+           placeholder="Url photo machine" [(ngModel)]="machine.photo">
           <div *ngIf="machineForm.controls['photo'].invalid && (machineForm.controls['photo'].dirty || machineForm.controls['photo'].touched)"
           class="alert alert-danger">
           <div class="obl" *ngIf="machineForm.controls['photo'].errors.required">La photo est obligatoire.</div>
         </div>
+        </div>
+        <div class="container d-flex justify-content-center">
+        <img *ngIf="machine.photo" class="imgModif" src="{{machine.photo}}" alt="image de la machine" />
       </div>
 
       <div class='form-group'>
@@ -51,11 +55,12 @@
     </div>
 
     </form>
+
   </div>
   <div class="modal-footer">
 
-    <button type="button" class="btn btn-light" (click)="modal.dismiss(); machineForm.reset()">Annuler</button>
-    <button type='submit' [disabled]="machineForm.pristine ||machineForm.invalid" class="btn btn-success mr-2" (click)="updateMachine(machineForm.value, machine.id_machine); modal.close(); machineForm.reset()">Confirmer</button>
+    <button type="button" class="btn btn-outline-dark" (click)="modal.dismiss(); machineForm.reset()">Annuler</button>
+    <button type='submit' [disabled]="machineForm.pristine ||machineForm.invalid" class="btn btn-outline-success mr-2" (click)="updateMachine(machineForm.value, machine.id_machine); modal.close(); machineForm.reset()">Confirmer</button>
   </div>
 </ng-template>
 
@@ -72,13 +77,13 @@
     <p>Voulez-vous vraiment supprimer {{machine.nom_machine}}</p>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-light" (click)="modal.dismiss()">Annuler</button>
-    <button type="button" class="btn btn btn-danger" (click)="deleteMachine(machine.id_machine); modal.close()">Supprimer</button>
+    <button type="button" class="btn btn-outline-dark" (click)="modal.dismiss()">Annuler</button>
+    <button type="button" class="btn btn-outline-danger" (click)="deleteMachine(machine.id_machine); modal.close()">Supprimer</button>
   </div>
 </ng-template>
 </div>
 </div>
-<!-- Modal ajout -->
+<!--ajout Modal -->
 <ng-template #contentAj let-modal>
   <div class="modal-header">
     <h4 class="modal-title">Ajouter un machine</h4>
@@ -106,18 +111,18 @@
   </div>
 
   <div class='form-group'>
-    <input type='text' class="form-control" formControlName='photo' placeholder="Photo machine">
+  <input type='text' class="form-control" formControlName='photo' pattern="(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|jpeg|png)"
+   placeholder="Url photo machine">
     <div *ngIf="machineForm.controls['photo'].invalid && (machineForm.controls['photo'].dirty || machineForm.controls['photo'].touched)"
     class="alert alert-danger">
-    <div class="obl" *ngIf="machineForm.controls['photo'].errors.required">La photo est obligatoire.</div>
+    <div class="obl" *ngIf="machineForm.controls['photo'].errors.required">L'image doit être au format PNG ou JPG.</div>
   </div>
 </div>
-
 </form>
 </div>
 <div class="modal-footer">
-  <button type="button" class="btn btn-light" (click)="modal.dismiss()">Annuler</button>
-  <button type='submit' [disabled]="machineForm.pristine ||machineForm.invalid" (click)="createMachine(machineForm.value); modal.close(); machineForm.reset();" class='btn btn-primary'>Ajouter</button>
+  <button type="button" class="btn btn-outline-dark" (click)="modal.dismiss()">Annuler</button>
+  <button type='submit' [disabled]="machineForm.pristine ||machineForm.invalid" (click)="createMachine(machineForm.value); modal.close(); machineForm.reset();" class='btn btn-outline-success'>Ajouter</button>
 </div>
 </ng-template>
 

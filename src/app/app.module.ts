@@ -84,8 +84,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
       }
     }),
     NgxPaginationModule,
-    ReactiveFormsModule.withConfig({ warnOnNgModelWithFormControl: 'never' })
+    ReactiveFormsModule.withConfig({ warnOnNgModelWithFormControl: 'never' }),
   ],
+
 
   providers: [
     {provide: LOCALE_ID, useValue: 'fr-CA' }

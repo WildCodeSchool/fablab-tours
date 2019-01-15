@@ -17,7 +17,6 @@ export class LoginService {
       })
     });
   }
-
   // modification membre
   updateMembre(body, param) {
     return this.http.put(`http://localhost:3000/api/equipe/${param}`, body

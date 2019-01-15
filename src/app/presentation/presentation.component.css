@@ -18,13 +18,14 @@
 
 /* Funlab Title */
 
-.funlab-presentation> h1 {
+.funlab-presentation h1 {
   text-align: center;
-  font-size: 2.5em;
-  font-weight: bold;
-  color: #696969;
-  letter-spacing: 1px;
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
   font-family: Raleway;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
 }
 
 /* Presentation text about Funlab */
@@ -37,4 +38,6 @@
   text-align: justify;
   text-justify: inter-word;
   text-align-last: center;
+  margin-left: 1em;
+  margin-right: 1em;
 }
