@@ -4,7 +4,7 @@
 </div>
 <div class="container">
   <div class="row">
-    <div class="col-md-4 mt-3"  *ngFor= "let equipe of equipes | paginate :{ itemsPerPage: 6, currentPage: p }">
+    <div class="col-md-6 col-sm-12 col-lg-4 col-xl-3 mt-3"  *ngFor= "let equipe of equipes | paginate :{ itemsPerPage: 6, currentPage: p }">
       <div class="card mb">
         <img class="card-img-top" src="{{equipe.image}}" alt="photo du membre">
         <div class="card-body mb">
