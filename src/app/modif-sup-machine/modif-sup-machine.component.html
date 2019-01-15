@@ -4,7 +4,7 @@
     <button class="btn btn-outline-success mb-5 mr-2" (click)="open(contentAj)">Ajouter une machine</button>
   </div>
   <div class="row">
-    <div class="col-md-6 col-sm-12 col-lg-4 col-xl-3" *ngFor="let machine of machines | paginate :{ itemsPerPage: 6, currentPage: p }">
+    <div class="col-md-6 col-sm-12 col-lg-4" *ngFor="let machine of machines | paginate :{ itemsPerPage: 6, currentPage: p }">
       <div class="card mb-4">
         <img class="card-img-top" src="{{machine.photo}}" alt="image machine">
         <div class="card-body">

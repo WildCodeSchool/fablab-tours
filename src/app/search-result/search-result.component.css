@@ -1,5 +1,5 @@
 .container {
-margin-top: 150px;
+margin-top: 14em;
 min-height: 300px !important;
 }
 
@@ -26,7 +26,35 @@ strong, a, h3 {
   margin-left: 10px;
 }
 
-
 .Error-msg p {
- line-height: 17px;
+  line-height: 18px;
+  height: 300px;
+}
+
+
+@media screen and (max-width:500px) {
+
+  .container {
+    margin-top: 8em;
+  }
+
+  .Error-msg p {
+    max-width: 28ch;
+    height: 200px;
+   }
+
+   .Error-msg {
+     height: 100px;
+   }
+
+  .card-text {
+    max-width: 23ch;
+  }
+
+}
+
+@media screen and (min-width: 500px) and (max-width:1220px) {
+  .card-text {
+    max-width: 40ch;
+  }
 }
