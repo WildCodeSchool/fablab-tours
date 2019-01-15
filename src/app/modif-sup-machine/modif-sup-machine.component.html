@@ -4,7 +4,7 @@
     <button class="btn btn-outline-success mb-5 mr-2" (click)="open(contentAj)">Ajouter une machine</button>
   </div>
   <div class="row">
-    <div class="col-md-6 col-sm-12 col-lg-4 col-xl-3" *ngFor="let machine of machines | paginate :{ itemsPerPage: 6, currentPage: p }">
+    <div class="col-md-6 col-sm-12 col-lg-4" *ngFor="let machine of machines | paginate :{ itemsPerPage: 6, currentPage: p }">
       <div class="card mb-4">
         <img class="card-img-top" src="{{machine.photo}}" alt="image machine">
         <div class="card-body">
@@ -32,14 +32,6 @@
               class="alert alert-danger">
               <div class="obl" *ngIf="machineForm.controls['nom_machine'].errors.required">Nom machine est obligatoire.</div>
             </div>
-            </div>
-
-          <div class='form-group'>
-            <textarea class="form-control" formControlName='description' placeholder="Description" [(ngModel)]="machine.description"></textarea>
-            <div *ngIf="machineForm.controls['description'].invalid && (machineForm.controls['description'].dirty || machineForm.controls['description'].touched)"
-            class="alert alert-danger">
-            <div class="obl" *ngIf="machineForm.controls['description'].errors.required">La description est obligatoire.</div>
-          </div>
           </div>
 
         <div class='form-group'>
@@ -53,11 +45,20 @@
         <div class="container d-flex justify-content-center">
         <img *ngIf="machine.photo" class="imgModif" src="{{machine.photo}}" alt="image de la machine" />
       </div>
+
+      <div class='form-group'>
+        <textarea class="form-control" formControlName='description' placeholder="Description" [(ngModel)]="machine.description"></textarea>
+        <div *ngIf="machineForm.controls['description'].invalid && (machineForm.controls['description'].dirty || machineForm.controls['description'].touched)"
+        class="alert alert-danger">
+        <div class="obl" *ngIf="machineForm.controls['description'].errors.required">La description est obligatoire.</div>
+      </div>
+    </div>
+
     </form>
 
   </div>
   <div class="modal-footer">
-    
+
     <button type="button" class="btn btn-outline-dark" (click)="modal.dismiss(); machineForm.reset()">Annuler</button>
     <button type='submit' [disabled]="machineForm.pristine ||machineForm.invalid" class="btn btn-outline-success mr-2" (click)="updateMachine(machineForm.value, machine.id_machine); modal.close(); machineForm.reset()">Confirmer</button>
   </div>
