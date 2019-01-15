@@ -41,17 +41,18 @@
                     <li class="nav-item log-out">
                         <h3 class="nav-link" *ngIf="!authService.loggedIn" routerLink="/agenda" (click)="showSidebar(false)">Agenda</h3>
                     </li>
-                    <li class="nav-item log-out">
-                        <h3 class="nav-link" *ngIf="!authService.loggedIn"><a  (click)="showSidebar(false)" href="http://funlab.fr/category/actusblog/" title="Lien externe: http://funlab.fr/category/actusblog/" target="_blank">Blog</a></h3>
-                    </li>
-                    <li class="nav-item log-out">
-                        <h3 class="nav-link" *ngIf="!authService.loggedIn"><a (click)="showSidebar(false)" href="http://wiki.funlab.fr/index.php/Accueil" title="Lien externe: http://wiki.funlab.fr/index.php/Accueil" target="_blank">Wiki</a></h3>
-                    </li>
+                    
                     <li class="nav-item log-out">
                         <h3 class="nav-link" *ngIf="!authService.loggedIn" routerLink="/machine" (click)="showSidebar(false)">Machines</h3>
                     </li>
                     <li class="nav-item log-out">
                         <h3 class="nav-link" *ngIf="!authService.loggedIn" routerLink="/equipe" (click)="showSidebar(false)">Equipe</h3>
+                    </li>
+                    <li class="nav-item log-out">
+                        <h3 class="nav-link" *ngIf="!authService.loggedIn"><a  (click)="showSidebar(false)" href="http://funlab.fr/category/actusblog/" title="Lien externe: http://funlab.fr/category/actusblog/" target="_blank">Blog</a></h3>
+                    </li>
+                    <li class="nav-item log-out">
+                        <h3 class="nav-link" *ngIf="!authService.loggedIn"><a (click)="showSidebar(false)" href="http://wiki.funlab.fr/index.php/Accueil" title="Lien externe: http://wiki.funlab.fr/index.php/Accueil" target="_blank">Wiki</a></h3>
                     </li>
                     <li class="nav-item log-out">
                         <h3 class="nav-link" *ngIf="!authService.loggedIn" routerLink="/contact" (click)="showSidebar(false)">Contact</h3>

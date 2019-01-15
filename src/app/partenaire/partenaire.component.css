@@ -7,13 +7,42 @@
 }
 
 img {
-    width: 100px;
     filter: grayscale();
     margin-top: 1em;
 }
 
 img:hover {
     filter: none;
+}
+
+.region {
+    width: 100px;
+}
+
+.tours {
+    width: 130px;
+    margin-top: 3em;
+}
+
+.orange {
+    width: 140px;
+    margin-top: 2em;
+}
+
+.ddcs {
+    width: 110px;
+}
+
+.fdva {
+    width: 140px;    
+}
+
+.compagnon {
+    width: 120px;
+}
+
+.fartools {
+    width: 150px;
 }
 
 
@@ -33,7 +62,7 @@ h1 {
 }
 
 h5 {
-    font-size: 22px;
+    font-size: 1.5rem;
     font-weight: bold;
 }
 
@@ -46,7 +75,7 @@ h5 {
 }
 
 .devpart {
-    margin-top: 1em;
+    margin-top: -2em;
     background-color: #70CCCC;
     border-color: #70CCCC;
     color: #FFF;
