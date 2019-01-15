@@ -347,7 +347,7 @@ body {
   }
 }
 
-@media screen and (min-width:350px) and (max-width: 450px) {
+@media screen and (min-width:350px) and (max-width: 650px) {
 
   .navbar {
     height: 10vh;

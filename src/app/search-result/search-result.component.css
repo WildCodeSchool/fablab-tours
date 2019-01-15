@@ -52,3 +52,9 @@ strong, a, h3 {
   }
 
 }
+
+@media screen and (min-width: 500px) and (max-width:1220px) {
+  .card-text {
+    max-width: 40ch;
+  }
+}
