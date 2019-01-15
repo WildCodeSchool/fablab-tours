@@ -26,15 +26,17 @@ img:hover {
 
 .orange {
     width: 140px;
-    margin-top: 2em;
+    margin-top: 2.5em;
 }
 
 .ddcs {
     width: 110px;
+    margin-top: 1em;
 }
 
 .fdva {
-    width: 140px;    
+    width: 140px;   
+    margin-top: 1em; 
 }
 
 .compagnon {
@@ -43,8 +45,16 @@ img:hover {
 
 .fartools {
     width: 150px;
+    margin-top: 2em;
 }
 
+.partenaireTech {
+    margin-bottom: 10em;
+}
+
+.partenaireFin {
+    margin-top: 3em;
+}
 
 a, h1, h5 {
     font-family: Raleway;
@@ -90,6 +100,7 @@ h5 {
 
 .container {
     margin-bottom: 5em;
+    margin-top: 2em;
 }
 
 @media screen and (max-width: 1000px) {
