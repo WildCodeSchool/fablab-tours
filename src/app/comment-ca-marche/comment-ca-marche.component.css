@@ -1,17 +1,13 @@
-/* Start === styling of header for section comment ca marche */
+/* Start === top-container - Esprit FabLab styling */
 
 h1 {
   text-transform: uppercase;
   letter-spacing: 1px;
   color: #696969;
-  margin-bottom: 1em;
   font-weight: bold;
   font-size: 2.5rem;
+  padding: 30px;
 }
-
-/* End === styling of header for section comment ca marche */
-
-/* Start === top-container - Esprit FabLab styling */
 
 .top-container {
   background-color: #F6F6F2;
@@ -32,7 +28,8 @@ h1 {
 
 .top-container h4 {
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 500;
+  margin-top: 2rem;
 }
 
 .card {
@@ -40,12 +37,18 @@ h1 {
   background-color: #F6F6F2;
 }
 
-/* icon styling */
+/* icon styling only top 3*/
 
-.fa {
-  padding: 10px;
-  font-size: 30px;
+.top-container .fa {
+  display: inline-block;
+  padding: 1rem;
+  font-size: 4rem;
+  background-color: #70CCCC;
+  color: hsl(240, 14%, 99%);
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
 }
+
 
 /* End === top-container - Esprit FabLab styling */
 
@@ -55,10 +58,9 @@ h1 {
   margin: 0;
   text-align: center;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 500;
   padding: 40px 15px 0;
-  font-size: 40px;
-  margin-top: 1em;
+  font-size: 2.25rem;
   margin-bottom: 2em;
   color: #696969;
 }
@@ -88,22 +90,27 @@ h1 {
 .horaire {
   text-align: center;
   letter-spacing: 1px;
-  
 }
 
-/* To split the days and hours  */
-
-.day {
-  float: left;
-  font-size: 12px;
-  font-family: Raleway;
+table {
+  border-collapse: separate;
+  border-spacing: 10px;
 }
 
-.time {
-  float: right;
-  font-weight: 600;
-  font-size: 13px;
-  font-family: Raleway;
+th {
+  text-align: left;
+}
+
+td {
+  text-align: right;
+}
+
+tr:hover {
+  transition-duration: 0.3s;
+  transform: translateY(-5px);
+  font-size: 1.125rem;
+  color: #70CCCC;
+  font-weight: bold;
 }
 
 /* End === section Horaire  */
@@ -118,14 +125,14 @@ h1 {
 .event-detail-start-date,
 .event-detail-start-time,
 .event-detail-end-time {
-  font-size: 12px;
+  font-size: 0.9rem;
   font-family: Raleway;
 }
 
 .event-detail-title {
   text-transform: uppercase;
   font-weight: 600;
-  font-size: 11px;
+  font-size: 0.8rem;
   font-family: Raleway;
 }
 
@@ -134,7 +141,7 @@ h1 {
 .agenda-more {
   text-align: center;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 1rem;
   font-weight: 600;
   font-family: Raleway;
 }
@@ -167,12 +174,33 @@ h1 {
   transition: 0;
 }
 
+.fa {
+  padding: 10px;
+  font-size: 30px;
+}
+
 .fa-paper-plane {
   font-size: 20px;
 }
 
+
+
 /* End === section Newsletter */
 
-h1, h2, h3, h4, p, .day, .time, a {
+h1,
+h2,
+h3,
+h4,
+p,
+.day,
+.time,
+a,
+table {
   font-family: Raleway;
+}
+
+p {
+  text-align: justify;
+  text-justify: inter-word;
+  text-align-last: center;
 }

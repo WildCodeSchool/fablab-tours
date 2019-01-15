@@ -30,12 +30,14 @@
 
 /* Presentation text about Funlab */
 
-.funlab-presentation p {
-  text-align: center;
+.funlab-presentation> p {
   font-size: 1.125rem;
   color: #7d7d7d;
   font-family: Raleway;
   margin-top: 1em;
+  text-align: justify;
+  text-justify: inter-word;
+  text-align-last: center;
   margin-left: 1em;
   margin-right: 1em;
 }

@@ -1,8 +1,6 @@
 <section class="comment-ca-marche fond">
-
-  <h1 class="text-center">Comment ca marche ?</h1>
-
   <div class="top-container">
+    <h1 class="text-center">Comment ca marche ?</h1>
     <div class="row justify-content-around">
       <div class="col-sm-12 col-md-12 col-lg-4">
         <div class="card ml-4 mr-4">
@@ -56,11 +54,23 @@
           </header>
           <div class="first-content">
             <p class="lead">
-              L’association La FUN a été créée en 2013 par une poignée de citoyens pour faire émerger un fablab à Tours : le Funlab. Accueil temporaire à la pépinière du Sanitas puis hébergé chez les Compagnons du Devoir, le Funlab s’est posé à Mame en 2016. Depuis la communauté de compétences et d’idées n’a cessé de s’agrandir. En 2019, le Funlab compte 240 adhérents, et demain pourquoi pas vous ?</p>
-              <p class="lead"> Lors des Open Ateliers, notre rendez-vous grand public tous les jeudis de 16h à 22h, la communauté vous accueille pour votre « toute première fois » : visite, infos, démonstration de machines. Vous souhaitez revenir pour vous former, bidouiller à plusieurs, développer un projet personnel ou professionnel, contribuer à la vie de l’association et ses activités, alors vous êtes prêts à adhérer : )</p>
-              <p class="lead">Le Funlab c’est aussi un espace de documentation (Wiki) pour y partager des ressources techniques et culturelles sur les projets développées par la communauté, un espace de publication (Blog) pour valoriser l’activité de l’association et un espace physique de ressources documentaires et de médiation numérique (BiblioMaker).</p>
-              <p class="lead">Tout au long de l’année, nous mettons en place de nombreuses activités au fablab et hors-les-murs tout en construisant des parcours pédagogiques sur mesure et des projets à impact social sur le territoire avec de nombreux partenaires (Université, École de la 2è Chance, entreprises, associations) afin d’ouvrir le fablab à un large public.</p>
-              <p class="lead2">Poussez la porte, ce fablab, c’est le vôtre!</p>
+              L’association La FUN a été créée en 2013 par une poignée de citoyens pour faire émerger un fablab à Tours
+              : le Funlab. Accueil temporaire à la pépinière du Sanitas puis hébergé chez les Compagnons du Devoir, le
+              Funlab s’est posé à Mame en 2016. Depuis la communauté de compétences et d’idées n’a cessé de s’agrandir.
+              En 2019, le Funlab compte 240 adhérents, et demain pourquoi pas vous ?</p>
+            <p class="lead"> Lors des Open Ateliers, notre rendez-vous grand public tous les jeudis de 16h à 22h, la
+              communauté vous accueille pour votre « toute première fois » : visite, infos, démonstration de machines.
+              Vous souhaitez revenir pour vous former, bidouiller à plusieurs, développer un projet personnel ou
+              professionnel, contribuer à la vie de l’association et ses activités, alors vous êtes prêts à adhérer : )</p>
+            <p class="lead">Le Funlab c’est aussi un espace de documentation (Wiki) pour y partager des ressources
+              techniques et culturelles sur les projets développées par la communauté, un espace de publication (Blog)
+              pour valoriser l’activité de l’association et un espace physique de ressources documentaires et de
+              médiation numérique (BiblioMaker).</p>
+            <p class="lead">Tout au long de l’année, nous mettons en place de nombreuses activités au fablab et
+              hors-les-murs tout en construisant des parcours pédagogiques sur mesure et des projets à impact social
+              sur le territoire avec de nombreux partenaires (Université, École de la 2è Chance, entreprises,
+              associations) afin d’ouvrir le fablab à un large public.</p>
+            <p class="lead2">Poussez la porte, ce fablab, c’est le vôtre!</p>
           </div>
         </article>
       </div>
@@ -71,30 +81,25 @@
         <h3 class="horaire">Les Horaires</h3>
         <div class="list-group mb-3">
           <div class="list-group-item">
-            <div class="event-detail text-center">
-              <div>
-                <div class="day">Mardi</div>
-                <div class="time">14h - 18h</div>
-              </div>
-              <br>
-              <hr>
-              <div>
-                <div class="day">Mercredi</div>
-                <div class="time">14h - 18h</div>
-              </div>
-              <br>
-              <hr>
-              <div>
-                <div class="day">Jeudi</div>
-                <div class="time">16h - 22h</div>
-              </div>
-              <br>
-              <hr>
-              <div>
-                <div class="day">Vendredi</div>
-                <div class="time">14h - 18h</div>
-                <br>
-              </div>
+            <div class="event-detail">
+              <table style="width:100%;">
+                <tr>
+                  <th>Mardi</th>
+                  <td>14h - 18h</td>
+                </tr>
+                <tr>
+                  <th>Mercredi</th>
+                  <td>14h - 18h</td>
+                </tr>
+                <tr>
+                  <th>Jeudi</th>
+                  <td>16h - 22h</td>
+                </tr>
+                <tr>
+                  <th>Vendredi</th>
+                  <td>14h - 18h</td>
+                </tr>
+              </table>
             </div>
           </div>
         </div>
@@ -106,7 +111,7 @@
           <div class="list-group-item">
             <div class="event-detail text-center" *ngFor="let event of evenements | slice:0:3; let i=index">
               <span class="event-detail-start-date">{{event.date | date: 'dd MMMM yyy '}}</span><!-- Date Pipe used to transform date format -->
-              <span class="event-detail-start-time">{{event.start}} à</span>
+              <span class="event-detail-start-time">de {{event.start}} à</span>
               <span class="event-detail-end-time"> {{event.end}}</span>
               <br>
               <span class="event-detail-title">{{event.title}}</span>

@@ -71,22 +71,22 @@ input{
 }
 
 @media screen and (max-width: 800px){
-  
+
   img{
     margin-left: 33%;
   }
-  
+
   li{
     margin-top: 0%;
   }
-  
+
   ul .d-flex {
     margin-top: -0.75em;
   }
   .reseaux{
     margin-top: 5%;
   }
-  
+
 }
 
 .loupe{
@@ -190,6 +190,11 @@ h4 {
   margin-top: 1em;
 }
 
+.error {
+  font-size: 15px;
+  color: red;
+}
+
 /*
 body {
   margin: 0;
@@ -253,7 +258,7 @@ body {
   border-radius: 50px;
   padding: 10px;
   transition: width 0.3s linear;
-  
+
 }
 
 .search_input {
