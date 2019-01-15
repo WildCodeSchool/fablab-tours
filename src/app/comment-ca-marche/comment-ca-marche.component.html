@@ -132,7 +132,7 @@
             <div class="form-group">
               <div class="col-sm-12">
                 <div class="input-group">
-                  <input type="email" class="form-control" placeholder="Saisissez votre email" formControlName='email'>
+                  <input type="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Saisissez votre email" formControlName='email'>
                   <span class="input-group-btn">
                     <button type="submit" [disabled]="newsForm.pristine ||newsForm.invalid" class="btn btn-primary"><i
                         class="fa fa-paper-plane"></i></button>
