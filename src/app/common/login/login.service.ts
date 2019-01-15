@@ -8,7 +8,7 @@ export class LoginService {
 
   constructor(private http: HttpClient) { }
 
-  // cretion machine
+  // creation machine
   sendMachine(body) {
     return this.http.post('http://localhost:3000/api/machines', body);
   }

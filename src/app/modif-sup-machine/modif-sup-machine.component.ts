@@ -49,7 +49,9 @@ export class ModifSupMachineComponent implements OnInit {
 
   // creation machine
   createMachine(form) {
-    this.loginService.sendMachine(form).subscribe();
+    this.loginService.sendMachine(form).subscribe(() => {
+      this.machines.push(form);
+    });
   }
 
   // suppression machine
