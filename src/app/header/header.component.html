@@ -68,13 +68,13 @@
                     </li>
                     <div class="reseaux">
                         <ul class="d-flex">
-                            <a *ngIf="!authService.loggedIn" (click)="showSidebar(false)" href="https://www.facebook.com/FablabTourangeau/" target="_blank" title="Lien externe: https://www.facebook.com/FablabTourangeau/"><i  class="fa fa-facebook-f mx-3"></i></a>
-                            <a *ngIf="!authService.loggedIn" (click)="showSidebar(false)" href="https://www.instagram.com/funlab_tours/" target="_blank" title="Lien externe: https://www.instagram.com/funlab_tours/"><i class="fa fa-instagram mx-3"></i></a>
-                            <a *ngIf="!authService.loggedIn" (click)="showSidebar(false)" href="https://twitter.com/lefunlab/" target="_blank" title="Lien externe: https://twitter.com/lefunlab/"><i class="fa fa-twitter mx-3"></i></a>
+                            <a *ngIf="!authService.loggedIn" href="https://www.facebook.com/FablabTourangeau/" target="_blank" title="Le Funlab sur Facebook"><i  class="fa fa-facebook-f mx-3"></i></a>
+                            <a *ngIf="!authService.loggedIn" href="https://www.instagram.com/funlab_tours/" target="_blank" title="Le Funlab sur Instagram"><i class="fa fa-instagram mx-3"></i></a>
+                            <a *ngIf="!authService.loggedIn" href="https://twitter.com/lefunlab/" target="_blank" title="Le Funlab sur Twitter"><i class="fa fa-twitter mx-3"></i></a>
                             
                             <!-- debut modal connexion user -->
-
-                            <a (click)="open(content)" (click)="showSidebar(false)" *ngIf="!authService.loggedIn"><i class="fa fa-user mx-2"></i></a>
+                            
+                            <a (click)="open(content)" (click)="showSidebar(false)" *ngIf="!authService.loggedIn" title="Connexion Admin"><i class="fa fa-user mx-2"></i></a>
                             <a (click)="logout()" (click)="showSidebar(false)" *ngIf="authService.loggedIn"><i class="fa fa-sign-out mx-2"></i></a>
                             <ng-template #content let-modal>
                                 <div class="modal-header">
