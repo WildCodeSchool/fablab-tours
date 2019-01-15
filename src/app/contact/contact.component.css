@@ -215,3 +215,7 @@ a{
 p, a, h5, .form-control, .obl{
   font-family: Raleway;
 }
+
+.captcha {
+  margin-top: 1em;
+}
