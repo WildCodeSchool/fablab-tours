@@ -26,8 +26,6 @@ import { RecaptchaModule  } from 'ng-recaptcha';
 import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
 import { PartenaireComponent } from './partenaire/partenaire.component';
 import { SearchResultComponent } from './search-result/search-result.component';
-import { AuthService } from './common/auth.service';
-import { AuthGuard } from './common/auth.guard';
 
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
@@ -35,7 +33,7 @@ import localeFr from '@angular/common/locales/fr';
 // the second parameter 'fr' is optional
 registerLocaleData(localeFr, 'fr');
 export function tokenGetter() {
-  return localStorage.getItem('access_token');
+  return sessionStorage.getItem('access_token');
 }
 import { AccueilUserComponent } from './accueil-user/accueil-user.component';
 import { ModifSupEquipeComponent } from './modif-sup-equipe/modif-sup-equipe.component';

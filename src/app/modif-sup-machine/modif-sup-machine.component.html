@@ -122,7 +122,7 @@
 </div>
 <div class="modal-footer">
   <button type="button" class="btn btn-outline-dark" (click)="modal.dismiss()">Annuler</button>
-  <button type='submit' [disabled]="machineForm.pristine ||machineForm.invalid" (click)="createMachine(machineForm.value); modal.close(); machineForm.reset();" class='btn btn-outline-success'>Ajouter</button>
+  <button type='submit' [disabled]="machineForm.pristine ||machineForm.invalid" (click)="createMachine(machineForm.value); modal.close(); machineForm.reset();" class='btn btn-outline-success' routerLink="/machine">Ajouter</button>
 </div>
 </ng-template>
 
