@@ -50,8 +50,11 @@
           <div class="obl" *ngIf="machineForm.controls['photo'].errors.required">La photo est obligatoire.</div>
         </div>
         </div>
-        <img *ngIf="machine.photo" src="{{machine.photo}}" alt="image de la machine" />
+        <div class="container d-flex justify-content-center">
+        <img *ngIf="machine.photo" class="imgModif" src="{{machine.photo}}" alt="image de la machine" />
+      </div>
     </form>
+
   </div>
   <div class="modal-footer">
     
