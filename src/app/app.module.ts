@@ -6,6 +6,7 @@ import { AngularOpenlayersModule } from 'ngx-openlayers';
 import { HttpClientModule } from '@angular/common/http';
 import { FullCalendarModule } from 'ng-fullcalendar';
 import { JwtModule } from '@auth0/angular-jwt';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -84,8 +85,10 @@ import { NgxPaginationModule } from 'ngx-pagination';
       }
     }),
     NgxPaginationModule,
-    ReactiveFormsModule.withConfig({ warnOnNgModelWithFormControl: 'never' })
+    ReactiveFormsModule.withConfig({ warnOnNgModelWithFormControl: 'never' }),
+    SlickCarouselModule
   ],
+
 
   providers: [
     {provide: LOCALE_ID, useValue: 'fr-CA' }
