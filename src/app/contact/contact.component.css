@@ -10,7 +10,7 @@
   width: 40px;
   height: 41px;
   z-index: 250;
-  }
+}
 
 * {
   margin: 0px;
@@ -79,12 +79,12 @@ h1 {
 .section2 .col2.first {
   float: left;
   height: 500px;
-
+  
 }
 
 .section2 .col2.last {
   float: right;
-
+  
 }
 
 .section2 .col2.column2 {
@@ -157,20 +157,20 @@ h1 {
   .container {
     padding: 0 30px 70px;
   }
-
+  
   .section2 .col2 {
     width: 100%;
     display: block;
   }
-
+  
   .section2 .col2.first {
     margin-bottom: 10px;
   }
-
+  
   .section2 .col2.column2 {
     padding: 0;
   }
-
+  
   body .sec2map {
     height: 250px !important;
   }
@@ -180,18 +180,18 @@ h1 {
   .section2 .sec2addr {
     font-size: 14px;
   }
-
+  
   .section2 .sec2contactform h3 {
     font-size: 16px;
   }
-
+  
   .section2 .sec2contactform input[type="text"],
   .section2 .sec2contactform input[type="email"],
   .section2 .sec2contactform textarea {
     padding: 10px;
     margin: 3px 0;
   }
-
+  
   .section2 .sec2contactform input[type="submit"] {
     padding: 10px 30px;
     font-size: 14px;
@@ -205,7 +205,7 @@ h1 {
 }
 .map
 {
-width: 50%;
+  width: 50%;
 }
 
 a{

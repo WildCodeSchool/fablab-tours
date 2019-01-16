@@ -6,6 +6,8 @@
     margin-top: 2em;
 }
 
+/* début logo partenaire */
+
 img {
     filter: grayscale();
     -webkit-filter: grayscale(100%);
@@ -36,8 +38,8 @@ img:hover {
 }
 
 .fdva {
-    width: 140px;   
-    margin-top: 1em; 
+    width: 140px;
+    margin-top: 1em;
 }
 
 .compagnon {
@@ -49,6 +51,10 @@ img:hover {
     margin-top: 2em;
 }
 
+/* fin logo partenaire */
+
+/* section logo */
+
 .partenaireTech {
     margin-bottom: 10em;
 }
@@ -56,6 +62,8 @@ img:hover {
 .partenaireFin {
     margin-top: 3em;
 }
+
+/* fin section logo */
 
 a, h1, h5 {
     font-family: Raleway;
@@ -73,9 +81,17 @@ h1 {
 }
 
 h5 {
-    font-size: 1.5rem;
-    font-weight: bold;
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 40px 15px 0;
+    font-size: 1.75rem;
+    margin-bottom: 2em;
+    color: #696969;
 }
+
+/* boutton don de devenir partenaire */
 
 .don {
     margin-top: 3em;
@@ -91,13 +107,20 @@ h5 {
     border-color: #70CCCC;
     color: #FFF;
     font-weight: bold;
-} 
+}
+
+.btn {
+    max-width: 15em;
+    min-width: 12em;
+}
 
 .btn:hover{
     background-color: #333333;
     border-color: #333333;
     color: #fff;
 }
+
+/* fin boutton */
 
 .container {
     margin-bottom: 5em;
@@ -110,7 +133,3 @@ h5 {
     }
 }
 
-.btn {
-    max-width: 15em;
-    min-width: 12em;
-}

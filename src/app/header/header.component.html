@@ -2,7 +2,7 @@
 <nav class="navbar navbar-light fixed-top">
 
     <!-- bouton pour faire apparaitre la sidebar -->
-    <button [ngClass]="{'transBtn': sidebarDisplayed}" (click)="showSidebar(!sidebarDisplayed)" id="boutonfiltre2" class="btnStartPos navbar-toggler"
+    <button [ngClass]="{'transBtn': sidebarDisplayed}" (click)="showSidebar(!sidebarDisplayed)" id="openSide" class="btnStartPos navbar-toggler"
     type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
     aria-expanded="false" aria-label="Toggle navigation">
 
@@ -72,7 +72,7 @@
                             <a *ngIf="!authService.loggedIn" href="https://www.instagram.com/funlab_tours/" target="_blank" title="Le Funlab sur Instagram"><i class="fa fa-instagram mx-3"></i></a>
                             <a *ngIf="!authService.loggedIn" href="https://twitter.com/lefunlab/" target="_blank" title="Le Funlab sur Twitter"><i class="fa fa-twitter mx-3"></i></a>
                             
-                            <!-- debut modal connexion user -->
+                            <!-- Debut modal connexion admin -->
 
                             <a (click)="open(content)" (click)="showSidebar(false)" title="Connexion administrateur" *ngIf="!authService.loggedIn"><i class="fa fa-user mx-2"></i></a>
                             <a (click)="logout()" (click)="showSidebar(false)" title="Déconnexion" *ngIf="authService.loggedIn"><i class="fa fa-sign-out mx-2"></i></a>
@@ -113,7 +113,7 @@
                             </div>
                         </div>
                     </ng-template>
-                    <!-- fin modal connexion user -->
+                    <!-- Fin modal connexion admin -->
                 </ul>
             </div>
         </ul>

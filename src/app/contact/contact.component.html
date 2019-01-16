@@ -1,9 +1,11 @@
 <div class="container mx-auto">
   <div class="innerwrap">
-
+    
     <h1 class="text-center">Contactez-nous</h1>
     <section class="section2 clearfix">
-
+      
+      <!-- Début map -->
+      
       <div class="col2 column1 first">
         <aol-map>
           <aol-control-zoom></aol-control-zoom>
@@ -36,17 +38,23 @@
           </aol-layer-vector>
         </aol-map>
       </div>
-
-
+      
+      <!-- Fin map -->
+      
+      <!-- Début adresse et mail -->
       <div class="col2 column2 last">
-
+        
         <div class="sec2innercont">
           <div class="sec2addr">
             <p class="mx-3"> MAME, 49 Boulevard Preuilly, 37000 Tours</p>
             <a href="mailto:contact@funlab.fr"><i class="fa fa-envelope mx-3"></i>contact@funlab.fr </a>
           </div>
         </div>
-
+        
+        <!-- Fin section adresse / mail -->
+        
+        <!-- Début Formulaire de contact -->
+        
         <div class="sec2contactform">
           <h5 class="sec2frmtitle">Laissez nous un message</h5>
           <form [formGroup]="touchForm" (ngSubmit)='contactForm(touchForm.value); touchForm.reset()'>
@@ -57,7 +65,7 @@
               <div class="obl" *ngIf="touchForm.controls['nom'].errors.required">Votre nom est obligatoire.</div>
             </div>
           </div>
-
+          
           <div class='form-group'>
             <input type='email' class='form-control' formControlName='email' pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Email">
             <div *ngIf="touchForm.controls['email'].invalid && (touchForm.controls['email'].dirty || touchForm.controls['email'].touched)"
@@ -65,7 +73,7 @@
             <div class="obl" *ngIf="touchForm.controls['email'].errors.required">Votre email est obligatoire.</div>
           </div>
         </div>
-
+        
         <div class='form-group'>
           <input type='text'  class='form-control' formControlName='sujet' placeholder="Sujet">
           <div *ngIf="touchForm.controls['sujet'].invalid && (touchForm.controls['sujet'].dirty || touchForm.controls['sujet'].touched)"
@@ -73,7 +81,7 @@
           <div class="obl" *ngIf="touchForm.controls['sujet'].errors.required">Le sujet est obligatoire.</div>
         </div>
       </div>
-
+      
       <div class='form-group'>
         <textarea  class='form-control' cols='30' rows='6' formControlName='message' placeholder="Message"></textarea>
         <div *ngIf="touchForm.controls['message'].invalid && (touchForm.controls['message'].dirty || touchForm.controls['message'].touched)"
@@ -82,11 +90,13 @@
       </div>
     </div>
     <div class="captcha">
-    <re-captcha data-size="compact" required siteKey="6LfVeoYUAAAAAEaZs6ni0Ax_Dd-Ua2ga1EnOJQul" formControlName="recaptchaReactive"></re-captcha>
+      <re-captcha data-size="compact" required siteKey="6LfVeoYUAAAAAEaZs6ni0Ax_Dd-Ua2ga1EnOJQul" formControlName="recaptchaReactive"></re-captcha>
     </div>
     <button type='submit' [disabled]="touchForm.pristine ||touchForm.invalid" class='btn btn-secondary'>Envoyer</button>
   </form>
 </div>
+
+<!-- Fin formulaire de contact -->
 
 </div>
 </section>
