@@ -9,7 +9,7 @@ export class ManuelComponent implements OnInit {
 
   constructor() { }
 
-  src = 'https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf';
+  src = '../../assets/images/manuel_d_utilisation/manuel_d_utilisation_funlab_tours.pdf';
 
   ngOnInit() {
   }
