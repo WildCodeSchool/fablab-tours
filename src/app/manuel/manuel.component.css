@@ -1,6 +1,10 @@
 .pdf-container {
-margin-top: 100px;
- }
+    margin-top: 8em;
+}
+
+.pdf {
+    margin-top: 3em;
+}
 
 .btn {
     background-color: #70CCCC;
@@ -13,3 +17,4 @@ margin-top: 100px;
     background-color: #000000;
     border-color: #000000;
 }
+
