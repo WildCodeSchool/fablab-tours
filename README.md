@@ -10,35 +10,32 @@ Dans le cadre de notre formation à la Wild Code School et afin de réaliser not
 nous étions amenés à créer un sité web avec les contraintes suivantes :
 
 1. Création d'un site d'une page d'accueil contenant plusieurs composants 'One Page'.
-2. utilisation de l'API google pour l affichage du calendrier 'FULL CALENDAR' et affichage de quatre évenements à venir.
-3. utilisation d'openlayers pour l'affichage d'une carte.
-4. Création d'un service pour la newsletter et formulaire de contact.
+2. Utilisation de l'API Google pour l'affichage du calendrier 'FULL CALENDAR' et affichage de quatre évenements à venir.
+3. Utilisation d'Openlayers pour l'affichage d'une carte.
+4. Création d'un service pour la newsletter et le formulaire de contact.
 5. Création d'un service pour la recherche.
-6. Création d'un espace administrateur pour la création, modification et supprission machines et équipe.
-7. Utiliser de mySql pour la création de la base de donnée.
+6. Création d'un espace administrateur pour la création, modification et suppréssion machines et équipe.
+7. Utiliser de MySql pour la création de la base de donnée.
 8. Utilisation d'Angular 7 'JavaScript' pour la partie Front.
 9. Utilisation de NodeJs Express pour la partie Back.
-10. Utilisation de Passport.js & JWT pour sécuriser la connexxion.
-11. Utilisation de HTML5, CSS & BOOTSTRAP.
-12. Utilistation de Git & Github.
+10. Utilisation de HTML5, CSS & BOOTSTRAP.
+11. Utilistation de Git & Github.
 
 _________________________________________________________________________________________________________________________________
 
-As part of our training at the Wild Code School and to create our third project (client project)
-we had to develop a website that met the following requirements:
+As part of our course at the Wild Code School, our third project (customer project) required us to create and develop a fully functional site with the following requirements: 
 
-1. Create a site of a home page containing several components 'One Page'.
-2. Use the google API to display the calendar 'FULL CALENDAR' and view of four upcoming events.
-3. use of openlayers for displaying a map.
-4. Creation of a service for the newsletter and contact form.
-5. Creation of a service for research.
-6. Create an administrator space for creating, modifying and deleting machines and team.
-7. Use mySql for creating the database.
-8. Using Angular 7 'JavaScript' for the Front End.
-9. Using NodeJs Express for Back End.
-10. Using Passport.js & JWT for connection security.
-11. Using HTML5, CSS & BOOTSTRAP.
-12. Utilization of Git & Github.
+1. To create a fully functioncal 'Single Page Application' website containing several 'One Page' components.
+2. To use and integrate the Google API to display the calendar with the use of 'FULL CALENDAR' and to view the four upcoming events.
+3. To use Openlayers in order to display a map.
+4. To create a service for the use of newsletter requests and contact forms.
+5. To create a service for the internal search engine.
+6. To create an admin workspace in order to create, to modify and/or to delete the machines and/or team members.
+7. To use MySql to manage the databases.
+8. To use Angular 7 'JavaScript' for the Front-end of the site.
+9. To use NodeJs Express for Back-end of the site.
+10. To use HTML5, CSS & BOOTSTRAP.
+11. To use Git & Github.
 
 ## Auteurs / Authors
 
