@@ -12,11 +12,23 @@
     color: white;
     margin-right: 4em;
 }
-@media screen and (min-width:350px) and (max-width: 500px) {
+@media screen and (min-width:320px) and (max-width: 500px) {
     .btn {
         margin-right: 6em;
     }
+    .pdf {
+        max-width: 320px;
+        margin-left: 3em;
+    }
 }
+
+@media screen and (min-width:350px) and (max-width: 450px) {
+    .pdf{
+        max-width: 380px;
+        margin-left: 1em;
+    }
+}
+
 
 .btn:hover {
     background-color: #000000;
