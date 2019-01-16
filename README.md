@@ -4,8 +4,6 @@
 
 ([Wild Code School Tours](https://wildcodeschool.fr/tours/))
 
-# ProjetVinci
-
 ## Description 
 
 Dans le cadre de notre formation à la Wild Code School et afin de réaliser notre troisiéme projet (projet client)
