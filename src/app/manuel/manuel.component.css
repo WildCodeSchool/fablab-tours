@@ -2,3 +2,14 @@
 margin-top: 100px;
  }
 
+.btn {
+    background-color: #70CCCC;
+    border-color: #70CCCC;
+    color: white;
+    margin-right: 3em;
+}
+
+.btn:hover {
+    background-color: #000000;
+    border-color: #000000;
+}
