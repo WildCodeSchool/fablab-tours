@@ -53,10 +53,12 @@
         
         <!-- Fin section adresse / mail -->
         
+
+        <div class="sec2contactform">
+          <h5>Laissez nous un message</h5>
+          
         <!-- Début Formulaire de contact -->
         
-        <div class="sec2contactform">
-          <h5 class="sec2frmtitle">Laissez nous un message</h5>
           <form [formGroup]="touchForm" (ngSubmit)='contactForm(touchForm.value); touchForm.reset()'>
             <div class='form-group'>
               <input type='text' class="form-control" formControlName='nom' placeholder="Nom">

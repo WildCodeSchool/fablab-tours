@@ -74,11 +74,13 @@
                             <a *ngIf="!authService.loggedIn" href="https://twitter.com/lefunlab/" target="_blank" title="Le Funlab sur Twitter"><i class="fa fa-twitter mx-3"></i></a>
                             
                             <!-- Logo connexion/deconnexion admin -->
-                            <div class="row">
+                            
                             <a (click)="open(content)" (click)="showSidebar(false)" *ngIf="!authService.loggedIn" title="Connexion Admin"><i class="fa fa-user mx-2"></i></a>
-                            <a (click)="logout()" (click)="showSidebar(false)" *ngIf="authService.loggedIn"><i class="fa fa-sign-out mx-2"></i></a>
-                        </div>
 
+                            <div class="row">
+                                <a (click)="logout()" (click)="showSidebar(false)" *ngIf="authService.loggedIn"><i class="fa fa-sign-out mx-2"></i></a>
+                            </div>
+                            
                             <div class="row manuelUser">
                                 <li class="nav-item manuel">
                                     <h5 class="nav-link" *ngIf="authService.loggedIn" routerLink="/manuel" (click)="showSidebar(false)">Manuel d'utilisation</h5>
