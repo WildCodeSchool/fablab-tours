@@ -45,7 +45,7 @@ button{
   cursor: pointer;
 }
 
-#boutonfiltre2 {
+#openSide {
   transition: transform 0.5s ease-in-out;
   position: fixed;
   cursor: pointer;
@@ -195,66 +195,7 @@ h4 {
   color: red;
 }
 
-.manuel {
-  color: #fff;
-  cursor: pointer;
-  font-family: Raleway;
-}
-
-/*
-body {
-  margin: 0;
-  padding: 0;
-  background: #6ecbcc;
-}
-
-.search-box {
-  position: absolute;
-  top: 20%;
-  right: 5%;
-  background: #6ecbcc;
-  height: 40px;
-  border-radius: 40px;
-  padding: 10px;
-}
-
-.search-box:hover>.search-txt {
-  width: 240px;
-  padding: 0 6px;
-}
-
-.search-box:hover>.search-btn {
-  background : white;
-  color: #6ecbcc;
-}
-
-.search-btn {
-  color: white;
-  float: right;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: #6ecbcc;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 0.4s;
-}
-
-.search-txt {
-  border: none;
-  background: none;
-  outline: none;
-  float: left;
-  color: white;
-  font-size: 17px;
-  transition: 0.4s;
-  line-height: 40px;
-  width: 0px;
-} */
-
-
-/* 2eme model */
+/* Début barre de recherche */
 
 .searchbar {
   position: absolute;
@@ -305,6 +246,8 @@ body {
   opacity: 0.98;
   font-size: 1.7rem;
 }
+
+/* Gestion navbar sur mobile */
 
 
 @media screen and (max-width: 350px) {
@@ -392,5 +335,8 @@ body {
   .openside{
     font-size: 1.8em;
   }
+
+
+  /* Fin barre de recherche */
 
 }

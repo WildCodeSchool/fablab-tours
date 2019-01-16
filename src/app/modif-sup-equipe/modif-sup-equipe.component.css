@@ -14,6 +14,8 @@ h1 {
   font-family: Raleway;
 }
 
+/* Début card */
+
 img{
   width: 100%;
   height: 300px;
@@ -39,8 +41,6 @@ img{
   box-shadow: 0.5px 1px 2px hsla(0, 0%, 20%, 1);
 }
 
-
-
 @media screen and (max-width: 600px) {
   img {
     width: 80%;
@@ -49,3 +49,5 @@ img{
     margin-top: 1em;
   }
 }
+
+/* Fin card */

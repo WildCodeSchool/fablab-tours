@@ -1,10 +1,18 @@
 <h1 class="text-center">Gestion de l'équipe</h1>
+<!-- Boutton ajouter equipe -->
+
 <div class="text-center">
   <button class="btn btn-outline-success mb-5 mr-2" (click)="open(contentAj)">Ajouter une personne</button>
 </div>
+
+<!-- Fin boutton -->
+
 <div class="container">
   <div class="row">
     <div class="col-md-6 col-sm-12 col-lg-4 mt-3"  *ngFor= "let equipe of equipes | paginate :{ itemsPerPage: 6, currentPage: p }">
+      
+      <!-- Card equipe -->
+      
       <div class="card mb">
         <img class="card-img-top" src="{{equipe.image}}" alt="photo du membre">
         <div class="card-body mb">
@@ -15,8 +23,10 @@
           <button type="button" class="btn btn btn-outline-danger" (click)="open(contentSup)">Supprimer</button>
         </div>
       </div>
-
-      <!-- update Modal -->
+      
+      <!-- Fin card equipe -->
+      
+      <!-- Modal modification -->
       <ng-template #content let-modal>
         <div class="modal-header">
           <h4 class="modal-title text-center">Modifier le membre</h4>
@@ -25,7 +35,7 @@
           </button>
         </div>
         <div class="modal-body">
-
+          
           <form [formGroup]="membreForm">
             <div class='form-group'>
               <input type='text' class="form-control" formControlName='prenom' [(ngModel)]="equipe.prenom">
@@ -34,7 +44,7 @@
               <div class="obl" *ngIf="membreForm.controls['prenom'].errors.required">Le prénom est obligatoire.</div>
             </div>
           </div>
-
+          
           <div class='form-group'>
             <input type='text' class="form-control" formControlName='nom' placeholder="nom" [(ngModel)]="equipe.nom">
             <div *ngIf="membreForm.controls['nom'].invalid && (membreForm.controls['nom'].dirty || membreForm.controls['nom'].touched)"
@@ -42,7 +52,7 @@
             <div class="obl" *ngIf="membreForm.controls['nom'].errors.required">Le nom est obligatoire.</div>
           </div>
         </div>
-
+        
         <div class='form-group'>
           <input type='text' class="form-control" formControlName='poste' placeholder="poste" [(ngModel)]="equipe.poste">
           <div *ngIf="membreForm.controls['poste'].invalid && (membreForm.controls['poste'].dirty || membreForm.controls['poste'].touched)"
@@ -50,25 +60,25 @@
           <div class="obl" *ngIf="membreForm.controls['poste'].errors.required">Le poste est obligatoire.</div>
         </div>
       </div>
-
+      
       <div class="form-group">
-      <input type="text" class="form-control" formControlName='email' pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-   placeholder="Email" [(ngModel)]="equipe.email">
+        <input type="text" class="form-control" formControlName='email' pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+        placeholder="Email" [(ngModel)]="equipe.email">
       </div>
-
+      
       <div class='form-group'>
         <input type='text' class="form-control" formControlName='linkedin' placeholder="linkedin" [(ngModel)]="equipe.linkedin">
       </div>
-
+      
       <div class='form-group'>
-      <input type='text' class="form-control" formControlName='image' pattern="(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|jpeg|png)"
-   placeholder="image" [(ngModel)]="equipe.image">
+        <input type='text' class="form-control" formControlName='image' pattern="(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|jpeg|png)"
+        placeholder="image" [(ngModel)]="equipe.image">
         <div *ngIf="membreForm.controls['image'].invalid && (membreForm.controls['image'].dirty || membreForm.controls['image'].touched)"
         class="alert alert-danger">
         <div class="obl" *ngIf="membreForm.controls['image'].errors.required">L'image est obligatoire.</div>
       </div>
     </div>
-
+    
   </form>
 </div>
 <div class="modal-footer">
@@ -77,10 +87,10 @@
 </div>
 </ng-template>
 
+<!-- Fin modal modification -->
 
 
-
-<!-- Delete Modal -->
+<!-- Modal suppression -->
 <ng-template #contentSup let-modal>
   <div class="modal-header">
     <h4 class="modal-title text-center">Confimer la supression de {{equipe.nom}}</h4>
@@ -98,10 +108,12 @@
   </div>
 </ng-template>
 
+<!-- Fin modal suppression -->
+
 </div>
 </div>
 
-<!-- Modal ajout -->
+<!-- Modal d'ajout -->
 <ng-template #contentAj let-modal>
   <div class="modal-header">
     <h4 class="modal-title">Ajout membre équipe</h4>
@@ -111,7 +123,7 @@
   </div>
   <div class="modal-body">
     <form [formGroup]="membreForm">
-
+      
       <div class='form-group'>
         <input type='text' class="form-control" formControlName='prenom' placeholder="Prenom">
         <div *ngIf="membreForm.controls['prenom'].invalid && (membreForm.controls['prenom'].dirty || membreForm.controls['prenom'].touched)"
@@ -119,7 +131,7 @@
         <div class="obl" *ngIf="membreForm.controls['prenom'].errors.required">Le prénom est obligatoire.</div>
       </div>
     </div>
-
+    
     <div class='form-group'>
       <input type='text' class="form-control" formControlName='nom' placeholder="Nom">
       <div *ngIf="membreForm.controls['nom'].invalid && (membreForm.controls['nom'].dirty || membreForm.controls['nom'].touched)"
@@ -127,7 +139,7 @@
       <div class="obl" *ngIf="membreForm.controls['nom'].errors.required">Le nom est obligatoire.</div>
     </div>
   </div>
-
+  
   <div class='form-group'>
     <input type='text' class="form-control" formControlName='image' pattern="(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|jpeg|png)" placeholder="Image">
     <div *ngIf="membreForm.controls['image'].invalid && (membreForm.controls['image'].dirty || membreForm.controls['image'].touched)"
@@ -158,7 +170,14 @@
   <button type='submit' [disabled]="membreForm.pristine ||membreForm.invalid" (click)="createMembre(membreForm.value); modal.close(); membreForm.reset()" class='btn btn-outline-success' routerLink="/equipe">Ajouter</button>
 </div>
 </ng-template>
+
+<!-- Fin modal d'ajout -->
+
+<!-- Pagination -->
+
 <div class="text-center mt-5">
   <pagination-controls (pageChange)="p = $event" nextLabel="Suivant" previousLabel="Précédent"></pagination-controls>
 </div>
+
+<!-- Fin pagination -->
 </div>

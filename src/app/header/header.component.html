@@ -2,7 +2,7 @@
 <nav class="navbar navbar-light fixed-top">
 
     <!-- bouton pour faire apparaitre la sidebar -->
-    <button [ngClass]="{'transBtn': sidebarDisplayed}" (click)="showSidebar(!sidebarDisplayed)" id="boutonfiltre2" class="btnStartPos navbar-toggler"
+    <button [ngClass]="{'transBtn': sidebarDisplayed}" (click)="showSidebar(!sidebarDisplayed)" id="openSide" class="btnStartPos navbar-toggler"
     type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
     aria-expanded="false" aria-label="Toggle navigation">
 
@@ -79,7 +79,7 @@
                             <a (click)="logout()" (click)="showSidebar(false)" *ngIf="authService.loggedIn"><i class="fa fa-sign-out mx-2"></i></a>
                             <ng-template #content let-modal>
                                 <div class="modal-header">
-                                    <h4>Connexion</h4>
+                                    <h4>Connexion Administrateur</h4>
                                     <button type="button" class="close" aria-label="Close" (click)="modal.close('Cross click')">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
@@ -91,7 +91,7 @@
                                             <form [formGroup]="connectForm">
 
                                                 <div class='form-group'>
-                                                    <input type='email' class="form-control connect" formControlName='username' placeholder="Votre email">
+                                                    <input type='email' class="form-control connect" formControlName='username' placeholder="Email">
                                                     <div *ngIf="connectForm.controls['username'].invalid && (connectForm.controls['username'].dirty || connectForm.controls['username'].touched)"
                                                     class="alert alert-danger">
                                                         <div class="obl" *ngIf="connectForm.controls['username'].invalid && (connectForm.controls['username'].dirty || connectForm.controls['username'].touched)">Email obligatoire.</div>
@@ -114,7 +114,7 @@
                             </div>
                         </div>
                     </ng-template>
-                    <!-- fin modal connexion user -->
+                    <!-- Fin modal connexion admin -->
                 </ul>
             </div>
         </ul>

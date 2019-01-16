@@ -47,6 +47,8 @@ h3 {
   background-color: #333333;
 }
 
+/* format mobile events */
+
 @media screen and (min-width:350px) and (max-width: 800px) {
   h3 {
     font-size: 1.375rem;
@@ -98,3 +100,5 @@ li {
 li, span, h2 {
   text-transform: capitalize;
 }
+
+/* Fin format mobile events */
