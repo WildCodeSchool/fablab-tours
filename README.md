@@ -18,8 +18,9 @@ nous étions amenés à créer un sité web avec les contraintes suivantes :
 7. Utiliser de mySql pour la création de la base de donnée.
 8. Utilisation d'Angular 7 'JavaScript' pour la partie Front.
 9. Utilisation de NodeJs Express pour la partie Back.
-10. Utilisation de HTML5, CSS & BOOTSTRAP.
-11. Utilistation de Git & Github.
+10. Utilisation de Passport.js & JWT pour sécuriser la connexxion.
+11. Utilisation de HTML5, CSS & BOOTSTRAP.
+12. Utilistation de Git & Github.
 
 _________________________________________________________________________________________________________________________________
 
@@ -35,8 +36,9 @@ we had to develop a website that met the following requirements:
 7. Use mySql for creating the database.
 8. Using Angular 7 'JavaScript' for the Front End.
 9. Using NodeJs Express for Back End.
-10. Using HTML5, CSS & BOOTSTRAP.
-11. Utilization of Git & Github.
+10. Using Passport.js & JWT for connection security.
+11. Using HTML5, CSS & BOOTSTRAP.
+12. Utilization of Git & Github.
 
 ## Auteurs / Authors
 

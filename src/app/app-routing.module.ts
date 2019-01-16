@@ -10,6 +10,7 @@ import { AuthGuard } from './common/auth.guard';
 import { AccueilUserComponent } from './accueil-user/accueil-user.component';
 import { ModifSupEquipeComponent } from './modif-sup-equipe/modif-sup-equipe.component';
 import { ModifSupMachineComponent } from './modif-sup-machine/modif-sup-machine.component';
+import { ManuelComponent } from './manuel/manuel.component';
 
 
 const routes: Routes = [
@@ -21,7 +22,7 @@ const routes: Routes = [
   { path: 'recherche', component: SearchResultComponent },
   { path: 'admin', component: AccueilUserComponent, canActivate: [AuthGuard] },
   { path: 'modifsupequipe', component: ModifSupEquipeComponent, canActivate: [AuthGuard] },
-  // { path: 'modifsupequipe/edit/:id', component: ModifSupEquipeComponent, canActivate: [AuthGuard] },
+  { path: 'manuel', component: ManuelComponent, canActivate: [AuthGuard] },
   { path: 'modifsupemachine', component: ModifSupMachineComponent, canActivate: [AuthGuard] },
   { path: 'recherche', component: SearchResultComponent }
 ];
