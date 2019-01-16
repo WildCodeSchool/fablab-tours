@@ -8,6 +8,7 @@
 
 img {
     filter: grayscale();
+    -webkit-filter: grayscale(100%);
     margin-top: 1em;
 }
 

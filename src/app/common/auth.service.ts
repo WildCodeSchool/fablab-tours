@@ -17,7 +17,7 @@ token: string;
       .pipe(
         map(result => {
           // stock le jwt token dans la session storage pour garder le user connecter
-          sessionStorage.setItem('access_token', JSON.stringify( result.token ));
+          sessionStorage.setItem('access_token', result.token );
           return true;
         })
       );

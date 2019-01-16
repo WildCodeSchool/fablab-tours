@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EquipeService } from '../common/equipe.service';
 import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { LoginService } from '../common/login/login.service';
+import { UserService } from '../common/user.service';
 
 @Component({
   selector: 'app-modif-sup-equipe',
@@ -17,7 +17,7 @@ export class ModifSupEquipeComponent implements OnInit {
   membreForm: FormGroup;
 
   // tslint:disable-next-line:max-line-length
-  constructor(private config: NgbModalConfig, public service: EquipeService, private modalService: NgbModal, private fb: FormBuilder, public loginService: LoginService) {
+  constructor(private config: NgbModalConfig, public service: EquipeService, private modalService: NgbModal, private fb: FormBuilder, public userService: UserService) {
     config.backdrop = 'static';
     config.keyboard = false;
    }
@@ -48,18 +48,18 @@ export class ModifSupEquipeComponent implements OnInit {
 
   // modification membre equipe
   updateMembre(form , id) {
-    this.loginService.updateMembre(form, id).subscribe();
+    this.userService.updateMembre(form, id).subscribe();
   }
 
   // creation membre equipe
   createMembre(form) {
-    this.loginService.sendMember(form).subscribe(() => {
+    this.userService.sendMember(form).subscribe(() => {
     });
   }
 
   // suppression membre equipe
   deleteMembre(id) {
-    this.loginService.deleteMembre(id).subscribe(() => {
+    this.userService.deleteMembre(id).subscribe(() => {
       const index = this.equipes.findIndex(e => e.id === id);
       this.equipes.splice(index, 1);
     });
