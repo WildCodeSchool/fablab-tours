@@ -41,7 +41,7 @@
                     <li class="nav-item log-out">
                         <h3 class="nav-link" *ngIf="!authService.loggedIn" routerLink="/agenda" (click)="showSidebar(false)">Agenda</h3>
                     </li>
-                    
+
                     <li class="nav-item log-out">
                         <h3 class="nav-link" *ngIf="!authService.loggedIn" routerLink="/machine" (click)="showSidebar(false)">Machines</h3>
                     </li>
@@ -71,9 +71,10 @@
                             <a *ngIf="!authService.loggedIn" href="https://www.facebook.com/FablabTourangeau/" target="_blank" title="Le Funlab sur Facebook"><i  class="fa fa-facebook-f mx-3"></i></a>
                             <a *ngIf="!authService.loggedIn" href="https://www.instagram.com/funlab_tours/" target="_blank" title="Le Funlab sur Instagram"><i class="fa fa-instagram mx-3"></i></a>
                             <a *ngIf="!authService.loggedIn" href="https://twitter.com/lefunlab/" target="_blank" title="Le Funlab sur Twitter"><i class="fa fa-twitter mx-3"></i></a>
-                            
+
                             <!-- debut modal connexion user -->
-                            
+
+                            <h5 class="manuel" *ngIf="authService.loggedIn" routerLink="/manuel" (click)="showSidebar(false)">Manuel d'utilisation</h5>
                             <a (click)="open(content)" (click)="showSidebar(false)" *ngIf="!authService.loggedIn" title="Connexion Admin"><i class="fa fa-user mx-2"></i></a>
                             <a (click)="logout()" (click)="showSidebar(false)" *ngIf="authService.loggedIn"><i class="fa fa-sign-out mx-2"></i></a>
                             <ng-template #content let-modal>

@@ -26,6 +26,7 @@ import { RecaptchaModule  } from 'ng-recaptcha';
 import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
 import { PartenaireComponent } from './partenaire/partenaire.component';
 import { SearchResultComponent } from './search-result/search-result.component';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
@@ -39,6 +40,7 @@ import { AccueilUserComponent } from './accueil-user/accueil-user.component';
 import { ModifSupEquipeComponent } from './modif-sup-equipe/modif-sup-equipe.component';
 import { ModifSupMachineComponent } from './modif-sup-machine/modif-sup-machine.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { ManuelComponent } from './manuel/manuel.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +60,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     SearchResultComponent,
     AccueilUserComponent,
     ModifSupEquipeComponent,
-    ModifSupMachineComponent
+    ModifSupMachineComponent,
+    ManuelComponent
 
   ],
   imports: [
@@ -74,6 +77,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     ReactiveFormsModule,
     RecaptchaModule,
     RecaptchaFormsModule,
+    PdfViewerModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,

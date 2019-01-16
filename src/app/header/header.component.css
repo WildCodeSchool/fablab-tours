@@ -172,11 +172,11 @@ h4 {
   .connect {
     margin-left: 3em;
   }
-  
+
   .btn {
     margin-left: 5em;
   }
-  
+
   h4 {
     margin-left: 3em;
   }
@@ -193,6 +193,12 @@ h4 {
 .error {
   font-size: 15px;
   color: red;
+}
+
+.manuel {
+  color: #fff;
+  cursor: pointer;
+  font-family: Raleway;
 }
 
 /*
@@ -306,42 +312,42 @@ body {
   .nav-link {
     margin-top: -0.5em;
   }
-  
+
   .navbar {
     height: 10vh;
   }
-  
+
   .sidebar{
     margin-top:10vh;
   }
-  
+
   img {
     opacity: 0;
   }
-  
+
   .search_icon{
     font-size: 1.3em;
     margin-right: -0.4em;
     margin-top: 1vh;
     height: 1.8rem;
-   
+
   }
-  
+
   .search_input{
     margin-right: -1em;
     height: 2rem;
 
   }
-  
+
   .searchbar{
     margin-right: -0.4em;
     margin-top: -1.6vh;
   }
-  
+
   .closeside{
     font-size: 2.1em;
   }
-  
+
   .openside{
     font-size: 1.8em;
   }
@@ -352,7 +358,7 @@ body {
   .navbar {
     height: 10vh;
   }
-  
+
   .sidebar{
     margin-top:10vh;
   }
@@ -363,13 +369,13 @@ body {
     font-size: 1.5em;
     margin-top: 0.2vh;
   }
-  
+
   .search_input{
     margin-right: -1em;
     height: 2rem;
 
   }
-  
+
   .searchbar{
     margin-right: -0.4em;
     margin-top: 0.4vh;
@@ -382,7 +388,7 @@ body {
   .closeside{
     font-size: 2.1em;
   }
-  
+
   .openside{
     font-size: 1.8em;
   }
