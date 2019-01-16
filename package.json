@@ -34,6 +34,7 @@
     "moment": "^2.23.0",
     "ng-fullcalendar": "^1.7.1",
     "ng-recaptcha": "^4.2.1",
+    "ng2-pdf-viewer": "^5.2.3",
     "ngx-openlayers": "^0.8.22",
     "ngx-pagination": "^3.2.1",
     "ngx-slick-carousel": "^0.4.4",
