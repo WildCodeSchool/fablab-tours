@@ -57,7 +57,7 @@ export class ModifSupMachineComponent implements OnInit {
   // suppression machine
   deleteMachine(id) {
     this.userService.deleteMachine(id).subscribe(() => {
-        const index = this.machines.findIndex(e => e.id === id);
+        const index = this.machines.findIndex(e => e.id_machine === id);
         this.machines.splice(index, 1);
       });
   }
