@@ -10,7 +10,12 @@
     background-color: #70CCCC;
     border-color: #70CCCC;
     color: white;
-    margin-right: 3em;
+    margin-right: 4em;
+}
+@media screen and (min-width:350px) and (max-width: 500px) {
+    .btn {
+        margin-right: 6em;
+    }
 }
 
 .btn:hover {

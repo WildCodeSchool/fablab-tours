@@ -150,6 +150,11 @@ a :hover{
   text-decoration: none;
 }
 
+.fa-sign-out {
+  margin-top: 0.4em;
+  size: 10rem;
+}
+
 li :hover, a :hover {
   color:#70CCCC;
   text-decoration: none;
