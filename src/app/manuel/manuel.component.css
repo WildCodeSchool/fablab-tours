@@ -12,6 +12,7 @@
     color: white;
     margin-right: 4em;
 }
+
 @media screen and (min-width:320px) and (max-width: 500px) {
     .btn {
         margin-right: 6em;
@@ -29,9 +30,7 @@
     }
 }
 
-
 .btn:hover {
     background-color: #000000;
     border-color: #000000;
 }
-
