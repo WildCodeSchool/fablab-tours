@@ -1,8 +1,8 @@
 <section class="comment-ca-marche fond">
-  <div class="top-container">
+  <div class="top-container" data-aos="fade-up">
     <h1 class="text-center">Comment ca marche ?</h1>
     <div class="row justify-content-around">
-      <div class="col-sm-12 col-md-12 col-lg-4">
+      <div class="col-sm-12 col-md-12 col-lg-4" data-aos="fade-up">
         <div class="card ml-4 mr-4">
           <div class="card-body text-center">
             <i class="fa fa-wrench"></i>
@@ -13,7 +13,7 @@
           </div>
         </div>
       </div>
-      <div class="col-sm-12 col-md-12 col-lg-4">
+      <div class="col-sm-12 col-md-12 col-lg-4" data-aos="fade-up">
         <div class="card ml-4 mr-4">
           <div class="card-body text-center">
             <i class="fa fa-book"></i>
@@ -24,7 +24,7 @@
           </div>
         </div>
       </div>
-      <div class="col-sm-12 col-md-12 col-lg-4">
+      <div class="col-sm-12 col-md-12 col-lg-4" data-aos="fade-up">
         <div class="card ml-4 mr-4">
           <div class="card-body text-center">
             <i class="fa fa-cogs"></i>
@@ -41,12 +41,12 @@
 
   <div class="container">
 
-    <div class="activity-header">
+    <div class="activity-header" data-aos="fade-up">
       <h2>Nos Activités</h2>
     </div>
 
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-md-8" data-aos="fade-up">
         <article>
           <!-- Title and Description of Activity One -->
           <header>
@@ -76,7 +76,7 @@
       </div>
 
       <!--Side section === START -->
-      <aside class="col-md-4">
+      <aside class="col-md-4" data-aos="fade-up">
         <!-- Horaires Section === START -->
         <h3 class="horaire">Les Horaires</h3>
         <div class="list-group mb-3">
@@ -106,8 +106,8 @@
         <!-- Horaires Section === END -->
 
         <!-- Agenda Section === START -->
-        <h3 class="agenda">Agenda</h3>
-        <div class="list-group mb-3">
+        <h3 class="agenda" data-aos="fade-up">Agenda</h3>
+        <div class="list-group mb-3" data-aos="fade-up">
           <div class="list-group-item">
             <div class="event-detail text-center" *ngFor="let event of evenements | slice:0:3; let i=index">
               <span class="event-detail-start-date">{{event.date | date: 'dd MMMM yyy '}}</span><!-- Date Pipe used to transform date format -->
@@ -126,7 +126,7 @@
 
         <!-- Newsletter Section === START -->
 
-        <div class="card mb-3">
+        <div class="card mb-3" data-aos="fade-up">
           <h3 class="card-header mb-3 text-center">Souscrire à notre newsletter</h3>
           <form action="/subscribe" method="post" class="form-horizontal" [formGroup]="newsForm" (ngSubmit)='contactForm(newsForm.value); newsForm.reset()'>
             <div class="form-group">
