@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EquipeService } from '../common/equipe.service';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
@@ -15,7 +15,9 @@ export class ModifSupEquipeComponent implements OnInit {
   equipes: any[];
   membreForm: FormGroup;
 
-  constructor(private modalService: NgbModal, private fb: FormBuilder, public equipeService: EquipeService) {
+  constructor(private config: NgbModalConfig, private modalService: NgbModal, private fb: FormBuilder, public equipeService: EquipeService) {
+    config.backdrop = 'static';
+    config.keyboard = false;
    }
 
   ngOnInit() {

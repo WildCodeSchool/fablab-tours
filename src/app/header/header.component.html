@@ -41,7 +41,6 @@
                     <li class="nav-item log-out">
                         <h3 class="nav-link" *ngIf="!authService.loggedIn()" routerLink="/agenda" (click)="showSidebar(false)">Agenda</h3>
                     </li>
-
                     <li class="nav-item log-out">
                         <h3 class="nav-link" *ngIf="!authService.loggedIn()" routerLink="/machine" (click)="showSidebar(false)">Machines</h3>
                     </li>
@@ -61,12 +60,12 @@
                         <h2 class="nav-link " *ngIf="authService.loggedIn()" routerLink="/admin" (click)="showSidebar(false)">Tableau de bord</h2>
                     </li>
                     <li class="nav-item log-in">
-                        <h5 class="nav-link" *ngIf="authService.loggedIn()" routerLink="/modifsupemachine" (click)="showSidebar(false)">Gestion Machines</h5>
-                    </li>
-                    <li class="nav-item log-in">
                         <h5 class="nav-link" *ngIf="authService.loggedIn()" routerLink="/modifsupequipe" (click)="showSidebar(false)">Gestion Equipe</h5>
                     </li>
-
+                    <li class="nav-item log-in">
+                        <h5 class="nav-link" *ngIf="authService.loggedIn()" routerLink="/modifsupemachine" (click)="showSidebar(false)">Gestion Machines</h5>
+                    </li>
+                    
                     <div class="reseaux">
                         <ul class="d-flex">
                             <a *ngIf="!authService.loggedIn()" href="https://www.facebook.com/FablabTourangeau/" target="_blank" title="Le Funlab sur Facebook"><i  class="fa fa-facebook-f mx-3"></i></a>
@@ -78,7 +77,7 @@
                             <a (click)="open(content)" (click)="showSidebar(false)" *ngIf="!authService.loggedIn()" title="Connexion Admin"><i class="fa fa-user mx-2"></i></a>
 
                             <div class="row">
-                                <a (click)="logout()" (click)="showSidebar(false)" *ngIf="authService.loggedIn()"><i class="fa fa-sign-out mx-2"></i></a>
+                                <a (click)="logout()" (click)="showSidebar(false)" title="Déconnexion" *ngIf="authService.loggedIn()"><i class="fa fa-sign-out mx-2"></i></a>
                             </div>
 
                             <div class="row manuelUser">
