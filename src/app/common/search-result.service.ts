@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -23,14 +24,14 @@ export class SearchResultService {
   }
 
   getSearch(param) {
-    this.http.get<any>(`http://localhost:3000/recherche/${param}`).subscribe(data => {
+    this.http.get<any>(`${environment.apiUrl}/recherche/${param}`).subscribe(data => {
       this.dataStore.result = data;
       this._search.next(Object.assign({}, this.dataStore).result);
     }, err => console.log('Impossible de charger les résultats'));
   }
 
   sendSearch(body) {
-    return this.http.post('http://localhost:3000/recherche', body);
+    return this.http.post(`${environment.apiUrl}/recherche`, body);
   }
 
 

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,7 @@ token: string;
 
 
   login(username: string, password: string): Observable<boolean> {
-    return this.http.post<{token: string}>('http://localhost:3000/api/auth', {username, password})
+    return this.http.post<{token: string}>(`${environment.apiUrl}/auth`, {username, password})
       .pipe(
         map(result => {
           // stock le jwt token dans la session storage pour garder le user connecter

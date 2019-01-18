@@ -6,6 +6,7 @@ import { AngularOpenlayersModule } from 'ngx-openlayers';
 import { HttpClientModule } from '@angular/common/http';
 import { FullCalendarModule } from 'ng-fullcalendar';
 import { JwtModule } from '@auth0/angular-jwt';
+import { environment } from './../environments/environment';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -79,8 +80,8 @@ import { ManuelComponent } from './manuel/manuel.component';
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
-        whitelistedDomains: ['localhost:3000'],
-        blacklistedRoutes: ['localhost:3000/api/auth']
+        whitelistedDomains: [`${environment.apiUrl}`],
+        blacklistedRoutes: [`${environment.apiUrl}/auth`]
       }
     }),
     NgxPaginationModule,

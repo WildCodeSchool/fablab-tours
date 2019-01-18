@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -11,12 +12,12 @@ export class MachinesService {
 
 
   getMachines(): Observable<any> {
-    return this.http.get<any>(`http://localhost:3000/api/machines`);
+    return this.http.get<any>(`${environment.apiUrl}/machines`);
   }
 
   // creation machine
   sendMachine(body) {
-    return this.http.post('http://localhost:3000/api/machines', body
+    return this.http.post(`${environment.apiUrl}/machines`, body
       , {
         headers: this.headers
       });
@@ -24,7 +25,7 @@ export class MachinesService {
 
   // modification machine
   updateMachine(body, param) {
-    return this.http.put(`http://localhost:3000/api/machines/${param}`, body
+    return this.http.put(`${environment.apiUrl}/machines/${param}`, body
       , {
         headers: this.headers
       });
@@ -32,7 +33,7 @@ export class MachinesService {
 
   // suppression machine
   deleteMachine(param) {
-    return this.http.delete(`http://localhost:3000/api/machines/${param}`
+    return this.http.delete(`${environment.apiUrl}/machines/${param}`
       , {
         headers: this.headers
       });

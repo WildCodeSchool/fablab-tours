@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EquipeService } from '../common/equipe.service';
-import * as $ from 'jquery';
+
 
 
 @Component({
