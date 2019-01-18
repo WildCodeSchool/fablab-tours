@@ -13,7 +13,13 @@
       <div class="row">
         <div class="equipe">
           <div class="pic">
-            <img src="{{equipe.image}}">
+            <div *ngIf="equipe.image;then show else default_show"></div>
+            <ng-template #show>
+              <img class="card-img-right flex-auto d-none d-lg-block" alt="image " src="{{equipe.image}}">
+            </ng-template>
+            <ng-template #default_show>
+              <img class="card-img-right flex-auto d-none d-lg-block default-show" alt="user" src="assets/images/equipe/user.png">
+            </ng-template>
           </div>
           <div class="team-content">
             <h3>{{equipe.prenom}}</h3>
