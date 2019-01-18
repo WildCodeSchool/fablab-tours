@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { MachinesService } from '../common/machines.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
-import { UserService } from '../common/user.service';
 
 @Component({
   selector: 'app-modif-sup-machine',
