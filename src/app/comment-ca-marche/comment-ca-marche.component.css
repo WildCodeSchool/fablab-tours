@@ -61,7 +61,7 @@ h1 {
 /*  paragraph styling */
 
 .lead {
-  margin-top: 1.4em;
+  margin-top: 1.8em;
   text-align: justify;
   font-size: 1.125rem;
   margin-left: 1em;
@@ -155,7 +155,7 @@ tr:hover {
 
 /* Button */
 
-.btn {
+.btnNews {
   padding: 0px;
   border-radius: 0.5px;
   background-color: #70CCCC;
@@ -165,7 +165,6 @@ tr:hover {
 .btn:hover {
   background-color: #000000;
   border: #000000;
-  transition: 0;
 }
 
 .fa {
@@ -207,13 +206,9 @@ p {
 }
 
 .don {
-  margin-top: 1em;
+  margin-top: 0.5em;
   background-color: #70CCCC;
   border-color: #70CCCC;
   color: #FFF;
   font-weight: bold;
-  text-align: center;
-  border-radius: 10px;
-  width: 10em;
-  height: 2em;
 }

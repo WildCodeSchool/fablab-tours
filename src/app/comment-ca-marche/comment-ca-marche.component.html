@@ -127,14 +127,14 @@
                       <!-- Newsletter Section === START -->
                       
                       <div class="card mb-3">
-                        <h3 class="card-header mb-3 text-center">Souscrire à notre newsletter</h3>
+                        <h3 class="card-header mb-3 text-center">Newsletter</h3>
                         <form action="/subscribe" method="post" class="form-horizontal" [formGroup]="newsForm" (ngSubmit)='contactForm(newsForm.value); newsForm.reset()'>
                           <div class="form-group">
                             <div class="col-sm-12">
                               <div class="input-group">
                                 <input type="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Saisissez votre email" formControlName='email'>
                                 <span class="input-group-btn">
-                                  <button type="submit" [disabled]="newsForm.pristine ||newsForm.invalid" class="btn btn-primary"><i
+                                  <button type="submit" [disabled]="newsForm.pristine ||newsForm.invalid" class="btn btn-primary btnNews"><i
                                     class="fa fa-paper-plane"></i></button>
                                   </span>
                                 </div>

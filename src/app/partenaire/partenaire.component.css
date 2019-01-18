@@ -57,6 +57,7 @@ img:hover {
 
 .partenaireTech {
     margin-bottom: 10em;
+    margin-top: 2em;
 }
 
 .partenaireFin {
@@ -108,6 +109,10 @@ h5 {
 
 .container {
     margin-bottom: 5em;
+    margin-top: 2em;
+}
+
+.parttech {
     margin-top: 2em;
 }
 
