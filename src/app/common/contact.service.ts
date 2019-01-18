@@ -5,13 +5,13 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ContactService {
 
-  constructor(private http: HttpClient ) { }
+  constructor(private http: HttpClient) { }
 
   sendMessage(body) {
     return this.http.post('http://localhost:3000/contact', body);
-    }
+  }
 
-    sendNewsletter(body) {
+  sendNewsletter(body) {
     return this.http.post('http://localhost:3000/subscribe', body);
-    }
+  }
 }

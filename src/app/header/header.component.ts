@@ -5,7 +5,6 @@ import { SearchResultService } from '../common/search-result.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { first } from 'rxjs/operators';
-import { FlashMessagesModule, FlashMessagesService } from 'angular2-flash-messages';
 
 @Component({
   selector: 'app-header',
@@ -19,7 +18,7 @@ export class HeaderComponent implements OnInit {
   rechercheForm: FormGroup;
   error: string;
 
-  constructor(private flashMessages: FlashMessagesService, private service: SearchResultService, private modalService: NgbModal,
+  constructor(private service: SearchResultService, private modalService: NgbModal,
   private fb: FormBuilder, public authService: AuthService, private router: Router) { }
 
   ngOnInit() {

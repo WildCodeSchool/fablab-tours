@@ -20,7 +20,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { EquipeComponent } from './equipe/equipe.component';
 import { CommentCaMarcheComponent } from './comment-ca-marche/comment-ca-marche.component';
 import { GalerieMachinesComponent } from './galerie-machines/galerie-machines.component';
-import { FlashMessagesModule } from 'angular2-flash-messages';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RecaptchaModule  } from 'ng-recaptcha';
 import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
@@ -72,7 +71,6 @@ import { ManuelComponent } from './manuel/manuel.component';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    FlashMessagesModule.forRoot(),
     FullCalendarModule,
     ReactiveFormsModule,
     RecaptchaModule,
@@ -86,7 +84,6 @@ import { ManuelComponent } from './manuel/manuel.component';
       }
     }),
     NgxPaginationModule,
-    ReactiveFormsModule.withConfig({ warnOnNgModelWithFormControl: 'never' }),
   ],
 
 

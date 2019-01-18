@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, BehaviorSubject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +8,7 @@ import { Observable, BehaviorSubject } from 'rxjs';
 export class SearchResultService {
 
   private _search: BehaviorSubject<any[]>;
-  private dataStore: {result: any[]};
+  private dataStore: { result: any[] };
 
   constructor(private http: HttpClient) {
     this.dataStore = {
@@ -16,11 +16,11 @@ export class SearchResultService {
     };
 
     this._search = new BehaviorSubject<any>([]);
-   }
+  }
 
-   get result() {
-     return this._search.asObservable();
-   }
+  get result() {
+    return this._search.asObservable();
+  }
 
   getSearch(param) {
     this.http.get<any>(`http://localhost:3000/recherche/${param}`).subscribe(data => {

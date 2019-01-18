@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ContactService } from '../common/contact.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { FlashMessagesModule, FlashMessagesService } from 'angular2-flash-messages';
 import swal from 'sweetalert2';
 
 
@@ -18,7 +17,7 @@ export class ContactComponent implements OnInit {
   x = 0.66842;
   y = 47.39301;
 
-  constructor(private flashMessages: FlashMessagesService, private fb: FormBuilder, private contactService: ContactService) {
+  constructor(private fb: FormBuilder, private contactService: ContactService) {
   }
   ngOnInit() {
 

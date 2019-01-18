@@ -27,7 +27,7 @@ token: string;
     sessionStorage.removeItem('access_token');
   }
 
-  public get loggedIn(): boolean {
+  loggedIn(): boolean {
     return (sessionStorage.getItem('access_token') !== null);
   }
 

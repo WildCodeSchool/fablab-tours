@@ -9,7 +9,7 @@ export class ManuelComponent implements OnInit {
 
   constructor() { }
 
-  src = '../../assets/images/manuel_d_utilisation/manuel_d_utilisation_funlab_tours.pdf';
+  src = 'assets/images/manuel_d_utilisation/manuel_d_utilisation_funlab_tours.pdf';
 
   ngOnInit() {
   }

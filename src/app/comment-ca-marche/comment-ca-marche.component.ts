@@ -1,10 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { elementClassProp } from '@angular/core/src/render3/instructions';
-import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { FlashMessagesModule, FlashMessagesService } from 'angular2-flash-messages';
 import swal from 'sweetalert2';
 import { ContactService } from '../common/contact.service';
 
@@ -21,10 +18,7 @@ export class CommentCaMarcheComponent implements OnInit, OnDestroy {
   newsForm: FormGroup;
   interval: any;
 
-
-
-  // tslint:disable-next-line:max-line-length
-  constructor(private modalService: NgbModal, private service: HttpClient, private flashMessages: FlashMessagesService, private fb: FormBuilder, private contactService: ContactService) { }
+  constructor(private service: HttpClient, private fb: FormBuilder, private contactService: ContactService) { }
 
   ngOnInit() {
 
@@ -34,7 +28,7 @@ export class CommentCaMarcheComponent implements OnInit, OnDestroy {
 
 
     // Calls calendar API
-this.service.get<any>('http://localhost:3000/api/calendar/events')
+    this.service.get<any>('http://localhost:3000/api/calendar/events')
       .pipe(
         map(res => {
           return res.map(event => {
@@ -49,14 +43,14 @@ this.service.get<any>('http://localhost:3000/api/calendar/events')
       )
       .subscribe(res => {
         this.evenements = res;
-    });
+      });
   }
 
   ngOnDestroy() {
     clearInterval(this.interval);
   }
 
-// fonction envoi email newsletter
+  // fonction envoi email newsletter
   contactForm(form) {
     // this.submitted = true;
     this.contactService.sendNewsletter(form).subscribe(() => {

@@ -14,7 +14,8 @@ export class SearchResultComponent implements OnInit {
   constructor(public service: SearchResultService, private sanitizer: DomSanitizer ) { }
 
   ngOnInit() {
-    this.results = this.service.result;  }
+    this.results = this.service.result;
+  }
 
   sanitized(content) {
     const html = this.sanitizer.bypassSecurityTrustHtml(content);

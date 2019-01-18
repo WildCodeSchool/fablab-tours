@@ -16,16 +16,13 @@ export class ModifSupMachineComponent implements OnInit {
   machineForm: FormGroup;
   machines: any[];
 
-  // tslint:disable-next-line:max-line-length
-  constructor(private config: NgbModalConfig, public service: MachinesService, private fb: FormBuilder, private modalService: NgbModal, public userService: UserService) {
-    config.backdrop = 'static';
-    config.keyboard = false;
+  constructor(public machineService: MachinesService, private fb: FormBuilder, private modalService: NgbModal) {
    }
 
   ngOnInit() {
 
     // récuperer les données machines de la base de données et les stocker dans le tableau machines.
-    this.service.getMachines().subscribe(res => {
+    this.machineService.getMachines().subscribe(res => {
       this.machines = res;
     });
 
@@ -44,19 +41,19 @@ export class ModifSupMachineComponent implements OnInit {
 
   // modification machine
   updateMachine(form, id) {
-    this.userService.updateMachine(form, id).subscribe();
+    this.machineService.updateMachine(form, id).subscribe();
   }
 
   // creation machine
   createMachine(form) {
-    this.userService.sendMachine(form).subscribe(() => {
+    this.machineService.sendMachine(form).subscribe(() => {
       this.machines.push(form);
     });
   }
 
   // suppression machine
   deleteMachine(id) {
-    this.userService.deleteMachine(id).subscribe(() => {
+    this.machineService.deleteMachine(id).subscribe(() => {
         const index = this.machines.findIndex(e => e.id_machine === id);
         this.machines.splice(index, 1);
       });
