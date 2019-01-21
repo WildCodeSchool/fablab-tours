@@ -1,90 +1,136 @@
+<!-- navbar -->
+<nav class="navbar navbar-light fixed-top">
 
-<nav class="navbar fixed-top navbar-expand-lg navbar-light nav1" *ngIf="onWindowfix()">
+    <!-- bouton pour faire apparaitre la sidebar -->
+    <button [ngClass]="{'transBtn': sidebarDisplayed}" (click)="showSidebar(!sidebarDisplayed)" id="openSide" class="btnStartPos navbar-toggler"
+    type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+    aria-expanded="false" aria-label="Toggle navigation">
 
-  <a class="navbar-brand d-flex justify-content-between">
-    <img src="../../assets/images/image-header/logo_funlab.png" width="115%" height="115%" routerLink="">
-  </a>
+    <!-- menu burger ouverture sidebar -->
+    <div *ngIf="!sidebarDisplayed" class="openside">
+        <i class="fa fa-bars"></i>
+    </div>
+    <!-- croix fermeture sidebar -->
+    <div *ngIf="sidebarDisplayed" class="closeside">
+        <i class="fa fa-times"></i>
+    </div>
+</button>
 
-  <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-    <!-- Icon loupe pour recherche
-    <img src="../../assets/images/image-header/loupe2.png" width="40" routerLink="/recherche">
-  -->
-  <div class="navbar-collapse" id="navbarNav"  [ngbCollapse]="!isCollapsed">
-    <ul class="navbar-nav mx-auto">
-      <li class="nav-item">
-        <h3 class="nav-link text-info mx-2" routerLink="">Accueil</h3>
-      </li>
-      <li class="nav-item">
-        <h3 class="nav-link text-info mx-2" routerLink="/agenda">Agenda</h3>
-      </li>
-      <li class="nav-item">
-        <h3 class="nav-link text-info mx-2"><a href="http://funlab.fr/category/actusblog/" target="_blank">Blog</a></h3>
-      </li>
-      <li class="nav-item">
-        <h3 class="nav-link text-info mx-2"><a href="http://wiki.funlab.fr/index.php/Accueil" target="_blank">Wiki</a></h3>
-      </li>
-      <li class="nav-item">
-        <h3 class="nav-link text-info mx-2" routerLink="/equipe">Equipe</h3>
-      </li>
-      <li class="nav-item">
-        <h3 class="nav-link text-info mx-2" routerLink="/contact">Contact</h3>
-      </li>
-    </ul>
+<!-- Logo FunLab -->
+<img src="assets/images/image-header/logo_blanc.svg" routerLink="" (click)="showSidebar(false)">
 
-    <form class="form-inline justify-content-center">
-      <input name="search" class="fa fa-search form-control" type="search" placeholder="Rechercher" aria-label="Search">
-      <i role="submit" class="fa fa-search"></i>
-    </form>
-
-  </div>
+<!-- Champ de recherche -->
+<form [formGroup]="rechercheForm" (ngSubmit)="onSubmit(); rechercheForm.reset()">
+    <div class="searchbar">
+        <input class="form-control search_input" type="text" formControlName="input" placeholder="Rechercher...">
+        <button class="search_icon" type="submit" [disabled]="rechercheForm.invalid"><i class="fa fa-search"></i></button>
+    </div>
+</form>
 </nav>
+<!-- fin navbar -->
 
+<!-- Sidebar -->
+<nav class="sidebar hidden fixed-top" id="nav1" [ngClass]="{'trans': sidebarDisplayed}">
+    <div class="navbar-nav">
+        <div class="row">
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault" [ngbCollapse]="false">
+                <ul class="nav sidebar-nav d-table">
+                    <li class="nav-item log-out">
+                        <h3 class="nav-link" *ngIf="!authService.loggedIn()" routerLink="" (click)="showSidebar(false)">Accueil</h3>
+                    </li>
+                    <li class="nav-item log-out">
+                        <h3 class="nav-link" *ngIf="!authService.loggedIn()" routerLink="/agenda" (click)="showSidebar(false)">Agenda</h3>
+                    </li>
+                    <li class="nav-item log-out">
+                        <h3 class="nav-link" *ngIf="!authService.loggedIn()" routerLink="/machine" (click)="showSidebar(false)">Machines</h3>
+                    </li>
+                    <li class="nav-item log-out">
+                        <h3 class="nav-link" *ngIf="!authService.loggedIn()" routerLink="/equipe" (click)="showSidebar(false)">Equipe</h3>
+                    </li>
+                    <li class="nav-item log-out">
+                        <h3 class="nav-link" *ngIf="!authService.loggedIn()"><a  (click)="showSidebar(false)" href="http://funlab.fr/category/actusblog/" title="Lien externe: http://funlab.fr/category/actusblog/" target="_blank">Blog</a></h3>
+                    </li>
+                    <li class="nav-item log-out">
+                        <h3 class="nav-link" *ngIf="!authService.loggedIn()"><a (click)="showSidebar(false)" href="http://wiki.funlab.fr/index.php/Accueil" title="Lien externe: http://wiki.funlab.fr/index.php/Accueil" target="_blank">Wiki</a></h3>
+                    </li>
+                    <li class="nav-item log-out">
+                        <h3 class="nav-link" *ngIf="!authService.loggedIn()" routerLink="/contact" (click)="showSidebar(false)">Contact</h3>
+                    </li>
+                    <li class="nav-item log-in">
+                        <h2 class="nav-link " *ngIf="authService.loggedIn()" routerLink="/admin" (click)="showSidebar(false)">Tableau de bord</h2>
+                    </li>
+                    <li class="nav-item log-in">
+                        <h5 class="nav-link" *ngIf="authService.loggedIn()" routerLink="/modifsupequipe" (click)="showSidebar(false)">Gestion Equipe</h5>
+                    </li>
+                    <li class="nav-item log-in">
+                        <h5 class="nav-link" *ngIf="authService.loggedIn()" routerLink="/modifsupemachine" (click)="showSidebar(false)">Gestion Machines</h5>
+                    </li>
+                    
+                    <div class="reseaux">
+                        <ul class="d-flex">
+                            <a *ngIf="!authService.loggedIn()" href="https://www.facebook.com/FablabTourangeau/" target="_blank" title="Le Funlab sur Facebook"><i  class="fa fa-facebook-f mx-3"></i></a>
+                            <a *ngIf="!authService.loggedIn()" href="https://www.instagram.com/funlab_tours/" target="_blank" title="Le Funlab sur Instagram"><i class="fa fa-instagram mx-3"></i></a>
+                            <a *ngIf="!authService.loggedIn()" href="https://twitter.com/lefunlab/" target="_blank" title="Le Funlab sur Twitter"><i class="fa fa-twitter mx-3"></i></a>
 
+                            <!-- Logo connexion/deconnexion admin -->
 
+                            <a (click)="open(content)" (click)="showSidebar(false)" *ngIf="!authService.loggedIn()" title="Connexion Admin"><i class="fa fa-user mx-2"></i></a>
 
+                            <div class="row">
+                                <a (click)="logout()" (click)="showSidebar(false)" title="Déconnexion" *ngIf="authService.loggedIn()"><i class="fa fa-sign-out mx-2"></i></a>
+                            </div>
 
-<div class="backgroundimage">
-  <nav class="navbar fixed-top navbar-expand-lg navbar-light nav2" *ngIf="onWindowScroll()">
+                            <div class="row manuelUser">
+                                <li class="nav-item manuel">
+                                    <h5 class="nav-link" *ngIf="authService.loggedIn()" routerLink="/manuel" (click)="showSidebar(false)">Manuel d'utilisation</h5>
+                                </li>
+                            </div>
 
-    <a class="navbar-brand d-flex justify-content-between">
-      <img src="../../assets/images/image-header/logo_funlab.png" width="115%" height="115%" routerLink="">
-    </a>
+                            <!-- debut modal connexion user -->
+                            <ng-template #content let-modal>
+                                <div class="modal-header">
+                                    <h4>Connexion Administrateur</h4>
+                                    <button type="button" class="close" aria-label="Close" (click)="modal.close('Cross click')">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="container-fluid">
 
-    <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+                                        <div class="sec2contactform">
+                                            <form [formGroup]="connectForm">
 
-    <!-- Icon loupe pour recherche
-    <img src="../../assets/images/image-header/loupe2.png" width="40" routerLink="/recherche">
-  -->
-  <div class="navbar-collapse" id="navbarNav"  [ngbCollapse]="!isCollapsed">
-    <ul class="navbar-nav mx-auto">
-      <li class="nav-item">
-        <h3 class="nav-link text-info mx-2" routerLink="">Accueil</h3>
-      </li>
-      <li class="nav-item">
-        <h3 class="nav-link text-info mx-2" routerLink="/agenda">Agenda</h3>
-      </li>
-      <li class="nav-item">
-        <h3 class="nav-link text-info mx-2"><a href="http://funlab.fr/category/actusblog/" target="_blank">Blog</a></h3>
-      </li>
-      <li class="nav-item">
-        <h3 class="nav-link text-info mx-2"><a href="http://wiki.funlab.fr/index.php/Accueil" target="_blank">Wiki</a></h3>
-      </li>
-      <li class="nav-item">
-        <h3 class="nav-link text-info mx-2" routerLink="/equipe">Equipe</h3>
-      </li>
-      <li class="nav-item">
-        <h3 class="nav-link text-info mx-2" routerLink="/contact">Contact</h3>
-      </li>
-    </ul>
+                                                <div class='form-group'>
+                                                    <input type='email' class="form-control connect" formControlName='username' placeholder="Email">
+                                                    <div *ngIf="connectForm.controls['username'].invalid && (connectForm.controls['username'].dirty || connectForm.controls['username'].touched)"
+                                                    class="alert alert-danger">
+                                                    <div class="obl" *ngIf="connectForm.controls['username'].invalid && (connectForm.controls['username'].dirty || connectForm.controls['username'].touched)">Email obligatoire.</div>
+                                                </div>
+                                            </div>
 
-    <form class="form-inline justify-content-center">
-      <input name="search" class="fa fa-search form-control" type="search" placeholder="Rechercher" aria-label="Search">
-      <i role="submit" class="fa fa-search"></i>
-    </form>
+                                            <div class='form-group'>
+                                                <input type='password' class="form-control connect" formControlName='password' placeholder="Mot de passe">
+                                                <div *ngIf="connectForm.controls['password'].invalid && (connectForm.controls['password'].dirty || connectForm.controls['password'].touched)"
+                                                class="alert alert-danger">
+                                                <div class="obl" *ngIf="connectForm.controls['password'].invalid && (connectForm.controls['password'].dirty || connectForm.controls['password'].touched)">Mot de passe obligatoire.</div>
+                                            </div>
+                                        </div>
 
-  </div>
+                                        <button type='button' [disabled]="connectForm.pristine ||connectForm.invalid" (click)="modal.close()" class='btn btn-secondary'>Connexion</button>
+                                        <h4 class="error" *ngIf="error">{{error}}</h4>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </ng-template>
+                    <!-- Fin modal connexion admin -->
+                </ul>
+            </div>
+        </ul>
+    </div>
+</div>
+</div>
 </nav>
+<!-- Fin sidebar -->
+

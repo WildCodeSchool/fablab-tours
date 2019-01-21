@@ -1,3 +1,52 @@
-<h1>
-  agenda works!
-</h1>
+<div class="container taille">
+    <h1 class="text-center titre">Prochains Evènements</h1>
+<!-- debut events -->
+    <div *ngFor='let event of evenements | slice: 0:4; let i = index' class="row row-striped">
+        <div class="col-2 text-right">
+            <h1 class="display-4"><span class="badge badge-secondary">{{event.jour | slice: 8:10}}</span></h1>
+            <h2>{{event.mois | date:'MMMM'}}</h2>
+            <li class="list-inline-item"><img src="assets/images/image-header/clock.svg" class="mx-2 clock" width="22"> {{event.hDepart}} - {{event.hFin}}</li>
+        </div>
+        <div class="col-10">
+            <h3 class="text-uppercase"><strong>{{event.title}}</strong></h3>
+            <ul class="list-inline">
+                <li class="list-inline-item"><img src="assets/images/image-header/calendar.svg" class="mx-2" width="25"> {{event.jour | date:'EEEE'}} </li>
+                
+                <li class="list-inline-item"><img src="assets/images/image-header/location.svg" class="mx-2" width="22">{{event.location}}</li>
+            </ul>
+            <p [innerHTML]="event.description"></p>
+        </div>
+    </div>
+<!-- fin events -->
+<!-- debut calendar -->
+    <div class="my-5 text-center">
+        <div *ngIf="calendarOptions">
+            <ng-fullcalendar #ucCalendar (eventClick)="eventClick($event.detail)" [options]="calendarOptions" [(eventsModel)]="evenements"></ng-fullcalendar>
+      </div>
+    </div>
+<!-- fin calendar -->
+</div>
+<!-- debut modal -->
+<div class="modal" id="myModal" [style.display]="showModal ? 'block' : 'none'">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+    <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title"> {{ name }} </h4>
+                <button type="button" class="close" data-dismiss="modal" (click) = "hide()">&times;</button>
+            </div>
+    <!-- Modal body -->
+            <div class="modal-body">
+                <p><span><img src="assets/images/image-header/clock.svg" class="mx-2" width="22"> {{dateStart | date: 'EEEE d MMMM y'}} </span></p>
+                <p> {{heureDepart}} à {{heureFin}} </p>
+                <p><span><img src="assets/images/image-header/location.svg" class="mx-2" width="22"></span> {{ lieu }} </p>
+                <p [innerHTML]="description"><span><img src="assets/images/image-header/align.svg" class="mx-2" width="22"></span></p>
+            </div>
+    <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" (click) = "hide()">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- fin modal -->

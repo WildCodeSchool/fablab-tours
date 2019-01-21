@@ -1,0 +1,203 @@
+/* Start === top-container - Esprit FabLab styling */
+
+h1 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #696969;
+  font-weight: bold;
+  font-size: 2.5rem;
+  padding: 30px;
+}
+
+.top-container {
+  background-color: #F6F6F2;
+}
+
+/* cards styling */
+
+.top-container h4 {
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-top: 2rem;
+}
+
+.card {
+  border: none;
+  background-color: #F6F6F2;
+}
+
+/* icon styling only top 3*/
+
+.top-container .fa {
+  display: inline-block;
+  padding: 1rem;
+  font-size: 4rem;
+  background-color: #70CCCC;
+  color: hsl(240, 14%, 99%);
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* End === top-container - Esprit FabLab styling */
+
+/* Start === Activity section */
+
+.activity-header h2 {
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 40px 15px 0;
+  font-size: 2.25rem;
+  margin-bottom: 2em;
+  color: #696969;
+}
+
+/*  paragraph styling */
+
+.lead {
+  margin-top: 1.4em;
+  text-align: justify;
+  font-size: 1.125rem;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.lead2 {
+  text-align: justify;
+  font-size: 21px;
+  font-weight: bold;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+/* End === Activity section */
+
+/* Start === section Horaire  */
+
+.horaire {
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 10px;
+  font-size: 0.9rem;
+}
+
+th {
+  text-align: left;
+}
+
+td {
+  text-align: right;
+}
+
+tr:hover {
+  transition-duration: 0.3s;
+  transform: translateY(-5px);
+  font-size: 1rem;
+  color: #70CCCC;
+  font-weight: bold;
+}
+
+/* End === section Horaire  */
+
+/* Start === section Agenda */
+
+.agenda {
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.event-detail-start-date,
+.event-detail-start-time,
+.event-detail-end-time {
+  font-size: 0.9rem;
+  font-family: Raleway;
+}
+
+.event-detail-title {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.8rem;
+  font-family: Raleway;
+}
+
+/* link to see agenda */
+
+.agenda-more {
+  text-align: center;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: Raleway;
+}
+
+.agenda-more a {
+  color: #70CCCC;
+}
+
+/* End === section Agenda */
+
+/* Start === section Newsletter */
+
+.form-control {
+  height: calc(2.5rem + 2px);
+  font-family: Raleway;
+}
+
+/* Button */
+
+.btn {
+  padding: 0px;
+  border-radius: 0.5px;
+  background-color: #70CCCC;
+  border-color: #70CCCC;
+}
+
+.btn:hover {
+  background-color: #000000;
+  border: #000000;
+  transition: 0;
+}
+
+.fa {
+  padding: 10px;
+  font-size: 30px;
+}
+
+.fa-paper-plane {
+  font-size: 20px;
+}
+
+
+
+/* End === section Newsletter */
+
+h1,
+h2,
+h3,
+h4,
+p,
+.day,
+.time,
+a,
+table {
+  font-family: Raleway;
+}
+
+p {
+  text-align: justify;
+  text-justify: inter-word;
+  text-align-last: center;
+}
+
+
+.row h2 {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  text-align: center;
+}
