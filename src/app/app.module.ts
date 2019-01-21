@@ -41,6 +41,7 @@ import { ModifSupEquipeComponent } from './modif-sup-equipe/modif-sup-equipe.com
 import { ModifSupMachineComponent } from './modif-sup-machine/modif-sup-machine.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ManuelComponent } from './manuel/manuel.component';
+import { ModifSupPartenaireComponent } from './modif-sup-partenaire/modif-sup-partenaire.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { ManuelComponent } from './manuel/manuel.component';
     AccueilUserComponent,
     ModifSupEquipeComponent,
     ModifSupMachineComponent,
-    ManuelComponent
+    ManuelComponent,
+    ModifSupPartenaireComponent
 
   ],
   imports: [
