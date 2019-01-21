@@ -1,46 +1,24 @@
-/* Start === styling of header for section comment ca marche */
-.header {
-  background-color: #666666;
-  color: #fff;
-}
+/* Start === top-container - Esprit FabLab styling */
 
-.header h1 {
-  margin: 0;
-  text-align: center;
+h1 {
   text-transform: uppercase;
   letter-spacing: 1px;
-  padding: 40px 15px 0;
+  color: #696969;
+  font-weight: bold;
+  font-size: 2.5rem;
+  padding: 30px;
 }
-
-.header p {
-  margin: 0;
-  text-align: center;
-  padding: 20px 30px;
-}
-
-/* End === styling of header for section comment ca marche */
-
-/* Start === top-container - Esprit FabLab styling */
 
 .top-container {
   background-color: #F6F6F2;
-}
-
-.top-container h2 {
-  margin: 0;
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: 600;
-  letter-spacing: 1px;
-  padding: 40px 15px 0;
-  color: #000000;
 }
 
 /* cards styling */
 
 .top-container h4 {
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 500;
+  margin-top: 2rem;
 }
 
 .card {
@@ -48,12 +26,18 @@
   background-color: #F6F6F2;
 }
 
-/* icon styling */
+/* icon styling only top 3*/
 
-.fa {
-  padding: 10px;
-  font-size: 30px;
+.top-container .fa {
+  display: inline-block;
+  padding: 1rem;
+  font-size: 4rem;
+  background-color: #70CCCC;
+  color: hsl(240, 14%, 99%);
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
 }
+
 
 /* End === top-container - Esprit FabLab styling */
 
@@ -63,78 +47,60 @@
   margin: 0;
   text-align: center;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 500;
   padding: 40px 15px 0;
+  font-size: 2.25rem;
+  margin-bottom: 2em;
+  color: #696969;
 }
 
 /*  paragraph styling */
 
 .lead {
-  margin-top: 12px;
+  margin-top: 1.4em;
   text-align: justify;
-  font-size: 19px;
+  font-size: 1.125rem;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.lead2 {
+  text-align: justify;
+  font-size: 21px;
+  font-weight: bold;
+  margin-left: 1em;
+  margin-right: 1em;
 }
 
 /* End === Activity section */
 
 /* Start === section Horaire  */
 
-.card-horaire {
+.horaire {
   text-align: center;
   letter-spacing: 1px;
-  background-color: rgba(0, 0, 0, 0.03);
-  cursor: pointer;
-  -webkit-transition: .1s all ease-in-out;
-  -moz-transition: .1s all ease-in-out;
-  -o-transition: .1s all ease-in-out;
-  transition: .1s all ease-in-out;
 }
 
-.card-horaire:hover {
-  background-color: #fdd000;
+table {
+  border-collapse: separate;
+  border-spacing: 10px;
+  font-size: 0.9rem;
 }
 
-/* top sentence of section horaire */
-
-#timeDiv {
-  font-size: 16px;
-  text-align: center;
+th {
+  text-align: left;
 }
 
-/* bottom sentence of section horaire */
-
-#statusDiv {
-  font-size: 16px;
-  text-align: center;
+td {
+  text-align: right;
 }
 
-/* Color for open */
-
-.open {
-  color: #27ae60;
-}
-
-/* Color for closed  */
-
-.closed {
-  color: rgba(231, 76, 60, 0.85);
-}
-
-/* To split the days and hours in modal */
-
-.day {
-  float: left;
-}
-
-.time {
-  float: right
-}
-
-/* Color to highlight day in modal */
-
-.today {
-  color: rgb(200, 85, 39);
-  font-weight: 600;
+tr:hover {
+  transition-duration: 0.3s;
+  transform: translateY(-5px);
+  font-size: 1rem;
+  color: #70CCCC;
+  font-weight: bold;
 }
 
 /* End === section Horaire  */
@@ -149,21 +115,29 @@
 .event-detail-start-date,
 .event-detail-start-time,
 .event-detail-end-time {
-  font-size: 12px;
+  font-size: 0.9rem;
+  font-family: Raleway;
 }
 
 .event-detail-title {
   text-transform: uppercase;
   font-weight: 600;
-  font-size: 11px;
+  font-size: 0.8rem;
+  font-family: Raleway;
 }
 
 /* link to see agenda */
 
 .agenda-more {
+  text-align: center;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 1rem;
   font-weight: 600;
+  font-family: Raleway;
+}
+
+.agenda-more a {
+  color: #70CCCC;
 }
 
 /* End === section Agenda */
@@ -172,6 +146,7 @@
 
 .form-control {
   height: calc(2.5rem + 2px);
+  font-family: Raleway;
 }
 
 /* Button */
@@ -179,6 +154,8 @@
 .btn {
   padding: 0px;
   border-radius: 0.5px;
+  background-color: #70CCCC;
+  border-color: #70CCCC;
 }
 
 .btn:hover {
@@ -187,8 +164,40 @@
   transition: 0;
 }
 
+.fa {
+  padding: 10px;
+  font-size: 30px;
+}
+
 .fa-paper-plane {
   font-size: 20px;
 }
 
+
+
 /* End === section Newsletter */
+
+h1,
+h2,
+h3,
+h4,
+p,
+.day,
+.time,
+a,
+table {
+  font-family: Raleway;
+}
+
+p {
+  text-align: justify;
+  text-justify: inter-word;
+  text-align-last: center;
+}
+
+
+.row h2 {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  text-align: center;
+}

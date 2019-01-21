@@ -1,0 +1,60 @@
+.container {
+margin-top: 14em;
+min-height: 300px !important;
+}
+
+img {
+  max-width: 300px;
+}
+
+p {
+  width: 600px;
+  height: 60px;
+  line-height: 15px;
+  /* Height / no. of lines to display */
+  overflow: hidden;
+  font-family: Raleway;
+}
+
+strong, a, h3 {
+  font-family: Raleway;
+}
+.default-show {
+  width: 200px;
+  height: 200px;
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+.Error-msg p {
+  line-height: 18px;
+  height: 300px;
+}
+
+
+@media screen and (max-width:500px) {
+
+  .container {
+    margin-top: 8em;
+  }
+
+  .Error-msg p {
+    max-width: 28ch;
+    height: 200px;
+   }
+
+   .Error-msg {
+     height: 100px;
+   }
+
+  .card-text {
+    max-width: 23ch;
+  }
+
+}
+
+@media screen and (min-width: 500px) and (max-width:1220px) {
+  .card-text {
+    max-width: 40ch;
+  }
+}

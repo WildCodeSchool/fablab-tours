@@ -1,108 +1,109 @@
-<div class="backgroundimage">
-  <div class="container">
-    <h1 class="mb-5 text-white">Nous Contacter</h1>
-    <div class="row">
-      <div class="col-12 col-sm-12 col-xl-7">
+<div class="container mx-auto">
+  <div class="innerwrap">
+    
+    <h1 class="text-center">Contactez-nous</h1>
+    <section class="section2 clearfix">
+      
+      <!-- Début map -->
+      
+      <div class="col2 column1 first">
+        <aol-map>
+          <aol-control-zoom></aol-control-zoom>
+          <aol-control-fullscreen></aol-control-fullscreen>
+          <aol-interaction-default></aol-interaction-default>
+          <aol-view [zoom]="zoom">
+            <aol-coordinate [x]="x" [y]="y" [srid]="'EPSG:4326'"></aol-coordinate>
+          </aol-view>
+          <aol-layer-tile [opacity]="1">
+            <aol-source-osm></aol-source-osm>
+          </aol-layer-tile>
+          <aol-layer-vector>
+            <aol-source-cluster [distance]="distance">
+              <aol-source-vector>
+                <aol-feature>
+                  <aol-overlay>
+                    <!--ircage de la page la carte pointe sur les Coordonnées FanLab-->
+                    <aol-coordinate [x]="0.6691059" [y]="47.3931929" [srid]="'EPSG:4326'"></aol-coordinate>
+                    <aol-content>
+                      <span class="logo_FanLab">
+                        <img  src="assets/images/localisationimages/MapMarker.png">
+                      </span>
+                    </aol-content>
+                  </aol-overlay>
+                </aol-feature>
+              </aol-source-vector>
+            </aol-source-cluster>
+          </aol-layer-vector>
+          <aol-layer-vector>
+          </aol-layer-vector>
+        </aol-map>
+      </div>
+      
+      <!-- Fin map -->
+      
+      <!-- Début adresse et mail -->
+      <div class="col2 column2 last">
+        
+        <div class="sec2innercont">
+          <div class="sec2addr">
+            <p class="mx-3"> MAME, 49 Boulevard Preuilly, 37000 Tours</p>
+            <a href="mailto:contact@funlab.fr"><i class="fa fa-envelope mx-3"></i>contact@funlab.fr </a>
+          </div>
+        </div>
+        
+        <!-- Fin section adresse / mail -->
+        
 
-        <!--Debut map géolicalisant fanlab-->
-
-        <div class="card card1">
-          <div class="card-body text-center">
-            <h2 class="d-flex justify-content-center">Carte</h2>
-            <div class="map">
-              <aol-map>
-                <aol-control-zoom></aol-control-zoom>
-                <aol-control-fullscreen></aol-control-fullscreen>
-                <aol-interaction-default></aol-interaction-default>
-                <aol-view [zoom]="14">
-                  <aol-coordinate [x]=" 0.66842" [y]="47.39301" [srid]="'EPSG:4326'"></aol-coordinate>
-                </aol-view>
-                <aol-layer-tile [opacity]="1">
-                  <aol-source-osm></aol-source-osm>
-                </aol-layer-tile>
-                <aol-layer-vector>
-                  <aol-source-cluster [distance]="60">
-                    <aol-source-vector>
-                      <aol-feature>
-                        <aol-overlay>
-                          <!--Coordonnées FanLab-->
-                          <aol-coordinate [x]="0.6691059" [y]="47.3931929" [srid]="'EPSG:4326'"></aol-coordinate>
-                          <aol-content>
-                            <span class="logo_FanLab">
-                              <img src="assets/localisationimages/MapMarker.png">
-                            </span>
-                          </aol-content>
-                        </aol-overlay>
-                      </aol-feature>
-                    </aol-source-vector>
-                  </aol-source-cluster>
-                </aol-layer-vector>
-                <aol-layer-vector>
-                  <aol-source-vector>
-                    <aol-feature>
-                      <aol-geometry-polygon>
-                        <aol-collection-coordinates [coordinates]="[[1.47, 43.545],[1.51, 43.545],[1.51, 43.565], [1.47, 43.565]]"
-                          [srid]="'EPSG:4326'">
-                        </aol-collection-coordinates>
-                      </aol-geometry-polygon>
-                      <aol-style>
-                        <aol-style-stroke [color]="'red'" [width]="2"></aol-style-stroke>
-                        <aol-style-fill [color]="[255,0,0,0.1]"></aol-style-fill>
-                      </aol-style>
-                    </aol-feature>
-                  </aol-source-vector>
-                </aol-layer-vector>
-              </aol-map>
+        <div class="sec2contactform">
+          <h5>Laissez nous un message</h5>
+          
+        <!-- Début Formulaire de contact -->
+        
+          <form [formGroup]="touchForm" (ngSubmit)='contactForm(touchForm.value); touchForm.reset()'>
+            <div class='form-group'>
+              <input type='text' class="form-control" formControlName='nom' placeholder="Nom">
+              <div *ngIf="touchForm.controls['nom'].invalid && (touchForm.controls['nom'].dirty || touchForm.controls['nom'].touched)"
+              class="alert alert-danger">
+              <div class="obl" *ngIf="touchForm.controls['nom'].errors.required">Votre nom est obligatoire.</div>
             </div>
           </div>
-          <!--Fin map-->
-          <p>
-            MAME<br>
-            49 Boulevard Preuilly<br>
-            37000 Tours<br>
-            contact@funlab.fr
-          </p>
+          
+          <div class='form-group'>
+            <input type='email' class='form-control' formControlName='email' pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Email">
+            <div *ngIf="touchForm.controls['email'].invalid && (touchForm.controls['email'].dirty || touchForm.controls['email'].touched)"
+            class="alert alert-danger">
+            <div class="obl" *ngIf="touchForm.controls['email'].errors.required">Votre email est obligatoire.</div>
+          </div>
+        </div>
+        
+        <div class='form-group'>
+          <input type='text'  class='form-control' formControlName='sujet' placeholder="Sujet">
+          <div *ngIf="touchForm.controls['sujet'].invalid && (touchForm.controls['sujet'].dirty || touchForm.controls['sujet'].touched)"
+          class="alert alert-danger">
+          <div class="obl" *ngIf="touchForm.controls['sujet'].errors.required">Le sujet est obligatoire.</div>
         </div>
       </div>
-
-
-      <!-- formulaire de contact -->
-
-
-      <div class="card col-12 col-sm-12 col-xl-5">
-        <h2 class="d-flex justify-content-center">Contact</h2>
-        <div class="form-element form-input form-group">
-          <input name="name" id="field-name" class="form-element-field" placeholder="Saisissez votre nom" type="input"
-            required minlength="5" />
-          <div class="form-element-bar"></div>
-          <label class="form-element-label" for="field-name">Nom</label>
-          <small class="form-element-hint">(champ obligatoire)</small>
-        </div>
-
-        <div class="form-element form-input form-group">
-          <input name="email" id="field-email" class="form-element-field" placeholder="Saisissez votre e-mail" type="input"
-            required minlength="5" />
-          <div class="form-element-bar"></div>
-          <label class="form-element-label" for="field-email">E-mail</label>
-          <small class="form-element-hint">(champ obligatoire)</small>
-        </div>
-
-        <div class="form-element form-input form-group">
-          <input name="sujet" id="field-sujet" class="form-element-field" placeholder="Saisissez le sujet de votre message"
-            type="input" required minlength="5" />
-          <div class="form-element-bar"></div>
-          <label class="form-element-label" for="field-email">Sujet</label>
-        </div>
-
-        <div class="form-element form-input form-group textarea">
-          <textarea name="message" id="field-message" class="form-element-field message" placeholder="Saisissez votre message"
-            type="message" required minlength="5"></textarea>
-          <div class="form-element-bar"></div>
-          <label class="form-element-label" for="field-name">Message</label>
-          <small class="form-element-hint">(champ obligatoire)</small>
-        </div>
+      
+      <div class='form-group'>
+        <textarea  class='form-control' cols='30' rows='6' formControlName='message' placeholder="Message"></textarea>
+        <div *ngIf="touchForm.controls['message'].invalid && (touchForm.controls['message'].dirty || touchForm.controls['message'].touched)"
+        class="alert alert-danger">
+        <div class="obl" *ngIf="touchForm.controls['message'].errors.required">Le message est obligatoire.</div>
       </div>
-      <!-- fin formulaire de contact -->
     </div>
-  </div>
+    <div class="captcha">
+      <re-captcha data-size="compact" required siteKey="6LfVeoYUAAAAAEaZs6ni0Ax_Dd-Ua2ga1EnOJQul" formControlName="recaptchaReactive"></re-captcha>
+    </div>
+    <button type='submit' [disabled]="touchForm.pristine ||touchForm.invalid" class='btn btn-secondary'>Envoyer</button>
+  </form>
 </div>
+
+<!-- Fin formulaire de contact -->
+
+</div>
+</section>
+
+</div>
+</div>
+
+

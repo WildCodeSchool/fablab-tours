@@ -1,0 +1,135 @@
+.social-footer-ul {
+    display: table;
+    margin: 15px auto 0 auto;
+    list-style-type: none;
+    margin-bottom: 5em;
+    margin-top: 2em;
+}
+
+/* début logo partenaire */
+
+img {
+    filter: grayscale();
+    -webkit-filter: grayscale(100%);
+    margin-top: 1em;
+}
+
+img:hover {
+    filter: none;
+}
+
+.region {
+    width: 100px;
+}
+
+.tours {
+    width: 130px;
+    margin-top: 3em;
+}
+
+.orange {
+    width: 140px;
+    margin-top: 2.5em;
+}
+
+.ddcs {
+    width: 110px;
+    margin-top: 1em;
+}
+
+.fdva {
+    width: 140px;
+    margin-top: 1em;
+}
+
+.compagnon {
+    width: 120px;
+}
+
+.fartools {
+    width: 150px;
+    margin-top: 2em;
+}
+
+/* fin logo partenaire */
+
+/* section logo */
+
+.partenaireTech {
+    margin-bottom: 10em;
+}
+
+.partenaireFin {
+    margin-top: 3em;
+}
+
+/* fin section logo */
+
+a, h1, h5 {
+    font-family: Raleway;
+}
+
+a {
+    font-size: 20px;
+}
+
+h1 {
+    text-transform: uppercase;
+    color: #696969;
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+
+h5 {
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 40px 15px 0;
+    font-size: 1.75rem;
+    margin-bottom: 2em;
+    color: #696969;
+}
+
+/* boutton don de devenir partenaire */
+
+.don {
+    margin-top: 3em;
+    background-color: #70CCCC;
+    border-color: #70CCCC;
+    color: #FFF;
+    font-weight: bold;
+}
+
+.devpart {
+    margin-top: -2em;
+    background-color: #70CCCC;
+    border-color: #70CCCC;
+    color: #FFF;
+    font-weight: bold;
+}
+
+.btn {
+    max-width: 15em;
+    min-width: 12em;
+}
+
+.btn:hover{
+    background-color: #333333;
+    border-color: #333333;
+    color: #fff;
+}
+
+/* fin boutton */
+
+.container {
+    margin-bottom: 5em;
+    margin-top: 2em;
+}
+
+@media screen and (max-width: 1000px) {
+    .parttech {
+        margin-top: 4em;
+    }
+}
+

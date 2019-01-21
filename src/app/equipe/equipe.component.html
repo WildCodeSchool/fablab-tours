@@ -1,3 +1,41 @@
-<h1>
-  equipe works!
-</h1>
+<h1 class="text-center">équipe</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 text-center">
+
+    </div>
+  </div>
+
+  <!-- Début card equipe -->
+
+  <div class="card-group">
+    <div class="col-xl-3 col-md-4 col-sm-6 mt-4" *ngFor= "let equipe of equipes">
+      <div class="row">
+        <div class="equipe">
+          <div class="pic">
+            <div *ngIf="equipe.image;then show else default_show"></div>
+            <ng-template #show>
+              <img class="card-img-right flex-auto d-none d-lg-block" alt="image" src="{{equipe.image}}">
+            </ng-template>
+            <ng-template #default_show>
+              <img class="card-img-right flex-auto d-none d-lg-block default-show" alt="user" src="assets/images/equipe/user.png">
+            </ng-template>
+          </div>
+          <div class="team-content">
+            <h3>{{equipe.prenom}}</h3>
+            <h4>{{equipe.nom}}</h4>
+            <span>{{equipe.poste}}</span>
+          </div>
+          <ul class="social">
+            <a href="mailto:{{equipe.email}}"><li>{{equipe.email}}</li></a>
+            <li><a *ngIf="equipe.linkedin" href="{{equipe.linkedin}}" target="_blank" class="fa fa-linkedin m-3"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Fin card equipe -->
+
+</div>
+

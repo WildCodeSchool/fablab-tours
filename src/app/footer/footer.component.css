@@ -1,4 +1,4 @@
-.col-white-amrc {
+.col-sm-6 {
   color: #FFF;
   text-align: center;
 }
@@ -15,12 +15,13 @@ footer {
   margin-bottom: 20px;
 }
 
-footer p {
-  font-size: 14px;
+footer p, .enveloppe {
+  font-size: 18px;
   color: #CCC;
   padding-bottom: 0px;
   margin-bottom: 8px;
   text-align: center;
+  font-family: Raleway;
 }
 
 .bottom-border {
@@ -28,25 +29,17 @@ footer p {
   padding-bottom: 20px;
 }
 
-.social-footer-ul {
-  display: table;
-  margin: 15px auto 0 auto;
-  list-style-type: none;
-
-}
-
 .reseaux :hover{
-  color:black;
+  color:#70CCCC;
   text-decoration: none;
 }
 
-
-.social-footer-ul a img {
-  width: 50px;
-}
-
 .text-white{
   font-size: 33px;
+}
+
+.res{
+  margin-top: 5.5em;
 }
 
 .btn{
@@ -55,22 +48,31 @@ footer p {
   margin: 20px auto 0 auto;
 }
 
-.reseaux{
-  margin-top: 2%;
-  margin-left: 6%;
+h5 {
+  font-family: Raleway;
+  font-size: 22px;
+  font-weight: bold;
 }
+
+.mt-3 a{
+  text-decoration: none;
+  color: #70CCCC;
+}
+
+/*Icon reseaux sociaux*/
 
 .text-white{
-  font-size: 33px;
-}
-
-.btn{
-  max-height: 40px;
-  font-size: 20px;
-  margin: 20px auto 0 auto;
+  font-size: 34px;
+  text-align: center;
 }
 
 .reseaux{
   margin-top: 2%;
   margin-left: 6%;
+  text-align: center;
+}
+
+ul.reseaux {
+  padding: 0;
+  list-style-type: none;
 }

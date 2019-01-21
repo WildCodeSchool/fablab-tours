@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ContactService } from '../common/contact.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-contact',
@@ -6,10 +10,32 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
+  touchForm: FormGroup;
+  distance = 60;
+  zoom = 16;
+  // Coordonnées de la ville de Tours
+  x = 0.66842;
+  y = 47.39301;
 
-  constructor() { }
-
+  constructor(private fb: FormBuilder, private contactService: ContactService) {
+  }
   ngOnInit() {
+
+    this.touchForm = this.fb.group({
+      nom: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      sujet: ['', Validators.required],
+      message: ['', [Validators.required, Validators.minLength(10)]],
+      recaptchaReactive: ['', Validators.required]
+    });
   }
 
+  contactForm(form) {
+    this.contactService.sendMessage(form).subscribe(() => {
+      swal('Formulaire de contact', 'Votre message a bien été envoyé', 'success');
+    });
+  }
 }
+
+
+

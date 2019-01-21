@@ -1,11 +1,11 @@
 .sidebar {
-  margin-top: 89px;
+  margin-top: 88px;
   height: 100vh;
   width: 320px;
   font-size: 8rem;
   background-color:#666666 !important;
   opacity: 0.98;
-  z-index: 1;
+  z-index: 9999;
 }
 
 .navbar-nav {
@@ -18,12 +18,22 @@ img{
   z-index: -1;
 }
 
-li{
-  font-family: Didot, serif;
-  margin-top: 12%;
-  margin-left: 50%;
+.log-out{
+  margin-top: 0.2em;
+  margin-left: 1em;;
   color: #fff;
   cursor: pointer;
+  font-family: Raleway;
+  font-weight: bold;
+}
+
+.log-in {
+  margin-left: 0.4em;
+  color: #fff;
+  cursor: pointer;
+  font-family: Raleway;
+  font-weight: bold;
+  margin-top: 0.2em;
 }
 
 button{
@@ -35,7 +45,20 @@ button{
   cursor: pointer;
 }
 
-#boutonfiltre2 {
+.manuel {
+  font-size: 0rem;
+  color: #fff;
+  cursor: pointer;
+  font-family: Raleway;
+  font-weight: bold;
+  margin-top: 50vh;
+}
+
+.mannuelUser {
+  margin-right: 19em;
+}
+
+#openSide {
   transition: transform 0.5s ease-in-out;
   position: fixed;
   cursor: pointer;
@@ -54,10 +77,6 @@ button{
 .transBtn {
   position: relative;
   z-index:3;
-  /*
-  transition: transform 0.5s ease-in-out;
-  transform: translateX(320px);
-  */
 }
 
 input{
@@ -65,26 +84,29 @@ input{
 }
 
 @media screen and (max-width: 800px){
-
+  
   img{
     margin-left: 33%;
   }
-
+  
   li{
-    margin-top: 5%;
+    margin-top: 0%;
   }
-
+  
+  ul .d-flex {
+    margin-top: -0.75em;
+  }
   .reseaux{
     margin-top: 5%;
   }
-
+  
 }
 
 .loupe{
   font-size: 1.9em;
   margin-left: 95%;
   margin-top:-80px;
-  color: black;
+  color: white;
 }
 
 .navbar{
@@ -94,27 +116,245 @@ input{
 
 .reseaux{
   font-size: 0.3em;
-  margin-top: 15%;
-  margin-left: 10%
+  margin-top: 0.7em;
+  margin-left: 0.4em;
 }
 
 .closeside{
   margin-left: 5%;
   font-size: 2.6em;
-  color: black;
+  color: white;
 }
 
 .openside{
   margin-left: 5%;
   font-size: 2.3em;
-  color: black;
+  color: white;
 }
 
 a{
   color: white;
 }
 
-li :hover, a :hover {
-  color:black;
+a :hover{
+  color:#70CCCC;
   text-decoration: none;
+}
+
+.fa{
+  color: white;
+}
+
+.fa :hover{
+  color:#70CCCC;
+  text-decoration: none;
+}
+
+.fa-sign-out {
+  margin-top: 0.4em;
+  size: 10rem;
+}
+
+li :hover, a :hover {
+  color:#70CCCC;
+  text-decoration: none;
+}
+
+h1{
+  font-family: Raleway;
+  text-transform: uppercase;
+}
+
+.btn {
+  border-radius: 2em;
+  margin-left: 10.5em;
+  font-family: Raleway;
+}
+
+.btn:hover {
+  background-color: #70CCCC;
+}
+
+h4 {
+  margin-left: 7.25em;
+  font-family: Raleway;
+  font-weight: bold;
+}
+
+.connect {
+  margin-left: 7.25em;
+  font-family: Raleway;
+}
+
+@media screen and (max-width: 500px) {
+  .connect {
+    margin-left: 3em;
+  }
+  
+  .btn {
+    margin-left: 5em;
+  }
+  
+  h4 {
+    margin-left: 3em;
+  }
+}
+
+.obl {
+  text-align: center;
+}
+
+.alert-danger {
+  margin-top: 1em;
+}
+
+.error {
+  font-size: 15px;
+  color: red;
+}
+
+/* Début barre de recherche */
+
+.searchbar {
+  position: absolute;
+  top: 0.7em;
+  right: 2em;
+  background: #666666;
+  border-radius: 50px;
+  padding: 10px;
+  transition: width 0.3s linear;
+  
+}
+
+.search_input {
+  border: 0;
+  outline: 0;
+  background: none;
+  width: 0;
+  height: 3em;
+  caret-color: transparent;
+  line-height: 40px;
+  border-radius: 50px;
+}
+
+.searchbar:hover>.search_input {
+  padding: 0 10px;
+  width: 400px;
+  caret-color: black;
+  transition: width 0.3s linear;
+  background-color: #70CCCC;
+}
+
+.searchbar:hover>.search_icon {
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.search_icon {
+  position: absolute;
+  top: 0.3em;
+  right: 0.5em;
+  height: 50px;
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background: #666666;
+  opacity: 0.98;
+  font-size: 1.7rem;
+}
+
+/* Gestion navbar sur mobile */
+
+
+@media screen and (max-width: 350px) {
+  
+  .nav-link {
+    margin-top: -0.5em;
+  }
+  
+  .navbar {
+    height: 10vh;
+  }
+  
+  .sidebar{
+    margin-top:10vh;
+  }
+  
+  img {
+    opacity: 0;
+  }
+  
+  .search_icon{
+    font-size: 1.3em;
+    margin-right: -0.4em;
+    margin-top: 1vh;
+    height: 1.8rem;
+    
+  }
+  
+  .search_input{
+    margin-right: -1em;
+    height: 2rem;
+    
+  }
+  
+  .searchbar{
+    margin-right: -0.4em;
+    margin-top: -1.6vh;
+  }
+  
+  .closeside{
+    font-size: 2.1em;
+  }
+  
+  .openside{
+    font-size: 1.8em;
+  }
+}
+
+@media screen and (min-width:350px) and (max-width: 650px) {
+  
+  .navbar {
+    height: 10vh;
+  }
+  
+  .sidebar{
+    margin-top:10vh;
+  }
+  
+  .search_icon{
+    margin-right: -0.4em;
+    height: 1.8rem;
+    font-size: 1.5em;
+    margin-top: 0.2vh;
+  }
+  
+  .search_input{
+    margin-right: -1em;
+    height: 2rem;
+    
+  }
+  
+  .searchbar{
+    margin-right: -0.4em;
+    margin-top: 0.4vh;
+  }
+  
+  img {
+    opacity: 0;
+  }
+  
+  .closeside{
+    font-size: 2.1em;
+  }
+  
+  .openside{
+    font-size: 1.8em;
+  }
+  
+  
+  /* Fin barre de recherche */
+  
 }

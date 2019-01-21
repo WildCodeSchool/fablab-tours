@@ -1,24 +1,13 @@
+/* Map marker */
 .logo_FanLab img {
 margin-left: -12px;
 margin-top: -40px;
-width: 30px;
+width: 40px;
 height: 41px;
 z-index: 250;
 }
-.logo_FanLab p{
-  color: red;
-  margin-top: 0px;
-}
-hr {
-  border-top: 1px solid #007bff;
-  width: 70%;
-}
 
-a {
-  color: #000;
-}
-
-
+/* style des deux card */
 .card {
   background-color: #FFFFFF;
   padding: 0;
@@ -28,47 +17,50 @@ a {
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
 }
 
-
+/* style des deux card au survol de la souris */
 .card:hover {
   box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3);
   color: black;
 }
 
-
+/* style map et photo de mame */
 .map {
+  margin-top: 20px;
   max-height: 300px;
+}
+
+.pic_mame {
+  margin-top: 20px;
+  width: 100%;
 }
 
 .pic_mame img {
   max-height: 250px;
-}
-
-
-/* test */
-.how-section1 {
-  margin-top: -15%;
-  padding: 10%;
-}
-
-.how-section1 h4 {
-  color: #ffa500;
-  font-weight: bold;
-  font-size: 30px;
-}
-
-.how-section1 .subheading {
-  color: #3931af;
-  font-size: 20px;
-}
-
-.how-section1 .row {
-  margin-top: 10%;
-}
-
-.how-img {
-  text-align: center;
-}
-
-.how-img img {
   width: 100%;
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+ .pic_mame img {
+   height: 210px;
+ }
+ .card {
+   height: 100%;
+ }
+}
+
+h4, h5, h1 {
+  font-family: Raleway;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  color: #696969;
+}
+
+h4 {
+  text-transform: uppercase;
 }
