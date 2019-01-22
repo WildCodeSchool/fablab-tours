@@ -53,7 +53,7 @@
           <div class="my-5">
             <!-- <input type='text' class="form-control" formControlName='status' list="mylist" placeholder="Choisir un type de partenaire"> -->
             <label>Status du partenaire:</label>
-            <select formControlName='status'>
+            <select formControlName='status' class="form-control form-control-sm">
               <option value="Partenaire Financier">Partenaire Financier</option>
               <option value="Partenaire Technique">Partenaire Technique</option>
             </select>
@@ -125,7 +125,7 @@
     <div class="my-5">
       <!-- <input type='text' class="form-control" formControlName='status' list="mylist" placeholder="Choisir un type de partenaire"> -->
       <label>Status du partenaire:</label>
-      <select formControlName='status'>
+      <select formControlName='status' class="form-control form-control-sm">
         <option value="Partenaire Financier">Partenaire Financier</option>
         <option value="Partenaire Technique">Partenaire Technique</option>
       </select>
@@ -142,7 +142,7 @@
 </div>
 <div class="modal-footer">
   <button type="button" class="btn btn-outline-dark" (click)="modal.dismiss()">Annuler</button>
-  <button type='submit' [disabled]="partenaireForm.pristine ||partenaireForm.invalid" (click)="createPartenaire(partenaireForm.value); modal.close(); partenaireForm.reset();" class='btn btn-outline-success' routerLink="/">Ajouter</button>
+  <button type='submit' [disabled]="partenaireForm.pristine ||partenaireForm.invalid" (click)="createPartenaire(partenaireForm.value); modal.close(); partenaireForm.reset();" class='btn btn-outline-success'>Ajouter</button>
 </div>
 </ng-template>
 

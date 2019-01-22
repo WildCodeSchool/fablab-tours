@@ -8,7 +8,6 @@
 img {
     filter: grayscale();
     -webkit-filter: grayscale(100%);
-    margin-top: 1em;
 }
 
 /* hover couleur logo apparait */
@@ -20,6 +19,8 @@ img:hover {
 .logo {
     width: 12rem;
     margin-left: 2em;
+    margin-top: 1em;
+    margin-bottom: 2em;
 }
 
 @media screen and (max-width: 321px) {
