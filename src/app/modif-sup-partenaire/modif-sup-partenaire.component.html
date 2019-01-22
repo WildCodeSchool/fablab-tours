@@ -1,18 +1,18 @@
 <h1 class="text-center">Gestion Partenaires</h1>
 <div class="container">
-
+  
   <!-- Boutton ajouter partenaire -->
-
+  
   <div class="text-center">
     <button class="btn btn-outline-success mb-5 mr-2" (click)="open(contentAj)">Ajouter un partenaire</button>
   </div>
-
+  
   <!-- Fin boutton ajouter partenaire -->
-
+  
   <div class="row">
     <div class="col-md-6 col-sm-12 col-lg-4" *ngFor="let partenaire of partenaires | paginate :{ itemsPerPage: 6, currentPage: p }">
       <!-- Début card partenaire -->
-
+      
       <div class="card mb-4">
         <img class="card-img-top" src="{{partenaire.image}}" alt="image partenaire">
         <div class="card-body">
@@ -23,9 +23,9 @@
         </div>
       </div>
       <!-- Fin card partenaire -->
-
+      
       <!-- Modal modification -->
-
+      
       <ng-template #content let-modal>
         <div class="modal-header">
           <h4 class="modal-title text-center">Modifier</h4>
@@ -34,72 +34,70 @@
           </button>
         </div>
         <div class="modal-body">
-
+          
           <form [formGroup]="partenaireForm">
-
-          <div class='form-group'>
-            <input type='text' class="form-control" formControlName='image' pattern="(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|jpeg|png|gif)"
-            placeholder="Url image partenaire" [(ngModel)]="partenaire.image">
-            <div *ngIf="partenaireForm.controls['image'].invalid && (partenaireForm.controls['image'].dirty || partenaireForm.controls['image'].touched)"
-            class="alert alert-danger">
-            <div class="obl" *ngIf="partenaireForm.controls['image'].errors.required">L'image est obligatoire et doit etre au format jpg, png, gif ou jpeg</div>
+            
+            <div class='form-group'>
+              <input type='text' class="form-control" formControlName='image' pattern="(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|jpeg|png|gif)"
+              placeholder="Url image partenaire" [(ngModel)]="partenaire.image">
+              <div *ngIf="partenaireForm.controls['image'].invalid && (partenaireForm.controls['image'].dirty || partenaireForm.controls['image'].touched)"
+              class="alert alert-danger">
+              <div class="obl" *ngIf="partenaireForm.controls['image'].errors.required">L'image est obligatoire et doit etre au format jpg, png, gif ou jpeg</div>
+            </div>
           </div>
-        </div>
-        <div class="container d-flex justify-content-center">
-          <img *ngIf="partenaire.image" class="imgModif" src="{{partenaire.image}}" alt="image de la partenaire" />
-        </div>
-
-
-        <div class="my-5">
-            <input type='text' class="form-control" formControlName='status' list="mylist" placeholder="Choisir un type de partenaire" [(ngModel)]="partenaire.status">
-            <datalist id="mylist">
-                <option value="Partenaire Financier">Partenaire Financier</option>
-                <option value="Partenaire Technique">Partenaire Technique</option>
-            </datalist>
+          <div class="container d-flex justify-content-center">
+            <img *ngIf="partenaire.image" class="imgModif" src="{{partenaire.image}}" alt="image de la partenaire" />
+          </div>
+          
+          
+          <div class="my-5">
+            <!-- <input type='text' class="form-control" formControlName='status' list="mylist" placeholder="Choisir un type de partenaire"> -->
+            <label>Status du partenaire:</label>
+            <select formControlName='status'>
+              <option value="Partenaire Financier">Partenaire Financier</option>
+              <option value="Partenaire Technique">Partenaire Technique</option>
+            </select>
             <div *ngIf="partenaireForm.controls['status'].invalid && (partenaireForm.controls['status'].dirty || partenaireForm.controls['status'].touched)"
             class="alert alert-danger">
-            <div class="obl" *ngIf="partenaireForm.controls['status'].errors.required">Status du partenaire est obligatoire.</div>
-          </div>
+            <div class="obl" *ngIf="partenaireForm.controls['status'].errors.required">Le status du partenaire est obligatoire.</div>
+          </div> 
         </div>
+        
         <div class='form-group'>
-          <textarea class="form-control" formControlName='url_site' placeholder="lien vers le site partenaire" [(ngModel)]="partenaire.url_site"></textarea>
-          <div *ngIf="partenaireForm.controls['url_site'].invalid && (partenaireForm.controls['url_site'].dirty || partenaireForm.controls['url_site'].touched)"
-          class="alert alert-danger">
-          <div class="obl" *ngIf="partenaireForm.controls['url_site'].errors.required">Le lien vers le site partenaire est obligatoire.</div>
+          <textarea class="form-control" formControlName='url_site' placeholder="Lien vers le site partenaire" [(ngModel)]="partenaire.url_site"></textarea>
         </div>
-      </div>
-
-    </form>
-
-  </div>
-  <div class="modal-footer">
-
-    <button type="button" class="btn btn-outline-dark" (click)="modal.dismiss(); partenaireForm.reset()">Annuler</button>
-    <button type='submit' [disabled]="partenaireForm.pristine ||partenaireForm.invalid" class="btn btn-outline-success mr-2" (click)="updatePartenaire(partenaireForm.value, partenaire.id_partenaire); modal.close(); partenaireForm.reset()">Confirmer</button>
-  </div>
-</ng-template>
-
-<!-- Fin Modal modification -->
-
-<!-- Modal Suppression -->
-<ng-template #contentSup let-modal>
-  <div class="modal-header">
-    <h4 class="modal-title text-center">Confimer la supression du partenaire</h4>
-    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    <p>Voulez-vous vraiment supprimer ce partenaire</p>
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="modal.dismiss()">Annuler</button>
-    <button type="button" class="btn btn-outline-danger" (click)="deletePartenaire(partenaire.id_partenaire); modal.close()">Supprimer</button>
-  </div>
-</ng-template>
-
-<!-- Fin Modal suppression -->
-
+        
+      </form>
+      
+    </div>
+    <div class="modal-footer">
+      
+      <button type="button" class="btn btn-outline-dark" (click)="modal.dismiss(); partenaireForm.reset()">Annuler</button>
+      <button type='submit' [disabled]="partenaireForm.pristine ||partenaireForm.invalid" class="btn btn-outline-success mr-2" (click)="updatePartenaire(partenaireForm.value, partenaire.id_partenaire); modal.close(); partenaireForm.reset()">Confirmer</button>
+    </div>
+  </ng-template>
+  
+  <!-- Fin Modal modification -->
+  
+  <!-- Modal Suppression -->
+  <ng-template #contentSup let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title text-center">Confimer la supression du partenaire</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>Voulez-vous vraiment supprimer ce partenaire</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.dismiss()">Annuler</button>
+      <button type="button" class="btn btn-outline-danger" (click)="deletePartenaire(partenaire.id_partenaire); modal.close()">Supprimer</button>
+    </div>
+  </ng-template>
+  
+  <!-- Fin Modal suppression -->
+  
 </div>
 </div>
 
@@ -115,39 +113,36 @@
   </div>
   <div class="modal-body">
     <form [formGroup]="partenaireForm">
-
+      
       <div class='form-group'>
-        <input type='text' class="form-control" formControlName='image' placeholder="image" pattern="(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|jpeg|png|gif)">
+        <input type='text' class="form-control" formControlName='image' placeholder="Image" pattern="(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|jpeg|png|gif)">
         <div *ngIf="partenaireForm.controls['image'].invalid && (partenaireForm.controls['image'].dirty || partenaireForm.controls['image'].touched)"
         class="alert alert-danger">
         <div class="obl" *ngIf="partenaireForm.controls['image'].errors.required">L'image est obligatoire et doit etre au format jpg, png, gif ou jpeg</div>
       </div>
     </div>
-
+    
     <div class="my-5">
-      <input type='text' class="form-control" formControlName='status' list="mylist" placeholder="Choisir un type de partenaire">
-      <datalist id="mylist">
-          <option value="Partenaire Financier">Partenaire Financier</option>
-          <option value="Partenaire Technique">Partenaire Technique</option>
-      </datalist>
+      <!-- <input type='text' class="form-control" formControlName='status' list="mylist" placeholder="Choisir un type de partenaire"> -->
+      <label>Status du partenaire:</label>
+      <select formControlName='status'>
+        <option value="Partenaire Financier">Partenaire Financier</option>
+        <option value="Partenaire Technique">Partenaire Technique</option>
+      </select>
       <div *ngIf="partenaireForm.controls['status'].invalid && (partenaireForm.controls['status'].dirty || partenaireForm.controls['status'].touched)"
       class="alert alert-danger">
-      <div class="obl" *ngIf="partenaireForm.controls['status'].errors.required">Status du partenaire est obligatoire.</div>
+      <div class="obl" *ngIf="partenaireForm.controls['status'].errors.required">Le status du partenaire est obligatoire.</div>
     </div>
   </div>
-
+  
   <div class='form-group'>
-    <input type='text' class="form-control" formControlName='url_site' placeholder="Url photo partenaire">
-    <div *ngIf="partenaireForm.controls['url_site'].invalid && (partenaireForm.controls['url_site'].dirty || partenaireForm.controls['url_site'].touched)"
-    class="alert alert-danger">
-    <div class="obl" *ngIf="partenaireForm.controls['url_site'].errors.required">Le lien vers le site partenaire est obligatoire.</div>
+    <input type='text' class="form-control" formControlName='url_site' placeholder="Site du partenaire">
   </div>
-</div>
 </form>
 </div>
 <div class="modal-footer">
   <button type="button" class="btn btn-outline-dark" (click)="modal.dismiss()">Annuler</button>
-  <button type='submit' [disabled]="partenaireForm.pristine ||partenaireForm.invalid" (click)="createPartenaire(partenaireForm.value); modal.close(); partenaireForm.reset();" class='btn btn-outline-success' routerLink="/admin">Ajouter</button>
+  <button type='submit' [disabled]="partenaireForm.pristine ||partenaireForm.invalid" (click)="createPartenaire(partenaireForm.value); modal.close(); partenaireForm.reset();" class='btn btn-outline-success' routerLink="/">Ajouter</button>
 </div>
 </ng-template>
 

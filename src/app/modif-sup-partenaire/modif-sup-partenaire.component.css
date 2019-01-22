@@ -15,8 +15,8 @@ h1 {
 /* Début css card */
 
 img {
-  width: 100%;
-  height: 350px;
+  width: 80%;
+  height: 80%;
 }
 
 .imgModif {
@@ -44,5 +44,3 @@ img {
 .pagination {
   margin: 0%
 }
-
-

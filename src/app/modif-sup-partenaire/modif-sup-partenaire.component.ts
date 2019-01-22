@@ -27,7 +27,7 @@ export class ModifSupPartenaireComponent implements OnInit {
     this.partenaireForm = this.fb.group({
       image: ['', Validators.required],
       status: ['', Validators.required],
-      url_site: ['', Validators.required]
+      url_site: ['']
     });
 
   }
