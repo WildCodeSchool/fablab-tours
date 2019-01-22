@@ -1,6 +1,6 @@
 <section class="comment-ca-marche fond">
   <div class="top-container">
-    <h1 class="text-center">Comment ca marche ?</h1>
+    <!-- <h1 class="text-center">Comment ca marche ?</h1> -->
     <div class="row justify-content-around">
       <div class="col-sm-12 col-md-12 col-lg-4">
         <div class="card ml-4 mr-4">
@@ -10,147 +10,151 @@
             <p>De la conception au prototypage : un atelier de fabrication
               équipé de machines à commande numérique, outils pour la
               soudure et l’électronique et outillage électro-portatifs.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-12 col-lg-4">
-        <div class="card ml-4 mr-4">
-          <div class="card-body text-center">
-            <i class="fa fa-book"></i>
-            <h4>Apprendre</h4>
-            <p>Chacun découvre et apprend à son rythme : visites, initiations
-              machines par niveau, ateliers thématiques, programme d’éducation
-              numérique, modules de formation et parcours pédagogiques sur mesure.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-12 col-lg-4">
-        <div class="card ml-4 mr-4">
-          <div class="card-body text-center">
-            <i class="fa fa-cogs"></i>
-            <h4> Expérimenter</h4>
-            <p>
-              Un lieu qui invite à repenser les modes de production et de coopération:
-              faire soi-même, faire ensemble, fabriquer local, s’entraider, partager des
-              connaissances, contribuer à des initiatives citoyennes, etc.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="container">
-
-    <div class="activity-header">
-      <h2>Nos Activités</h2>
-    </div>
-
-    <div class="row">
-      <div class="col-md-8">
-        <article>
-          <!-- Title and Description of Activity One -->
-          <header>
-            <h2>Un fablab citoyen, comment ça fonctionne ?</h2>
-          </header>
-          <div class="first-content">
-            <p class="lead">
-              L’association La FUN a été créée en 2013 par une poignée de citoyens pour faire émerger un fablab à Tours
-              : le Funlab. Accueil temporaire à la pépinière du Sanitas puis hébergé chez les Compagnons du Devoir, le
-              Funlab s’est posé à Mame en 2016. Depuis la communauté de compétences et d’idées n’a cessé de s’agrandir.
-              En 2019, le Funlab compte 240 adhérents, et demain pourquoi pas vous ?</p>
-            <p class="lead"> Lors des Open Ateliers, notre rendez-vous grand public tous les jeudis de 16h à 22h, la
-              communauté vous accueille pour votre « toute première fois » : visite, infos, démonstration de machines.
-              Vous souhaitez revenir pour vous former, bidouiller à plusieurs, développer un projet personnel ou
-              professionnel, contribuer à la vie de l’association et ses activités, alors vous êtes prêts à adhérer : )</p>
-            <p class="lead">Le Funlab c’est aussi un espace de documentation (Wiki) pour y partager des ressources
-              techniques et culturelles sur les projets développées par la communauté, un espace de publication (Blog)
-              pour valoriser l’activité de l’association et un espace physique de ressources documentaires et de
-              médiation numérique (BiblioMaker).</p>
-            <p class="lead">Tout au long de l’année, nous mettons en place de nombreuses activités au fablab et
-              hors-les-murs tout en construisant des parcours pédagogiques sur mesure et des projets à impact social
-              sur le territoire avec de nombreux partenaires (Université, École de la 2è Chance, entreprises,
-              associations) afin d’ouvrir le fablab à un large public.</p>
-            <p class="lead2">Poussez la porte, ce fablab, c’est le vôtre!</p>
-          </div>
-        </article>
-      </div>
-
-      <!--Side section === START -->
-      <aside class="col-md-4">
-        <!-- Horaires Section === START -->
-        <h3 class="horaire">Les Horaires</h3>
-        <div class="list-group mb-3">
-          <div class="list-group-item">
-            <div class="event-detail">
-              <table style="width:100%;">
-                <tr>
-                  <th>Mardi</th>
-                  <td>14h - 18h</td>
-                </tr>
-                <tr>
-                  <th>Mercredi</th>
-                  <td>14h - 18h</td>
-                </tr>
-                <tr>
-                  <th>Jeudi</th>
-                  <td>16h - 22h</td>
-                </tr>
-                <tr>
-                  <th>Vendredi</th>
-                  <td>14h - 18h</td>
-                </tr>
-              </table>
             </div>
           </div>
         </div>
-        <!-- Horaires Section === END -->
-
-        <!-- Agenda Section === START -->
-        <h3 class="agenda">Agenda</h3>
-        <div class="list-group mb-3">
-          <div class="list-group-item">
-            <div class="event-detail text-center" *ngFor="let event of evenements | slice:0:3; let i=index">
-              <span class="event-detail-start-date">{{event.date | date: 'dd MMMM yyy '}}</span><!-- Date Pipe used to transform date format -->
-              <span class="event-detail-start-time">de {{event.start}} à</span>
-              <span class="event-detail-end-time"> {{event.end}}</span>
-              <br>
-              <span class="event-detail-title">{{event.title}}</span>
-              <hr>
-            </div>
-            <div class="agenda-more">
-              <a routerLink="/agenda">Voir l'agenda complet&hellip;</a>
+        <div class="col-sm-12 col-md-12 col-lg-4">
+          <div class="card ml-4 mr-4">
+            <div class="card-body text-center">
+              <i class="fa fa-book"></i>
+              <h4>Apprendre</h4>
+              <p>Chacun découvre et apprend à son rythme : visites, initiations
+                machines par niveau, ateliers thématiques, programme d’éducation
+                numérique, modules de formation et parcours pédagogiques sur mesure.</p>
+              </div>
             </div>
           </div>
-        </div>
-        <!-- Agenda Section === END -->
-
-        <!-- Newsletter Section === START -->
-
-        <div class="card mb-3">
-          <h3 class="card-header mb-3 text-center">Souscrire à notre newsletter</h3>
-          <form class="form-horizontal" [formGroup]="newsForm" (ngSubmit)='contactForm(newsForm.value); newsForm.reset()'>
-            <div class="form-group">
-              <div class="col-sm-12">
-                <div class="input-group">
-                  <input type="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Saisissez votre email" formControlName='email'>
-                  <span class="input-group-btn">
-                    <button type="submit" [disabled]="newsForm.pristine ||newsForm.invalid" class="btn btn-primary"><i
-                        class="fa fa-paper-plane"></i></button>
-                  </span>
-                </div>
-                <div *ngIf="newsForm.controls['email'].invalid && (newsForm.controls['email'].dirty || newsForm.controls['email'].touched)"
-                  class="mt-5" class="alert alert-danger">
-                  <div class="obl" *ngIf="newsForm.controls['email'].errors.required">Votre email est obligatoire.</div>
+          <div class="col-sm-12 col-md-12 col-lg-4">
+            <div class="card ml-4 mr-4">
+              <div class="card-body text-center">
+                <i class="fa fa-cogs"></i>
+                <h4> Expérimenter</h4>
+                <p>
+                  Un lieu qui invite à repenser les modes de production et de coopération:
+                  faire soi-même, faire ensemble, fabriquer local, s’entraider, partager des
+                  connaissances, contribuer à des initiatives citoyennes, etc.</p>
                 </div>
               </div>
             </div>
-          </form>
+          </div>
         </div>
-        <!-- Newsletter Section === END -->
-      </aside>
-      <!--Side section === END -->
-
-    </div>
-  </div>
-
-</section>
+        
+        <div class="container">
+          
+          <div class="activity-header">
+            <h2>Nos Activités</h2>
+          </div>
+          
+          <div class="row">
+            <div class="col-md-8">
+              <article>
+                <!-- Title and Description of Activity One -->
+                <header>
+                  <h2>Un fablab citoyen, comment ça fonctionne ?</h2>
+                </header>
+                <div class="first-content">
+                  <p class="lead">
+                    L’association La FUN a été créée en 2013 par une poignée de citoyens pour faire émerger un fablab à Tours
+                    : le Funlab. Accueil temporaire à la pépinière du Sanitas puis hébergé chez les Compagnons du Devoir, le
+                    Funlab s’est posé à Mame en 2016. Depuis la communauté de compétences et d’idées n’a cessé de s’agrandir.
+                    En 2019, le Funlab compte 240 adhérents, et demain pourquoi pas vous ?</p>
+                    <p class="lead"> Lors des Open Ateliers, notre rendez-vous grand public tous les jeudis de 16h à 22h, la
+                      communauté vous accueille pour votre « toute première fois » : visite, infos, démonstration de machines.
+                      Vous souhaitez revenir pour vous former, bidouiller à plusieurs, développer un projet personnel ou
+                      professionnel, contribuer à la vie de l’association et ses activités, alors vous êtes prêts à adhérer : )</p>
+                      <p class="lead">Le Funlab c’est aussi un espace de documentation (Wiki) pour y partager des ressources
+                        techniques et culturelles sur les projets développées par la communauté, un espace de publication (Blog)
+                        pour valoriser l’activité de l’association et un espace physique de ressources documentaires et de
+                        médiation numérique (BiblioMaker).</p>
+                        <p class="lead">Tout au long de l’année, nous mettons en place de nombreuses activités au fablab et
+                          hors-les-murs tout en construisant des parcours pédagogiques sur mesure et des projets à impact social
+                          sur le territoire avec de nombreux partenaires (Université, École de la 2è Chance, entreprises,
+                          associations) afin d’ouvrir le fablab à un large public.</p>
+                          <p class="lead2">Poussez la porte, ce fablab, c’est le vôtre!</p>
+                        </div>
+                      </article>
+                    </div>
+                    
+                    <!--Side section === START -->
+                    <aside class="col-md-4">
+                      <!-- Horaires Section === START -->
+                      <h3 class="horaire">Les Horaires</h3>
+                      <div class="list-group mb-3">
+                        <div class="list-group-item">
+                          <div class="event-detail">
+                            <table style="width:100%;">
+                              <tr>
+                                <th>Mardi</th>
+                                <td>14h - 18h</td>
+                              </tr>
+                              <tr>
+                                <th>Mercredi</th>
+                                <td>14h - 18h</td>
+                              </tr>
+                              <tr>
+                                <th>Jeudi</th>
+                                <td>16h - 22h</td>
+                              </tr>
+                              <tr>
+                                <th>Vendredi</th>
+                                <td>14h - 18h</td>
+                              </tr>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Horaires Section === END -->
+                      
+                      <!-- Agenda Section === START -->
+                      <h3 class="agenda">Agenda</h3>
+                      <div class="list-group mb-3">
+                        <div class="list-group-item">
+                          <div class="event-detail text-center" *ngFor="let event of evenements | slice:0:3; let i=index">
+                            <span class="event-detail-start-date">{{event.date | date: 'dd MMMM yyy '}}</span><!-- Date Pipe used to transform date format -->
+                            <span class="event-detail-start-time">de {{event.start}} à</span>
+                            <span class="event-detail-end-time"> {{event.end}}</span>
+                            <br>
+                            <span class="event-detail-title">{{event.title}}</span>
+                            <hr>
+                          </div>
+                          <div class="agenda-more">
+                            <a routerLink="/agenda">Voir l'agenda complet&hellip;</a>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Agenda Section === END -->
+                      
+                      <!-- Newsletter Section === START -->
+                      
+                      <div class="card mb-3">
+                        <h3 class="card-header mb-3 text-center">Newsletter</h3>
+                        <form action="/subscribe" method="post" class="form-horizontal" [formGroup]="newsForm" (ngSubmit)='contactForm(newsForm.value); newsForm.reset()'>
+                          <div class="form-group">
+                            <div class="col-sm-12">
+                              <div class="input-group">
+                                <input type="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Saisissez votre email" formControlName='email'>
+                                <span class="input-group-btn">
+                                  <button type="submit" [disabled]="newsForm.pristine ||newsForm.invalid" class="btn btn-primary btnNews"><i
+                                    class="fa fa-paper-plane"></i></button>
+                                  </span>
+                                </div>
+                                <div *ngIf="newsForm.controls['email'].invalid && (newsForm.controls['email'].dirty || newsForm.controls['email'].touched)"
+                                class="mt-5" class="alert alert-danger">
+                                <div class="obl" *ngIf="newsForm.controls['email'].errors.required">Votre email est obligatoire.</div>
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                      <!-- Newsletter Section === END -->
+                      <div class="container d-flex justify-content-center">
+                        <a class="btn btn-secondary don" href="https://www.helloasso.com/associations/la-fabrique-d-usages-numeriques/formulaires/1/widget" title="Lien externe: https://www.helloasso.com/associations/la-fabrique-d-usages-numeriques/formulaires/1/widget" target="_blank">Faire un don</a>
+                      </div>
+                    </aside>
+                    <!--Side section === END -->
+                    
+                  </div>
+                </div>
+                
+              </section>
+              

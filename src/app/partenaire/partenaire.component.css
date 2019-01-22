@@ -23,12 +23,12 @@ img:hover {
 }
 
 .tours {
-    width: 130px;
+    width: 150px;
     margin-top: 3em;
 }
 
 .orange {
-    width: 140px;
+    width: 170px;
     margin-top: 2.5em;
 }
 
@@ -57,6 +57,7 @@ img:hover {
 
 .partenaireTech {
     margin-bottom: 10em;
+    margin-top: 2em;
 }
 
 .partenaireFin {
@@ -93,22 +94,6 @@ h5 {
 
 /* boutton don de devenir partenaire */
 
-.don {
-    margin-top: 3em;
-    background-color: #70CCCC;
-    border-color: #70CCCC;
-    color: #FFF;
-    font-weight: bold;
-}
-
-.devpart {
-    margin-top: -2em;
-    background-color: #70CCCC;
-    border-color: #70CCCC;
-    color: #FFF;
-    font-weight: bold;
-}
-
 .btn {
     max-width: 15em;
     min-width: 12em;
@@ -124,6 +109,10 @@ h5 {
 
 .container {
     margin-bottom: 5em;
+    margin-top: 2em;
+}
+
+.parttech {
     margin-top: 2em;
 }
 
