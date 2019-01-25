@@ -137,7 +137,7 @@ a{
 }
 
 a :hover{
-  color:#70CCCC;
+  color:#70CFD0;
   text-decoration: none;
 }
 
@@ -146,7 +146,7 @@ a :hover{
 }
 
 .fa :hover{
-  color:#70CCCC;
+  color:#70CFD0;
   text-decoration: none;
 }
 
@@ -156,7 +156,7 @@ a :hover{
 }
 
 li :hover, a :hover {
-  color:#70CCCC;
+  color:#70CFD0;
   text-decoration: none;
 }
 
@@ -172,7 +172,7 @@ h1{
 }
 
 .btn:hover {
-  background-color: #70CCCC;
+  background-color: #70CFD0;
 }
 
 h4 {
@@ -242,7 +242,7 @@ h4 {
   width: 400px;
   caret-color: black;
   transition: width 0.3s linear;
-  background-color: #70CCCC;
+  background-color: #70CFD0;
 }
 
 .searchbar:hover>.search_icon {

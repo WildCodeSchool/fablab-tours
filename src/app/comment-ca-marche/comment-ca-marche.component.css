@@ -36,7 +36,7 @@ h1 {
   display: inline-block;
   padding: 1rem;
   font-size: 4rem;
-  background-color: #70CCCC;
+  background-color: #70CFD0;
   color: hsl(240, 14%, 99%);
   border-radius: 50%;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
@@ -103,7 +103,7 @@ tr:hover {
   transition-duration: 0.3s;
   transform: translateY(-5px);
   font-size: 1rem;
-  color: #70CCCC;
+  color: #70CFD0;
   font-weight: bold;
 }
 
@@ -158,8 +158,8 @@ tr:hover {
 .btnNews {
   padding: 0px;
   border-radius: 0.5px;
-  background-color: #70CCCC;
-  border-color: #70CCCC;
+  background-color: #70CFD0;
+  border-color: #70CFD0;
 }
 
 .btn:hover {
@@ -207,8 +207,8 @@ p {
 
 .don {
   margin-top: 0.5em;
-  background-color: #70CCCC;
-  border-color: #70CCCC;
+  background-color: #70CFD0;
+  border-color: #70CFD0;
   color: #FFF;
   font-weight: bold;
 }
