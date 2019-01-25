@@ -31,6 +31,7 @@ li {
     min-height: 425px;
 }
 
+/* Image card */
 .equipe .pic{
     display: inline-block;
     width: 130px;
@@ -83,26 +84,24 @@ li {
     transform: scale(0.7);
 }
 
+/* nom, prénom, poste */
 .equipe .team-content{
     margin-bottom: 30px;
+    font-family: Raleway;
 }
 
-.equipe .title{
-    font-size: 22px;
-    font-weight: 700;
-    color: #4e5052;
-    letter-spacing: 1px;
-    text-transform: capitalize;
-    margin-bottom: 5px;
-}
-
-.equipe .post{
-    display: block;
-    font-size: 15px;
-    color: #4e5052;
+.equipe span{
+    font-size: 20px;
+    color: #666666;
     text-transform: capitalize;
 }
 
+.equipe h4 {
+    max-width: 15ch;
+    text-transform: uppercase;
+}
+
+/* email, linkedin */
 .equipe .social{
     width: 100%;
     padding: 0;
@@ -134,17 +133,3 @@ li {
     text-decoration: none;
 }
 
-span, h3, h4 {
-    font-family: Raleway;
-}
-
-span{
-    font-size: 20px;
-    color: #666666;
-    text-transform: capitalize;
-}
-
-h4 {
-    max-width: 15ch;
-    text-transform: uppercase;
-}
