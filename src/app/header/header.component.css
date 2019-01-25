@@ -51,7 +51,7 @@ button{
   cursor: pointer;
   font-family: Raleway;
   font-weight: bold;
-  margin-top: 50vh;
+  margin-top: 42vh;
 }
 
 .mannuelUser {
@@ -84,22 +84,22 @@ input{
 }
 
 @media screen and (max-width: 800px){
-  
+
   img{
     margin-left: 33%;
   }
-  
+
   li{
     margin-top: 0%;
   }
-  
+
   ul .d-flex {
     margin-top: -0.75em;
   }
   .reseaux{
     margin-top: 5%;
   }
-  
+
 }
 
 .loupe{
@@ -190,11 +190,11 @@ h4 {
   .connect {
     margin-left: 3em;
   }
-  
+
   .btn {
     margin-left: 5em;
   }
-  
+
   h4 {
     margin-left: 3em;
   }
@@ -223,7 +223,7 @@ h4 {
   border-radius: 50px;
   padding: 10px;
   transition: width 0.3s linear;
-  
+
 }
 
 .search_input {
@@ -269,92 +269,92 @@ h4 {
 
 
 @media screen and (max-width: 350px) {
-  
+
   .nav-link {
     margin-top: -0.5em;
   }
-  
+
   .navbar {
     height: 10vh;
   }
-  
+
   .sidebar{
     margin-top:10vh;
   }
-  
+
   img {
     opacity: 0;
   }
-  
+
   .search_icon{
     font-size: 1.3em;
     margin-right: -0.4em;
     margin-top: 1vh;
     height: 1.8rem;
-    
+
   }
-  
+
   .search_input{
     margin-right: -1em;
     height: 2rem;
-    
+
   }
-  
+
   .searchbar{
     margin-right: -0.4em;
     margin-top: -1.6vh;
   }
-  
+
   .closeside{
     font-size: 2.1em;
   }
-  
+
   .openside{
     font-size: 1.8em;
   }
 }
 
 @media screen and (min-width:350px) and (max-width: 650px) {
-  
+
   .navbar {
     height: 10vh;
   }
-  
+
   .sidebar{
     margin-top:10vh;
   }
-  
+
   .search_icon{
     margin-right: -0.4em;
     height: 1.8rem;
     font-size: 1.5em;
     margin-top: 0.2vh;
   }
-  
+
   .search_input{
     margin-right: -1em;
     height: 2rem;
-    
+
   }
-  
+
   .searchbar{
     margin-right: -0.4em;
     margin-top: 0.4vh;
   }
-  
+
   img {
     opacity: 0;
   }
-  
+
   .closeside{
     font-size: 2.1em;
   }
-  
+
   .openside{
     font-size: 1.8em;
   }
-  
-  
+
+
   /* Fin barre de recherche */
-  
+
 }

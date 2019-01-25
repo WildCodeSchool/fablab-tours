@@ -12,12 +12,12 @@
   <div class="row d-flex justify-content-center">
           <!-- Début card partenaire -->
     <div class="card m-1 col-12 col-sm-6 col-lg-4 col-xl-3" style="max-width: 260px;" *ngFor="let partenaire of partenaires | paginate :{ itemsPerPage: 6, currentPage: p }">
-        <img class="card-img-top m-2" src="{{partenaire.image}}" alt="Card image cap Responsive image" style="max-height: 150px;">
+        <img class="card-img-top m-2" src="{{partenaire.image}}" alt="Card image cap Responsive image">
         <div class="card-body">
             <h5 class="card-title d-flex justify-content-center">{{partenaire.status}}</h5>
         </div>
-        <div class="card-footer d-flex justify-content-center">
-            <button type="button" class="btn btn-outline-info m-1" (click)="open(content)">Modifier</button>
+        <div class="footer d-flex justify-content-center">
+            <button type="button" class="btn btn-outline-info mr-2" (click)="open(content)">Modifier</button>
             <button type="button" class="btn btn-outline-danger" (click)="open(contentSup)">Supprimer</button>
          </div>
 
