@@ -14,12 +14,12 @@ h1 {
 
 /* Début css card */
 
-img {
+/* img {
   width: 80%;
   height: 80%;
   margin-left: 2em;
   margin-top: 2em;
-}
+} */
 
 .imgModif {
   width: 90%;
@@ -38,12 +38,10 @@ img {
   }
 }
 
-.card-body {
-  text-align: center;
-}
-
-/* Fin css card */
-
 .pagination {
   margin: 0%
 }
+.card-footer {
+margin-bottom: 0 !important;
+}
+/* Fin css card */
