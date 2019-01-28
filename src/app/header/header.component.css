@@ -18,6 +18,7 @@ img{
   z-index: -1;
 }
 
+/* bouton connexion/deconnexion */
 .log-out{
   margin-top: 0.2em;
   margin-left: 1em;;
@@ -45,6 +46,8 @@ button{
   cursor: pointer;
 }
 
+
+/* manuel utilisation */
 .manuel {
   font-size: 0rem;
   color: #fff;

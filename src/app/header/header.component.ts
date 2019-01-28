@@ -47,7 +47,7 @@ export class HeaderComponent implements OnInit {
         .pipe(first())
         .subscribe(
           result => this.router.navigate(['admin']),
-          err => this.error = 'Erreur lors de la connexion'
+          err => this.error = 'Adresse mail ou mot de passe incorrect'
         );
     }
     // deconnection
