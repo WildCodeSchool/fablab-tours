@@ -1,65 +1,25 @@
 <h1 class="text-center my-5"> Partenaires </h1>
+
+<!-- Section partenaire -->
+
 <div class="container justify-content-center">
+
     <!--Debut section partenaires financiers-->
     <h5 class="text-center">Partenaires Financiers</h5>
-    <div class="row justify-content-around partenaireFin">
-        
-        
-        <div class="row">
-            <div class="col-sm col-xl-2 col-md-3 col-sm-12">
-                <a class="m-3" href="http://www.regioncentre-valdeloire.fr/accueil.html" target="_blank" title="Lien externe: http://www.regioncentre-valdeloire.fr/accueil.html"><img src="assets/images/image-header/region-centre-val-de-loire.jpg" class="region" alt="region-centre-val-de-loire"></a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm col-xl-2 col-md-3 col-sm-12">
-                <a class="m-3" href="http://tours-metropole.fr/" target="_blank" title="Lien externe: http://tours-metropole.fr/"><img src="assets/images/image-header/tours-metropole.png" class="tours" alt="tours-metropole"></a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm col-xl-2 col-md-3 col-sm-12">
-                <a class="m-3" href="https://www.fondationorange.com/" target="_blank" title="Lien externe: https://www.fondationorange.com/"><img src="assets/images/image-header/logo_fondation-orange.png" class="orange" alt="fondationOrange"></a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm col-xl-2 col-md-3 col-sm-12">
-                <a class="m-3" href="http://www.indre-et-loire.gouv.fr/Services-de-l-Etat/Presentation-des-services/Direction-departementale-de-la-cohesion-sociale" target="_blank" title="Lien externe:http://www.indre-et-loire.gouv.fr/Services-de-l-Etat/Presentation-des-services/Direction-departementale-de-la-cohesion-sociale"><img src="assets/images/image-header/ddcs.jpg" class="ddcs" alt="ddcs"></a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm col-xl-2 col-md-3 col-sm-12">
-                <a class="m-3" href="https://www.associations.gouv.fr/FDVA.html" target="_blank" title="Lien externe:https://www.associations.gouv.fr/FDVA.html"><img src="assets/images/image-header/fdva.jpg" class="fdva" alt="fdva"></a>  
-            </div>
-        </div>
-        
+    <div class="row justify-content-around">
+        <div class="col-xl-3 col-md-4 col-sm-6" *ngFor="let partenaire of partFinancier">
+            <a href="{{partenaire.url_site}}" target="_blank" title="Lien externe: {{partenaire.url_site}}"><img src="{{partenaire.image}}" class="logo" alt="image partenaire"></a>
+        </div> 
     </div>
     
     <!-- fin section partenaires financiers -->
     
-    <!-- Début section boutton -->
-    
-    <div class="container d-flex justify-content-center">
-        <a class="btn btn-secondary don" href="https://www.helloasso.com/associations/la-fabrique-d-usages-numeriques/formulaires/1/widget" title="Lien externe: https://www.helloasso.com/associations/la-fabrique-d-usages-numeriques/formulaires/1/widget" target="_blank">Faire un don</a>
-    </div>
-    <div class="container d-flex justify-content-center">
-        <a class="btn btn-secondary devpart" routerLink='/contact'>Devenir partenaire</a>
-    </div>
-    
-    <!-- fin section boutton -->
     <!-- Début section partenaires techniques -->
     
-    <h5 class="text-center parttech">Partenaires Techniques</h5>
-    
-    <div class="row justify-content-around partenaireTech">
-        
-        <div class="row">
-            <div class="col-sm col-xl-2 col-md-3 col-sm-12">
-                <a class="m-3" href="https://www.compagnons-du-devoir.com/" target="_blank" title="Lien externe: https://www.compagnons-du-devoir.com/"><img src="assets/images/image-header/cdd.png" class="compagnon" alt="compagnons-du-devoir"></a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm col-xl-2 col-md-3 col-sm-12">
-                <a class="m-3" href="https://www.fartools.com" target="_blank" title="Lien externe:https://www.fartools.com"><img src="assets/images/image-header/fartools.png" class="fartools" alt="fartools"></a>
-            </div>
+    <h5 class="text-center">Partenaires Techniques</h5>
+    <div class="row justify-content-around">
+        <div class="col-xl-3 col-md-4 col-sm-6" *ngFor="let partenaire of partTechnique">
+            <a href="{{partenaire.url_site}}" target="_blank" title="Lien externe: {{partenaire.url_site}}"><img src="{{partenaire.image}}" class="logo" alt="image partenaire"></a>
         </div>
     </div>
     <!-- Fin section partenaires techniques -->

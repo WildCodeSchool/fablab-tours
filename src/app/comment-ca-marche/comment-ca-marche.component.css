@@ -16,9 +16,13 @@ h1 {
 /* cards styling */
 
 .top-container h4 {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  font-family: Raleway;
   text-transform: uppercase;
-  font-weight: 500;
-  margin-top: 2rem;
+  margin-top: 1em;
 }
 
 .card {
@@ -32,7 +36,7 @@ h1 {
   display: inline-block;
   padding: 1rem;
   font-size: 4rem;
-  background-color: #70CCCC;
+  background-color: #70CFD0;
   color: hsl(240, 14%, 99%);
   border-radius: 50%;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
@@ -57,7 +61,7 @@ h1 {
 /*  paragraph styling */
 
 .lead {
-  margin-top: 1.4em;
+  margin-top: 1.8em;
   text-align: justify;
   font-size: 1.125rem;
   margin-left: 1em;
@@ -99,7 +103,7 @@ tr:hover {
   transition-duration: 0.3s;
   transform: translateY(-5px);
   font-size: 1rem;
-  color: #70CCCC;
+  color: #70CFD0;
   font-weight: bold;
 }
 
@@ -151,17 +155,16 @@ tr:hover {
 
 /* Button */
 
-.btn {
+.btnNews {
   padding: 0px;
   border-radius: 0.5px;
-  background-color: #70CCCC;
-  border-color: #70CCCC;
+  background-color: #70CFD0;
+  border-color: #70CFD0;
 }
 
 .btn:hover {
-  background-color: #000000;
-  border: #000000;
-  transition: 0;
+  background-color: #333333;
+  border: #333333;
 }
 
 .fa {
@@ -200,4 +203,12 @@ p {
   margin-left: 0.5em;
   margin-right: 0.5em;
   text-align: center;
+}
+
+.don {
+  margin-top: 0.5em;
+  background-color: #70CFD0;
+  border-color: #70CFD0;
+  color: #FFF;
+  font-weight: bold;
 }

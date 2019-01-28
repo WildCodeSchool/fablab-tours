@@ -1,0 +1,56 @@
+.container {
+  margin-bottom: 5em;
+}
+
+h1 {
+  margin-top: 3.5em;
+  font-size: 2.5em;
+  margin-bottom: 1.5em;
+  text-transform: uppercase;
+  color: #696969;
+  font-weight: bold;
+  font-family: Raleway;
+}
+
+/* Début css card */
+
+/* img {
+  width: 80%;
+  height: 80%;
+  margin-left: 2em;
+  margin-top: 2em;
+} */
+
+.imgModif {
+  width: 90%;
+  height: 90%;
+}
+
+@media screen and (max-width: 500px) {
+
+  .img {
+    margin-left: 3em;
+  }
+
+  .imgModif {
+    width: 70%;
+    height: 70%;
+  }
+}
+
+.pagination {
+  margin: 0%
+}
+.footer {
+padding: 0.75rem 1.25rem;
+border-top: 1px solid rgba(0, 0, 0, 0.125);
+}
+/* Fin css card */
+.card-body
+{
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
+}
+.card-img-top{
+  max-height: 150px;
+}

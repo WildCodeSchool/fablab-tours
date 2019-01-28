@@ -29,17 +29,18 @@ li {
     min-width: 14rem;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
     min-height: 425px;
-    
 }
 
+/* Image card */
 .equipe .pic{
-    display:inline-block;
+    display: inline-block;
     width: 130px;
     height: 130px;
     margin-bottom: 50px;
     position: relative;
     z-index: 1;
 }
+
 .equipe .pic::before{
     content: "";
     width: 100%;
@@ -57,17 +58,19 @@ li {
 .equipe:hover .pic::before{
     height: 100%;
 }
+
 .equipe .pic::after{
     content: "";
     width: 100%;
     height: 99%;
     border-radius: 50%;
-    background: #72cfd0;
+    background: #70CFD0;
     position: absolute;
     top: 0;
     left: 0;
     z-index: -1;
 }
+
 .equipe .pic img{
     width: 100%;
     height: 100%;
@@ -75,27 +78,30 @@ li {
     transform: scale(1);
     transition: all 0.6s ease 0s;
 }
+
 .equipe:hover .pic img{
     box-shadow: 0 0 0 14px #f7f5ec;
     transform: scale(0.7);
 }
+
+/* nom, prénom, poste */
 .equipe .team-content{
     margin-bottom: 30px;
+    font-family: Raleway;
 }
-.equipe .title{
-    font-size: 22px;
-    font-weight: 700;
-    color: #4e5052;
-    letter-spacing: 1px;
-    text-transform: capitalize;
-    margin-bottom: 5px;
-}
-.equipe .post{
-    display: block;
-    font-size: 15px;
-    color: #4e5052;
+
+.equipe span{
+    font-size: 20px;
+    color: #666666;
     text-transform: capitalize;
 }
+
+.equipe h4 {
+    max-width: 15ch;
+    text-transform: uppercase;
+}
+
+/* email, linkedin */
 .equipe .social{
     width: 100%;
     padding: 0;
@@ -105,13 +111,13 @@ li {
     bottom: -100px;
     left: 0;
     transition: all 0.5s ease 0s;
-    
 }
 
 .equipe:hover .social{
     bottom: 0;
     min-height: 3em;
 }
+
 .equipe .social li{
     display: inline-block;
 }
@@ -120,24 +126,10 @@ li {
     display: block;
     font-size: 23px;
     color: white;transition: all 0.5s ease 0s;
-    
 }
+
 .equipe .social li a:hover{
-    color:#70CCCC;
+    color:#70CFD0;
     text-decoration: none;
 }
 
-span, h3, h4 {
-    font-family: Raleway;
-}
-
-span{
-    font-size: 20px;
-    color: #666666;
-    text-transform: capitalize;
-}
-
-h4 {
-    max-width: 15ch;
-    text-transform: uppercase;
-}
