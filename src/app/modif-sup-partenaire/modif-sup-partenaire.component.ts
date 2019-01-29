@@ -12,6 +12,7 @@ export class ModifSupPartenaireComponent implements OnInit {
 
   partenaires: any[];
   partenaireForm: FormGroup;
+  p=1;
 
 
   constructor(public partenairesService: PartenairesService, private fb: FormBuilder, private modalService: NgbModal) { }
