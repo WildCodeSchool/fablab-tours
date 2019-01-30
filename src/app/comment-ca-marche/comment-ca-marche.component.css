@@ -205,6 +205,11 @@ p {
   text-align: center;
 }
 
+.row {
+  margin-right: 0;
+  margin-left: 0;
+}
+
 .don {
   margin-top: 0.5em;
   background-color: #70CFD0;
