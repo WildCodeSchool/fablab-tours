@@ -23,7 +23,7 @@
 <form [formGroup]="rechercheForm" (ngSubmit)="onSubmit(); rechercheForm.reset()">
   <div class="searchbar">
     <input class="form-control search_input" type="text" formControlName="input" placeholder="Rechercher...">
-    <button class="search_icon" type="submit" [disabled]="rechercheForm.invalid"><i class="fa fa-search"></i></button>
+    <button class="search_icon" type="submit" (click)="showSidebar(false)" [disabled]="rechercheForm.invalid"><i class="fa fa-search"></i></button>
   </div>
 </form>
 </nav>
@@ -105,7 +105,7 @@
                                     <ng-template #content let-modal>
                                       <div class="modal-header">
                                         <h4 class="text-center">Connexion Administrateur</h4>
-                                        <button type="button" class="close" aria-label="Close" (click)="modal.close('Cross click')">
+                                        <button type="button" class="close" aria-label="Close" (click)="modal.dissmiss('Cross click')">
                                           <span aria-hidden="true">&times;</span>
                                         </button>
                                       </div>
