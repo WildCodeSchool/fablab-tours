@@ -179,10 +179,12 @@ h1{
 }
 
 h4 {
-  margin-left: 7.25em;
+  margin-left: 6.5em;
+  max-width: 10ch;
   font-family: Raleway;
   font-weight: bold;
 }
+
 
 .connect {
   margin-left: 7.25em;
@@ -191,11 +193,11 @@ h4 {
 
 @media screen and (max-width: 500px) {
   .connect {
-    margin-left: 3em;
+    margin-left: 2.5em;
   }
   
   .btn {
-    margin-left: 5em;
+    margin-left: 6em;
   }
   
   h4 {
