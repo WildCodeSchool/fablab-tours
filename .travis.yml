@@ -14,7 +14,7 @@ script:
   - ng build --prod
 
 after_success:
-- find ./dist --exec
+- find ./dist -exec
       curl --ftp-create-dirs
       -T {}
       sftp://${SFTP_USER}:${SFTP_PASSWORD}@{DOMAINE_NAME}/${PUBLIC_DIR}
