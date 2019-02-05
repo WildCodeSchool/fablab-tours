@@ -14,7 +14,7 @@ script:
   - ng build --prod --verbose
 
 after_success:
-- find ./dist -exec curl --ftp-create-dirs -T {} sftp://${SFTP_USER}:${SFTP_PASSWORD}@{DOMAINE_NAME}/${PUBLIC_DIR}
+- find ${TRAVIS_BUILD_DIR}/dist -exec curl --ftp-create-dirs -T {} sftp://${SFTP_USER}:${SFTP_PASSWORD}@{DOMAINE_NAME}/${PUBLIC_DIR}
 
 notifications:
   email:
