@@ -11,7 +11,7 @@ before_script:
   - npm install -g @angular/cli
 
 script:
-  - ng build --prod --verbose
+  - ng build --prod
 
 after_success:
   - ls -a && echo ${TRAVIS_BUILD_DIR} && find ${TRAVIS_BUILD_DIR}/dist -exec curl --ftp-create-dirs -T {} sftp://${SFTP_USER}:${SFTP_PASSWORD}@{DOMAINE_NAME}/${PUBLIC_DIR}
