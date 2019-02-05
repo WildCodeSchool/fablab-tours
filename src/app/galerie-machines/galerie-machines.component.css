@@ -1,8 +1,8 @@
 /* Conteneur des card organisées sous form de  Masonry */
 .card-columns {
-  padding-top: 60px;
   padding-bottom: 3px;
   margin: 50px;
+  padding-top: 2em;
 }
 .card-columns .item-slide {
   position: relative;
@@ -34,7 +34,7 @@
 
 @media screen and (max-width: 1000px) {
   .card-columns .slide-hover {
-   background: rgba(0, 0, 0, .2);
+    background: rgba(0, 0, 0, .2);
   }
 }
 
