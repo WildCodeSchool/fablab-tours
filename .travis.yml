@@ -11,13 +11,10 @@ before_script:
   - npm install -g @angular/cli
 
 script:
-  - ng build --prod
+  - ng build --prod --verbose
 
 after_success:
-- find ./dist -exec
-      curl --ftp-create-dirs
-      -T {}
-      sftp://${SFTP_USER}:${SFTP_PASSWORD}@{DOMAINE_NAME}/${PUBLIC_DIR}
+- find ./dist -exec curl --ftp-create-dirs -T {} sftp://${SFTP_USER}:${SFTP_PASSWORD}@{DOMAINE_NAME}/${PUBLIC_DIR}
 
 notifications:
   email:
