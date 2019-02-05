@@ -7,6 +7,16 @@ img {
   max-width: 300px;
 }
 
+.btn {
+  background-color: #70CFD0 ;
+  border-color: #70CFD0;
+}
+
+.btn:hover{
+  background-color: #333333;
+  border-color: #333333;
+}
+
 p {
   width: 600px;
   height: 60px;
@@ -19,6 +29,11 @@ p {
 strong, a, h3 {
   font-family: Raleway;
 }
+
+strong {
+  color: #70CFD0;
+}
+
 .default-show {
   width: 200px;
   height: 200px;

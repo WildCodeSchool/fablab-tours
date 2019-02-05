@@ -4,7 +4,7 @@ import { map } from 'rxjs/operators';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import swal from 'sweetalert2';
 import { ContactService } from '../common/contact.service';
-
+import { environment } from '../../environments/environment';
 
 
 @Component({
@@ -28,7 +28,7 @@ export class CommentCaMarcheComponent implements OnInit, OnDestroy {
 
 
     // Calls calendar API
-    this.service.get<any>('http://localhost:3000/api/calendar/events')
+    this.service.get<any>(`${environment.apiUrl}/calendar/events`)
       .pipe(
         map(res => {
           return res.map(event => {
