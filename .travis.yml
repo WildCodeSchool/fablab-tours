@@ -14,7 +14,7 @@ script:
   - ng build --prod
 
 after_success:
-  - cd dist/projet3-funlab/ && find . -type f -exec curl -v -u ${SFTP_USER}:${SFTP_PASSWORD} --ftp-create-dirs -T {} ftp://{DOMAINE_NAME}/${PUBLIC_DIR}/{} \;
+  - cd dist/projet3-funlab/ && find . -type f -exec curl -v -u ${SFTP_USER}:${SFTP_PASSWORD} --ftp-create-dirs -T {} ftp://${DOMAINE_NAME}/${PUBLIC_DIR}/{} \;
 
 notifications:
   email:
