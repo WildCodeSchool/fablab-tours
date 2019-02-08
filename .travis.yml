@@ -7,6 +7,11 @@ branches:
   only:
     - master
 
+addons:
+  apt:
+    packages:
+    - lftp
+
 before_script:
   - npm install -g @angular/cli
 
@@ -14,8 +19,8 @@ script:
   - ng build --prod
 
 after_success:
-  - ./purge.sh
-  - cd dist/projet3-funlab/ && find . -type f -exec curl -v -u ${SFTP_USER}:${SFTP_PASSWORD} --ftp-create-dirs -T {} ftp://${DOMAINE_NAME}/${PUBLIC_DIR}/{} \;
+  - ./deploy.sh
+  # - cd dist/projet3-funlab/ && find . -type f -exec curl -v -u ${SFTP_USER}:${SFTP_PASSWORD} --ftp-create-dirs -T {} ftp://${DOMAINE_NAME}/${PUBLIC_DIR}/{} \;
 
 notifications:
   email:
