@@ -10,7 +10,7 @@ branches:
 addons:
   apt:
     packages:
-    - lftp
+    - sshpass
 
 before_script:
   - npm install -g @angular/cli
@@ -19,7 +19,10 @@ script:
   - ng build --prod
 
 after_success:
-  - ./deploy.sh
+  - sshpass -p ${SFTP_PASSWORD} ssh ${SFTP_USER}@funlab.fr 'rm -rfd api.funlab.fr/public/*'
+  - sshpass -p ${SFTP_PASSWORD} scp -r ./dist/projet3-funlab/* ${SFTP_USER}@funlab.fr:api.funlab.fr/public/
+
+  # - ./deploy.sh
   # - cd dist/projet3-funlab/ && find . -type f -exec curl -v -u ${SFTP_USER}:${SFTP_PASSWORD} --ftp-create-dirs -T {} ftp://${DOMAINE_NAME}/${PUBLIC_DIR}/{} \;
 
 notifications:
