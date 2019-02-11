@@ -8,6 +8,7 @@ branches:
     - master
 
 addons:
+  ssh_known_hosts: funlab.fr
   apt:
     packages:
     - sshpass
