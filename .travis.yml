@@ -20,8 +20,8 @@ script:
   - ng build --prod
 
 after_success:
-  - sshpass -p ${SSH_PASSWORD} ssh -v ${SSH_USER}@funlab.fr 'rm -rfd funlab.fr/public/*'
-  - sshpass -p ${SSH_PASSWORD} scp -v -r ${TRAVIS_BUILD_DIR}/dist/projet3-funlab/* ${SSH_USER}@funlab.fr:funlab.fr/public/
+  - sshpass -p ${SSH_PASSWORD} ssh -v ${SSH_USER}@funlab.fr 'rm -rfd prod.funlab.fr/public/*'
+  - sshpass -p ${SSH_PASSWORD} scp -v -r ${TRAVIS_BUILD_DIR}/dist/projet3-funlab/* ${SSH_USER}@funlab.fr:prod.funlab.fr.fr/public/
 
 notifications:
   email:
